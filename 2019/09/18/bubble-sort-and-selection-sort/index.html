@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>华中阁</title>
-  <meta name="keywords" content>
-  <meta name="description" content="华中阁">
+  <title>bubble sort and selection sort  | 华中阁</title>
+  <meta name="keywords" content=" code心得 ">
+  <meta name="description" content="bubble sort and selection sort  | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="bubble sort123456789101112void bubble(struct card A[],int N)&amp;#123;    for(int i = 0;i &amp;lt; N; i++)&amp;#123;        for(int j = N-1; j &amp;gt;= i ; j-- )&amp;#123;//这里是需要学习的地方，直接让j作为最后，更改循环条件尽可能的减少次数">
 <meta name="keywords" content="code心得">
@@ -53,7 +53,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -422,12 +422,49 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-bubble-sort-and-selection-sort" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对博客的理解"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于华中阁"><span class="toc-text">关于华中阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">bubble sort and selection sort </h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">code心得</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-09-18 16:44:49'>2019-09-18 16:41</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#bubble-sort"><span class="toc-text">bubble sort</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#selection-sort"><span class="toc-text">selection sort</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算法稳定性的判断"><span class="toc-text">算法稳定性的判断</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -440,37 +477,45 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。通过对在华中科技大学读研期间的一些学习心得的记录，对自己的技术和人生态度进行一个串联，它是私人的空间。</p>
-<p>山，快马加鞭未下鞍，惊回首离天三尺三。</p>
-<h2 id="关于华中阁"><a href="#关于华中阁" class="headerlink" title="关于华中阁"></a>关于华中阁</h2><p><strong>华中阁</strong> 是钟帅豪的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/">Hexo</a> 生成，部署在 <a href="https://pages.github.com/">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="bubble-sort"><a href="#bubble-sort" class="headerlink" title="bubble sort"></a>bubble sort</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void bubble(struct card A[],int N)&#123;</span><br><span class="line">    for(int i = 0;i &lt; N; i++)&#123;</span><br><span class="line">        for(int j = N-1; j &gt;= i ; j-- )&#123;//这里是需要学习的地方，直接让j作为最后，更改循环条件尽可能的减少次数</span><br><span class="line">            if(A[j].value &lt; A[i].value)&#123;</span><br><span class="line">                card t = A[j];</span><br><span class="line">                A[j] = A[i];</span><br><span class="line">                A[i] = t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </article>
-        
-        <p>
-            <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h1 id="selection-sort"><a href="#selection-sort" class="headerlink" title="selection sort"></a>selection sort</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void selection(struct card A[],int N)&#123;</span><br><span class="line">    for(int i = 0; i &lt; N; i++)&#123;</span><br><span class="line">            int minj = i;//定义一个minj用来接收所有比较中的最小值元素所在的位置</span><br><span class="line">        for(int j = i; j &lt; N; j++)&#123;//选择排序从前往后找，在j循环时直接将j = i带入，另外利用空位转存将要被替代的旧元素的值</span><br><span class="line">            if(A[j].value &lt; A[i].value)&#123;</span><br><span class="line">                minj = j;</span><br><span class="line">            &#125;</span><br><span class="line">            card t = A[i]; A[i] = A[minj]; A[minj] = t;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="算法稳定性的判断"><a href="#算法稳定性的判断" class="headerlink" title="算法稳定性的判断"></a>算法稳定性的判断</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//判断算法的稳定性</span><br><span class="line">bool isStable(struct card C1[],struct card C2[],int N)&#123;//新增加一个标志位，观察标志位是否如原先相同就可以得出是否是稳定的结论</span><br><span class="line">for(int i = 0 ; i &lt; N ; i++)&#123;</span><br><span class="line">    if(C1[i].suit != C2[i].suit)&#123;</span><br><span class="line">        return false ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>bubble sort and selection sort </p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-09-18, 16:41:06</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-18, 16:44:49</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/18/bubble-sort-and-selection-sort/" title="bubble sort and selection sort ">http://yoursite.com/2019/09/18/bubble-sort-and-selection-sort/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">©2016-2019 钟帅豪</p>
