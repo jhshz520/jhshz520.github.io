@@ -14,18 +14,18 @@
 
  | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="动态规划最重要的是要找到状态转移方程，不然开过大的数组很有可能会内存溢出区间和可以转换成求差的问题，求差问题，也可以转换成区间和的问题。 2019 年 9月 21 日 leetcode学习了leetcode的一些刷题方法，主要是动态规划的简单应用，学会用空间换时间的一些技巧">
-<meta name="keywords" content="算法心得">
+<meta name="description" content="1.标准写法：（!ptr）或（ptr）ptr 表示指针存在且不为空！ptr等价于 ptr==NULL 这种写法在多数平台上都没歧义，只有一个统一的结果。 2.不要使用（NULL == ptr ）或者 （nullptr== ptr ）这种写法，在不同的平台上可能有不同的结果。 从此可以总结出，在不同的平台上，NULL可能会被定义为其他地址，当然这个地址都是非法不可访问的。此问题同样适用于C。">
+<meta name="keywords" content="刷题心得">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动态规划">
-<meta property="og:url" content="http://yoursite.com/2019/09/21/动态规划/index.html">
+<meta property="og:title" content="指针">
+<meta property="og:url" content="http://yoursite.com/2019/09/25/指针/index.html">
 <meta property="og:site_name" content="华中阁">
-<meta property="og:description" content="动态规划最重要的是要找到状态转移方程，不然开过大的数组很有可能会内存溢出区间和可以转换成求差的问题，求差问题，也可以转换成区间和的问题。 2019 年 9月 21 日 leetcode学习了leetcode的一些刷题方法，主要是动态规划的简单应用，学会用空间换时间的一些技巧">
+<meta property="og:description" content="1.标准写法：（!ptr）或（ptr）ptr 表示指针存在且不为空！ptr等价于 ptr==NULL 这种写法在多数平台上都没歧义，只有一个统一的结果。 2.不要使用（NULL == ptr ）或者 （nullptr== ptr ）这种写法，在不同的平台上可能有不同的结果。 从此可以总结出，在不同的平台上，NULL可能会被定义为其他地址，当然这个地址都是非法不可访问的。此问题同样适用于C。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-21T09:55:42.991Z">
+<meta property="og:updated_time" content="2019-09-25T01:19:04.824Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="动态规划">
-<meta name="twitter:description" content="动态规划最重要的是要找到状态转移方程，不然开过大的数组很有可能会内存溢出区间和可以转换成求差的问题，求差问题，也可以转换成区间和的问题。 2019 年 9月 21 日 leetcode学习了leetcode的一些刷题方法，主要是动态规划的简单应用，学会用空间换时间的一些技巧">
+<meta name="twitter:title" content="指针">
+<meta name="twitter:description" content="1.标准写法：（!ptr）或（ptr）ptr 表示指针存在且不为空！ptr等价于 ptr==NULL 这种写法在多数平台上都没歧义，只有一个统一的结果。 2.不要使用（NULL == ptr ）或者 （nullptr== ptr ）这种写法，在不同的平台上可能有不同的结果。 从此可以总结出，在不同的平台上，NULL可能会被定义为其他地址，当然这个地址都是非法不可访问的。此问题同样适用于C。">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -216,7 +216,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(15)</small></div></li>
+    <li><div class="all active">全部文章<small>(16)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -228,7 +228,7 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="15">
+<input type="hidden" id="yelog_site_posts_number" value="16">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -275,19 +275,23 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">算法心得</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">文献阅读</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color1">计算机论文</a>
+        <a href="javascript:" class="color5">算法心得</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">刷题心得</a>
     </li>
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color5">coding 心得</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">计算机论文</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -329,19 +333,19 @@
         </a>
         
         <a  class=""
-           href="/2019/09/03/java/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="java">java</span>
-            <span class="post-date" title="2019-09-03 06:53:31">2019/09/03</span>
-        </a>
-        
-        <a  class=""
            href="/2019/09/11/markdown使用心得体会/"
            data-tag="blog编辑相关"
            data-author="" >
             <span class="post-title" title="markdown使用心得体会">markdown使用心得体会</span>
             <span class="post-date" title="2019-09-11 17:41:24">2019/09/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/03/java/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java">java</span>
+            <span class="post-date" title="2019-09-03 06:53:31">2019/09/03</span>
         </a>
         
         <a  class=""
@@ -353,14 +357,6 @@
         </a>
         
         <a  class=""
-           href="/2019/09/21/动态规划/"
-           data-tag="算法心得"
-           data-author="" >
-            <span class="post-title" title="动态规划">动态规划</span>
-            <span class="post-date" title="2019-09-21 16:07:34">2019/09/21</span>
-        </a>
-        
-        <a  class=""
            href="/2019/09/18/Docker集群的调度策略和通信优化技术研究/"
            data-tag="文献阅读"
            data-author="" >
@@ -369,11 +365,11 @@
         </a>
         
         <a  class=""
-           href="/2019/09/02/zshblog/"
-           data-tag=""
+           href="/2019/09/21/动态规划/"
+           data-tag="算法心得"
            data-author="" >
-            <span class="post-title" title="zshblog">zshblog</span>
-            <span class="post-date" title="2019-09-02 12:50:37">2019/09/02</span>
+            <span class="post-title" title="动态规划">动态规划</span>
+            <span class="post-date" title="2019-09-21 16:07:34">2019/09/21</span>
         </a>
         
         <a  class=""
@@ -385,11 +381,27 @@
         </a>
         
         <a  class=""
-           href="/2019/09/03/计算机顶会列表/"
-           data-tag="计算机论文"
+           href="/2019/09/25/指针/"
+           data-tag="刷题心得"
            data-author="" >
-            <span class="post-title" title="计算机顶会列表">计算机顶会列表</span>
-            <span class="post-date" title="2019-09-03 06:38:17">2019/09/03</span>
+            <span class="post-title" title="指针">指针</span>
+            <span class="post-date" title="2019-09-25 09:16:31">2019/09/25</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/03/邻接矩阵的使用/"
+           data-tag="coding 心得"
+           data-author="" >
+            <span class="post-title" title="邻接矩阵的使用">邻接矩阵的使用</span>
+            <span class="post-date" title="2019-09-03 06:54:51">2019/09/03</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/02/zshblog/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="zshblog">zshblog</span>
+            <span class="post-date" title="2019-09-02 12:50:37">2019/09/02</span>
         </a>
         
         <a  class=""
@@ -409,11 +421,11 @@
         </a>
         
         <a  class=""
-           href="/2019/09/03/邻接矩阵的使用/"
-           data-tag="coding 心得"
+           href="/2019/09/03/计算机顶会列表/"
+           data-tag="计算机论文"
            data-author="" >
-            <span class="post-title" title="邻接矩阵的使用">邻接矩阵的使用</span>
-            <span class="post-date" title="2019-09-03 06:54:51">2019/09/03</span>
+            <span class="post-title" title="计算机顶会列表">计算机顶会列表</span>
+            <span class="post-date" title="2019-09-03 06:38:17">2019/09/03</span>
         </a>
         
         <a  class=""
@@ -600,7 +612,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#Git 心得','#code心得','#blog编辑相关','#算法心得','#文献阅读','#计算机论文','#coding 心得','#读研之路','#就业规划',],
+            'data': ['#Git 心得','#code心得','#blog编辑相关','#文献阅读','#算法心得','#刷题心得','#coding 心得','#计算机论文','#读研之路','#就业规划',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

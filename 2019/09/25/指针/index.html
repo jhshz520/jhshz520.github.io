@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Docker集群的调度策略和通信优化技术研究 | 华中阁</title>
-  <meta name="keywords" content=" 文献阅读 ">
-  <meta name="description" content="Docker集群的调度策略和通信优化技术研究 | 华中阁">
+  <title>指针 | 华中阁</title>
+  <meta name="keywords" content=" 刷题心得 ">
+  <meta name="description" content="指针 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1.标准写法：（!ptr）或（ptr）ptr 表示指针存在且不为空！ptr等价于 ptr==NULL 这种写法在多数平台上都没歧义，只有一个统一的结果。 2.不要使用（NULL == ptr ）或者 （nullptr== ptr ）这种写法，在不同的平台上可能有不同的结果。 从此可以总结出，在不同的平台上，NULL可能会被定义为其他地址，当然这个地址都是非法不可访问的。此问题同样适用于C。">
 <meta name="keywords" content="刷题心得">
@@ -448,9 +448,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Docker集群的调度策略和通信优化技术研究" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-指针" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Docker集群的调度策略和通信优化技术研究</h1>
+        <h1 class="article-title">指针</h1>
     
     <div class="article-meta">
         
@@ -459,14 +459,14 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">文献阅读</a>
+            <a href="javascript:" class="color5">刷题心得</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-18 10:44:29'>2019-09-18 10:25</time>
+        创建时间:<time class="date" title='更新时间: 2019-09-25 09:19:04'>2019-09-25 09:16</time>
         
     </div>
     <div class="article-meta">
@@ -488,7 +488,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker网络发展的关键点"><span class="toc-text">Docker网络发展的关键点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整"><span class="toc-text">如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一般使用第三方工具进行定制"><span class="toc-text">一般使用第三方工具进行定制</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-标准写法："><span class="toc-text">1.标准写法：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-不要使用（NULL-ptr-）或者-（nullptr-ptr-）"><span class="toc-text">2.不要使用（NULL == ptr ）或者 （nullptr== ptr ）</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -503,14 +503,10 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Docker网络发展的关键点"><a href="#Docker网络发展的关键点" class="headerlink" title="Docker网络发展的关键点"></a>Docker网络发展的关键点</h1><h2 id="如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整"><a href="#如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整" class="headerlink" title="如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整"></a>如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整</h2><h3 id="一般使用第三方工具进行定制"><a href="#一般使用第三方工具进行定制" class="headerlink" title="一般使用第三方工具进行定制"></a>一般使用第三方工具进行定制</h3><p>1 OpenvsSwitch</p>
-<p>重量级解决方案，不适合中小规模应用，不支持容器的动态地址转换，无法实现应用隐匿性，而且由于实现基于虚拟化网桥，性能方面有损失<br>2 CoreOS 公司的Flanel</p>
-<p>为集群所有节点重新规划地址分配规则，部署繁琐，随节点规模增长复杂度提升，缺少服务质量控制功能，无细粒度管理和控制</p>
-<p>3 Linux内置 Traffic control 和cgroup 方式实现</p>
-<p>需要修改内核，实现难度大，而且需要在创建容器时预先指定大小，无法实现动态网络控制，实现方式不灵活，集群重新部署，需要重新配置内核环境，与DOcker的跨平台和容易部署初衷相违背</p>
-<p>4 Socetplane</p>
-<p>原有Docker命令进行封装，提供网络抽象层，支持多网络和分布式IP地址管理，虽然实现了容器地址的丰富管理，但缺少质量控制，无法实现分级管理</p>
-<p>无一劳永逸的解决方法</p>
+        <h1 id="1-标准写法："><a href="#1-标准写法：" class="headerlink" title="1.标准写法："></a>1.标准写法：</h1><p>（!ptr）或（ptr）<br>ptr 表示指针存在且不为空<br>！ptr等价于 ptr==NULL</p>
+<p>这种写法在多数平台上都没歧义，只有一个统一的结果。</p>
+<h1 id="2-不要使用（NULL-ptr-）或者-（nullptr-ptr-）"><a href="#2-不要使用（NULL-ptr-）或者-（nullptr-ptr-）" class="headerlink" title="2.不要使用（NULL == ptr ）或者 （nullptr== ptr ）"></a>2.不要使用（NULL == ptr ）或者 （nullptr== ptr ）</h1><p>这种写法，在不同的平台上可能有不同的结果。</p>
+<p>从此可以总结出，在不同的平台上，NULL可能会被定义为其他地址，当然这个地址都是非法不可访问的。此问题同样适用于C。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
@@ -524,12 +520,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Docker集群的调度策略和通信优化技术研究</p>
+    <p><span class="copy-title">文章标题:</span>指针</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-18, 10:25:50</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-18, 10:44:29</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/18/Docker集群的调度策略和通信优化技术研究/" title="Docker集群的调度策略和通信优化技术研究">http://yoursite.com/2019/09/18/Docker集群的调度策略和通信优化技术研究/</a>
+    <p><span class="copy-title">发布时间:</span>2019-09-25, 09:16:31</p>
+    <p><span class="copy-title">最后更新:</span>2019-09-25, 09:19:04</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/25/指针/" title="指针">http://yoursite.com/2019/09/25/指针/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
