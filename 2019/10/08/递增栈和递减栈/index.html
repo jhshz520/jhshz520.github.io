@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Hello World | 华中阁</title>
-  <meta name="keywords" content>
-  <meta name="description" content="Hello World | 华中阁">
+  <title>递增栈和递减栈 | 华中阁</title>
+  <meta name="keywords" content=" leetcode496 ">
+  <meta name="description" content="递增栈和递减栈 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="递增栈1.元素入栈之后，其下面元素一定是其左边第一个比它大的数；(可用来求每个元素左边更大的第一个元素)2.若在元素插入之前，栈顶元素比插入元素小，那么栈顶元素一定是插入元素左边第一个比它小的数3.若在元素插入之前，栈顶元素比插入元素小，那么待插入元素是所有需要出栈的元素右边第一个更大的数； (可用来求每个元素右边更大的第一个元素)4.最后一定会留下最大的数（对较大的数更有利） 123456789">
 <meta name="keywords" content="leetcode496">
@@ -480,19 +480,25 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="w-递增栈和递减栈" class="article article-type-w" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">递增栈和递减栈</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">leetcode496</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-02 12:31:20'>2019-09-02 12:31</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-08 11:24:17'>2019-10-08 10:46</time>
         
     </div>
     <div class="article-meta">
@@ -514,7 +520,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#递增栈"><span class="toc-text">递增栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递减栈"><span class="toc-text">递减栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#map-中的元素访问全都是用-中括号来访问"><span class="toc-text">map[[]]中的元素访问全都是用[]中括号来访问</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -529,20 +535,13 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h1 id="递增栈"><a href="#递增栈" class="headerlink" title="递增栈"></a>递增栈</h1><p>1.元素入栈之后，其下面元素一定是其左边第一个比它大的数；(可用来求每个元素左边更大的第一个元素)<br>2.若在元素插入之前，栈顶元素比插入元素小，那么栈顶元素一定是插入元素左边第一个比它小的数<br>3.若在元素插入之前，栈顶元素比插入元素小，那么待插入元素是所有需要出栈的元素右边第一个更大的数； (可用来求每个元素右边更大的第一个元素)<br>4.最后一定会留下最大的数（对较大的数更有利）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/*1.正向用递增栈*/</span><br><span class="line">/*class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; nextGreaterElement(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123;</span><br><span class="line">        map&lt;int,int&gt; PMap;</span><br><span class="line">        stack&lt;int&gt; UpStack;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        for(int i=0;i&lt;nums2.size();i++)&#123;</span><br><span class="line">            if(UpStack.empty()||UpStack.top()&gt;nums2[i])</span><br><span class="line">                UpStack.push(nums2[i]);</span><br><span class="line">            else&#123;</span><br><span class="line">                while(!UpStack.empty()&amp;&amp;UpStack.top()&lt;nums2[i])&#123;</span><br><span class="line">                    PMap.insert(&#123;UpStack.top(),nums2[i]&#125;);</span><br><span class="line">                    UpStack.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                UpStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        while(!UpStack.empty())&#123;</span><br><span class="line">            PMap.insert(&#123;UpStack.top(),-1&#125;);</span><br><span class="line">            UpStack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;nums1.size();i++)&#123;</span><br><span class="line">            result.push_back(PMap[nums1[i]]);   //map的下标操作返回值是和value的类型一样的</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;*/</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h1 id="递减栈"><a href="#递减栈" class="headerlink" title="递减栈"></a>递减栈</h1><p>1.元素入栈之后，其下面的元素一定是其左边第一个比它小的数；(可用来求每个元素左边更小的第一个元素)<br>2.若在元素插入之前，栈顶元素比插入元素更大，那么栈顶元素一定是待插入元素左边一个更大的数<br>3.若在元素插入之前，栈顶元素比插入元素更大，那么栈顶元素一定是所有需要出栈的元素右边更小的数；(可用来求每个元素右边更小的第一个元素)<br>4.最后一定会留下最小的数（对较小 的数更有利）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; nextGreaterElement(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123;</span><br><span class="line">        map&lt;int,int&gt; PMap;</span><br><span class="line">        stack&lt;int&gt; DStack;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        for(int i=nums2.size()-1;i&gt;=0;i--)&#123;</span><br><span class="line">            if(DStack.empty())&#123;</span><br><span class="line">                PMap.insert(&#123;nums2[i],-1&#125;);</span><br><span class="line">                DStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            else if(DStack.top()&gt;nums2[i])&#123;</span><br><span class="line">                PMap.insert(&#123;nums2[i],DStack.top()&#125;);</span><br><span class="line">                DStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                while(!DStack.empty()&amp;&amp;DStack.top()&lt;nums2[i])</span><br><span class="line">                   DStack.pop();</span><br><span class="line">                if(DStack.empty())</span><br><span class="line">                   PMap.insert(&#123;nums2[i],-1&#125;);</span><br><span class="line">                else</span><br><span class="line">                   PMap.insert(&#123;nums2[i],DStack.top()&#125;); </span><br><span class="line">                DStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;nums1.size();i++)</span><br><span class="line">            result.push_back(PMap[nums1[i]]);   //map的下标操作返回值是和value的类型一样的</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+<h3 id="map-中的元素访问全都是用-中括号来访问"><a href="#map-中的元素访问全都是用-中括号来访问" class="headerlink" title="map[[]]中的元素访问全都是用[]中括号来访问"></a>map[[]]中的元素访问全都是用[]中括号来访问</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -555,12 +554,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>递增栈和递减栈</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-02, 12:31:20</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-02, 12:31:20</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/02/hello-world/" title="Hello World">http://yoursite.com/2019/09/02/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-08, 10:46:34</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-08, 11:24:17</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/08/递增栈和递减栈/" title="递增栈和递减栈">http://yoursite.com/2019/10/08/递增栈和递减栈/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>

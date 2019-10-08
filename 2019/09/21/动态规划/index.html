@@ -6,18 +6,18 @@
   <meta name="keywords" content=" 算法心得 ">
   <meta name="description" content="动态规划 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="线段树概念线段树的代码组成： 1：build函数：用于建立整个线段树。 2：upgrade，修改（更新）函数。注意区分：单点更新、区间更新。 3：push_up: 父节点回溯更新函数 如果是区间更新，还需要：push_down，用于：把lazy_tag往下推一级，推到该节点的子节点，并更新该节点左右子节点的：数据值、lazy_tag值。 一、build函数：构建线段树 原理： 开始时是区间[1,n">
-<meta name="keywords" content="算法心得">
+<meta name="description" content="递增栈1.元素入栈之后，其下面元素一定是其左边第一个比它大的数；(可用来求每个元素左边更大的第一个元素)2.若在元素插入之前，栈顶元素比插入元素小，那么栈顶元素一定是插入元素左边第一个比它小的数3.若在元素插入之前，栈顶元素比插入元素小，那么待插入元素是所有需要出栈的元素右边第一个更大的数； (可用来求每个元素右边更大的第一个元素)4.最后一定会留下最大的数（对较大的数更有利） 123456789">
+<meta name="keywords" content="leetcode496">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线段树">
-<meta property="og:url" content="http://yoursite.com/2019/09/30/线段树/index.html">
+<meta property="og:title" content="递增栈和递减栈">
+<meta property="og:url" content="http://yoursite.com/2019/10/08/递增栈和递减栈/index.html">
 <meta property="og:site_name" content="华中阁">
-<meta property="og:description" content="线段树概念线段树的代码组成： 1：build函数：用于建立整个线段树。 2：upgrade，修改（更新）函数。注意区分：单点更新、区间更新。 3：push_up: 父节点回溯更新函数 如果是区间更新，还需要：push_down，用于：把lazy_tag往下推一级，推到该节点的子节点，并更新该节点左右子节点的：数据值、lazy_tag值。 一、build函数：构建线段树 原理： 开始时是区间[1,n">
+<meta property="og:description" content="递增栈1.元素入栈之后，其下面元素一定是其左边第一个比它大的数；(可用来求每个元素左边更大的第一个元素)2.若在元素插入之前，栈顶元素比插入元素小，那么栈顶元素一定是插入元素左边第一个比它小的数3.若在元素插入之前，栈顶元素比插入元素小，那么待插入元素是所有需要出栈的元素右边第一个更大的数； (可用来求每个元素右边更大的第一个元素)4.最后一定会留下最大的数（对较大的数更有利） 123456789">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-30T01:21:13.817Z">
+<meta property="og:updated_time" content="2019-10-08T03:24:17.647Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线段树">
-<meta name="twitter:description" content="线段树概念线段树的代码组成： 1：build函数：用于建立整个线段树。 2：upgrade，修改（更新）函数。注意区分：单点更新、区间更新。 3：push_up: 父节点回溯更新函数 如果是区间更新，还需要：push_down，用于：把lazy_tag往下推一级，推到该节点的子节点，并更新该节点左右子节点的：数据值、lazy_tag值。 一、build函数：构建线段树 原理： 开始时是区间[1,n">
+<meta name="twitter:title" content="递增栈和递减栈">
+<meta name="twitter:description" content="递增栈1.元素入栈之后，其下面元素一定是其左边第一个比它大的数；(可用来求每个元素左边更大的第一个元素)2.若在元素插入之前，栈顶元素比插入元素小，那么栈顶元素一定是插入元素左边第一个比它小的数3.若在元素插入之前，栈顶元素比插入元素小，那么待插入元素是所有需要出栈的元素右边第一个更大的数； (可用来求每个元素右边更大的第一个元素)4.最后一定会留下最大的数（对较大的数更有利） 123456789">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -208,7 +208,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(17)</small></div></li>
+    <li><div class="all active">全部文章<small>(19)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -220,7 +220,7 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="17">
+<input type="hidden" id="yelog_site_posts_number" value="19">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -255,6 +255,10 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Git 心得</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color5">文献阅读</a>
     </li>
     
@@ -263,11 +267,15 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">Git 心得</a>
+        <a href="javascript:" class="color2">code心得</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">code心得</a>
+        <a href="javascript:" class="color1">leetcode42</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">刷题心得</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -279,7 +287,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">刷题心得</a>
+        <a href="javascript:" class="color2">leetcode496</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">coding 心得</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -288,10 +300,6 @@
     
     <li class="article-tag-list-item">
         <a href="javascript:" class="color5">就业规划</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">coding 心得</a>
     </li>
     
     <div class="clearfix"></div>
@@ -306,6 +314,14 @@
            data-author="" >
             <span class="post-title" title="C++">C++</span>
             <span class="post-date" title="2019-09-03 06:53:14">2019/09/03</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/03/GitBash常用语句/"
+           data-tag="Git 心得"
+           data-author="" >
+            <span class="post-title" title="GitBash的常用语句">GitBash的常用语句</span>
+            <span class="post-date" title="2019-09-03 06:54:51">2019/09/03</span>
         </a>
         
         <a  class=""
@@ -333,14 +349,6 @@
         </a>
         
         <a  class=""
-           href="/2019/09/03/GitBash常用语句/"
-           data-tag="Git 心得"
-           data-author="" >
-            <span class="post-title" title="GitBash的常用语句">GitBash的常用语句</span>
-            <span class="post-date" title="2019-09-03 06:54:51">2019/09/03</span>
-        </a>
-        
-        <a  class=""
            href="/2019/09/03/分布式系统/"
            data-tag=""
            data-author="" >
@@ -357,27 +365,11 @@
         </a>
         
         <a  class=""
-           href="/2019/09/21/动态规划/"
-           data-tag="算法心得"
-           data-author="" >
-            <span class="post-title" title="动态规划">动态规划</span>
-            <span class="post-date" title="2019-09-21 16:07:34">2019/09/21</span>
-        </a>
-        
-        <a  class=""
            href="/2019/09/02/zshblog/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="zshblog">zshblog</span>
             <span class="post-date" title="2019-09-02 12:50:37">2019/09/02</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/09/30/线段树/"
-           data-tag="算法心得"
-           data-author="" >
-            <span class="post-title" title="线段树">线段树</span>
-            <span class="post-date" title="2019-09-30 08:37:01">2019/09/30</span>
         </a>
         
         <a  class=""
@@ -389,11 +381,43 @@
         </a>
         
         <a  class=""
+           href="/2019/10/08/接雨水栈的应用/"
+           data-tag="leetcode42"
+           data-author="" >
+            <span class="post-title" title="接雨水栈的应用">接雨水栈的应用</span>
+            <span class="post-date" title="2019-10-08 09:03:08">2019/10/08</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/25/指针/"
+           data-tag="刷题心得"
+           data-author="" >
+            <span class="post-title" title="指针">指针</span>
+            <span class="post-date" title="2019-09-25 09:16:31">2019/09/25</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/21/动态规划/"
+           data-tag="算法心得"
+           data-author="" >
+            <span class="post-title" title="动态规划">动态规划</span>
+            <span class="post-date" title="2019-09-21 16:07:34">2019/09/21</span>
+        </a>
+        
+        <a  class=""
            href="/2019/09/03/计算机顶会列表/"
            data-tag="计算机论文"
            data-author="" >
             <span class="post-title" title="计算机顶会列表">计算机顶会列表</span>
             <span class="post-date" title="2019-09-03 06:38:17">2019/09/03</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/08/递增栈和递减栈/"
+           data-tag="leetcode496"
+           data-author="" >
+            <span class="post-title" title="递增栈和递减栈">递增栈和递减栈</span>
+            <span class="post-date" title="2019-10-08 10:46:34">2019/10/08</span>
         </a>
         
         <a  class=""
@@ -413,11 +437,11 @@
         </a>
         
         <a  class=""
-           href="/2019/09/25/指针/"
-           data-tag="刷题心得"
+           href="/2019/09/03/邻接矩阵的使用/"
+           data-tag="coding 心得"
            data-author="" >
-            <span class="post-title" title="指针">指针</span>
-            <span class="post-date" title="2019-09-25 09:16:31">2019/09/25</span>
+            <span class="post-title" title="邻接矩阵的使用">邻接矩阵的使用</span>
+            <span class="post-date" title="2019-09-03 06:54:51">2019/09/03</span>
         </a>
         
         <a  class=""
@@ -429,19 +453,19 @@
         </a>
         
         <a  class=""
+           href="/2019/09/30/线段树/"
+           data-tag="算法心得"
+           data-author="" >
+            <span class="post-title" title="线段树">线段树</span>
+            <span class="post-date" title="2019-09-30 08:37:01">2019/09/30</span>
+        </a>
+        
+        <a  class=""
            href="/2019/09/12/银行待遇汇总/"
            data-tag="就业规划"
            data-author="" >
             <span class="post-title" title="银行待遇汇总">银行待遇汇总</span>
             <span class="post-date" title="2019-09-12 14:29:01">2019/09/12</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/09/03/邻接矩阵的使用/"
-           data-tag="coding 心得"
-           data-author="" >
-            <span class="post-title" title="邻接矩阵的使用">邻接矩阵的使用</span>
-            <span class="post-date" title="2019-09-03 06:54:51">2019/09/03</span>
         </a>
         
     </nav>
@@ -598,7 +622,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#文献阅读','#blog编辑相关','#Git 心得','#code心得','#算法心得','#计算机论文','#刷题心得','#读研之路','#就业规划','#coding 心得',],
+            'data': ['#Git 心得','#文献阅读','#blog编辑相关','#code心得','#leetcode42','#刷题心得','#算法心得','#计算机论文','#leetcode496','#coding 心得','#读研之路','#就业规划',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
