@@ -498,7 +498,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-08 11:24:20'>2019-10-08 09:03</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-08 19:53:25'>2019-10-08 09:03</time>
         
     </div>
     <div class="article-meta">
@@ -520,7 +520,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#算法"><span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组内维护一个栈"><span class="toc-text">数组内维护一个栈</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#算法"><span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组内维护一个栈"><span class="toc-text">数组内维护一个栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cb快捷键"><span class="toc-text">cb快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#eclipse"><span class="toc-text">eclipse</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么不能在int数组初始化时直接赋值"><span class="toc-text">为什么不能在int数组初始化时直接赋值</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -540,6 +540,11 @@
 <p>则可以界定中间的高度了弹出栈顶元素，计算距离，<br>C++</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">int trap(vector&lt;int&gt;&amp; height)</span><br><span class="line">&#123;</span><br><span class="line">    int ans = 0, current = 0;</span><br><span class="line">    stack&lt;int&gt; st;</span><br><span class="line">    while (current &lt; height.size()) &#123;</span><br><span class="line">        while (!st.empty() &amp;&amp; height[current] &gt; height[st.top()]) &#123;</span><br><span class="line">            int top = st.top();//保存当前栈中最小高度位置的下标</span><br><span class="line">            st.pop();</span><br><span class="line">            if (st.empty())</span><br><span class="line">                break;</span><br><span class="line">            int distance = current - st.top() - 1;</span><br><span class="line">            int bounded_height = min(height[current], height[st.top()]) - height[top];//可以看做是一层一层的叠加，bounded_height看做是左右中最小高度与前一个次小高度的高度差</span><br><span class="line">            ans += distance * bounded_height;</span><br><span class="line">        &#125;</span><br><span class="line">        st.push(current++);</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="cb快捷键"><a href="#cb快捷键" class="headerlink" title="cb快捷键"></a>cb快捷键</h3><p>crtl + D 快速复制一行</p>
+<h3 id="eclipse"><a href="#eclipse" class="headerlink" title="eclipse"></a>eclipse</h3><p>ctrl +alt+下箭头</p>
+<h3 id="为什么不能在int数组初始化时直接赋值"><a href="#为什么不能在int数组初始化时直接赋值" class="headerlink" title="为什么不能在int数组初始化时直接赋值"></a>为什么不能在int数组初始化时直接赋值</h3><p> int count[26] ={101}</p>
+<p> 这样的语句的最终结果是只有第一项是101，其余各项还都</p>
+<p> 是直接赋值为零</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
@@ -557,7 +562,7 @@
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-08, 09:03:08</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-08, 11:24:20</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-08, 19:53:25</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/08/接雨水栈的应用/" title="接雨水栈的应用">http://yoursite.com/2019/10/08/接雨水栈的应用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
