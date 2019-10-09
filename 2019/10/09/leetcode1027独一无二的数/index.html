@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>zshblog | 华中阁</title>
-  <meta name="keywords" content>
-  <meta name="description" content="zshblog | 华中阁">
+  <title>leetcode1027独一无二的数 | 华中阁</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="leetcode1027独一无二的数 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="题目描述给你一个整数数组 arr，请你帮忙统计数组中每个数的出现次数。 如果每个数的出现次数都是独一无二的，就返回 true；否则返回 false。 map 容器map 容器中first 和second 可以用vector等任何其他的容器来进行定义例如map&amp;lt;int,int&amp;gt; count;map &amp;lt;int, vector &amp;gt; result; for循环的另一种表示形式C++">
 <meta name="keywords" content="leetcode">
@@ -492,19 +492,25 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-zshblog" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="w-leetcode1027独一无二的数" class="article article-type-w" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">zshblog</h1>
+        <h1 class="article-title">leetcode1027独一无二的数</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">leetcode</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-02 22:51:32'>2019-09-02 12:50</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-09 17:41:39'>2019-10-09 16:33</time>
         
     </div>
     <div class="article-meta">
@@ -526,7 +532,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#map-容器"><span class="toc-text">map 容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#for循环的另一种表示形式"><span class="toc-text">for循环的另一种表示形式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for-auto-c-count"><span class="toc-text">for(auto c : count)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#求气球的个数"><span class="toc-text">求气球的个数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的方法"><span class="toc-text">我的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#用switch-的方法来对进行有限的情况来进行枚举也不失为一种好方法"><span class="toc-text">用switch 的方法来对进行有限的情况来进行枚举也不失为一种好方法</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -541,10 +547,19 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>test my blog<br>避免域名每次被清空的方法<br>1利用cname这样避免github利用cname这样避免github repository中的domain每次被清空</p>
-<p>2注意在source文件夹下建立一个CNAME文件，里面只写一个域名就能避免每次被清空这也是解决方法之一<br>重新更新一下repository中的settings才会生效</p>
-<p>3 测试了好几次为什么每次都是先在githubpages上反映，<br>在<a href="http://www.jhshz.top上反映的很慢？需要刷新一下" target="_blank" rel="noopener">www.jhshz.top上反映的很慢？需要刷新一下</a></p>
-<p>是因为TTL是10分钟的原因吗，并不会马上部署完成还是需要一定的反应时间，但并不是每次都需要重新访问githubpages的，<br>部署顺序估计是先部署到githubpages，在其上面更新，然后通过域名访问时，其实是在访问githubpages</p>
+        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>给你一个整数数组 arr，请你帮忙统计数组中每个数的出现次数。</p>
+<p>如果每个数的出现次数都是独一无二的，就返回 true；否则返回 false。</p>
+<h1 id="map-容器"><a href="#map-容器" class="headerlink" title="map 容器"></a>map 容器</h1><p>map 容器中first 和second 可以用vector等任何其他的容器来进行定义<br>例如<br>map&lt;int,int&gt; count;<br>map &lt;int, vector<int> &gt; result;</int></p>
+<h1 id="for循环的另一种表示形式"><a href="#for循环的另一种表示形式" class="headerlink" title="for循环的另一种表示形式"></a>for循环的另一种表示形式</h1><p>C++11中的新的特性<br>跟java中的for循环的两种形式比较类似，直接对对象进行for循环枚举，比平常int型的定义更加的方便特别是当size未知时这种</p>
+<p>循环方式更加的便利和高效</p>
+<h3 id="for-auto-c-count"><a href="#for-auto-c-count" class="headerlink" title="for(auto c : count)"></a>for(auto c : count)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool uniqueOccurrences(vector&lt;int&gt;&amp; arr) &#123;</span><br><span class="line">        map&lt;int,int&gt; count;//count the number of arry[i]        </span><br><span class="line">        map&lt;int,vector&lt;int&gt;&gt; result;// vector storage the the number of arry[i]</span><br><span class="line">        sort(arr.begin(),arr.end());</span><br><span class="line">        for(int i =0; i&lt; arr.size(); i++)&#123;</span><br><span class="line">            count[arr[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        for(auto c : count)&#123;</span><br><span class="line">            result[c.second].push_back(c.first);</span><br><span class="line">        &#125;</span><br><span class="line">        for(auto r : result)&#123;</span><br><span class="line">            if(r.second.size() &gt; 1)</span><br><span class="line">                return false;</span><br><span class="line">        &#125;</span><br><span class="line">    return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="求气球的个数"><a href="#求气球的个数" class="headerlink" title="求气球的个数"></a>求气球的个数</h1><p>给你一个字符串 text，你需要使用 text 中的字母来拼凑尽可能多的单词 “balloon”（气球）。</p>
+<p>字符串 text 中的每个字母最多只能被使用一次。请你返回最多可以拼凑出多少个单词 “balloon”。</p>
+<h1 id="我的方法"><a href="#我的方法" class="headerlink" title="我的方法"></a>我的方法</h1><figure class="highlight plain"><figcaption><span>Solution &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">public:</span><br><span class="line">    int maxNumberOfBalloons(string text) &#123;//第一次没看题解，自己提交通过纪念一下</span><br><span class="line">        map&lt;int,int&gt; ma;//</span><br><span class="line">      //  map&lt;int,vector&lt;int&gt; result;</span><br><span class="line">        //int b,a,l,o,n;</span><br><span class="line">        int ans = 0;</span><br><span class="line">        map&lt;char,int&gt; ballon;</span><br><span class="line">        for(int i = 0; i &lt;text.size(); i++)&#123;</span><br><span class="line">            ballon[text[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">       /* for(int j = 0 ;j &lt;ballon.size(); j++)&#123;</span><br><span class="line">            if(ballon[j].first==&apos;b&apos;)&#123;</span><br><span class="line">                b = ballon[i]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        */</span><br><span class="line">        for(auto b: ballon)&#123;</span><br><span class="line">            if(b.first == &apos;b&apos;)&#123;</span><br><span class="line">                ans =b.second;</span><br><span class="line">            &#125;</span><br><span class="line">            if(b.first == &apos;a&apos;)&#123;</span><br><span class="line">                ans = min(ans,b.second);</span><br><span class="line">            &#125;</span><br><span class="line">             if(b.first == &apos;n&apos;)&#123;</span><br><span class="line">                ans = min(ans,b.second);</span><br><span class="line">            &#125;</span><br><span class="line">            if(b.first == &apos;l&apos;)&#123;</span><br><span class="line">              ans = min(ans,b.second/2);</span><br><span class="line">            &#125;</span><br><span class="line">            if(b.first == &apos;o&apos;)&#123;</span><br><span class="line">                ans = min(ans,b.second/2);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="用switch-的方法来对进行有限的情况来进行枚举也不失为一种好方法"><a href="#用switch-的方法来对进行有限的情况来进行枚举也不失为一种好方法" class="headerlink" title="用switch 的方法来对进行有限的情况来进行枚举也不失为一种好方法"></a>用switch 的方法来对进行有限的情况来进行枚举也不失为一种好方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">int maxNumberOfBalloons(string text) &#123;</span><br><span class="line">int a1[5]=&#123;0,0,0,0,0&#125;;</span><br><span class="line">for(int i=0;i&lt;text.length();i++)</span><br><span class="line">&#123;</span><br><span class="line">switch(text[i])</span><br><span class="line">&#123; case &apos;b&apos; : a1[0]+=1;</span><br><span class="line">break;</span><br><span class="line">case &apos;a&apos; : a1[1]+=1;</span><br><span class="line">break;</span><br><span class="line">case &apos;l&apos; : a1[2]+=1;</span><br><span class="line">break;</span><br><span class="line">case &apos;o&apos; : a1[3]+=1;</span><br><span class="line">break;</span><br><span class="line">case &apos;n&apos; : a1[4]+=1;</span><br><span class="line">break;</span><br><span class="line">default :</span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">a1[2]=a1[2]/2;</span><br><span class="line">a1[3]=a1[3]/2;</span><br><span class="line">int count=a1[0];</span><br><span class="line">for(int i=1;i&lt;5;i++)</span><br><span class="line">&#123;</span><br><span class="line">if(a1[i]&lt;count)</span><br><span class="line">&#123;</span><br><span class="line">count=a1[i];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return count;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
@@ -558,12 +573,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>zshblog</p>
+    <p><span class="copy-title">文章标题:</span>leetcode1027独一无二的数</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-02, 12:50:37</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-02, 22:51:32</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/02/zshblog/" title="zshblog">http://yoursite.com/2019/09/02/zshblog/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-09, 16:33:52</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-09, 17:41:39</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/09/leetcode1027独一无二的数/" title="leetcode1027独一无二的数">http://yoursite.com/2019/10/09/leetcode1027独一无二的数/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
