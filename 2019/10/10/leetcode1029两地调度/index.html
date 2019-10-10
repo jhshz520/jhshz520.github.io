@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Docker集群的调度策略和通信优化技术研究 | 华中阁</title>
-  <meta name="keywords" content=" 文献阅读 ">
-  <meta name="description" content="Docker集群的调度策略和通信优化技术研究 | 华中阁">
+  <title>leetcode1029两地调度 | 华中阁</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="leetcode1029两地调度 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="公司计划面试 2N 人。第 i 人飞往 A 市的费用为 costs[i][0]，飞往 B 市的费用为 costs[i][1]。 返回将每个人都飞到某座城市的最低费用，要求每个城市都有 N 人抵达。 map怎么进行排序?第一反应是利用stl中提供的sort算法实现，这个想法是好 的，不幸的是，sort算法有个限制，利用sort算法只能对 序列容器进行排序，就是线性的（如vector，list， de">
 <meta name="keywords" content="leetcode">
@@ -500,9 +500,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Docker集群的调度策略和通信优化技术研究" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="w-leetcode1029两地调度" class="article article-type-w" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Docker集群的调度策略和通信优化技术研究</h1>
+        <h1 class="article-title">leetcode1029两地调度</h1>
     
     <div class="article-meta">
         
@@ -511,19 +511,19 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">文献阅读</a>
+            <a href="javascript:" class="color4">leetcode</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-29 18:14:47'>2019-09-18 10:25</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-10 21:18:25'>2019-10-10 19:24</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:365</span>
+        <span>字数:715</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -542,7 +542,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker网络发展的关键点"><span class="toc-text">Docker网络发展的关键点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整"><span class="toc-text">如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一般使用第三方工具进行定制"><span class="toc-text">一般使用第三方工具进行定制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调度问题，负载问题的解决可以类比交通领域的解决方式"><span class="toc-text">调度问题，负载问题的解决可以类比交通领域的解决方式</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#map怎么进行排序"><span class="toc-text">map怎么进行排序?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路一-将键和值进行对调进而按照键来进行访问，自动实现了排序"><span class="toc-text">思路一 将键和值进行对调进而按照键来进行访问，自动实现了排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#但是两者的插入方式还是有区别的"><span class="toc-text">但是两者的插入方式还是有区别的</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路二-利用pair中的value值进行比较，进而排序找出，前一半"><span class="toc-text">思路二 利用pair中的value值进行比较，进而排序找出，前一半</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#错误解析"><span class="toc-text">错误解析</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -557,15 +557,30 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Docker网络发展的关键点"><a href="#Docker网络发展的关键点" class="headerlink" title="Docker网络发展的关键点"></a>Docker网络发展的关键点</h1><h2 id="如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整"><a href="#如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整" class="headerlink" title="如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整"></a>如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整</h2><h3 id="一般使用第三方工具进行定制"><a href="#一般使用第三方工具进行定制" class="headerlink" title="一般使用第三方工具进行定制"></a>一般使用第三方工具进行定制</h3><p>1 OpenvsSwitch</p>
-<p>重量级解决方案，不适合中小规模应用，不支持容器的动态地址转换，无法实现应用隐匿性，而且由于实现基于虚拟化网桥，性能方面有损失<br>2 CoreOS 公司的Flanel</p>
-<p>为集群所有节点重新规划地址分配规则，部署繁琐，随节点规模增长复杂度提升，缺少服务质量控制功能，无细粒度管理和控制</p>
-<p>3 Linux内置 Traffic control 和cgroup 方式实现</p>
-<p>需要修改内核，实现难度大，而且需要在创建容器时预先指定大小，无法实现动态网络控制，实现方式不灵活，集群重新部署，需要重新配置内核环境，与DOcker的跨平台和容易部署初衷相违背</p>
-<p>4 Socetplane</p>
-<p>原有Docker命令进行封装，提供网络抽象层，支持多网络和分布式IP地址管理，虽然实现了容器地址的丰富管理，但缺少质量控制，无法实现分级管理</p>
-<p>无一劳永逸的解决方法</p>
-<h2 id="调度问题，负载问题的解决可以类比交通领域的解决方式"><a href="#调度问题，负载问题的解决可以类比交通领域的解决方式" class="headerlink" title="调度问题，负载问题的解决可以类比交通领域的解决方式"></a>调度问题，负载问题的解决可以类比交通领域的解决方式</h2>
+        <p>公司计划面试 2N 人。第 i 人飞往 A 市的费用为 costs[i][0]，飞往 B 市的费用为 costs[i][1]。</p>
+<p>返回将每个人都飞到某座城市的最低费用，要求每个城市都有 N 人抵达。</p>
+<h1 id="map怎么进行排序"><a href="#map怎么进行排序" class="headerlink" title="map怎么进行排序?"></a>map怎么进行排序?</h1><p>第一反应是利用stl中提供的sort算法实现，这个想法是好</p>
+<p>的，不幸的是，sort算法有个限制，利用sort算法只能对</p>
+<p>序列容器进行排序，就是线性的（如vector，list，</p>
+<p>deque）。map也是一个集合容器，它里面存储的元素是</p>
+<p>pair，但是它不是线性存储的（前面提过，像红黑树），所</p>
+<p>以利用sort不能直接和map结合进行排序。</p>
+<p>我们知道map中的元素类型为pair，具体定义如下：</p>
+<p>template &lt;class T1, class T2&gt; struct pair<br>{<br>  typedef T1 first_type;<br>  typedef T2 second_type;</p>
+<p>  T1 first;<br>  T2 second;<br>  pair() : first(T1()), second(T2()) {}<br>  pair(const T1&amp; x, const T2&amp; y) : first(x), second(y) {}<br>  template &lt;class U, class V&gt;<br>    pair (const pair&lt;U,V&gt; &amp;p) : first(p.first), second(p.second) { }<br>}</p>
+<p>pair也是一个模板类，这样就实现了良好的通用性。它仅有两个数据成员first 和 second，即 key 和 value，而且</p>
+<p>在 <utility>头文件中，还为pair重载了 &lt; 运算符， 具体实现如下： </utility></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class _T1, class _T2&gt;</span><br><span class="line">    inline bool</span><br><span class="line">    operator&lt;(const pair&lt;_T1, _T2&gt;&amp; __x, const pair&lt;_T1, _T2&gt;&amp; __y)</span><br><span class="line">    &#123; return __x.first &lt; __y.first</span><br><span class="line">             || (!(__y.first &lt; __x.first) &amp;&amp; __x.second &lt; __y.second); &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="思路一-将键和值进行对调进而按照键来进行访问，自动实现了排序"><a href="#思路一-将键和值进行对调进而按照键来进行访问，自动实现了排序" class="headerlink" title="思路一 将键和值进行对调进而按照键来进行访问，自动实现了排序"></a>思路一 将键和值进行对调进而按照键来进行访问，自动实现了排序</h1><p>在实际的项目中可能会碰到key重复的情况，正常的MAP类型</p>
+<p>是不允许重复的key，所以就要使用multimap了，</p>
+<p>multimap的使用和map基本类似，可以无缝对接</p>
+<h2 id="但是两者的插入方式还是有区别的"><a href="#但是两者的插入方式还是有区别的" class="headerlink" title="但是两者的插入方式还是有区别的"></a>但是两者的插入方式还是有区别的</h2><p>//name_score_map[“LiMin”] = 90;　　//主要插入的方式和map有所区别<br>name_score_map.insert(make_pair(“LiMin”, 90));<br>//name_score_map[“LiMin”] = 91;<br>name_score_map.insert(make_pair(“LiMin”, 91));<br>//name_score_map[“ZiLinMi”] = 79;<br>name_score_map.insert(make_pair(“ZiLinMi”, 79));<br>//name_score_map[“BoB”] = 92;</p>
+<h1 id="思路二-利用pair中的value值进行比较，进而排序找出，前一半"><a href="#思路二-利用pair中的value值进行比较，进而排序找出，前一半" class="headerlink" title="思路二 利用pair中的value值进行比较，进而排序找出，前一半"></a>思路二 利用pair中的value值进行比较，进而排序找出，前一半</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">static bool cmp(const pair&lt;int,int&gt;&amp; a,const pair&lt;int,int&gt;&amp; b)</span><br><span class="line">    &#123;</span><br><span class="line">        return a.first&lt;b.first;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int twoCitySchedCost(vector&lt;vector&lt;int&gt;&gt;&amp; costs) &#123;</span><br><span class="line">        int n=costs.size();</span><br><span class="line">        int n2=n/2;</span><br><span class="line">        vector&lt;pair&lt;int,int&gt;&gt; cha(n);</span><br><span class="line">        for(int i=0;i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            cha[i]=make_pair(costs[i][1]-costs[i][0],i);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        stable_sort(cha.begin(),cha.end(),cmp);</span><br><span class="line"></span><br><span class="line">        int res=0;</span><br><span class="line">        for(int i=0;i&lt;n2;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            res+=costs[cha[i].second][1];</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=n2;i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            res+=costs[cha[i].second][0];</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>利用vector进行比较，非常值得借鉴，构造一个sort的比较方案</p>
+<h1 id="错误解析"><a href="#错误解析" class="headerlink" title="错误解析"></a>错误解析</h1><p>i 的作用域错误，致使半天没有发现错误，实际上思路是没有问题的，以后要特别注意避免犯这样的错误。</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -578,12 +593,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Docker集群的调度策略和通信优化技术研究</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">365</span></p>
+    <p><span class="copy-title">文章标题:</span>leetcode1029两地调度</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">715</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-18, 10:25:50</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-29, 18:14:47</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/18/Docker集群的调度策略和通信优化技术研究/" title="Docker集群的调度策略和通信优化技术研究">http://yoursite.com/2019/09/18/Docker集群的调度策略和通信优化技术研究/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-10, 19:24:39</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-10, 21:18:25</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/10/leetcode1029两地调度/" title="leetcode1029两地调度">http://yoursite.com/2019/10/10/leetcode1029两地调度/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
