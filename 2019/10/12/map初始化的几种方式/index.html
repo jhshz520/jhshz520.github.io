@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>GitBash的常用语句 | 华中阁</title>
-  <meta name="keywords" content=" Git 心得 ">
-  <meta name="description" content="GitBash的常用语句 | 华中阁">
+  <title>map初始化的几种方式 | 华中阁</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="map初始化的几种方式 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="map初始化的方式1 insert方式12345678map&amp;lt;char,int&amp;gt; m;       m.insert(make_pair(&amp;apos;I&amp;apos;,1));       m.insert(make_pair(&amp;apos;V&amp;apos;,5));       m.insert(make_pair(&amp;apos;X&amp;apos;,10));       m.insert(ma">
 <meta name="keywords" content="leetcode">
@@ -532,9 +532,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-GitBash常用语句" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-map初始化的几种方式" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">GitBash的常用语句</h1>
+        <h1 class="article-title">map初始化的几种方式</h1>
     
     <div class="article-meta">
         
@@ -543,19 +543,19 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">Git 心得</a>
+            <a href="javascript:" class="color4">leetcode</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-18 14:36:47'>2019-09-03 06:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-12 09:07:31'>2019-10-12 09:03</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:114</span>
+        <span>字数:157</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -574,7 +574,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git常用语句"><span class="toc-text">Git常用语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化"><span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加文件"><span class="toc-text">添加文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加特定的文件"><span class="toc-text">添加特定的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提交至主分支"><span class="toc-text">提交至主分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加远程链接"><span class="toc-text">添加远程链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#向远程更新代码前要先从远程获取最新版本代码"><span class="toc-text">向远程更新代码前要先从远程获取最新版本代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后是提交自己的代码"><span class="toc-text">最后是提交自己的代码</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#map初始化的方式"><span class="toc-text">map初始化的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-insert方式"><span class="toc-text">1 insert方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2直接赋值方式"><span class="toc-text">2直接赋值方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#string-字符串类型的每一个s-i-实质上都是一个char类型，因此不用特别的强制类型转换成char"><span class="toc-text">string 字符串类型的每一个s[i]实质上都是一个char类型，因此不用特别的强制类型转换成char</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -589,15 +589,11 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Git常用语句"><a href="#Git常用语句" class="headerlink" title="Git常用语句"></a>Git常用语句</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>git init </p>
-<p>在本地文件中打开Bash<br>输入git init</p>
-<h2 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h2><p>git add .</p>
-<h2 id="添加特定的文件"><a href="#添加特定的文件" class="headerlink" title="添加特定的文件"></a>添加特定的文件</h2><p>git add 文件名</p>
-<h2 id="提交至主分支"><a href="#提交至主分支" class="headerlink" title="提交至主分支"></a>提交至主分支</h2><p>git commit -m “双引号里面为注释的内容”</p>
-<h2 id="添加远程链接"><a href="#添加远程链接" class="headerlink" title="添加远程链接"></a>添加远程链接</h2><p>git remote add origin <a href="https://github.com/jhshz520/algorithm_pratice" target="_blank" rel="noopener">https://github.com/jhshz520/algorithm_pratice</a></p>
-<h2 id="向远程更新代码前要先从远程获取最新版本代码"><a href="#向远程更新代码前要先从远程获取最新版本代码" class="headerlink" title="向远程更新代码前要先从远程获取最新版本代码"></a>向远程更新代码前要先从远程获取最新版本代码</h2><p>git pull origin master</p>
-<h2 id="最后是提交自己的代码"><a href="#最后是提交自己的代码" class="headerlink" title="最后是提交自己的代码"></a>最后是提交自己的代码</h2><p>git push -u origin master</p>
+        <h1 id="map初始化的方式"><a href="#map初始化的方式" class="headerlink" title="map初始化的方式"></a>map初始化的方式</h1><h2 id="1-insert方式"><a href="#1-insert方式" class="headerlink" title="1 insert方式"></a>1 insert方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">map&lt;char,int&gt; m;</span><br><span class="line">       m.insert(make_pair(&apos;I&apos;,1));</span><br><span class="line">       m.insert(make_pair(&apos;V&apos;,5));</span><br><span class="line">       m.insert(make_pair(&apos;X&apos;,10));</span><br><span class="line">       m.insert(make_pair(&apos;L&apos;,50));</span><br><span class="line">       m.insert(make_pair(&apos;C&apos;,100));</span><br><span class="line">       m.insert(make_pair(&apos;D&apos;,500));</span><br><span class="line">       m.insert(make_pair(&apos;M&apos;,1000));</span><br></pre></td></tr></table></figure>
 
+<h2 id="2直接赋值方式"><a href="#2直接赋值方式" class="headerlink" title="2直接赋值方式"></a>2直接赋值方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">map&lt;char, int&gt; table = &#123;</span><br><span class="line">            &#123;&apos;I&apos;, 1&#125;,</span><br><span class="line">            &#123;&apos;V&apos;, 5&#125;,</span><br><span class="line">            &#123;&apos;X&apos;, 10&#125;,</span><br><span class="line">            &#123;&apos;L&apos;, 50&#125;,</span><br><span class="line">            &#123;&apos;C&apos;, 100&#125;,</span><br><span class="line">            &#123;&apos;D&apos;, 500&#125;,</span><br><span class="line">            &#123;&apos;M&apos;, 1000&#125;</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="string-字符串类型的每一个s-i-实质上都是一个char类型，因此不用特别的强制类型转换成char"><a href="#string-字符串类型的每一个s-i-实质上都是一个char类型，因此不用特别的强制类型转换成char" class="headerlink" title="string 字符串类型的每一个s[i]实质上都是一个char类型，因此不用特别的强制类型转换成char"></a>string 字符串类型的每一个s[i]实质上都是一个char类型，因此不用特别的强制类型转换成char</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -610,12 +606,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>GitBash的常用语句</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">114</span></p>
+    <p><span class="copy-title">文章标题:</span>map初始化的几种方式</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">157</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-03, 06:54:51</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-18, 14:36:47</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/03/GitBash常用语句/" title="GitBash的常用语句">http://yoursite.com/2019/09/03/GitBash常用语句/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-12, 09:03:19</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-12, 09:07:31</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/12/map初始化的几种方式/" title="map初始化的几种方式">http://yoursite.com/2019/10/12/map初始化的几种方式/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
