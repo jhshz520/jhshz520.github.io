@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>古今唯难甘，可与人言无二三 | 华中阁</title>
-  <meta name="keywords" content=" 读研之路 ">
-  <meta name="description" content="古今唯难甘，可与人言无二三 | 华中阁">
+  <title>蔡乐公式leetcode1185 | 华中阁</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="蔡乐公式leetcode1185 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="map初始化的方式1 insert方式12345678map&amp;lt;char,int&amp;gt; m;       m.insert(make_pair(&amp;apos;I&amp;apos;,1));       m.insert(make_pair(&amp;apos;V&amp;apos;,5));       m.insert(make_pair(&amp;apos;X&amp;apos;,10));       m.insert(ma">
 <meta name="keywords" content="leetcode">
@@ -492,9 +492,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-古今唯难甘，可与人言无二三" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-蔡乐公式leetcode1185" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">古今唯难甘，可与人言无二三</h1>
+        <h1 class="article-title">蔡乐公式leetcode1185</h1>
     
     <div class="article-meta">
         
@@ -503,19 +503,19 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">读研之路</a>
+            <a href="javascript:" class="color4">leetcode</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-11 18:15:09'>2019-09-11 18:08</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-12 16:07:16'>2019-10-12 15:20</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:194</span>
+        <span>字数:159</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -534,7 +534,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#大江东流去"><span class="toc-text">大江东流去</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -549,10 +549,10 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="大江东流去"><a href="#大江东流去" class="headerlink" title="大江东流去"></a>大江东流去</h1><p>今天是我来华中科技大学的第三周，而后还要在这里度过另一个三年，计算机专业的学生压力还是巨大的，因为时时刻刻都有许多的东西要学。</p>
-<p>每天都是在打卡或者奔波的路上，突然有了另一种高三时候的感觉对于大学后半学期闲散惯了的我还是有许多的不适应的</p>
-<p>毕竟又步入了人生的新阶段，实验室有硬性的要求，压力还是非常大的，但是转念一想有压力不一定是坏事，希望三年后有个更加光明的未来，争取不再被强力的剥削。</p>
-<p>学得文武艺，货卖帝王家</p>
+        <p>1582年10月4日之后：w=y1+(y1/4)+(c/4)-2<em>c+(26</em>(m+1)/10)+d-1;</p>
+<p>1582年10月4日以及之前：w=y1+y/4+c/4-2<em>c+13</em>(m+1)/5+d+2;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">string weeks[7] = &#123;&quot;Sunday&quot;, &quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;&#125;;</span><br><span class="line">        int month_days[12] = &#123;31,28,31,30,31,30,31,31,30,31,30,31&#125;; </span><br><span class="line">        // 1971-01-01 星期五</span><br><span class="line">        int sum = 0;</span><br><span class="line">        for(int i=1971; i&lt;year; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if( (i % 4 ==0 &amp;&amp; i % 100 != 0) || (i % 400 == 0) )</span><br><span class="line">                sum += 366;</span><br><span class="line">            else</span><br><span class="line">                sum += 365;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0; i&lt;month-1; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += month_days[i];</span><br><span class="line">            if(i == 1 &amp;&amp; ((year % 4 ==0 &amp;&amp; year % 100 != 0) || (year % 400 == 0)))</span><br><span class="line">                sum += 1;</span><br><span class="line">        &#125;</span><br><span class="line">        sum += day;</span><br><span class="line">        return weeks[(sum + 4) % 7];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
@@ -566,12 +566,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>古今唯难甘，可与人言无二三</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">194</span></p>
+    <p><span class="copy-title">文章标题:</span>蔡乐公式leetcode1185</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">159</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-11, 18:08:48</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-11, 18:15:09</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/11/古今唯难甘，可与人言无二三/" title="古今唯难甘，可与人言无二三">http://yoursite.com/2019/09/11/古今唯难甘，可与人言无二三/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-12, 15:20:10</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-12, 16:07:16</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/12/蔡乐公式leetcode1185/" title="蔡乐公式leetcode1185">http://yoursite.com/2019/10/12/蔡乐公式leetcode1185/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
