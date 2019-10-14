@@ -6,18 +6,18 @@
   <meta name="keywords" content=" leetcode ">
   <meta name="description" content="环形链表leetcode141 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1582年10月4日之后：w=y1+(y1/4)+(c/4)-2c+(26(m+1)/10)+d-1; 1582年10月4日以及之前：w=y1+y/4+c/4-2c+13(m+1)/5+d+2; 1234567891011121314151617181920string weeks[7] = &amp;#123;&amp;quot;Sunday&amp;quot;, &amp;quot;Monday&amp;quot;, &amp;quot;T">
+<meta name="description" content="二进制异或可以进行无进位加法我们知道，在位运算操作中，异或的一个重要特性是无进位加法 如果要得到 a + b 的最终值，我们还要找到进位的数，把这二者相加。在位运算中，我们可以使用与操作获得进位 利用位操作实现加法 首先看十进制是如何做的： 5+7=12，三步走 第一步：相加各位的值，不算进位，得到2。 第二步：计算进位值，得到10. 如果这一步的进位值为0，那么第一步得到的值就是最终结果。 第三">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蔡乐公式leetcode1185">
-<meta property="og:url" content="http://yoursite.com/2019/10/12/蔡乐公式leetcode1185/index.html">
+<meta property="og:title" content="leetcode371进位的两个整数之之和">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/leetcode371进位的两个整数之之和/index.html">
 <meta property="og:site_name" content="华中阁">
-<meta property="og:description" content="1582年10月4日之后：w=y1+(y1/4)+(c/4)-2c+(26(m+1)/10)+d-1; 1582年10月4日以及之前：w=y1+y/4+c/4-2c+13(m+1)/5+d+2; 1234567891011121314151617181920string weeks[7] = &amp;#123;&amp;quot;Sunday&amp;quot;, &amp;quot;Monday&amp;quot;, &amp;quot;T">
+<meta property="og:description" content="二进制异或可以进行无进位加法我们知道，在位运算操作中，异或的一个重要特性是无进位加法 如果要得到 a + b 的最终值，我们还要找到进位的数，把这二者相加。在位运算中，我们可以使用与操作获得进位 利用位操作实现加法 首先看十进制是如何做的： 5+7=12，三步走 第一步：相加各位的值，不算进位，得到2。 第二步：计算进位值，得到10. 如果这一步的进位值为0，那么第一步得到的值就是最终结果。 第三">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-12T08:26:19.442Z">
+<meta property="og:updated_time" content="2019-10-14T09:08:18.685Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蔡乐公式leetcode1185">
-<meta name="twitter:description" content="1582年10月4日之后：w=y1+(y1/4)+(c/4)-2c+(26(m+1)/10)+d-1; 1582年10月4日以及之前：w=y1+y/4+c/4-2c+13(m+1)/5+d+2; 1234567891011121314151617181920string weeks[7] = &amp;#123;&amp;quot;Sunday&amp;quot;, &amp;quot;Monday&amp;quot;, &amp;quot;T">
+<meta name="twitter:title" content="leetcode371进位的两个整数之之和">
+<meta name="twitter:description" content="二进制异或可以进行无进位加法我们知道，在位运算操作中，异或的一个重要特性是无进位加法 如果要得到 a + b 的最终值，我们还要找到进位的数，把这二者相加。在位运算中，我们可以使用与操作获得进位 利用位操作实现加法 首先看十进制是如何做的： 5+7=12，三步走 第一步：相加各位的值，不算进位，得到2。 第二步：计算进位值，得到10. 如果这一步的进位值为0，那么第一步得到的值就是最终结果。 第三">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -144,7 +144,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(27)</small></div></li>
+    <li><div class="all active">全部文章<small>(30)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -156,8 +156,8 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="27">
-<input type="hidden" id="yelog_site_word_count" value="15.2k">
+<input type="hidden" id="yelog_site_posts_number" value="30">
+<input type="hidden" id="yelog_site_word_count" value="16.5k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -191,14 +191,6 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">code心得</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">文献阅读</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a href="javascript:" class="color2">Git 心得</a>
     </li>
     
@@ -207,15 +199,23 @@
     </li>
     
     <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">文献阅读</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">code心得</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a href="javascript:" class="color4">blog编辑相关</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">算法心得</a>
+        <a href="javascript:" class="color5">读研之路</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">读研之路</a>
+        <a href="javascript:" class="color5">算法心得</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -231,11 +231,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color2">leetcode496</a>
+        <a href="javascript:" class="color5">coding 心得</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a href="javascript:" class="color5">coding 心得</a>
+        <a href="javascript:" class="color2">leetcode496</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -257,35 +257,19 @@
         </a>
         
         <a  class=""
-           href="/2019/09/18/bubble-sort-and-selection-sort/"
-           data-tag="code心得"
-           data-author="" >
-            <span class="post-title" title="bubble sort and selection sort ">bubble sort and selection sort </span>
-            <span class="post-date" title="2019-09-18 16:41:06">2019/09/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/09/18/Docker集群的调度策略和通信优化技术研究/"
-           data-tag="文献阅读"
-           data-author="" >
-            <span class="post-title" title="Docker集群的调度策略和通信优化技术研究">Docker集群的调度策略和通信优化技术研究</span>
-            <span class="post-date" title="2019-09-18 10:25:50">2019/09/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/09/02/hello-world/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Hello World">Hello World</span>
-            <span class="post-date" title="2019-09-02 12:31:20">2019/09/02</span>
-        </a>
-        
-        <a  class=""
            href="/2019/09/03/GitBash常用语句/"
            data-tag="Git 心得"
            data-author="" >
             <span class="post-title" title="GitBash的常用语句">GitBash的常用语句</span>
             <span class="post-date" title="2019-09-03 06:54:51">2019/09/03</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/14/leet389找不同/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="leet389找不同">leet389找不同</span>
+            <span class="post-date" title="2019-10-14 15:56:18">2019/10/14</span>
         </a>
         
         <a  class=""
@@ -297,27 +281,19 @@
         </a>
         
         <a  class=""
+           href="/2019/09/18/Docker集群的调度策略和通信优化技术研究/"
+           data-tag="文献阅读"
+           data-author="" >
+            <span class="post-title" title="Docker集群的调度策略和通信优化技术研究">Docker集群的调度策略和通信优化技术研究</span>
+            <span class="post-date" title="2019-09-18 10:25:50">2019/09/18</span>
+        </a>
+        
+        <a  class=""
            href="/2019/10/09/leetcode1027独一无二的数/"
            data-tag="leetcode"
            data-author="" >
             <span class="post-title" title="leetcode1027独一无二的数">leetcode1027独一无二的数</span>
             <span class="post-date" title="2019-10-09 16:33:52">2019/10/09</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/10/10/leetcode1029两地调度/"
-           data-tag="leetcode"
-           data-author="" >
-            <span class="post-title" title="leetcode1029两地调度">leetcode1029两地调度</span>
-            <span class="post-date" title="2019-10-10 19:24:39">2019/10/10</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/10/11/leetcode682棒球比赛/"
-           data-tag="leetcode"
-           data-author="" >
-            <span class="post-title" title="leetcode682棒球比赛">leetcode682棒球比赛</span>
-            <span class="post-date" title="2019-10-11 08:29:23">2019/10/11</span>
         </a>
         
         <a  class=""
@@ -329,19 +305,43 @@
         </a>
         
         <a  class=""
+           href="/2019/10/14/leetcode371进位的两个整数之之和/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="leetcode371进位的两个整数之之和">leetcode371进位的两个整数之之和</span>
+            <span class="post-date" title="2019-10-14 16:46:40">2019/10/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/18/bubble-sort-and-selection-sort/"
+           data-tag="code心得"
+           data-author="" >
+            <span class="post-title" title="bubble sort and selection sort ">bubble sort and selection sort </span>
+            <span class="post-date" title="2019-09-18 16:41:06">2019/09/18</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/14/leetcode938二叉搜索树的范围和/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="leetcode938二叉搜索树的范围和">leetcode938二叉搜索树的范围和</span>
+            <span class="post-date" title="2019-10-14 09:11:04">2019/10/14</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/10/leetcode1029两地调度/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="leetcode1029两地调度">leetcode1029两地调度</span>
+            <span class="post-date" title="2019-10-10 19:24:39">2019/10/10</span>
+        </a>
+        
+        <a  class=""
            href="/2019/10/11/leetcode997/"
            data-tag="leetcode"
            data-author="" >
             <span class="post-title" title="leetcode997">leetcode997</span>
             <span class="post-date" title="2019-10-11 15:27:02">2019/10/11</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/10/12/map初始化的几种方式/"
-           data-tag="leetcode"
-           data-author="" >
-            <span class="post-title" title="map初始化的几种方式">map初始化的几种方式</span>
-            <span class="post-date" title="2019-10-12 09:03:19">2019/10/12</span>
         </a>
         
         <a  class=""
@@ -369,11 +369,11 @@
         </a>
         
         <a  class=""
-           href="/2019/09/21/动态规划/"
-           data-tag="算法心得"
+           href="/2019/09/02/hello-world/"
+           data-tag=""
            data-author="" >
-            <span class="post-title" title="动态规划">动态规划</span>
-            <span class="post-date" title="2019-09-21 16:07:34">2019/09/21</span>
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-09-02 12:31:20">2019/09/02</span>
         </a>
         
         <a  class=""
@@ -385,6 +385,14 @@
         </a>
         
         <a  class=""
+           href="/2019/09/21/动态规划/"
+           data-tag="算法心得"
+           data-author="" >
+            <span class="post-title" title="动态规划">动态规划</span>
+            <span class="post-date" title="2019-09-21 16:07:34">2019/09/21</span>
+        </a>
+        
+        <a  class=""
            href="/2019/09/25/指针/"
            data-tag="刷题心得"
            data-author="" >
@@ -393,27 +401,19 @@
         </a>
         
         <a  class=""
+           href="/2019/10/12/map初始化的几种方式/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="map初始化的几种方式">map初始化的几种方式</span>
+            <span class="post-date" title="2019-10-12 09:03:19">2019/10/12</span>
+        </a>
+        
+        <a  class=""
            href="/2019/10/08/接雨水栈的应用/"
            data-tag="leetcode42"
            data-author="" >
             <span class="post-title" title="接雨水栈的应用">接雨水栈的应用</span>
             <span class="post-date" title="2019-10-08 09:03:08">2019/10/08</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/10/12/环形链表leetcode141/"
-           data-tag="leetcode"
-           data-author="" >
-            <span class="post-title" title="环形链表leetcode141">环形链表leetcode141</span>
-            <span class="post-date" title="2019-10-12 16:29:57">2019/10/12</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/09/30/线段树/"
-           data-tag="算法心得"
-           data-author="" >
-            <span class="post-title" title="线段树">线段树</span>
-            <span class="post-date" title="2019-09-30 08:37:01">2019/09/30</span>
         </a>
         
         <a  class=""
@@ -433,11 +433,11 @@
         </a>
         
         <a  class=""
-           href="/2019/10/12/蔡乐公式leetcode1185/"
+           href="/2019/10/11/leetcode682棒球比赛/"
            data-tag="leetcode"
            data-author="" >
-            <span class="post-title" title="蔡乐公式leetcode1185">蔡乐公式leetcode1185</span>
-            <span class="post-date" title="2019-10-12 15:20:10">2019/10/12</span>
+            <span class="post-title" title="leetcode682棒球比赛">leetcode682棒球比赛</span>
+            <span class="post-date" title="2019-10-11 08:29:23">2019/10/11</span>
         </a>
         
         <a  class=""
@@ -449,11 +449,11 @@
         </a>
         
         <a  class=""
-           href="/2019/10/08/递增栈和递减栈/"
-           data-tag="leetcode496"
+           href="/2019/10/12/环形链表leetcode141/"
+           data-tag="leetcode"
            data-author="" >
-            <span class="post-title" title="递增栈和递减栈">递增栈和递减栈</span>
-            <span class="post-date" title="2019-10-08 10:46:34">2019/10/08</span>
+            <span class="post-title" title="环形链表leetcode141">环形链表leetcode141</span>
+            <span class="post-date" title="2019-10-12 16:29:57">2019/10/12</span>
         </a>
         
         <a  class=""
@@ -462,6 +462,30 @@
            data-author="" >
             <span class="post-title" title="邻接矩阵的使用">邻接矩阵的使用</span>
             <span class="post-date" title="2019-09-03 06:54:51">2019/09/03</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/08/递增栈和递减栈/"
+           data-tag="leetcode496"
+           data-author="" >
+            <span class="post-title" title="递增栈和递减栈">递增栈和递减栈</span>
+            <span class="post-date" title="2019-10-08 10:46:34">2019/10/08</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/12/蔡乐公式leetcode1185/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="蔡乐公式leetcode1185">蔡乐公式leetcode1185</span>
+            <span class="post-date" title="2019-10-12 15:20:10">2019/10/12</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/30/线段树/"
+           data-tag="算法心得"
+           data-author="" >
+            <span class="post-title" title="线段树">线段树</span>
+            <span class="post-date" title="2019-09-30 08:37:01">2019/09/30</span>
         </a>
         
         <a  class=""
@@ -632,7 +656,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#code心得','#文献阅读','#Git 心得','#leetcode','#blog编辑相关','#算法心得','#读研之路','#刷题心得','#leetcode42','#计算机论文','#leetcode496','#coding 心得','#就业规划',],
+            'data': ['#Git 心得','#leetcode','#文献阅读','#code心得','#blog编辑相关','#读研之路','#算法心得','#刷题心得','#leetcode42','#计算机论文','#coding 心得','#leetcode496','#就业规划',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

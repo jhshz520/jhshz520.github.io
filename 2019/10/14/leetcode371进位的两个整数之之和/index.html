@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>java | 华中阁</title>
-  <meta name="keywords" content>
-  <meta name="description" content="java | 华中阁">
+  <title>leetcode371进位的两个整数之之和 | 华中阁</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="leetcode371进位的两个整数之之和 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="二进制异或可以进行无进位加法我们知道，在位运算操作中，异或的一个重要特性是无进位加法 如果要得到 a + b 的最终值，我们还要找到进位的数，把这二者相加。在位运算中，我们可以使用与操作获得进位 利用位操作实现加法 首先看十进制是如何做的： 5+7=12，三步走 第一步：相加各位的值，不算进位，得到2。 第二步：计算进位值，得到10. 如果这一步的进位值为0，那么第一步得到的值就是最终结果。 第三">
 <meta name="keywords" content="leetcode">
@@ -508,24 +508,30 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-java" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-leetcode371进位的两个整数之之和" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">java</h1>
+        <h1 class="article-title">leetcode371进位的两个整数之之和</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">leetcode</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-03 06:53:31'>2019-09-03 06:53</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-14 17:08:18'>2019-10-14 16:46</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:409</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -544,7 +550,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二进制异或可以进行无进位加法"><span class="toc-text">二进制异或可以进行无进位加法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递归法求两数之和"><span class="toc-text">递归法求两数之和</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -559,7 +565,20 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="二进制异或可以进行无进位加法"><a href="#二进制异或可以进行无进位加法" class="headerlink" title="二进制异或可以进行无进位加法"></a>二进制异或可以进行无进位加法</h1><p>我们知道，在位运算操作中，异或的一个重要特性是无进位加法</p>
+<p>如果要得到 a + b 的最终值，我们还要找到进位的数，把这二者相加。在位运算中，我们可以使用与操作获得进位</p>
+<p>利用位操作实现加法</p>
+<p>首先看十进制是如何做的： 5+7=12，三步走</p>
+<pre><code>第一步：相加各位的值，不算进位，得到2。
+第二步：计算进位值，得到10. 如果这一步的进位值为0，那么第一步得到的值就是最终结果。
+第三步：重复上述两步，只是相加的值变成上述两步的得到的结果2和10，得到12。</code></pre><p>同样我们可以用三步走的方式计算二进制值相加： 5—101，7—111</p>
+<pre><code>第一步：相加各位的值，不算进位，得到010，二进制每位相加就相当于各位做异或操作，101^111。
+第二步：计算进位值，得到1010，相当于各位进行与操作得到101，再向左移一位得到1010，(101&amp;111)&lt;&lt;1。
+第三步重复上述两步，各位相加 010^1010=1000，进位值为100=(010 &amp; 1010)&lt;&lt;1。
+继续重复上述两步：1000^100 = 1100，进位值为0，跳出循环，1100为最终结果。
+结束条件：进位为0，即a为最终的求和结果。</code></pre><h1 id="递归法求两数之和"><a href="#递归法求两数之和" class="headerlink" title="递归法求两数之和"></a>递归法求两数之和</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int getSum(int a, int b) &#123;</span><br><span class="line">       unsigned int c =a^b;</span><br><span class="line">       unsigned int d =a&amp;b;</span><br><span class="line">        d = d&lt;&lt;1;</span><br><span class="line">       while(d)&#123;</span><br><span class="line">          </span><br><span class="line">           return getSum(c,d);</span><br><span class="line">       &#125;</span><br><span class="line">       return c;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -572,12 +591,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>java</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">文章标题:</span>leetcode371进位的两个整数之之和</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">409</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-03, 06:53:31</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-03, 06:53:31</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/03/java/" title="java">http://yoursite.com/2019/09/03/java/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-14, 16:46:40</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-14, 17:08:18</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/14/leetcode371进位的两个整数之之和/" title="leetcode371进位的两个整数之之和">http://yoursite.com/2019/10/14/leetcode371进位的两个整数之之和/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
