@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Hello World | 华中阁</title>
-  <meta name="keywords" content>
-  <meta name="description" content="Hello World | 华中阁">
+  <title>leetcode107二叉树的层次遍历 | 华中阁</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="leetcode107二叉树的层次遍历 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="题目介绍给定一个二叉树，返回其节点值自底向上的层次遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历） 我的代码123456789101112131415161718192021222324252627282930313233343536373839404142/** * Definition for a binary tree node. * struct TreeNode &amp;#1">
 <meta name="keywords" content="leetcode">
@@ -516,24 +516,30 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-leetcode107二叉树的层次遍历" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">leetcode107二叉树的层次遍历</h1>
     
     <div class="article-meta">
         
         
         
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">leetcode</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-02 12:31:20'>2019-09-02 12:31</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-15 10:19:44'>2019-10-15 09:20</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:73</span>
+        <span>字数:646</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -552,7 +558,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目介绍"><span class="toc-text">题目介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的代码"><span class="toc-text">我的代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#利用队列实现，然后进行顺序的翻转"><span class="toc-text">利用队列实现，然后进行顺序的翻转</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#stack"><span class="toc-text">stack</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -567,19 +573,11 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h1 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h1><p>给定一个二叉树，返回其节点值自底向上的层次遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）</p>
+<h1 id="我的代码"><a href="#我的代码" class="headerlink" title="我的代码"></a>我的代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;vector&lt;int&gt; &gt; result;//</span><br><span class="line">        vector&lt;int&gt; floor;</span><br><span class="line">     TreeNode * q[10000];</span><br><span class="line">        int front ,rear;</span><br><span class="line">        TreeNode * p = root;</span><br><span class="line">        front = rear = -1;</span><br><span class="line">        int last = 0;</span><br><span class="line">        if(!root) return result;</span><br><span class="line">        q[++rear] = root;//first root put in queue</span><br><span class="line">        while(front!=rear)&#123;</span><br><span class="line">            p = q[++front];</span><br><span class="line">      </span><br><span class="line">            floor.push_back(p-&gt;val);</span><br><span class="line">            if(p-&gt;left)&#123;</span><br><span class="line">                q[++rear] = p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">              if(p-&gt;right)&#123;</span><br><span class="line">                q[++rear] = p-&gt;right;</span><br><span class="line">            &#125;</span><br><span class="line">              if(front == last)&#123;</span><br><span class="line">            last = rear;</span><br><span class="line">            result.push_back(floor);</span><br><span class="line">                  floor.clear();</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        reverse(result.begin(),result.end());</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h3 id="利用队列实现，然后进行顺序的翻转"><a href="#利用队列实现，然后进行顺序的翻转" class="headerlink" title="利用队列实现，然后进行顺序的翻转"></a>利用队列实现，然后进行顺序的翻转</h3><h1 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h1><p>思路：此题需要熟悉二叉树的层次遍历，对于常见的层次遍历是利用队列（先进先出）的特性进行实现的，总的思路就是我们每遍历一个节点就把该节点的左孩子和右孩子放进队列（顺序很重要），然后遍历完这个节点之后就从队列中取出头节点（取出的节点有可能是右边的同层节点，也有可能是下一层的第一个节点），然后直到遍历完成。以上就是层次遍历的思路。<br>对于本题，额外需要注意的是判断什么时候遍历完一层，我们可以采取使用一个记录下一层位置的一个值来判断什么时候完成遍历的。我们首先就应该在循环外面把根节点放入队列，然后令last等于0，这其实是让last指向队尾，什么时候我们从队列中取出元素，如果取出到last的时候就代表我们已经遍历完一层，同时每遍历完一层，就应该更新last的值，让last=rear,因为遍历完一层了，说明旗下所有的孩子均已经入队了，所以此时rear就对应出下一层的最大值。此算法强烈推荐大家记住，面试常考。</p>
+<p>与老师进行沟通，根据教学计划制定相应的助教工作方案，协助老师整理算法题库和教辅资料，自己也进行相关算法的学习与复习，向老师了解本科生的学习情况，便于后续对学生平时的表现给予公正的评价。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
@@ -593,12 +591,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">73</span></p>
+    <p><span class="copy-title">文章标题:</span>leetcode107二叉树的层次遍历</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">646</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-02, 12:31:20</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-02, 12:31:20</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/02/hello-world/" title="Hello World">http://yoursite.com/2019/09/02/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-15, 09:20:12</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-15, 10:19:44</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/15/leetcode107二叉树的层次遍历/" title="leetcode107二叉树的层次遍历">http://yoursite.com/2019/10/15/leetcode107二叉树的层次遍历/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
