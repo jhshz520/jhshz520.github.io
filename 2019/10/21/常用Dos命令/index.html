@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>leetcode997 | 华中阁</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="leetcode997 | 华中阁">
+  <title>常用Dos命令 | 华中阁</title>
+  <meta name="keywords" content=" 命令行工具 ">
+  <meta name="description" content="常用Dos命令 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="cdchange directory dirdirectory ，列出目录中的文件名/ p 分屏显示 h 显示隐藏文件s 显示系统文件d 显示目录 md mkdirmake directory md back，创建一个名为back的文件夹 rdremove dirctory rd 只能够删除空目录 rd 后面跟的是路径或名称 rd 不能够直接删除文件 path设置命令搜索向导 renrenamer">
 <meta name="keywords" content="命令行工具">
@@ -528,9 +528,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="w-leetcode997" class="article article-type-w" itemscope itemprop="blogPost">
+        <article id="post-常用Dos命令" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">leetcode997</h1>
+        <h1 class="article-title">常用Dos命令</h1>
     
     <div class="article-meta">
         
@@ -539,19 +539,19 @@
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">leetcode</a>
+            <a href="javascript:" class="color1">命令行工具</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-11 19:03:23'>2019-10-11 15:27</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-21 16:50:16'>2019-10-21 14:47</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:174</span>
+        <span>字数:403</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -570,7 +570,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图的应用"><span class="toc-text">图的应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#利用vector来进行vector数组的截取"><span class="toc-text">利用vector来进行vector数组的截取</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#cd"><span class="toc-text">cd</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dir"><span class="toc-text">dir</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#md-mkdir"><span class="toc-text">md mkdir</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rd"><span class="toc-text">rd</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#path"><span class="toc-text">path</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ren"><span class="toc-text">ren</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#type"><span class="toc-text">type</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#copy"><span class="toc-text">copy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fc-命令"><span class="toc-text">fc 命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#del"><span class="toc-text">del</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#————————————–"><span class="toc-text">————————————–</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络命令"><span class="toc-text">网络命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#telnet-命令"><span class="toc-text">telnet 命令</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#open-RemoteServe-port"><span class="toc-text">open \RemoteServe port</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#close"><span class="toc-text">close</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#set"><span class="toc-text">set</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#display"><span class="toc-text">display</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#send"><span class="toc-text">send</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#arp"><span class="toc-text">arp</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#at"><span class="toc-text">at</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ping"><span class="toc-text">ping</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ipconfig"><span class="toc-text">ipconfig</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#netstat"><span class="toc-text">netstat</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -585,12 +585,47 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="图的应用"><a href="#图的应用" class="headerlink" title="图的应用"></a>图的应用</h1><p>在一个小镇里，按从 1 到 N 标记了 N 个人。传言称，这些人中有一个是小镇上的秘密法官。</p>
-<p>如果小镇的法官真的存在，那么：</p>
-<pre><code>小镇的法官不相信任何人。
-每个人（除了小镇法官外）都信任小镇的法官。
-只有一个人同时满足属性 1 和属性 2 。</code></pre><p>给定数组 trust，该数组由信任对 trust[i] = [a, b] 组成，表示标记为 a 的人信任标记为 b 的人。</p>
-<h1 id="利用vector来进行vector数组的截取"><a href="#利用vector来进行vector数组的截取" class="headerlink" title="利用vector来进行vector数组的截取"></a>利用vector来进行vector数组的截取</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TreeNode * root = new TreeNode(nums[mid]);</span><br><span class="line">       vector&lt;int&gt; vec_left(nums.begin(),nums.begin()+mid);</span><br><span class="line">       root-&gt;left = sortedArrayToBST(vec_left);</span><br><span class="line">        vector&lt;int&gt; vec_right(nums.begin()+mid+1,nums.end());</span><br></pre></td></tr></table></figure>
+        <h1 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h1><p>change directory</p>
+<h1 id="dir"><a href="#dir" class="headerlink" title="dir"></a>dir</h1><p>directory ，列出目录中的文件名<br>/ p 分屏显示</p>
+<p>h 显示隐藏文件<br>s 显示系统文件<br>d 显示目录</p>
+<h1 id="md-mkdir"><a href="#md-mkdir" class="headerlink" title="md mkdir"></a>md mkdir</h1><p>make directory</p>
+<p>md back，创建一个名为back的文件夹</p>
+<h1 id="rd"><a href="#rd" class="headerlink" title="rd"></a>rd</h1><p>remove dirctory</p>
+<p>rd 只能够删除空目录</p>
+<p>rd 后面跟的是路径或名称</p>
+<p>rd 不能够直接删除文件</p>
+<h1 id="path"><a href="#path" class="headerlink" title="path"></a>path</h1><p>设置命令搜索向导</p>
+<h1 id="ren"><a href="#ren" class="headerlink" title="ren"></a>ren</h1><p>rename<br>rename oldname newname</p>
+<h1 id="type"><a href="#type" class="headerlink" title="type"></a>type</h1><p>显示文件的内容</p>
+<p>不能直接显示文件夹的名字</p>
+<h1 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h1><p>copy sourcefile newfile</p>
+<p>可以指定专门的后缀名称的文件例</p>
+<p>copy *.com c:dos</p>
+<p>copy 命令合并多个文件<br>例 copy 1.txt+2.txt 12.txt</p>
+<h1 id="fc-命令"><a href="#fc-命令" class="headerlink" title="fc 命令"></a>fc 命令</h1><p>文件比较，file compare </p>
+<p>/c 忽略大小写字母的差异</p>
+<h1 id="del"><a href="#del" class="headerlink" title="del"></a>del</h1><p>删除文件而非文件夹</p>
+<p>/p 输出之前等待确认</p>
+<h1 id="————————————–"><a href="#————————————–" class="headerlink" title="————————————–"></a>————————————–</h1><h1 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h1><h2 id="telnet-命令"><a href="#telnet-命令" class="headerlink" title="telnet 命令"></a>telnet 命令</h2><p>telnet \RemoteServe</p>
+<p>指定要连接的服务器的名称</p>
+<p>如果不指定名称，则会默认启用客户端</p>
+<p>quit 命令可以退出 telnet 提示符的模式</p>
+<h1 id="open-RemoteServe-port"><a href="#open-RemoteServe-port" class="headerlink" title="open \RemoteServe port"></a>open \RemoteServe port</h1><p>指定服务器名和端口号</p>
+<h1 id="close"><a href="#close" class="headerlink" title="close"></a>close</h1><p>关闭与远程计算机的连接</p>
+<h1 id="set"><a href="#set" class="headerlink" title="set"></a>set</h1><p> 设置</p>
+<h1 id="display"><a href="#display" class="headerlink" title="display"></a>display</h1><p>查看当前的设置</p>
+<h1 id="send"><a href="#send" class="headerlink" title="send"></a>send</h1><p>发送telnet client 命令</p>
+<h1 id="arp"><a href="#arp" class="headerlink" title="arp"></a>arp</h1><p>显示和修改本地arp列表<br>-a<br>显示本地arp表</p>
+<h1 id="at"><a href="#at" class="headerlink" title="at"></a>at</h1><p>计划管理程序</p>
+<h1 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h1><p>-a 对目的地ip地址进行反向名称解析，如果解析成功将返</p>
+<p>回相应的主机名</p>
+<h1 id="ipconfig"><a href="#ipconfig" class="headerlink" title="ipconfig"></a>ipconfig</h1><p>/all 显示所有适配器的完整tcp/ip配置信息</p>
+<h1 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h1><p>显示当前网络状态</p>
+<p>-a 显示所有活动的tcp和udp</p>
+<p>-e 以太网统计信息</p>
+<p>-r 路由表内容</p>
+<p>-p prococol 显示所制定的协议</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -603,12 +638,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>leetcode997</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">174</span></p>
+    <p><span class="copy-title">文章标题:</span>常用Dos命令</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">403</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-11, 15:27:02</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-11, 19:03:23</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/11/leetcode997/" title="leetcode997">http://yoursite.com/2019/10/11/leetcode997/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-21, 14:47:13</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-21, 16:50:16</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/21/常用Dos命令/" title="常用Dos命令">http://yoursite.com/2019/10/21/常用Dos命令/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
