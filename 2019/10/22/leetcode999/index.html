@@ -577,12 +577,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-22 09:25:26'>2019-10-22 08:58</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-22 09:40:35'>2019-10-22 08:58</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:708</span>
+        <span>字数:739</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -623,51 +623,8 @@
 <h4 id="不应该设置这么多重的循环"><a href="#不应该设置这么多重的循环" class="headerlink" title="// 不应该设置这么多重的循环"></a>// 不应该设置这么多重的循环</h4><h2 id="在一个循环里面利用flag，还有加深for的理解，可以用if和break来整理某些逻辑"><a href="#在一个循环里面利用flag，还有加深for的理解，可以用if和break来整理某些逻辑" class="headerlink" title="在一个循环里面利用flag，还有加深for的理解，可以用if和break来整理某些逻辑"></a>在一个循环里面利用flag，还有加深for的理解，可以用if和break来整理某些逻辑</h2><h2 id="先找到车的位置"><a href="#先找到车的位置" class="headerlink" title="先找到车的位置"></a>先找到车的位置</h2><p><strong>以车的位置上下左右四个点为起点按行按列搜索</strong></p>
 <p><strong>碰到象挡路直接break；</strong></p>
 <p><strong>否则搜索小卒的位置，搜索到则加一</strong></p>
-<p>class Solution {<br>public:<br>    int numRookCaptures(vector&lt;vector<char>&gt;&amp; board) {<br>        int count =0;<br>        int row,col;<br>        for(int i = 0; i &lt; board.size();i++){<br>            for(int j = 0; j &lt; board[0].size();j++){<br>                if(board[i][j] == ‘R’){<br>                    row = i;<br>                    col = j;<br>                    break;<br>                }<br>            }<br>        }<br>        for(int i = row-1;i &gt; 0;i–){</char></p>
-<pre><code>        if(board[i][col] == &apos;B&apos;)
-            break;
-        else if(board[i][col] ==&apos;p&apos;){
-            count++;
-            break;
-        }
-    }
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int numRookCaptures(vector&lt;vector&lt;char&gt;&gt;&amp; board) &#123;</span><br><span class="line">        int count =0;</span><br><span class="line">        int row,col;</span><br><span class="line">        for(int i = 0; i &lt; board.size();i++)&#123;</span><br><span class="line">            for(int j = 0; j &lt; board[0].size();j++)&#123;</span><br><span class="line">                if(board[i][j] == &apos;R&apos;)&#123;</span><br><span class="line">                    row = i;</span><br><span class="line">                    col = j;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = row-1;i &gt; 0;i--)&#123;</span><br><span class="line"></span><br><span class="line">            if(board[i][col] == &apos;B&apos;)</span><br><span class="line">                break;</span><br><span class="line">            else if(board[i][col] ==&apos;p&apos;)&#123;</span><br><span class="line">                count++;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        for(int i = row+1;i &lt; board.size();i++)&#123;</span><br><span class="line"></span><br><span class="line">            if(board[i][col] == &apos;B&apos;)</span><br><span class="line">                break;</span><br><span class="line">            else if(board[i][col] == &apos;p&apos;)&#123;</span><br><span class="line">                count++;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">         for(int j = col-1;j &gt;=0;j--)&#123;</span><br><span class="line"></span><br><span class="line">             if(board[row][j] == &apos;B&apos;)</span><br><span class="line">                 break;</span><br><span class="line">             else if(board[row][j] == &apos;p&apos;)&#123;</span><br><span class="line">                 count++;</span><br><span class="line">                 break;</span><br><span class="line">                 </span><br><span class="line">             &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        for(int j = col+1;j &lt; board[1].size();j++)&#123;</span><br><span class="line"></span><br><span class="line">              if(board[row][j] == &apos;B&apos;)</span><br><span class="line">                 break;</span><br><span class="line">             else if(board[row][j] == &apos;p&apos;)&#123;</span><br><span class="line">                 count++;</span><br><span class="line">                 break;</span><br><span class="line">                 </span><br><span class="line">             &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return count;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-    for(int i = row+1;i &lt; board.size();i++){
-
-        if(board[i][col] == &apos;B&apos;)
-            break;
-        else if(board[i][col] == &apos;p&apos;){
-            count++;
-            break;
-        }
-    }
-
-
-     for(int j = col-1;j &gt;=0;j--){
-
-         if(board[row][j] == &apos;B&apos;)
-             break;
-         else if(board[row][j] == &apos;p&apos;){
-             count++;
-             break;
-
-         }
-    }
-
-    for(int j = col+1;j &lt; board[1].size();j++){
-
-          if(board[row][j] == &apos;B&apos;)
-             break;
-         else if(board[row][j] == &apos;p&apos;){
-             count++;
-             break;
-
-         }
-    }
-
-    return count;
-
-}</code></pre><p>};</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
@@ -682,10 +639,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>leetcode999</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">708</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">739</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-22, 08:58:14</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-22, 09:25:26</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-22, 09:40:35</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/22/leetcode999/" title="leetcode999">http://yoursite.com/2019/10/22/leetcode999/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
