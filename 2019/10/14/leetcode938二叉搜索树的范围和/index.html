@@ -155,7 +155,7 @@
     
         
             
-            <li><div data-rel="C++算法实践">C++算法实践<small>(1)</small></div>
+            <li><div data-rel="C++算法实践">C++算法实践<small>(2)</small></div>
                 
             </li>
             
@@ -373,7 +373,7 @@
             <span class="post-date" title="2019-10-15 09:20:12">2019/10/15</span>
         </a>
         
-        <a  class=""
+        <a  class="C++算法实践 "
            href="/2019/10/14/leetcode938二叉搜索树的范围和/"
            data-tag="leetcode"
            data-author="" >
@@ -585,6 +585,12 @@
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="C++算法实践">C++算法实践</a>
+            
+        </span>
+        
         
         <span class="tag">
             
@@ -595,12 +601,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-14 15:44:20'>2019-10-14 09:11</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-23 20:28:31'>2019-10-14 09:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:431</span>
+        <span>字数:432</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -645,7 +651,8 @@
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">我的代码</span><br><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int rangeSumBST(TreeNode* root, int L, int R) &#123;</span><br><span class="line">        int ans =0;</span><br><span class="line">        int l,r,v;</span><br><span class="line">        l = r = 0;</span><br><span class="line">        if(root==NULL)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">       if(root-&gt;val&lt;L)&#123;</span><br><span class="line">          ans = rangeSumBST(root-&gt;right,L,R); </span><br><span class="line">       &#125; </span><br><span class="line">        else if(root-&gt;val&gt;R)&#123;</span><br><span class="line">            ans = rangeSumBST(root-&gt;left,L,R);</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            v = root-&gt;val;</span><br><span class="line">            l = rangeSumBST(root-&gt;right,L,R);</span><br><span class="line">            r = rangeSumBST(root-&gt;left,L,R);</span><br><span class="line">            ans = v+l+r;</span><br><span class="line">        &#125;</span><br><span class="line">       return  ans; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h1 id="学会reverse（）函数的使用"><a href="#学会reverse（）函数的使用" class="headerlink" title="学会reverse（）函数的使用"></a>学会reverse（）函数的使用</h1><p>string res<br>reverse(res.begin(),res.end());</p>
+<h1 id="学会reverse（）函数的使用"><a href="#学会reverse（）函数的使用" class="headerlink" title="学会reverse（）函数的使用"></a>学会reverse（）函数的使用</h1><p>string res</p>
+<p>reverse(res.begin(),res.end());</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
@@ -660,10 +667,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>leetcode938二叉搜索树的范围和</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">431</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">432</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-14, 09:11:04</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-14, 15:44:20</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-23, 20:28:31</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/14/leetcode938二叉搜索树的范围和/" title="leetcode938二叉搜索树的范围和">http://yoursite.com/2019/10/14/leetcode938二叉搜索树的范围和/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
