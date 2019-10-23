@@ -2,17 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>编程实践
-
-
-
- | 华中阁</title>
-  <meta name="keywords" content=" code心得 ">
-  <meta name="description" content="编程实践
-
-
-
- | 华中阁">
+  <title>求索之路 | 华中阁</title>
+  <meta name="keywords" content=" 读研心得 ">
+  <meta name="description" content="求索之路 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -581,34 +573,36 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-编程实践" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-求索之路" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">编程实践
-
-
-
-</h1>
+        <h1 class="article-title">求索之路</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="随笔">随笔</a>
+            
+        </span>
+        
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">code心得</a>
+            <a href="javascript:" class="color5">读研心得</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-16 16:51:19'>2019-09-03 06:52</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-23 20:16:33'>2019-10-23 20:06</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:448</span>
+        <span>字数:402</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -627,7 +621,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LCS的关键代码"><span class="toc-text">LCS的关键代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化横竖两条边均为零"><span class="toc-text">初始化横竖两条边均为零</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当Xi和Yj相等时，矩阵-i-j-的值为左上角的值加一"><span class="toc-text">当Xi和Yj相等时，矩阵[i][j]的值为左上角的值加一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#否则，矩阵-i-j-的值为左边和上边值中的较大值"><span class="toc-text">否则，矩阵[i][j]的值为左边和上边值中的较大值</span></a></li></ol></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -642,17 +636,16 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">static const int N =100;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);</span><br><span class="line">   string s1,s2;</span><br><span class="line">//    char s1[10],s2[10];</span><br><span class="line">    int k;</span><br><span class="line"></span><br><span class="line">      cin &gt;&gt; k;</span><br><span class="line">      for(int i = 0; i &lt; k; i++)&#123;</span><br><span class="line">        cin &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">        int c[N+1][N+1];</span><br><span class="line">    //string :: size_type  m,n;</span><br><span class="line">    int m,n;</span><br><span class="line">     m = s1.size();</span><br><span class="line">     n = s2.size();</span><br><span class="line">//    m = strlen(s1);</span><br><span class="line">//    n = strlen(s2);</span><br><span class="line">    int maxl = 0;</span><br><span class="line">    s1 = &apos; &apos; + s1;</span><br><span class="line">    s2 = &apos; &apos; + s2;</span><br><span class="line">    c[0][0] = 0;</span><br><span class="line">    for(int i = 1; i &lt;= m; i++)&#123;//注意此时是从1开始的</span><br><span class="line">        c[i][0] = 0;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int j = 1; j &lt;= n; j++)&#123;</span><br><span class="line">        c[0][j] = 0;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i =1; i &lt;= m; i++)&#123;</span><br><span class="line">        for(int j = 1; j &lt;= n; j++)&#123;</span><br><span class="line">            if(s1[i] == s2[j])&#123;</span><br><span class="line">                c[i][j] = c[i-1][j-1] + 1;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">            c[i][j] = max(c[i-1][j],c[i][j-1]);</span><br><span class="line">            &#125;</span><br><span class="line">            maxl = max(maxl,c[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> //       cout &lt;&lt; lcs_test(s1,s2) &lt;&lt; endl;</span><br><span class="line">     cout &lt;&lt; maxl&lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>今天为明天《病毒传播模型》要发表的报告做了一整天的ppt，尽管有过一</p>
+<p>些知识的提前阅读，但做出来的效果还是不太能令自己满意。</p>
+<p>   研究生每天真是有很多的知识要去学习，实验室论文的压力也摆在面前，看着实验室的同学们每天都忙忙碌碌尤其是看论文，我这么长时间却没看过几篇论文，可能是觉得打牢基础更重要吧</p>
+<p>   最主要的是感觉自己的入门有点慢，自己的知识方面还是有很大的欠缺，一方面很想通过一些实际的编程操作来锻炼一下自己的能力但是研究生阶段，学校还是很注重理论知识的培养，<br>   关于这两者的平衡还真是难掌握啊</p>
+<p>   今天大概是我搭建博客到利用hexo写博客的一个多月了，时间也过得真是快，记得曾经备战考研时下过一个timing的app，曾经看到过很多的同学在里面为了自己的理想而战，也是踌躇满怀。</p>
+<p>   后来有一天特意去上面看了一下，以前加的那些道友也都很长时间没在这个app上出现过了</p>
+<p>   人生到处知何似，恰似飞鸿踏雪泥呀</p>
+<p>   我要更加快速的成长，学习知识的步伐一定要赶上父母亲人老去的速度。</p>
+<p>   看到我博客的陌生人，也祝你有一个光明的未来。</p>
 
-<p>##<br>最长公共子序列<br>当N 设置为1000时，总是会出现莫名其妙的报错</p>
-<p>报错提示：Process returned -1073741571 (0xC00000FD)</p>
-<p>代表堆栈溢出，很可能的原因就是开辟的数组空间太大，</p>
-<p>百思不得其解之后，将N改为100马上编译通过</p>
-<h1 id="LCS的关键代码"><a href="#LCS的关键代码" class="headerlink" title="LCS的关键代码"></a>LCS的关键代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for(int i = 1; i &lt;= m; i++)&#123;//注意此时是从1开始的</span><br><span class="line">      c[i][0] = 0;</span><br><span class="line">  &#125;</span><br><span class="line">  for(int j = 1; j &lt;= n; j++)&#123;</span><br><span class="line">      c[0][j] = 0;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="初始化横竖两条边均为零"><a href="#初始化横竖两条边均为零" class="headerlink" title="初始化横竖两条边均为零"></a>初始化横竖两条边均为零</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for(int i =1; i &lt;= m; i++)&#123;</span><br><span class="line">       for(int j = 1; j &lt;= n; j++)&#123;</span><br><span class="line">           if(s1[i] == s2[j])&#123;</span><br><span class="line">               c[i][j] = c[i-1][j-1] + 1;</span><br><span class="line">           &#125;else&#123;</span><br><span class="line">           c[i][j] = max(c[i-1][j],c[i][j-1]);</span><br><span class="line">           &#125;</span><br><span class="line">           maxl = max(maxl,c[i][j]);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="当Xi和Yj相等时，矩阵-i-j-的值为左上角的值加一"><a href="#当Xi和Yj相等时，矩阵-i-j-的值为左上角的值加一" class="headerlink" title="当Xi和Yj相等时，矩阵[i][j]的值为左上角的值加一"></a>当Xi和Yj相等时，矩阵[i][j]的值为左上角的值加一</h3><h3 id="否则，矩阵-i-j-的值为左边和上边值中的较大值"><a href="#否则，矩阵-i-j-的值为左边和上边值中的较大值" class="headerlink" title="否则，矩阵[i][j]的值为左边和上边值中的较大值"></a>否则，矩阵[i][j]的值为左边和上边值中的较大值</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -665,20 +658,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>编程实践
-
-
-
-</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">448</span></p>
+    <p><span class="copy-title">文章标题:</span>求索之路</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">402</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-03, 06:52:29</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-16, 16:51:19</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/03/编程实践/" title="编程实践
-
-
-
-">http://yoursite.com/2019/09/03/编程实践/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-23, 20:06:26</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-23, 20:16:33</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/23/求索之路/" title="求索之路">http://yoursite.com/2019/10/23/求索之路/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
