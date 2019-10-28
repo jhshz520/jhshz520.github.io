@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>meiyouclean | 华中阁</title>
-  <meta name="keywords" content>
-  <meta name="description" content="meiyouclean | 华中阁">
+  <title>leetcode111二叉树的最小深度 | 华中阁</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="leetcode111二叉树的最小深度 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -661,24 +661,36 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="w-meiyouclean" class="article article-type-w" itemscope itemprop="blogPost">
+        <article id="post-leetcode111二叉树的最小深度" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">meiyouclean</h1>
+        <h1 class="article-title">leetcode111二叉树的最小深度</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="Cpp算法实践">Cpp算法实践</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">leetcode</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-28 09:16:45'>2019-10-28 09:16</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-28 17:14:52'>2019-10-28 16:29</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:189</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -697,7 +709,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#递归最终要的是先要缕清递归的结束条件"><span class="toc-text">递归最终要的是先要缕清递归的结束条件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理"><span class="toc-text">最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -712,7 +724,9 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="递归最终要的是先要缕清递归的结束条件"><a href="#递归最终要的是先要缕清递归的结束条件" class="headerlink" title="递归最终要的是先要缕清递归的结束条件"></a>递归最终要的是先要缕清递归的结束条件</h1><h2 id="最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理"><a href="#最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理" class="headerlink" title="最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理"></a>最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"># java版本</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public int minDepth(TreeNode root) &#123;</span><br><span class="line">        if(root == null) return 0;</span><br><span class="line">        int m1 = minDepth(root.left);</span><br><span class="line">        int m2 = minDepth(root.right);</span><br><span class="line">        //1.如果左孩子和右孩子有为空的情况，直接返回m1+m2+1</span><br><span class="line">        //2.如果都不为空，返回较小深度+1</span><br><span class="line">        return root.left == null || root.right == null ? m1 + m2 + 1 : Math.min(m1,m2) + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line">    int minDepth(TreeNode* root) &#123;</span><br><span class="line">        //int min = 0;</span><br><span class="line">        int l,r;</span><br><span class="line">        if(!root)</span><br><span class="line">            return 0;</span><br><span class="line">       // int level =1;</span><br><span class="line">        if(root-&gt;left==NULL&amp;&amp;root-&gt;right==NULL)</span><br><span class="line">            return 1;//</span><br><span class="line">        </span><br><span class="line">        l = minDepth(root-&gt;left);</span><br><span class="line">         r = minDepth(root-&gt;right);</span><br><span class="line">         if((!root-&gt;right)||(!root-&gt;left))</span><br><span class="line">             return l+r+1;</span><br><span class="line">             </span><br><span class="line">           </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        return min(l,r)+1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -725,12 +739,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>meiyouclean</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">文章标题:</span>leetcode111二叉树的最小深度</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">189</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-28, 09:16:45</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-28, 09:16:45</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/28/meiyouclean/" title="meiyouclean">http://yoursite.com/2019/10/28/meiyouclean/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-28, 16:29:53</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-28, 17:14:52</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/28/leetcode111二叉树的最小深度/" title="leetcode111二叉树的最小深度">http://yoursite.com/2019/10/28/leetcode111二叉树的最小深度/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
