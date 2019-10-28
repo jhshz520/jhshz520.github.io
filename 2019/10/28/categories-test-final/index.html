@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>leetcode104二叉树的最大深度 | 华中阁</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="leetcode104二叉树的最大深度 | 华中阁">
+  <title>categories test final | 华中阁</title>
+  <meta name="keywords" content>
+  <meta name="description" content="categories test final | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -649,36 +649,24 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="w-leetcode104二叉树的最大深度" class="article article-type-w" itemscope itemprop="blogPost">
+        <article id="post-categories-test-final" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">leetcode104二叉树的最大深度</h1>
+        <h1 class="article-title">categories test final</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-                <a href="javascript:" data-rel="C++编程实践">C++编程实践</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">leetcode</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-27 11:11:47'>2019-10-27 10:37</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-28 14:58:19'>2019-10-28 14:56</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:447</span>
+        <span>字数:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -697,7 +685,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#三种方法实践"><span class="toc-text">三种方法实践</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归、栈循环实现深度优先遍历"><span class="toc-text">递归、栈循环实现深度优先遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的递归实现超时代码"><span class="toc-text">我的递归实现超时代码</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -712,9 +700,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="三种方法实践"><a href="#三种方法实践" class="headerlink" title="三种方法实践"></a>三种方法实践</h1><h2 id="递归、栈循环实现深度优先遍历"><a href="#递归、栈循环实现深度优先遍历" class="headerlink" title="递归、栈循环实现深度优先遍历"></a>递归、栈循环实现深度优先遍历</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">//深度优先：递归版</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxDepth(TreeNode* root) &#123;</span><br><span class="line">        if(root==NULL) return 0;</span><br><span class="line">        int l=maxDepth(root-&gt;left)+1;</span><br><span class="line">        int r=maxDepth(root-&gt;right)+1;</span><br><span class="line">        return l&gt;r?l:r;   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">//深度优先：用栈的循环版</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxDepth(TreeNode* root) &#123;</span><br><span class="line">        if(root==NULL) return 0;</span><br><span class="line">        stack&lt;pair&lt;TreeNode*,int&gt;&gt; s;</span><br><span class="line">        TreeNode* p=root;</span><br><span class="line">        int Maxdeep=0;</span><br><span class="line">        int deep=0;</span><br><span class="line">        while(!s.empty()||p!=NULL)//若栈非空，则说明还有一些节点的右子树尚未探索；若p非空，意味着还有一些节点的左子树尚未探索</span><br><span class="line">        &#123;</span><br><span class="line">            while(p!=NULL)//优先往左边走</span><br><span class="line">            &#123;</span><br><span class="line">                s.push(pair&lt;TreeNode*,int&gt;(p,++deep));</span><br><span class="line">                p=p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            p=s.top().first;//若左边无路，就预备右拐。右拐之前，记录右拐点的基本信息</span><br><span class="line">            deep=s.top().second;</span><br><span class="line">            if(Maxdeep&lt;deep) Maxdeep=deep;//预备右拐时，比较当前节点深度和之前存储的最大深度</span><br><span class="line">            s.pop();//将右拐点出栈；此时栈顶为右拐点的前一个结点。在右拐点的右子树全被遍历完后，会预备在这个节点右拐</span><br><span class="line">            p=p-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        return Maxdeep;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">//广度优先：使用队列</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxDepth(TreeNode* root) &#123;</span><br><span class="line">         if(root==NULL) return 0;</span><br><span class="line">         deque&lt;TreeNode*&gt; q;</span><br><span class="line">         q.push_back(root);</span><br><span class="line">         int deep=0;</span><br><span class="line">         while(!q.empty())</span><br><span class="line">         &#123;</span><br><span class="line">             deep++;</span><br><span class="line">             int num=q.size();</span><br><span class="line">             for(int i=1;i&lt;=num;i++)</span><br><span class="line">             &#123;</span><br><span class="line">                TreeNode* p=q.front();</span><br><span class="line">                q.pop_front();</span><br><span class="line">                if(p-&gt;left) q.push_back(p-&gt;left);</span><br><span class="line">                if(p-&gt;right) q.push_back(p-&gt;right);</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         return deep;         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="我的递归实现超时代码"><a href="#我的递归实现超时代码" class="headerlink" title="我的递归实现超时代码"></a>我的递归实现超时代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int dfs(int depth,TreeNode * node)&#123;</span><br><span class="line">    //int l =depth,r = depth;</span><br><span class="line">    if(!node)</span><br><span class="line">        return depth;</span><br><span class="line">    if(node-&gt;left)&#123;</span><br><span class="line">        //l +=1;</span><br><span class="line">       dfs(1+depth,node-&gt;left);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">       if(node-&gt;right)&#123;</span><br><span class="line">        //r +=1;</span><br><span class="line">           //node = node-&gt;right;</span><br><span class="line">           dfs(1+depth,node-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">    return max(dfs(1+depth,node-&gt;left),dfs(1+depth,node-&gt;right));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -727,12 +713,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>leetcode104二叉树的最大深度</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">447</span></p>
+    <p><span class="copy-title">文章标题:</span>categories test final</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-27, 10:37:39</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-27, 11:11:47</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/27/leetcode104二叉树的最大深度/" title="leetcode104二叉树的最大深度">http://yoursite.com/2019/10/27/leetcode104二叉树的最大深度/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-28, 14:56:29</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-28, 14:58:19</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/28/categories-test-final/" title="categories test final">http://yoursite.com/2019/10/28/categories-test-final/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
