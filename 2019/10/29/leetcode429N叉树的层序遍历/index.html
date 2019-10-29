@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>leetcode237链表删除节点 | 华中阁</title>
+  <title>leetcode429N叉树的层序遍历 | 华中阁</title>
   <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="leetcode237链表删除节点 | 华中阁">
+  <meta name="description" content="leetcode429N叉树的层序遍历 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -685,9 +685,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-leetcode237链表删除节点" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-leetcode429N叉树的层序遍历" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">leetcode237链表删除节点</h1>
+        <h1 class="article-title">leetcode429N叉树的层序遍历</h1>
     
     <div class="article-meta">
         
@@ -709,12 +709,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-28 15:07:57'>2019-10-11 09:38</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-29 11:06:16'>2019-10-29 10:31</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:55</span>
+        <span>字数:254</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -733,7 +733,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#如何在不知道前一个节点时来删除这个节点"><span class="toc-text">如何在不知道前一个节点时来删除这个节点</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#queue的应用"><span class="toc-text">queue的应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题的关键怎么判断节点在一层"><span class="toc-text">问题的关键怎么判断节点在一层</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码如下："><span class="toc-text">代码如下：</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -748,8 +748,13 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="如何在不知道前一个节点时来删除这个节点"><a href="#如何在不知道前一个节点时来删除这个节点" class="headerlink" title="如何在不知道前一个节点时来删除这个节点"></a>如何在不知道前一个节点时来删除这个节点</h1><p>先把后面的节点转存到要删除的节点然后删除后面的节点即可，然后删除后面的节点</p>
-
+        <h1 id="queue的应用"><a href="#queue的应用" class="headerlink" title="queue的应用"></a>queue的应用</h1><p>pop（）</p>
+<p>front（）</p>
+<p>push（）</p>
+<p>back（）</p>
+<h1 id="问题的关键怎么判断节点在一层"><a href="#问题的关键怎么判断节点在一层" class="headerlink" title="问题的关键怎么判断节点在一层"></a>问题的关键怎么判断节点在一层</h1><p>入队列时先判断一下队列中的节点个数，在压入队列时一次性压入一层的节点，</p>
+<p>在对队列的节点进行访问时，出队列前将其记录在vector中进行存储</p>
+<h1 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">// Definition for a Node.</span><br><span class="line">class Node &#123;</span><br><span class="line">public:</span><br><span class="line">    int val;</span><br><span class="line">    vector&lt;Node*&gt; children;</span><br><span class="line"></span><br><span class="line">    Node() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    Node(int _val, vector&lt;Node*&gt; _children) &#123;</span><br><span class="line">        val = _val;</span><br><span class="line">        children = _children;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">*/</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; levelOrder(Node* root) &#123;</span><br><span class="line">        vector&lt;vector &lt;int&gt; &gt; res;</span><br><span class="line">        queue &lt;Node * &gt; q;//怎么判断该层结束了？</span><br><span class="line">        //一次压入一层</span><br><span class="line">        q.push(root);</span><br><span class="line">      //  vector&lt;int&gt; first;</span><br><span class="line">        if(!root)</span><br><span class="line">            return &#123;&#125;;</span><br><span class="line">       // first.push_back(root-&gt;val);</span><br><span class="line">        //res.push_back(first);</span><br><span class="line">        while(!q.empty())&#123;</span><br><span class="line">            int cnt = q.size();</span><br><span class="line">           </span><br><span class="line">            </span><br><span class="line">            //q.pop();</span><br><span class="line">              vector&lt;int&gt; ans;</span><br><span class="line">            for(int i = 0;i&lt;cnt;i++)&#123;</span><br><span class="line">                Node * cur = q.front();</span><br><span class="line">                q.pop();</span><br><span class="line">                ans.push_back(cur-&gt;val);</span><br><span class="line">                 for(auto n : cur-&gt;children)&#123;            </span><br><span class="line">                      q.push(n);</span><br><span class="line">                     </span><br><span class="line">                &#125; </span><br><span class="line">               /* if(n-&gt;val!=NULL)&#123;</span><br><span class="line">                      ans.push_back(n-&gt;val);</span><br><span class="line">            &#125;</span><br><span class="line">            */</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">           if(ans.size()!=0)</span><br><span class="line">            res.push_back(ans);</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -762,12 +767,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>leetcode237链表删除节点</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">55</span></p>
+    <p><span class="copy-title">文章标题:</span>leetcode429N叉树的层序遍历</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">254</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-11, 09:38:58</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-28, 15:07:57</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/11/leetcode237链表删除节点/" title="leetcode237链表删除节点">http://yoursite.com/2019/10/11/leetcode237链表删除节点/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-29, 10:31:47</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-29, 11:06:16</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/29/leetcode429N叉树的层序遍历/" title="leetcode429N叉树的层序遍历">http://yoursite.com/2019/10/29/leetcode429N叉树的层序遍历/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
