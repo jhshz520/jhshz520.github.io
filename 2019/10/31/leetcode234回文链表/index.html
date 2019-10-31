@@ -2,17 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>编程实践
-
-
-
- | 华中阁</title>
-  <meta name="keywords" content=" code心得 ">
-  <meta name="description" content="编程实践
-
-
-
- | 华中阁">
+  <title>leetcode234回文链表 | 华中阁</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="leetcode234回文链表 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -709,34 +701,36 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-编程实践" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-leetcode234回文链表" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">编程实践
-
-
-
-</h1>
+        <h1 class="article-title">leetcode234回文链表</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="Cpp算法实践">Cpp算法实践</a>
+            
+        </span>
+        
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">code心得</a>
+            <a href="javascript:" class="color4">leetcode</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-16 16:51:19'>2019-09-03 06:52</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-31 09:42:24'>2019-10-31 08:45</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:448</span>
+        <span>字数:672</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -755,7 +749,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LCS的关键代码"><span class="toc-text">LCS的关键代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化横竖两条边均为零"><span class="toc-text">初始化横竖两条边均为零</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#当Xi和Yj相等时，矩阵-i-j-的值为左上角的值加一"><span class="toc-text">当Xi和Yj相等时，矩阵[i][j]的值为左上角的值加一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#否则，矩阵-i-j-的值为左边和上边值中的较大值"><span class="toc-text">否则，矩阵[i][j]的值为左边和上边值中的较大值</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#回文链表"><span class="toc-text">回文链表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#翻转前半部分判断是否相等"><span class="toc-text">翻转前半部分判断是否相等</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#链表翻转的关键代码"><span class="toc-text">链表翻转的关键代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mycode"><span class="toc-text">mycode</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -770,17 +764,12 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">static const int N =100;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);</span><br><span class="line">   string s1,s2;</span><br><span class="line">//    char s1[10],s2[10];</span><br><span class="line">    int k;</span><br><span class="line"></span><br><span class="line">      cin &gt;&gt; k;</span><br><span class="line">      for(int i = 0; i &lt; k; i++)&#123;</span><br><span class="line">        cin &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">        int c[N+1][N+1];</span><br><span class="line">    //string :: size_type  m,n;</span><br><span class="line">    int m,n;</span><br><span class="line">     m = s1.size();</span><br><span class="line">     n = s2.size();</span><br><span class="line">//    m = strlen(s1);</span><br><span class="line">//    n = strlen(s2);</span><br><span class="line">    int maxl = 0;</span><br><span class="line">    s1 = &apos; &apos; + s1;</span><br><span class="line">    s2 = &apos; &apos; + s2;</span><br><span class="line">    c[0][0] = 0;</span><br><span class="line">    for(int i = 1; i &lt;= m; i++)&#123;//注意此时是从1开始的</span><br><span class="line">        c[i][0] = 0;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int j = 1; j &lt;= n; j++)&#123;</span><br><span class="line">        c[0][j] = 0;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i =1; i &lt;= m; i++)&#123;</span><br><span class="line">        for(int j = 1; j &lt;= n; j++)&#123;</span><br><span class="line">            if(s1[i] == s2[j])&#123;</span><br><span class="line">                c[i][j] = c[i-1][j-1] + 1;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">            c[i][j] = max(c[i-1][j],c[i][j-1]);</span><br><span class="line">            &#125;</span><br><span class="line">            maxl = max(maxl,c[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> //       cout &lt;&lt; lcs_test(s1,s2) &lt;&lt; endl;</span><br><span class="line">     cout &lt;&lt; maxl&lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="回文链表"><a href="#回文链表" class="headerlink" title="回文链表"></a>回文链表</h1><h1 id="翻转前半部分判断是否相等"><a href="#翻转前半部分判断是否相等" class="headerlink" title="翻转前半部分判断是否相等"></a>翻转前半部分判断是否相等</h1><p>思路：此题基本思路就是讲链表分为两段，并且把前面一段进行倒置，然后再比较前后两段是否相同即可，最简单的方法就是先计算链表的长度，然后将前面一半用头插法的办法进行倒置，最后再比较，但是由于需要的是一半这个特殊的位置，所以我们可以考虑快慢指针，何谓快慢指针，其实就是两个指针，一根指针一次移动一个位置，另一个指针一次移动两个位置，就好比两个人走路一个速度为v,一个速度为2v,当速度快的人走到底了设长度为x,这个速度快的人所话的时间就为x/(2v)而对于相同的时间而言对于那个走得慢的就走到的距离为d. d = v* t,而t为x/(2v),代入就为d = x/2所以当一个人走到底了另一个人正好走到了一半。所以快慢指针适合用于有中点相关的场景，同时为了更加简便，我们可以采用一边移动一边将其倒置，这个倒置的顺序只需要在图上画一画就凑出来了，同时需要注意链表个数为奇数和为偶数对于后一半的头结点位置有所不同。所以此题最关键就是可以在找到中点的同时就进行倒置了，也要记住有中点或倍数的时候可以考虑快慢指针来解决问题。</p>
+<h1 id="链表翻转的关键代码"><a href="#链表翻转的关键代码" class="headerlink" title="链表翻转的关键代码"></a>链表翻转的关键代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ListNode * pre;</span><br><span class="line">ListNode* s =NULL;</span><br><span class="line">slow = head;</span><br><span class="line">pre = slow;</span><br><span class="line">slow = slow-&gt;next;</span><br><span class="line">pre-&gt;next = s;</span><br><span class="line">s = pre;</span><br></pre></td></tr></table></figure>
 
-<p>##<br>最长公共子序列<br>当N 设置为1000时，总是会出现莫名其妙的报错</p>
-<p>报错提示：Process returned -1073741571 (0xC00000FD)</p>
-<p>代表堆栈溢出，很可能的原因就是开辟的数组空间太大，</p>
-<p>百思不得其解之后，将N改为100马上编译通过</p>
-<h1 id="LCS的关键代码"><a href="#LCS的关键代码" class="headerlink" title="LCS的关键代码"></a>LCS的关键代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for(int i = 1; i &lt;= m; i++)&#123;//注意此时是从1开始的</span><br><span class="line">      c[i][0] = 0;</span><br><span class="line">  &#125;</span><br><span class="line">  for(int j = 1; j &lt;= n; j++)&#123;</span><br><span class="line">      c[0][j] = 0;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="mycode"><a href="#mycode" class="headerlink" title="mycode"></a>mycode</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode *next;</span><br><span class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool isPalindrome(ListNode* head) &#123;</span><br><span class="line">        if(!head||!head-&gt;next)</span><br><span class="line">            return true;</span><br><span class="line">        ListNode * slow,*fast;</span><br><span class="line">        slow = fast = head;</span><br><span class="line">        ListNode * s =NULL;</span><br><span class="line">        ListNode * pre = NULL ;</span><br><span class="line">        while(fast!=NULL&amp;&amp;fast-&gt;next!=NULL)&#123;//很关键的一个步骤能够便于后续区分奇数还是偶数，奇数时不是尾指针，偶数时则是尾指针,指向空指针,因为fast是一次跳两个因此要同时判断此时的fast和下一时刻的fast，不然会造成越界溢出</span><br><span class="line">            pre =slow;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">            fast = fast-&gt;next-&gt;next;</span><br><span class="line">            pre-&gt;next = s;</span><br><span class="line">            s = pre;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode * tmp;</span><br><span class="line">        tmp = slow;</span><br><span class="line">        if(fast!=NULL) //判断出数目为偶数</span><br><span class="line">        tmp =tmp-&gt;next;//偶数个后半部分则从中点n+1开始</span><br><span class="line">        while(tmp!=NULL)&#123;</span><br><span class="line">            if(tmp-&gt;val!=pre-&gt;val)</span><br><span class="line">                return false;</span><br><span class="line">            else&#123;</span><br><span class="line">                tmp = tmp-&gt;next;</span><br><span class="line">                pre = pre-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h3 id="初始化横竖两条边均为零"><a href="#初始化横竖两条边均为零" class="headerlink" title="初始化横竖两条边均为零"></a>初始化横竖两条边均为零</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for(int i =1; i &lt;= m; i++)&#123;</span><br><span class="line">       for(int j = 1; j &lt;= n; j++)&#123;</span><br><span class="line">           if(s1[i] == s2[j])&#123;</span><br><span class="line">               c[i][j] = c[i-1][j-1] + 1;</span><br><span class="line">           &#125;else&#123;</span><br><span class="line">           c[i][j] = max(c[i-1][j],c[i][j-1]);</span><br><span class="line">           &#125;</span><br><span class="line">           maxl = max(maxl,c[i][j]);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="当Xi和Yj相等时，矩阵-i-j-的值为左上角的值加一"><a href="#当Xi和Yj相等时，矩阵-i-j-的值为左上角的值加一" class="headerlink" title="当Xi和Yj相等时，矩阵[i][j]的值为左上角的值加一"></a>当Xi和Yj相等时，矩阵[i][j]的值为左上角的值加一</h3><h3 id="否则，矩阵-i-j-的值为左边和上边值中的较大值"><a href="#否则，矩阵-i-j-的值为左边和上边值中的较大值" class="headerlink" title="否则，矩阵[i][j]的值为左边和上边值中的较大值"></a>否则，矩阵[i][j]的值为左边和上边值中的较大值</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -793,20 +782,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>编程实践
-
-
-
-</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">448</span></p>
+    <p><span class="copy-title">文章标题:</span>leetcode234回文链表</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">672</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-03, 06:52:29</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-16, 16:51:19</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/03/编程实践/" title="编程实践
-
-
-
-">http://yoursite.com/2019/09/03/编程实践/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-31, 08:45:45</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-31, 09:42:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/31/leetcode234回文链表/" title="leetcode234回文链表">http://yoursite.com/2019/10/31/leetcode234回文链表/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
