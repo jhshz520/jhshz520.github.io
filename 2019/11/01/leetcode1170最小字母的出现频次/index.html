@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>递增栈和递减栈 | 华中阁</title>
-  <meta name="keywords" content=" leetcode496 ">
-  <meta name="description" content="递增栈和递减栈 | 华中阁">
+  <title>leetcode1170最小字母的出现频次 | 华中阁</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="leetcode1170最小字母的出现频次 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -725,30 +725,36 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="w-递增栈和递减栈" class="article article-type-w" itemscope itemprop="blogPost">
+        <article id="post-leetcode1170最小字母的出现频次" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">递增栈和递减栈</h1>
+        <h1 class="article-title">leetcode1170最小字母的出现频次</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="Cpp算法实践">Cpp算法实践</a>
+            
+        </span>
+        
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">leetcode496</a>
+            <a href="javascript:" class="color4">leetcode</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-08 11:24:17'>2019-10-08 10:46</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-01 17:24:37'>2019-11-01 16:41</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:670</span>
+        <span>字数:330</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -767,7 +773,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#递增栈"><span class="toc-text">递增栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递减栈"><span class="toc-text">递减栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#map-中的元素访问全都是用-中括号来访问"><span class="toc-text">map[[]]中的元素访问全都是用[]中括号来访问</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mycode"><span class="toc-text">mycode</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#改进-存储后来的值"><span class="toc-text">改进 存储后来的值</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -782,13 +788,9 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="递增栈"><a href="#递增栈" class="headerlink" title="递增栈"></a>递增栈</h1><p>1.元素入栈之后，其下面元素一定是其左边第一个比它大的数；(可用来求每个元素左边更大的第一个元素)<br>2.若在元素插入之前，栈顶元素比插入元素小，那么栈顶元素一定是插入元素左边第一个比它小的数<br>3.若在元素插入之前，栈顶元素比插入元素小，那么待插入元素是所有需要出栈的元素右边第一个更大的数； (可用来求每个元素右边更大的第一个元素)<br>4.最后一定会留下最大的数（对较大的数更有利）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/*1.正向用递增栈*/</span><br><span class="line">/*class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; nextGreaterElement(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123;</span><br><span class="line">        map&lt;int,int&gt; PMap;</span><br><span class="line">        stack&lt;int&gt; UpStack;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        for(int i=0;i&lt;nums2.size();i++)&#123;</span><br><span class="line">            if(UpStack.empty()||UpStack.top()&gt;nums2[i])</span><br><span class="line">                UpStack.push(nums2[i]);</span><br><span class="line">            else&#123;</span><br><span class="line">                while(!UpStack.empty()&amp;&amp;UpStack.top()&lt;nums2[i])&#123;</span><br><span class="line">                    PMap.insert(&#123;UpStack.top(),nums2[i]&#125;);</span><br><span class="line">                    UpStack.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                UpStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        while(!UpStack.empty())&#123;</span><br><span class="line">            PMap.insert(&#123;UpStack.top(),-1&#125;);</span><br><span class="line">            UpStack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;nums1.size();i++)&#123;</span><br><span class="line">            result.push_back(PMap[nums1[i]]);   //map的下标操作返回值是和value的类型一样的</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;*/</span><br></pre></td></tr></table></figure>
+        <h1 id="mycode"><a href="#mycode" class="headerlink" title="mycode"></a>mycode</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) &#123;</span><br><span class="line">        vector&lt;int&gt; res;</span><br><span class="line">        int i;</span><br><span class="line">        i =0;</span><br><span class="line">        while(i&lt;queries.size())&#123;</span><br><span class="line">            int count =0;</span><br><span class="line">            for(int j=0;j&lt;words.size();j++)&#123;</span><br><span class="line">                if(f(queries[i])&lt;f(words[j]))</span><br><span class="line">                    count++;</span><br><span class="line">            &#125;</span><br><span class="line">            res.push_back(count);</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">    int f(string s)&#123;</span><br><span class="line">        int cnt =0;</span><br><span class="line">        char min = s[0];</span><br><span class="line">        for(int i = 1; i &lt; s.size();i++)&#123;</span><br><span class="line">            if(min&gt;s[i])</span><br><span class="line">                min = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 0; i &lt;s.size();i++)&#123;</span><br><span class="line">            if(s[i] ==min)</span><br><span class="line">                cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        return cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<h1 id="递减栈"><a href="#递减栈" class="headerlink" title="递减栈"></a>递减栈</h1><p>1.元素入栈之后，其下面的元素一定是其左边第一个比它小的数；(可用来求每个元素左边更小的第一个元素)<br>2.若在元素插入之前，栈顶元素比插入元素更大，那么栈顶元素一定是待插入元素左边一个更大的数<br>3.若在元素插入之前，栈顶元素比插入元素更大，那么栈顶元素一定是所有需要出栈的元素右边更小的数；(可用来求每个元素右边更小的第一个元素)<br>4.最后一定会留下最小的数（对较小 的数更有利）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; nextGreaterElement(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123;</span><br><span class="line">        map&lt;int,int&gt; PMap;</span><br><span class="line">        stack&lt;int&gt; DStack;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        for(int i=nums2.size()-1;i&gt;=0;i--)&#123;</span><br><span class="line">            if(DStack.empty())&#123;</span><br><span class="line">                PMap.insert(&#123;nums2[i],-1&#125;);</span><br><span class="line">                DStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            else if(DStack.top()&gt;nums2[i])&#123;</span><br><span class="line">                PMap.insert(&#123;nums2[i],DStack.top()&#125;);</span><br><span class="line">                DStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                while(!DStack.empty()&amp;&amp;DStack.top()&lt;nums2[i])</span><br><span class="line">                   DStack.pop();</span><br><span class="line">                if(DStack.empty())</span><br><span class="line">                   PMap.insert(&#123;nums2[i],-1&#125;);</span><br><span class="line">                else</span><br><span class="line">                   PMap.insert(&#123;nums2[i],DStack.top()&#125;); </span><br><span class="line">                DStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;nums1.size();i++)</span><br><span class="line">            result.push_back(PMap[nums1[i]]);   //map的下标操作返回值是和value的类型一样的</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="map-中的元素访问全都是用-中括号来访问"><a href="#map-中的元素访问全都是用-中括号来访问" class="headerlink" title="map[[]]中的元素访问全都是用[]中括号来访问"></a>map[[]]中的元素访问全都是用[]中括号来访问</h3>
+<h1 id="改进-存储后来的值"><a href="#改进-存储后来的值" class="headerlink" title="改进 存储后来的值"></a>改进 存储后来的值</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int f(string&amp; s) &#123;</span><br><span class="line">        char min = s[0];</span><br><span class="line">        int count = 1;</span><br><span class="line">        int length = s.length();</span><br><span class="line">        for (int i = 1; i &lt; length; i++) &#123;</span><br><span class="line">            if (s[i] &lt; min) &#123;</span><br><span class="line">                min = s[i];</span><br><span class="line">                count = 1;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if (s[i] == min) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        vector&lt;int&gt; fwords;</span><br><span class="line">        //先计算好words数组中每个元素调用f函数的值，存到fwords数组中</span><br><span class="line">        for (auto it = words.begin(); it != words.end(); it++) &#123;</span><br><span class="line">            fwords.push_back(f(*it));</span><br><span class="line">        &#125;</span><br><span class="line">        sort(fwords.begin(), fwords.end());</span><br><span class="line">        int size = fwords.size();</span><br><span class="line">        for (auto it = queries.begin(); it != queries.end(); it++) &#123;</span><br><span class="line">            int fquery = f(*it);</span><br><span class="line">            //对于每个f(queries[i])，用二分查找找到应该插入的位置，再用size减去位置，就得到了数组中比它大的元素个数</span><br><span class="line">            result.push_back(size - (upper_bound(fwords.begin(), fwords.end(), fquery) - fwords.begin()));</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -801,12 +803,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>递增栈和递减栈</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">670</span></p>
+    <p><span class="copy-title">文章标题:</span>leetcode1170最小字母的出现频次</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">330</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-08, 10:46:34</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-08, 11:24:17</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/08/递增栈和递减栈/" title="递增栈和递减栈">http://yoursite.com/2019/10/08/递增栈和递减栈/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-01, 16:41:09</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-01, 17:24:37</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/01/leetcode1170最小字母的出现频次/" title="leetcode1170最小字母的出现频次">http://yoursite.com/2019/11/01/leetcode1170最小字母的出现频次/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
