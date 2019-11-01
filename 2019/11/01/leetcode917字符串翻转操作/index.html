@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>leetcode237链表删除节点 | 华中阁</title>
+  <title>leetcode917字符串翻转操作 | 华中阁</title>
   <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="leetcode237链表删除节点 | 华中阁">
+  <meta name="description" content="leetcode917字符串翻转操作 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="isalpha（）函数原型：int isalpha（int ch） 判断字符ch是否为英文字母，当ch为英文字母a-z或A-Z时，返回非零值，否则返回零。 使用时需包含头文件&amp;lt;ctype.h&amp;gt; A的ASCII码是65,a的ASCII码是97。ASCII码表中,小写字母排在大写字母的后面,一个字母的大小写数值相差32 string 的子字符串string s2 = s1.substr(2">
 <meta name="keywords" content="leetcode">
@@ -718,9 +718,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-leetcode237链表删除节点" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-leetcode917字符串翻转操作" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">leetcode237链表删除节点</h1>
+        <h1 class="article-title">leetcode917字符串翻转操作</h1>
     
     <div class="article-meta">
         
@@ -742,12 +742,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-28 15:07:57'>2019-10-11 09:38</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-01 15:26:55'>2019-11-01 11:46</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:55</span>
+        <span>字数:280</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -766,7 +766,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#如何在不知道前一个节点时来删除这个节点"><span class="toc-text">如何在不知道前一个节点时来删除这个节点</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#isalpha（）函数"><span class="toc-text">isalpha（）函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#A的ASCII码是65-a的ASCII码是97。"><span class="toc-text">A的ASCII码是65,a的ASCII码是97。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#string-的子字符串"><span class="toc-text">string 的子字符串</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mycode"><span class="toc-text">mycode</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -781,8 +781,19 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="如何在不知道前一个节点时来删除这个节点"><a href="#如何在不知道前一个节点时来删除这个节点" class="headerlink" title="如何在不知道前一个节点时来删除这个节点"></a>如何在不知道前一个节点时来删除这个节点</h1><p>先把后面的节点转存到要删除的节点然后删除后面的节点即可，然后删除后面的节点</p>
-
+        <h1 id="isalpha（）函数"><a href="#isalpha（）函数" class="headerlink" title="isalpha（）函数"></a>isalpha（）函数</h1><p>原型：int isalpha（int ch）</p>
+<p>判断字符ch是否为英文字母，当ch为英文字母a-z或A-Z时，返回非零值，否则返回零。</p>
+<p>使用时需包含头文件&lt;ctype.h&gt;</p>
+<h1 id="A的ASCII码是65-a的ASCII码是97。"><a href="#A的ASCII码是65-a的ASCII码是97。" class="headerlink" title="A的ASCII码是65,a的ASCII码是97。"></a>A的ASCII码是65,a的ASCII码是97。</h1><p>ASCII码表中,小写字母排在大写字母的后面,一个字母的大小写数值相差32</p>
+<h1 id="string-的子字符串"><a href="#string-的子字符串" class="headerlink" title="string 的子字符串"></a>string 的子字符串</h1><p>string s2 = s1.substr(2, 4); </p>
+<h1 id="mycode"><a href="#mycode" class="headerlink" title="mycode"></a>mycode</h1><p><ctype>里面还有很多string类型的操作<br>比如isalnum（）字母或数字</ctype></p>
+<p>iscontrl（）控制字符</p>
+<p>isdigit（）数字</p>
+<p>islower（）小写</p>
+<p>isspace（）空格</p>
+<p>toupper（）转大写</p>
+<p>tolower（）转小写<br>等等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string reverseOnlyLetters(string S) &#123;</span><br><span class="line">          if(S.size()==0)</span><br><span class="line">            return S;</span><br><span class="line">        string s1 (S);</span><br><span class="line">        //s1 = S;</span><br><span class="line">        int i = S.size()-1;</span><br><span class="line">        int j =0;</span><br><span class="line">      </span><br><span class="line">        while (i&gt;=0)&#123;</span><br><span class="line">           if((&apos;A&apos;&lt;=S[i])&amp;&amp;(S[i]&lt;=&apos;Z&apos;)||(&apos;a&apos;&lt;=S[i])&amp;&amp;(S[i]&lt;=&apos;z&apos;))&#123;//不能将这种条件一起判断应该分两次判断</span><br><span class="line">               </span><br><span class="line">               if((&apos;A&apos;&lt;=s1[j])&amp;&amp;(s1[j]&lt;=&apos;Z&apos;)||(&apos;a&apos;&lt;=s1[j])&amp;&amp;(s1[j]&lt;=&apos;z&apos;))</span><br><span class="line">               &#123;</span><br><span class="line">                   s1[j] = S[i]; </span><br><span class="line">                   i--;</span><br><span class="line">                   j++;</span><br><span class="line">               &#125;else&#123;</span><br><span class="line">                   j++;</span><br><span class="line">               &#125;</span><br><span class="line">                </span><br><span class="line">           &#125;</span><br><span class="line">           else&#123;</span><br><span class="line">               i--;</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return s1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -795,12 +806,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>leetcode237链表删除节点</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">55</span></p>
+    <p><span class="copy-title">文章标题:</span>leetcode917字符串翻转操作</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">280</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-11, 09:38:58</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-28, 15:07:57</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/11/leetcode237链表删除节点/" title="leetcode237链表删除节点">http://yoursite.com/2019/10/11/leetcode237链表删除节点/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-01, 11:46:21</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-01, 15:26:55</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/01/leetcode917字符串翻转操作/" title="leetcode917字符串翻转操作">http://yoursite.com/2019/11/01/leetcode917字符串翻转操作/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
