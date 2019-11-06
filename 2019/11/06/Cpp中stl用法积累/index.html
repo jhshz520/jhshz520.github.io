@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>map初始化的几种方式 | 华中阁</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="map初始化的几种方式 | 华中阁">
+  <title>Cpp中stl用法积累 | 华中阁</title>
+  <meta name="keywords" content=" code心得 ">
+  <meta name="description" content="Cpp中stl用法积累 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -761,9 +761,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-map初始化的几种方式" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="w-Cpp中stl用法积累" class="article article-type-w" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">map初始化的几种方式</h1>
+        <h1 class="article-title">Cpp中stl用法积累</h1>
     
     <div class="article-meta">
         
@@ -771,26 +771,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Cpp算法实践">Cpp算法实践</a>
+                <a href="javascript:" data-rel="工具">工具</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">leetcode</a>
+            <a href="javascript:" class="color2">code心得</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-30 16:52:50'>2019-10-12 09:03</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-06 18:04:07'>2019-11-06 15:28</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:157</span>
+        <span>字数:748</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -809,7 +809,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#map初始化的方式"><span class="toc-text">map初始化的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-insert方式"><span class="toc-text">1 insert方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2直接赋值方式"><span class="toc-text">2直接赋值方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#string-字符串类型的每一个s-i-实质上都是一个char类型，因此不用特别的强制类型转换成char"><span class="toc-text">string 字符串类型的每一个s[i]实质上都是一个char类型，因此不用特别的强制类型转换成char</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reverse（）"><span class="toc-text">reverse（）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#容器的begin（）和end（）是左闭右开的"><span class="toc-text">容器的begin（）和end（）是左闭右开的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#stack"><span class="toc-text">stack</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vector前方插入操作"><span class="toc-text">vector前方插入操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vector-操作汇总"><span class="toc-text">vector 操作汇总</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数组整体赋给vector"><span class="toc-text">数组整体赋给vector</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -824,11 +824,20 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="map初始化的方式"><a href="#map初始化的方式" class="headerlink" title="map初始化的方式"></a>map初始化的方式</h1><h2 id="1-insert方式"><a href="#1-insert方式" class="headerlink" title="1 insert方式"></a>1 insert方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">map&lt;char,int&gt; m;</span><br><span class="line">       m.insert(make_pair(&apos;I&apos;,1));</span><br><span class="line">       m.insert(make_pair(&apos;V&apos;,5));</span><br><span class="line">       m.insert(make_pair(&apos;X&apos;,10));</span><br><span class="line">       m.insert(make_pair(&apos;L&apos;,50));</span><br><span class="line">       m.insert(make_pair(&apos;C&apos;,100));</span><br><span class="line">       m.insert(make_pair(&apos;D&apos;,500));</span><br><span class="line">       m.insert(make_pair(&apos;M&apos;,1000));</span><br></pre></td></tr></table></figure>
+        <h1 id="reverse（）"><a href="#reverse（）" class="headerlink" title="reverse（）"></a>reverse（）</h1><p>reverse(s.begin(),s.end()) </p>
+<p>reverse 的 后一个参数指向要翻转元素的下一个位置</p>
+<h1 id="容器的begin（）和end（）是左闭右开的"><a href="#容器的begin（）和end（）是左闭右开的" class="headerlink" title="容器的begin（）和end（）是左闭右开的"></a>容器的begin（）和end（）是左闭右开的</h1><p>s.end() 指向容器最后一个元素的下一个位置</p>
+<p>上述代码 等价于</p>
+<p>reverse（s.begin()+0,s.begin()+s.size())</p>
+<h1 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h1><p> 栈只有下面五个操作<br> s.empty()</p>
+<p> s.top()</p>
+<p> s.size()</p>
+<p> s.pop()</p>
+<p> s.push()</p>
+<h1 id="vector前方插入操作"><a href="#vector前方插入操作" class="headerlink" title="vector前方插入操作"></a>vector前方插入操作</h1><p> vector 没有push_front（）<br>  但是可以用 res.insert(res.begin(),s.top());来达到相同的目的</p>
+<h1 id="vector-操作汇总"><a href="#vector-操作汇总" class="headerlink" title="vector 操作汇总"></a>vector 操作汇总</h1><p>（1）a.assign(b.begin(), b.begin()+3);//b为向量，将b的0~2个元素构成的向量赋给a<br>（2）a.assign(4,2);//是a只含4个元素，且每个元素为2<br>（3）a.back();//返回a的最后一个元素<br>（4）a.front();//返回a的第一个元素<br>（5）a[i]; //返回a的第i个元素，当且仅当a[i]存在2013-12-07<br>（6）a.clear();//清空a中的元素<br>（7）a.empty();//判断a是否为空，空则返回ture,不空则返回false<br>（8）a.pop_back();//删除a向量的最后一个元素<br>（9）a.erase(a.begin()+1,a.begin()+3);//删除a中第1个（从第0个算起）到第2个元素，也就是说删除的元素从a.begin()+1算起（包括它）一直到a.begin()+3（不包括它）<br>（10）a.push_back(5);//在a的最后一个向量后插入一个元素，其值为5<br>（11）a.insert(a.begin()+1,5);//在a的第1个元素（从第0个算起）的位置插入数值5，如a为1,2,3,4，插入元素后为1,5,2,3,4<br>（12）a.insert(a.begin()+1,3,5);//在a的第1个元素（从第0个算起）的位置插入3个数，其值都为5<br>（13）a.insert(a.begin()+1,b+3,b+6);//b为数组，在a的第1个元素（从第0个算起）的位置插入b的第3个元素到第5个元素（不包括b+6），如b为1,2,3,4,5,9,8，插入元素后为1,4,5,9,2,3,4,5,9,8<br>（14）a.size();//返回a中元素的个数；<br>（15）a.capacity();//返回a在内存中总共可以容纳的元素个数<br>（16）a.rezize(10);//将a的现有元素个数调至10个，多则删，少则补，其值随机<br>（17）a.rezize(10,2);//将a的现有元素个数调至10个，多则删，少则补，其值为2<br>（18）a.reserve(100);//将a的容量（capacity）扩充至100，也就是说现在测试a.capacity();的时候返回值是100.这种操作只有在需要给a添加大量数据的时候才 显得有意义，因为这将避免内存多次容量扩充操作（当a的容量不足时电脑会自动扩容，当然这必然降低性能）<br>（19）a.swap(b);//b为向量，将a中的元素和b中的元素进行整体性交换<br>（20）a==b; //b为向量，向量的比较操作还有!=,&gt;=,&lt;=,&gt;,&lt;</p>
+<h1 id="数组整体赋给vector"><a href="#数组整体赋给vector" class="headerlink" title="数组整体赋给vector"></a>数组整体赋给vector</h1><p>int a[5] = {0}<br>vector <int> v (a,a+5);<br>v.assign(&amp;a[i],&amp;a[5]);</int></p>
 
-<h2 id="2直接赋值方式"><a href="#2直接赋值方式" class="headerlink" title="2直接赋值方式"></a>2直接赋值方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">map&lt;char, int&gt; table = &#123;</span><br><span class="line">            &#123;&apos;I&apos;, 1&#125;,</span><br><span class="line">            &#123;&apos;V&apos;, 5&#125;,</span><br><span class="line">            &#123;&apos;X&apos;, 10&#125;,</span><br><span class="line">            &#123;&apos;L&apos;, 50&#125;,</span><br><span class="line">            &#123;&apos;C&apos;, 100&#125;,</span><br><span class="line">            &#123;&apos;D&apos;, 500&#125;,</span><br><span class="line">            &#123;&apos;M&apos;, 1000&#125;</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="string-字符串类型的每一个s-i-实质上都是一个char类型，因此不用特别的强制类型转换成char"><a href="#string-字符串类型的每一个s-i-实质上都是一个char类型，因此不用特别的强制类型转换成char" class="headerlink" title="string 字符串类型的每一个s[i]实质上都是一个char类型，因此不用特别的强制类型转换成char"></a>string 字符串类型的每一个s[i]实质上都是一个char类型，因此不用特别的强制类型转换成char</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -841,12 +850,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>map初始化的几种方式</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">157</span></p>
+    <p><span class="copy-title">文章标题:</span>Cpp中stl用法积累</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">748</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-12, 09:03:19</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-30, 16:52:50</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/12/map初始化的几种方式/" title="map初始化的几种方式">http://yoursite.com/2019/10/12/map初始化的几种方式/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-06, 15:28:35</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-06, 18:04:07</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/06/Cpp中stl用法积累/" title="Cpp中stl用法积累">http://yoursite.com/2019/11/06/Cpp中stl用法积累/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
