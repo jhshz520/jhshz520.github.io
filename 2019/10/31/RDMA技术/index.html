@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <title>RDMA技术 | 华中阁</title>
-  <meta name="keywords" content>
+  <meta name="keywords" content=" 网络 ">
   <meta name="description" content="RDMA技术 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
@@ -155,7 +155,7 @@
     
         
             
-            <li><div data-rel="容器课题相关">容器课题相关<small>(1)</small></div>
+            <li><div data-rel="容器课题相关">容器课题相关<small>(2)</small></div>
                 
             </li>
             
@@ -212,7 +212,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="55">
-<input type="hidden" id="yelog_site_word_count" value="24.7k">
+<input type="hidden" id="yelog_site_word_count" value="24.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -323,6 +323,10 @@
         <a href="javascript:" class="color5">就业规划</a>
     </li>
     
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">网络</a>
+    </li>
+    
     <div class="clearfix"></div>
 </div>
 
@@ -361,9 +365,9 @@
             <span class="post-date" title="2019-09-18 10:25:50">2019/09/18</span>
         </a>
         
-        <a  class=""
+        <a  class="容器课题相关 "
            href="/2019/10/31/RDMA技术/"
-           data-tag=""
+           data-tag="网络"
            data-author="" >
             <span class="post-title" title="RDMA技术">RDMA技术</span>
             <span class="post-date" title="2019-10-31 17:29:43">2019/10/31</span>
@@ -797,16 +801,28 @@
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="容器课题相关">容器课题相关</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">网络</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-31 17:29:43'>2019-10-31 17:29</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-07 15:10:56'>2019-10-31 17:29</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:81</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -825,7 +841,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#RDMA"><span class="toc-text">RDMA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#高吞吐，低延迟"><span class="toc-text">高吞吐，低延迟</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#网络通信的衡量标准"><span class="toc-text">网络通信的衡量标准</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Large-Messages-网络传输延迟开销占主导"><span class="toc-text">Large Messages 网络传输延迟开销占主导</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Small-Messages-消息发送和接受端占主导"><span class="toc-text">Small Messages 消息发送和接受端占主导</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#高性能网络通信"><span class="toc-text">高性能网络通信</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RDMA专有的-RDMA-enable-NIC-网卡"><span class="toc-text">RDMA专有的 RDMA enable NIC 网卡</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -840,7 +856,13 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="RDMA"><a href="#RDMA" class="headerlink" title="RDMA"></a>RDMA</h1><p>远程直接内存访问</p>
+<h1 id="高吞吐，低延迟"><a href="#高吞吐，低延迟" class="headerlink" title="高吞吐，低延迟"></a>高吞吐，低延迟</h1><h1 id="网络通信的衡量标准"><a href="#网络通信的衡量标准" class="headerlink" title="网络通信的衡量标准"></a>网络通信的衡量标准</h1><p>高带宽<br>低延迟</p>
+<h1 id="Large-Messages-网络传输延迟开销占主导"><a href="#Large-Messages-网络传输延迟开销占主导" class="headerlink" title="Large Messages 网络传输延迟开销占主导"></a>Large Messages 网络传输延迟开销占主导</h1><h1 id="Small-Messages-消息发送和接受端占主导"><a href="#Small-Messages-消息发送和接受端占主导" class="headerlink" title="Small Messages 消息发送和接受端占主导"></a>Small Messages 消息发送和接受端占主导</h1><h1 id="高性能网络通信"><a href="#高性能网络通信" class="headerlink" title="高性能网络通信"></a>高性能网络通信</h1><p>1 TOE</p>
+<p>2 U-net</p>
+<p>3 VIA</p>
+<p>4 RDMA</p>
+<h1 id="RDMA专有的-RDMA-enable-NIC-网卡"><a href="#RDMA专有的-RDMA-enable-NIC-网卡" class="headerlink" title="RDMA专有的 RDMA enable NIC 网卡"></a>RDMA专有的 RDMA enable NIC 网卡</h1>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -854,10 +876,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>RDMA技术</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">81</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-31, 17:29:43</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-31, 17:29:43</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-07, 15:10:56</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/31/RDMA技术/" title="RDMA技术">http://yoursite.com/2019/10/31/RDMA技术/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -919,7 +941,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#code心得','#Docker环境','#文献阅读','#博客相关','#codeblocks配置','#hexo','#java语言测试','#leetcode','#blog编辑相关','#算法心得','#读研之路','#命令行工具','#刷题心得','#leetcode42','#读研心得','#计算机论文','#leetcode496','#coding 心得','#就业规划',],
+            'data': ['#code心得','#Docker环境','#文献阅读','#博客相关','#codeblocks配置','#hexo','#java语言测试','#leetcode','#blog编辑相关','#算法心得','#读研之路','#命令行工具','#刷题心得','#leetcode42','#读研心得','#计算机论文','#leetcode496','#coding 心得','#就业规划','#网络',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
