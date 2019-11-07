@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>leetcode682棒球比赛 | 华中阁</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="leetcode682棒球比赛 | 华中阁">
+  <title>博客中插入图片 | 华中阁</title>
+  <meta name="keywords" content>
+  <meta name="description" content="博客中插入图片 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -769,36 +769,24 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-leetcode682棒球比赛" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-博客中插入图片" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">leetcode682棒球比赛</h1>
+        <h1 class="article-title">博客中插入图片</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-                <a href="javascript:" data-rel="Cpp算法实践">Cpp算法实践</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">leetcode</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-30 16:48:41'>2019-10-11 08:29</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-07 08:45:43'>2019-11-07 08:45</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:530</span>
+        <span>字数:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -817,7 +805,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#怎么实现string类型向int型的转换"><span class="toc-text">怎么实现string类型向int型的转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#string-和-int-的相互转换"><span class="toc-text">string 和 int 的相互转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ps"><span class="toc-text">ps</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -832,24 +820,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>你现在是棒球比赛记录员。<br>给定一个字符串列表，每个字符串可以是以下四种类型之一：<br>1.整数（一轮的得分）：直接表示您在本轮中获得的积分数。</p>
-<ol start="2">
-<li>“+”（一轮的得分）：表示本轮获得的得分是前两轮有效 回合得分的总和。</li>
-<li>“D”（一轮的得分）：表示本轮获得的得分是前一轮有效 回合得分的两倍。</li>
-<li>“C”（一个操作，这不是一个回合的分数）：表示您获得的最后一个有效 回合的分数是无效的，应该被移除。</li>
-</ol>
-<p>每一轮的操作都是永久性的，可能会对前一轮和后一轮产生影响。<br>你需要返回你在所有回合中得分的总和。</p>
-<h1 id="怎么实现string类型向int型的转换"><a href="#怎么实现string类型向int型的转换" class="headerlink" title="怎么实现string类型向int型的转换"></a>怎么实现string类型向int型的转换</h1><h2 id="string-和-int-的相互转换"><a href="#string-和-int-的相互转换" class="headerlink" title="string 和 int 的相互转换"></a>string 和 int 的相互转换</h2><p>1 to_string<br>包含在# include<string>。作用是把数值类型如int、double、long等转化为string</string></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int a = 4;</span><br><span class="line">double b = 3.14;</span><br><span class="line">string str1, str2;</span><br><span class="line">str1 = to_string(a);</span><br><span class="line">str2 = to_string(b);</span><br><span class="line">cout &lt;&lt; str1 &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; str2 &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
-
-<p>2 stoi和atoi<br>包含在#include<string>，不是c++11的可以在#include<cstring>。作用是将字符串转化为int型。区别是stoi的形参是const string<em>，而atoi的形参是const char<em>。c_str()的作用是将const string</em>转化为const char</em></cstring></string></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">string s1(&quot;1234567&quot;);</span><br><span class="line">char* s2 = &quot;1234567&quot;;</span><br><span class="line">int a = stoi(s1);</span><br><span class="line">int b = atoi(s2);</span><br><span class="line">int c = atoi(s1.c_str());</span><br><span class="line">cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; c &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
-
-<h2 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h2><p>codeblocks 存在bug不能很好支持to_string和stoi</p>
-<p>因此需要替换MinGW中的头文件</p>
-<p>将include文件夹下的wchar.h和stdio.h拷贝到MinGW的include文件夹中，一般是C:\mingw\include，如果你的codeblocks集成了MinGW则首先要从你的codeblocks安装目录中找到MinGW文件夹，拷贝到其下的include文件夹。<br>C:\mingw\include 或者 D:\Program Files\CodeBlocks\MinGW\include（记得找你自己的codeblocks安装目录）</p>
-<p>将os_defines.h拷贝到MinGW安装目录的如下目录：<br>C:\mingw\lib\gcc\mingw32\4.7.0\include\c++\mingw32\bits<br>当然如果codeblocks集成MinGW，你要拷贝到对应的MinGW目录下对应的文件夹。</p>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -862,12 +833,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>leetcode682棒球比赛</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">530</span></p>
+    <p><span class="copy-title">文章标题:</span>博客中插入图片</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-11, 08:29:23</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-30, 16:48:41</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/11/leetcode682棒球比赛/" title="leetcode682棒球比赛">http://yoursite.com/2019/10/11/leetcode682棒球比赛/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-07, 08:45:43</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-07, 08:45:43</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/07/博客中插入图片/" title="博客中插入图片">http://yoursite.com/2019/11/07/博客中插入图片/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
