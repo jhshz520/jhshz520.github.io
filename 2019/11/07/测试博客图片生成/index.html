@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>leetcode1029两地调度 | 华中阁</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="leetcode1029两地调度 | 华中阁">
+  <title>测试博客图片生成 | 华中阁</title>
+  <meta name="keywords" content>
+  <meta name="description" content="测试博客图片生成 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -797,9 +797,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="w-leetcode1029两地调度" class="article article-type-w" itemscope itemprop="blogPost">
+        <article id="post-测试博客图片生成" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">leetcode1029两地调度</h1>
+        <h1 class="article-title">测试博客图片生成</h1>
     
     <div class="article-meta">
         
@@ -807,26 +807,20 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Cpp算法实践">Cpp算法实践</a>
+                <a href="javascript:" data-rel="工具">工具</a>
             
         </span>
         
         
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">leetcode</a>
-            
-        </span>
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-11-07 09:43:54'>2019-11-07 08:50</time>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-30 16:51:51'>2019-10-10 19:24</time>
-        
-    </div>
-    <div class="article-meta">
-        
-        <span>字数:715</span>
+        <span>字数:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -845,7 +839,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#map怎么进行排序"><span class="toc-text">map怎么进行排序?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路一-将键和值进行对调进而按照键来进行访问，自动实现了排序"><span class="toc-text">思路一 将键和值进行对调进而按照键来进行访问，自动实现了排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#但是两者的插入方式还是有区别的"><span class="toc-text">但是两者的插入方式还是有区别的</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#思路二-利用pair中的value值进行比较，进而排序找出，前一半"><span class="toc-text">思路二 利用pair中的value值进行比较，进而排序找出，前一半</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#错误解析"><span class="toc-text">错误解析</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -860,30 +854,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>公司计划面试 2N 人。第 i 人飞往 A 市的费用为 costs[i][0]，飞往 B 市的费用为 costs[i][1]。</p>
-<p>返回将每个人都飞到某座城市的最低费用，要求每个城市都有 N 人抵达。</p>
-<h1 id="map怎么进行排序"><a href="#map怎么进行排序" class="headerlink" title="map怎么进行排序?"></a>map怎么进行排序?</h1><p>第一反应是利用stl中提供的sort算法实现，这个想法是好</p>
-<p>的，不幸的是，sort算法有个限制，利用sort算法只能对</p>
-<p>序列容器进行排序，就是线性的（如vector，list，</p>
-<p>deque）。map也是一个集合容器，它里面存储的元素是</p>
-<p>pair，但是它不是线性存储的（前面提过，像红黑树），所</p>
-<p>以利用sort不能直接和map结合进行排序。</p>
-<p>我们知道map中的元素类型为pair，具体定义如下：</p>
-<p>template &lt;class T1, class T2&gt; struct pair<br>{<br>  typedef T1 first_type;<br>  typedef T2 second_type;</p>
-<p>  T1 first;<br>  T2 second;<br>  pair() : first(T1()), second(T2()) {}<br>  pair(const T1&amp; x, const T2&amp; y) : first(x), second(y) {}<br>  template &lt;class U, class V&gt;<br>    pair (const pair&lt;U,V&gt; &amp;p) : first(p.first), second(p.second) { }<br>}</p>
-<p>pair也是一个模板类，这样就实现了良好的通用性。它仅有两个数据成员first 和 second，即 key 和 value，而且</p>
-<p>在 <utility>头文件中，还为pair重载了 &lt; 运算符， 具体实现如下： </utility></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class _T1, class _T2&gt;</span><br><span class="line">    inline bool</span><br><span class="line">    operator&lt;(const pair&lt;_T1, _T2&gt;&amp; __x, const pair&lt;_T1, _T2&gt;&amp; __y)</span><br><span class="line">    &#123; return __x.first &lt; __y.first</span><br><span class="line">             || (!(__y.first &lt; __x.first) &amp;&amp; __x.second &lt; __y.second); &#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="思路一-将键和值进行对调进而按照键来进行访问，自动实现了排序"><a href="#思路一-将键和值进行对调进而按照键来进行访问，自动实现了排序" class="headerlink" title="思路一 将键和值进行对调进而按照键来进行访问，自动实现了排序"></a>思路一 将键和值进行对调进而按照键来进行访问，自动实现了排序</h1><p>在实际的项目中可能会碰到key重复的情况，正常的MAP类型</p>
-<p>是不允许重复的key，所以就要使用multimap了，</p>
-<p>multimap的使用和map基本类似，可以无缝对接</p>
-<h2 id="但是两者的插入方式还是有区别的"><a href="#但是两者的插入方式还是有区别的" class="headerlink" title="但是两者的插入方式还是有区别的"></a>但是两者的插入方式还是有区别的</h2><p>//name_score_map[“LiMin”] = 90;　　//主要插入的方式和map有所区别<br>name_score_map.insert(make_pair(“LiMin”, 90));<br>//name_score_map[“LiMin”] = 91;<br>name_score_map.insert(make_pair(“LiMin”, 91));<br>//name_score_map[“ZiLinMi”] = 79;<br>name_score_map.insert(make_pair(“ZiLinMi”, 79));<br>//name_score_map[“BoB”] = 92;</p>
-<h1 id="思路二-利用pair中的value值进行比较，进而排序找出，前一半"><a href="#思路二-利用pair中的value值进行比较，进而排序找出，前一半" class="headerlink" title="思路二 利用pair中的value值进行比较，进而排序找出，前一半"></a>思路二 利用pair中的value值进行比较，进而排序找出，前一半</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">static bool cmp(const pair&lt;int,int&gt;&amp; a,const pair&lt;int,int&gt;&amp; b)</span><br><span class="line">    &#123;</span><br><span class="line">        return a.first&lt;b.first;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int twoCitySchedCost(vector&lt;vector&lt;int&gt;&gt;&amp; costs) &#123;</span><br><span class="line">        int n=costs.size();</span><br><span class="line">        int n2=n/2;</span><br><span class="line">        vector&lt;pair&lt;int,int&gt;&gt; cha(n);</span><br><span class="line">        for(int i=0;i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            cha[i]=make_pair(costs[i][1]-costs[i][0],i);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        stable_sort(cha.begin(),cha.end(),cmp);</span><br><span class="line"></span><br><span class="line">        int res=0;</span><br><span class="line">        for(int i=0;i&lt;n2;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            res+=costs[cha[i].second][1];</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=n2;i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            res+=costs[cha[i].second][0];</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>利用vector进行比较，非常值得借鉴，构造一个sort的比较方案</p>
-<h1 id="错误解析"><a href="#错误解析" class="headerlink" title="错误解析"></a>错误解析</h1><p>i 的作用域错误，致使半天没有发现错误，实际上思路是没有问题的，以后要特别注意避免犯这样的错误。</p>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -896,12 +867,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>leetcode1029两地调度</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">715</span></p>
+    <p><span class="copy-title">文章标题:</span>测试博客图片生成</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-10, 19:24:39</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-30, 16:51:51</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/10/leetcode1029两地调度/" title="leetcode1029两地调度">http://yoursite.com/2019/10/10/leetcode1029两地调度/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-07, 08:50:20</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-07, 09:43:54</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/07/测试博客图片生成/" title="测试博客图片生成">http://yoursite.com/2019/11/07/测试博客图片生成/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
