@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>bubble sort and selection sort  | 华中阁</title>
-  <meta name="keywords" content=" code心得 ">
-  <meta name="description" content="bubble sort and selection sort  | 华中阁">
+  <title>image folder generate test | 华中阁</title>
+  <meta name="keywords" content=" hexo ">
+  <meta name="description" content="image folder generate test | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -789,9 +789,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-bubble-sort-and-selection-sort" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-image-folder-generate-test" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">bubble sort and selection sort </h1>
+        <h1 class="article-title">image folder generate test</h1>
     
     <div class="article-meta">
         
@@ -799,26 +799,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="编程实践">编程实践</a>
+                <a href="javascript:" data-rel="工具">工具</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">code心得</a>
+            <a href="javascript:" class="color5">hexo</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-28 15:02:56'>2019-09-18 16:41</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-07 09:23:25'>2019-11-07 09:06</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:289</span>
+        <span>字数:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -837,7 +837,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#bubble-sort"><span class="toc-text">bubble sort</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#selection-sort"><span class="toc-text">selection sort</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#算法稳定性的判断"><span class="toc-text">算法稳定性的判断</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -852,11 +852,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="bubble-sort"><a href="#bubble-sort" class="headerlink" title="bubble sort"></a>bubble sort</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void bubble(struct card A[],int N)&#123;</span><br><span class="line">    for(int i = 0;i &lt; N; i++)&#123;</span><br><span class="line">        for(int j = N-1; j &gt;= i ; j-- )&#123;//这里是需要学习的地方，直接让j作为最后，更改循环条件尽可能的减少次数</span><br><span class="line">            if(A[j].value &lt; A[i].value)&#123;</span><br><span class="line">                card t = A[j];</span><br><span class="line">                A[j] = A[i];</span><br><span class="line">                A[i] = t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="selection-sort"><a href="#selection-sort" class="headerlink" title="selection sort"></a>selection sort</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void selection(struct card A[],int N)&#123;</span><br><span class="line">    for(int i = 0; i &lt; N; i++)&#123;</span><br><span class="line">            int minj = i;//定义一个minj用来接收所有比较中的最小值元素所在的位置</span><br><span class="line">        for(int j = i; j &lt; N; j++)&#123;//选择排序从前往后找，在j循环时直接将j = i带入，另外利用空位转存将要被替代的旧元素的值</span><br><span class="line">            if(A[j].value &lt; A[i].value)&#123;</span><br><span class="line">                minj = j;</span><br><span class="line">            &#125;</span><br><span class="line">            card t = A[i]; A[i] = A[minj]; A[minj] = t;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="算法稳定性的判断"><a href="#算法稳定性的判断" class="headerlink" title="算法稳定性的判断"></a>算法稳定性的判断</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//判断算法的稳定性</span><br><span class="line">bool isStable(struct card C1[],struct card C2[],int N)&#123;//新增加一个标志位，观察标志位是否如原先相同就可以得出是否是稳定的结论</span><br><span class="line">for(int i = 0 ; i &lt; N ; i++)&#123;</span><br><span class="line">    if(C1[i].suit != C2[i].suit)&#123;</span><br><span class="line">        return false ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -869,12 +865,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>bubble sort and selection sort </p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">289</span></p>
+    <p><span class="copy-title">文章标题:</span>image folder generate test</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-18, 16:41:06</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-28, 15:02:56</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/18/bubble-sort-and-selection-sort/" title="bubble sort and selection sort ">http://yoursite.com/2019/09/18/bubble-sort-and-selection-sort/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-07, 09:06:21</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-07, 09:23:25</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/07/image-folder-generate-test/" title="image folder generate test">http://yoursite.com/2019/11/07/image-folder-generate-test/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
