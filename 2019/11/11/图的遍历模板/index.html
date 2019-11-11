@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>leetcode682棒球比赛 | 华中阁</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="leetcode682棒球比赛 | 华中阁">
+  <title>图的遍历模板 | 华中阁</title>
+  <meta name="keywords" content=" 经典算法模板 ">
+  <meta name="description" content="图的遍历模板 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -877,9 +877,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-leetcode682棒球比赛" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-图的遍历模板" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">leetcode682棒球比赛</h1>
+        <h1 class="article-title">图的遍历模板</h1>
     
     <div class="article-meta">
         
@@ -887,26 +887,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Cpp算法实践">Cpp算法实践</a>
+                <a href="javascript:" data-rel="经典算法">经典算法</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">leetcode</a>
+            <a href="javascript:" class="color2">经典算法模板</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-30 16:48:41'>2019-10-11 08:29</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-11 09:15:56'>2019-11-11 09:12</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:530</span>
+        <span>字数:717</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -925,7 +925,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#怎么实现string类型向int型的转换"><span class="toc-text">怎么实现string类型向int型的转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#string-和-int-的相互转换"><span class="toc-text">string 和 int 的相互转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ps"><span class="toc-text">ps</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DFS"><span class="toc-text">DFS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-text">模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DFS-解决N皇后问题实例"><span class="toc-text">DFS 解决N皇后问题实例</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -940,24 +940,10 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h1><p>你现在是棒球比赛记录员。<br>给定一个字符串列表，每个字符串可以是以下四种类型之一：<br>1.整数（一轮的得分）：直接表示您在本轮中获得的积分数。</p>
-<ol start="2">
-<li>“+”（一轮的得分）：表示本轮获得的得分是前两轮有效 回合得分的总和。</li>
-<li>“D”（一轮的得分）：表示本轮获得的得分是前一轮有效 回合得分的两倍。</li>
-<li>“C”（一个操作，这不是一个回合的分数）：表示您获得的最后一个有效 回合的分数是无效的，应该被移除。</li>
-</ol>
-<p>每一轮的操作都是永久性的，可能会对前一轮和后一轮产生影响。<br>你需要返回你在所有回合中得分的总和。</p>
-<h1 id="怎么实现string类型向int型的转换"><a href="#怎么实现string类型向int型的转换" class="headerlink" title="怎么实现string类型向int型的转换"></a>怎么实现string类型向int型的转换</h1><h2 id="string-和-int-的相互转换"><a href="#string-和-int-的相互转换" class="headerlink" title="string 和 int 的相互转换"></a>string 和 int 的相互转换</h2><p>1 to_string<br>包含在# include<string>。作用是把数值类型如int、double、long等转化为string</string></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int a = 4;</span><br><span class="line">double b = 3.14;</span><br><span class="line">string str1, str2;</span><br><span class="line">str1 = to_string(a);</span><br><span class="line">str2 = to_string(b);</span><br><span class="line">cout &lt;&lt; str1 &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; str2 &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+        <h1 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h1><p>深度优先搜索适合解决必须走到最深处(例如对于树，须走到它的叶子节点)才能得到一个解的问题。通常利用递归实现，所以每次递归开始的时候要判断是否达到收敛条件，若达到了则得到一个可行解，若没达到，则对当前状态进行扩展（扩展的时候通常会根据实际情况过滤掉一些非法的状态，这个过程叫剪枝，适当的剪枝有时能极大地提高搜索的速度），如果要求输出具体解，则此时应该保存该状态，当扩展结束后，需要释放这个保存的状态。</p>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* dfs 模板.</span><br><span class="line">* @param[in] input 输入数据指针</span><br><span class="line">* @param[inout] cur or gap 标记当前位置或距离目标的距离</span><br><span class="line">* @param[out] path 当前路径，也是中间结果</span><br><span class="line">* @param[out] result 存放最终结果</span><br><span class="line">* @return 路径长度，如果是求路径本身，则不需要返回长度</span><br><span class="line">*/</span><br><span class="line">void dfs(type *input, type *path, int cur or gap, type *result) &#123;</span><br><span class="line">  if (数据非法) return 0; // 终止条件</span><br><span class="line">  if (cur == input.size( or gap == 0)) &#123; // 收敛条件</span><br><span class="line">    将 path 放入 result</span><br><span class="line">  &#125;</span><br><span class="line">  if (可以剪枝) return;</span><br><span class="line">  for(...) &#123; // 执行所有可能的扩展动作</span><br><span class="line">     执行动作，修改 path</span><br><span class="line">     dfs(input, step + 1 or gap--, result);</span><br><span class="line">     恢复 path</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>2 stoi和atoi<br>包含在#include<string>，不是c++11的可以在#include<cstring>。作用是将字符串转化为int型。区别是stoi的形参是const string<em>，而atoi的形参是const char<em>。c_str()的作用是将const string</em>转化为const char</em></cstring></string></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">string s1(&quot;1234567&quot;);</span><br><span class="line">char* s2 = &quot;1234567&quot;;</span><br><span class="line">int a = stoi(s1);</span><br><span class="line">int b = atoi(s2);</span><br><span class="line">int c = atoi(s1.c_str());</span><br><span class="line">cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; c &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
-
-<h2 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h2><p>codeblocks 存在bug不能很好支持to_string和stoi</p>
-<p>因此需要替换MinGW中的头文件</p>
-<p>将include文件夹下的wchar.h和stdio.h拷贝到MinGW的include文件夹中，一般是C:\mingw\include，如果你的codeblocks集成了MinGW则首先要从你的codeblocks安装目录中找到MinGW文件夹，拷贝到其下的include文件夹。<br>C:\mingw\include 或者 D:\Program Files\CodeBlocks\MinGW\include（记得找你自己的codeblocks安装目录）</p>
-<p>将os_defines.h拷贝到MinGW安装目录的如下目录：<br>C:\mingw\lib\gcc\mingw32\4.7.0\include\c++\mingw32\bits<br>当然如果codeblocks集成MinGW，你要拷贝到对应的MinGW目录下对应的文件夹。</p>
-
+<h2 id="DFS-解决N皇后问题实例"><a href="#DFS-解决N皇后问题实例" class="headerlink" title="DFS 解决N皇后问题实例"></a>DFS 解决N皇后问题实例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;stdafx.h&quot;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">	vector&lt;vector&lt;string&gt; &gt; solveNQueens(int n) &#123;</span><br><span class="line">		column=vector&lt;int&gt;(n,0);</span><br><span class="line">		principle_diagonals=vector&lt;int&gt;(2*n,0);</span><br><span class="line">		counter_diagonals=vector&lt;int&gt;(2*n,0);</span><br><span class="line">		vector&lt;int&gt; C(n,0);  //C[i]的值表示第i行皇后所在的列</span><br><span class="line">		vector&lt;vector&lt;string&gt;&gt; result;</span><br><span class="line">		DFS(result,C,0);</span><br><span class="line">		return result;</span><br><span class="line">	&#125;</span><br><span class="line">private:</span><br><span class="line">	vector&lt;int&gt; column;  //column[i]表示第i行皇后所在的列</span><br><span class="line">	vector&lt;int&gt; principle_diagonals;  //表示主该主对角线是否已经有皇后</span><br><span class="line">	vector&lt;int&gt; counter_diagonals;  //表示副对角线是否已经有皇后</span><br><span class="line">	void DFS(vector&lt;vector&lt;string&gt; &gt;&amp; result,vector&lt;int&gt;&amp;C ,int row)</span><br><span class="line">	&#123;</span><br><span class="line">		int n=C.size();</span><br><span class="line">		if(row==n)    //收敛条件</span><br><span class="line">		&#123;</span><br><span class="line">			string tmpStr(n,&apos;.&apos;);</span><br><span class="line">			vector&lt;string&gt;tmpResult(n,tmpStr);</span><br><span class="line">			for(int i=0;i&lt;n;++i)</span><br><span class="line">			&#123;</span><br><span class="line">				tmpResult[i][C[i]]=&apos;Q&apos;;</span><br><span class="line">			&#125;</span><br><span class="line">			result.push_back(tmpResult);</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		for(int i=0;i&lt;n;++i)</span><br><span class="line">		&#123;</span><br><span class="line">			bool ok=column[i]==0&amp;&amp;principle_diagonals[row+i]==0 &amp;&amp; counter_diagonals[n-row+i]==0;</span><br><span class="line">			if(ok)  //用于剪枝，只扩展合法的状态</span><br><span class="line">			&#123;</span><br><span class="line">				//执行扩展</span><br><span class="line">				column[i]=principle_diagonals[row+i]=counter_diagonals[n-row+i]=1;</span><br><span class="line">				C[row]=i;</span><br><span class="line">				DFS(result,C,row+1);</span><br><span class="line">				//撤销扩展</span><br><span class="line">				column[i]=principle_diagonals[row+i]=counter_diagonals[n-row+i]=0;</span><br><span class="line">				C[row]=0;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">int _tmain(int argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line">	vector&lt;vector&lt;string&gt;&gt; result;</span><br><span class="line">	Solution sln;</span><br><span class="line">	result=sln.solveNQueens(4);</span><br><span class="line">	for (int i=0;i&lt;result.size();++i)</span><br><span class="line">	&#123;</span><br><span class="line">		for (int j=0;j&lt;result[0].size();++j)</span><br><span class="line">		&#123;</span><br><span class="line">			cout&lt;&lt;result[i][j]&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;endl;</span><br><span class="line">		cout&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -970,12 +956,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>leetcode682棒球比赛</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">530</span></p>
+    <p><span class="copy-title">文章标题:</span>图的遍历模板</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">717</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-11, 08:29:23</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-30, 16:48:41</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/11/leetcode682棒球比赛/" title="leetcode682棒球比赛">http://jhshz520.github.io/2019/10/11/leetcode682棒球比赛/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-11, 09:12:29</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-11, 09:15:56</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/11/图的遍历模板/" title="图的遍历模板">http://jhshz520.github.io/2019/11/11/图的遍历模板/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
