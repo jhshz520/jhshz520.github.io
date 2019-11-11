@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>GitBash的常用语句 | 华中阁</title>
-  <meta name="keywords" content=" Git 心得 ">
-  <meta name="description" content="GitBash的常用语句 | 华中阁">
+  <title>链表常用操作 | 华中阁</title>
+  <meta name="keywords" content=" 链表 ">
+  <meta name="description" content="链表常用操作 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -897,9 +897,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-GitBash常用语句" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-链表常用操作" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">GitBash的常用语句</h1>
+        <h1 class="article-title">链表常用操作</h1>
     
     <div class="article-meta">
         
@@ -907,26 +907,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="工具">工具</a>
+                <a href="javascript:" data-rel="数据结构">数据结构</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color2">Git 心得</a>
+            <a href="javascript:" class="color3">链表</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-07 16:27:46'>2019-09-03 06:54</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-11 20:27:48'>2019-11-11 19:46</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:114</span>
+        <span>字数:206</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -945,7 +945,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git常用语句"><span class="toc-text">Git常用语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化"><span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加文件"><span class="toc-text">添加文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加特定的文件"><span class="toc-text">添加特定的文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提交至主分支"><span class="toc-text">提交至主分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加远程链接"><span class="toc-text">添加远程链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#向远程更新代码前要先从远程获取最新版本代码"><span class="toc-text">向远程更新代码前要先从远程获取最新版本代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最后是提交自己的代码"><span class="toc-text">最后是提交自己的代码</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#怎么得到链表的整个长度并取得中间值"><span class="toc-text">怎么得到链表的整个长度并取得中间值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#链表中元素的删除"><span class="toc-text">链表中元素的删除</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -960,15 +960,11 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Git常用语句"><a href="#Git常用语句" class="headerlink" title="Git常用语句"></a>Git常用语句</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>git init </p>
-<p>在本地文件中打开Bash<br>输入git init</p>
-<h2 id="添加文件"><a href="#添加文件" class="headerlink" title="添加文件"></a>添加文件</h2><p>git add .</p>
-<h2 id="添加特定的文件"><a href="#添加特定的文件" class="headerlink" title="添加特定的文件"></a>添加特定的文件</h2><p>git add 文件名</p>
-<h2 id="提交至主分支"><a href="#提交至主分支" class="headerlink" title="提交至主分支"></a>提交至主分支</h2><p>git commit -m “双引号里面为注释的内容”</p>
-<h2 id="添加远程链接"><a href="#添加远程链接" class="headerlink" title="添加远程链接"></a>添加远程链接</h2><p>git remote add origin <a href="https://github.com/jhshz520/algorithm_pratice" target="_blank" rel="noopener">https://github.com/jhshz520/algorithm_pratice</a></p>
-<h2 id="向远程更新代码前要先从远程获取最新版本代码"><a href="#向远程更新代码前要先从远程获取最新版本代码" class="headerlink" title="向远程更新代码前要先从远程获取最新版本代码"></a>向远程更新代码前要先从远程获取最新版本代码</h2><p>git pull origin master</p>
-<h2 id="最后是提交自己的代码"><a href="#最后是提交自己的代码" class="headerlink" title="最后是提交自己的代码"></a>最后是提交自己的代码</h2><p>git push -u origin master</p>
+        <h1 id="怎么得到链表的整个长度并取得中间值"><a href="#怎么得到链表的整个长度并取得中间值" class="headerlink" title="怎么得到链表的整个长度并取得中间值"></a>怎么得到链表的整个长度并取得中间值</h1><p>快慢指针遍历链表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ListNode* middleNode(ListNode* head) &#123;</span><br><span class="line">       ListNode * slow = head;</span><br><span class="line">       ListNode * fast = head;</span><br><span class="line">       while(fast != NULL&amp;&amp;fast-&gt;next!=NULL)&#123;</span><br><span class="line">       </span><br><span class="line">               fast = fast-&gt;next-&gt;next;</span><br><span class="line">               slow = slow-&gt;next;</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">       </span><br><span class="line">       return slow;</span><br><span class="line">       </span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
+<h1 id="链表中元素的删除"><a href="#链表中元素的删除" class="headerlink" title="链表中元素的删除"></a>链表中元素的删除</h1><p>最主要的是分清要删除的节点是否是头结点，尾结点和普通节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public:</span><br><span class="line">    ListNode* removeElements(ListNode* head, int val) &#123;//在原链表进行操作，需要考虑是否是头结点是否是尾结点</span><br><span class="line">   //if(head==NULL) return head;</span><br><span class="line">        ListNode  * tmp = head ;</span><br><span class="line">        ListNode * pre = tmp;</span><br><span class="line">        </span><br><span class="line">        while(tmp!=NULL)&#123;</span><br><span class="line">            if(tmp-&gt;val==val)&#123;</span><br><span class="line">                if(tmp ==head)&#123;</span><br><span class="line">                    head = tmp-&gt;next;</span><br><span class="line">                    tmp = head;</span><br><span class="line">                if(head==NULL) return head;</span><br><span class="line">                    continue;</span><br><span class="line">                &#125;else if(tmp-&gt;next==NULL)&#123;</span><br><span class="line">                    pre-&gt;next = NULL;</span><br><span class="line">                    return head;</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                      pre-&gt;next = tmp-&gt;next;</span><br><span class="line">                tmp = tmp-&gt;next;</span><br><span class="line">                &#125;              </span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                pre = tmp;</span><br><span class="line">                tmp = tmp-&gt;next;</span><br><span class="line">               </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return head;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -981,12 +977,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>GitBash的常用语句</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">114</span></p>
+    <p><span class="copy-title">文章标题:</span>链表常用操作</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">206</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-03, 06:54:51</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-07, 16:27:46</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/03/GitBash常用语句/" title="GitBash的常用语句">http://jhshz520.github.io/2019/09/03/GitBash常用语句/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-11, 19:46:38</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-11, 20:27:48</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/11/链表常用操作/" title="链表常用操作">http://jhshz520.github.io/2019/11/11/链表常用操作/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
