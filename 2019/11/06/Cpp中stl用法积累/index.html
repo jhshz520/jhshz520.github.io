@@ -212,7 +212,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="61">
-<input type="hidden" id="yelog_site_word_count" value="26.7k">
+<input type="hidden" id="yelog_site_word_count" value="26.8k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -881,12 +881,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-06 18:08:19'>2019-11-06 15:28</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-11 09:04:05'>2019-11-06 15:28</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:748</span>
+        <span>字数:846</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -905,7 +905,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reverse（）"><span class="toc-text">reverse（）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#容器的begin（）和end（）是左闭右开的"><span class="toc-text">容器的begin（）和end（）是左闭右开的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#stack"><span class="toc-text">stack</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vector前方插入操作"><span class="toc-text">vector前方插入操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vector-操作汇总"><span class="toc-text">vector 操作汇总</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数组整体赋给vector"><span class="toc-text">数组整体赋给vector</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reverse（）"><span class="toc-text">reverse（）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#容器的begin（）和end（）是左闭右开的"><span class="toc-text">容器的begin（）和end（）是左闭右开的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#stack"><span class="toc-text">stack</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vector前方插入操作"><span class="toc-text">vector前方插入操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vector-操作汇总"><span class="toc-text">vector 操作汇总</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数组整体赋给vector"><span class="toc-text">数组整体赋给vector</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#string-中-find（）函数的用法"><span class="toc-text">string 中 find（）函数的用法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -933,7 +933,8 @@
 <h1 id="vector前方插入操作"><a href="#vector前方插入操作" class="headerlink" title="vector前方插入操作"></a>vector前方插入操作</h1><p> vector 没有push_front（）<br>  但是可以用 res.insert(res.begin(),s.top());来达到相同的目的</p>
 <h1 id="vector-操作汇总"><a href="#vector-操作汇总" class="headerlink" title="vector 操作汇总"></a>vector 操作汇总</h1><p>（1）a.assign(b.begin(), b.begin()+3);//b为向量，将b的0~2个元素构成的向量赋给a<br>（2）a.assign(4,2);//是a只含4个元素，且每个元素为2<br>（3）a.back();//返回a的最后一个元素<br>（4）a.front();//返回a的第一个元素<br>（5）a[i]; //返回a的第i个元素，当且仅当a[i]存在2013-12-07<br>（6）a.clear();//清空a中的元素<br>（7）a.empty();//判断a是否为空，空则返回ture,不空则返回false<br>（8）a.pop_back();//删除a向量的最后一个元素<br>（9）a.erase(a.begin()+1,a.begin()+3);//删除a中第1个（从第0个算起）到第2个元素，也就是说删除的元素从a.begin()+1算起（包括它）一直到a.begin()+3（不包括它）<br>（10）a.push_back(5);//在a的最后一个向量后插入一个元素，其值为5<br>（11）a.insert(a.begin()+1,5);//在a的第1个元素（从第0个算起）的位置插入数值5，如a为1,2,3,4，插入元素后为1,5,2,3,4<br>（12）a.insert(a.begin()+1,3,5);//在a的第1个元素（从第0个算起）的位置插入3个数，其值都为5<br>（13）a.insert(a.begin()+1,b+3,b+6);//b为数组，在a的第1个元素（从第0个算起）的位置插入b的第3个元素到第5个元素（不包括b+6），如b为1,2,3,4,5,9,8，插入元素后为1,4,5,9,2,3,4,5,9,8<br>（14）a.size();//返回a中元素的个数；<br>（15）a.capacity();//返回a在内存中总共可以容纳的元素个数<br>（16）a.rezize(10);//将a的现有元素个数调至10个，多则删，少则补，其值随机<br>（17）a.rezize(10,2);//将a的现有元素个数调至10个，多则删，少则补，其值为2<br>（18）a.reserve(100);//将a的容量（capacity）扩充至100，也就是说现在测试a.capacity();的时候返回值是100.这种操作只有在需要给a添加大量数据的时候才 显得有意义，因为这将避免内存多次容量扩充操作（当a的容量不足时电脑会自动扩容，当然这必然降低性能）<br>（19）a.swap(b);//b为向量，将a中的元素和b中的元素进行整体性交换<br>（20）a==b; //b为向量，向量的比较操作还有!=,&gt;=,&lt;=,&gt;,&lt;</p>
 <h1 id="数组整体赋给vector"><a href="#数组整体赋给vector" class="headerlink" title="数组整体赋给vector"></a>数组整体赋给vector</h1><p>int a[5] = {0}<br>vector <int> v (a,a+5);<br>v.assign(&amp;a[i],&amp;a[5]);</int></p>
-
+<h1 id="string-中-find（）函数的用法"><a href="#string-中-find（）函数的用法" class="headerlink" title="string 中 find（）函数的用法"></a>string 中 find（）函数的用法</h1><p>string中find()返回值是字母在母串中的位置（下标记录），如果没有找到，那么会返回一个特别的标记npos。（返回值可以看成是一个int型的数）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">for(int j = 0; j &lt; w.size(); j++)&#123;</span><br><span class="line">                  if(s1.find(tolower(w[j]))!=string::npos) a++;</span><br><span class="line">                  if(s2.find(tolower(w[j]))!=string::npos) b++;</span><br><span class="line">                  if(s3.find(tolower(w[j]))!=string::npos) c++;</span><br><span class="line">              &#125;</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -947,10 +948,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>Cpp中stl用法积累</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">748</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">846</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2019-11-06, 15:28:35</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-06, 18:08:19</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-11, 09:04:05</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/06/Cpp中stl用法积累/" title="Cpp中stl用法积累">http://jhshz520.github.io/2019/11/06/Cpp中stl用法积累/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
