@@ -228,7 +228,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="63">
-<input type="hidden" id="yelog_site_word_count" value="27.7k">
+<input type="hidden" id="yelog_site_word_count" value="28.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -921,12 +921,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-11 20:27:48'>2019-11-11 19:46</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-12 09:33:16'>2019-11-11 19:46</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:206</span>
+        <span>字数:759</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -945,7 +945,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#怎么得到链表的整个长度并取得中间值"><span class="toc-text">怎么得到链表的整个长度并取得中间值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#链表中元素的删除"><span class="toc-text">链表中元素的删除</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#怎么得到链表的整个长度并取得中间值"><span class="toc-text">怎么得到链表的整个长度并取得中间值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#链表中元素的删除"><span class="toc-text">链表中元素的删除</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#链表的原位置翻转"><span class="toc-text">链表的原位置翻转</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递归解法"><span class="toc-text">递归解法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -965,6 +965,15 @@
 
 <h1 id="链表中元素的删除"><a href="#链表中元素的删除" class="headerlink" title="链表中元素的删除"></a>链表中元素的删除</h1><p>最主要的是分清要删除的节点是否是头结点，尾结点和普通节点</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public:</span><br><span class="line">    ListNode* removeElements(ListNode* head, int val) &#123;//在原链表进行操作，需要考虑是否是头结点是否是尾结点</span><br><span class="line">   //if(head==NULL) return head;</span><br><span class="line">        ListNode  * tmp = head ;</span><br><span class="line">        ListNode * pre = tmp;</span><br><span class="line">        </span><br><span class="line">        while(tmp!=NULL)&#123;</span><br><span class="line">            if(tmp-&gt;val==val)&#123;</span><br><span class="line">                if(tmp ==head)&#123;</span><br><span class="line">                    head = tmp-&gt;next;</span><br><span class="line">                    tmp = head;</span><br><span class="line">                if(head==NULL) return head;</span><br><span class="line">                    continue;</span><br><span class="line">                &#125;else if(tmp-&gt;next==NULL)&#123;</span><br><span class="line">                    pre-&gt;next = NULL;</span><br><span class="line">                    return head;</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                      pre-&gt;next = tmp-&gt;next;</span><br><span class="line">                tmp = tmp-&gt;next;</span><br><span class="line">                &#125;              </span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                pre = tmp;</span><br><span class="line">                tmp = tmp-&gt;next;</span><br><span class="line">               </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return head;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="链表的原位置翻转"><a href="#链表的原位置翻转" class="headerlink" title="链表的原位置翻转"></a>链表的原位置翻转</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ListNode* reverseList(ListNode* head) &#123;</span><br><span class="line">        ListNode * cur = head;</span><br><span class="line">        ListNode * pre = NULL;//注意此处不能将pre的初值赋值为head，不然会形成环状链表</span><br><span class="line">        ListNode * tmp = NULL;</span><br><span class="line"></span><br><span class="line">        while(cur)&#123;</span><br><span class="line">            tmp = cur-&gt;next;//在赋值运算符的右边，-&gt;next看做一个节点</span><br><span class="line">            cur-&gt;next = pre ;//在赋值运算符的左边，cur-&gt;next看做是对cur指向什么节点进行操作</span><br><span class="line">            pre = cur;//注意这一步操作不能和下一个操作换位置，是先把当前节点赋值给pre作为下次操作的前驱节点，然后才将上面保存的下一个待翻转的节点赋值给当前节点</span><br><span class="line">            cur = tmp;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">        return pre;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="递归解法"><a href="#递归解法" class="headerlink" title="递归解法"></a>递归解法</h1><p>不是很容易理解的递归解法</p>
+<p>递归的两个条件：</p>
+<p>终止条件是当前节点或者下一个节点==null<br>在函数内部，改变节点的指向，也就是head的下一个节点指向head 递归函数那句</p>
+<p>head.next.next = head<br>递归函数中每次返回的cur其实只最后一个节点，在递归函数内部，改变的是当前节点的指向。</p>
+<p>直接看最后一层循环终止，此时head = 4，cur =5；head-&gt;next是5，将它的指向指向此时的head节点4，并且将4 指向空，返回节点5，此时链表结构是5-&gt;4-&gt;NULL;返回到第三层递归 head 是3，head-&gt;next 为节点 4,且4指向NULL；<br>第三层的cur 等于第四层的cur仍然是5？；此时返回 head-&gt;next = 4 将其next指向3，3指向NULL</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">	public ListNode reverseList(ListNode head) &#123;</span><br><span class="line">		//递归终止条件是当前为空，或者下一个节点为空</span><br><span class="line">		if(head==null || head.next==null) &#123;</span><br><span class="line">			return head;</span><br><span class="line">		&#125;</span><br><span class="line">		//这里的cur就是最后一个节点</span><br><span class="line">		ListNode cur = reverseList(head.next);</span><br><span class="line">		//这里请配合动画演示理解</span><br><span class="line">		//如果链表是 1-&gt;2-&gt;3-&gt;4-&gt;5，那么此时的cur就是5</span><br><span class="line">		//而head是4，head的下一个是5，下下一个是空</span><br><span class="line">		//所以head.next.next 就是5-&gt;4</span><br><span class="line">		head.next.next = head;</span><br><span class="line">		//防止链表循环，需要将head.next设置为空</span><br><span class="line">		head.next = null;</span><br><span class="line">		//每层递归函数都返回cur，也就是最后一个节点</span><br><span class="line">		return cur;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -978,10 +987,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>链表常用操作</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">206</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">759</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2019-11-11, 19:46:38</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-11, 20:27:48</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-12, 09:33:16</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/11/链表常用操作/" title="链表常用操作">http://jhshz520.github.io/2019/11/11/链表常用操作/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
