@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>leetcode389找不同 | 华中阁</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="leetcode389找不同 | 华中阁">
+  <title>hill3密码探究 | 华中阁</title>
+  <meta name="keywords" content=" 希尔密码探究 ">
+  <meta name="description" content="hill3密码探究 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -917,9 +917,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-leetcode389找不同" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-hill3密码探究" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">leetcode389找不同</h1>
+        <h1 class="article-title">hill3密码探究</h1>
     
     <div class="article-meta">
         
@@ -927,26 +927,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Cpp算法实践">Cpp算法实践</a>
+                <a href="javascript:" data-rel="密码学">密码学</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">leetcode</a>
+            <a href="javascript:" class="color2">希尔密码探究</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-07 16:32:18'>2019-10-14 15:56</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-14 17:54:39'>2019-11-14 17:43</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:442</span>
+        <span>字数:226</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -965,7 +965,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#位运算的应用"><span class="toc-text">位运算的应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的代码"><span class="toc-text">我的代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串替换法"><span class="toc-text">字符串替换法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#map-计数法"><span class="toc-text">map 计数法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ASCII-差值法"><span class="toc-text">ASCII 差值法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#C-vesrion"><span class="toc-text">C++ vesrion:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-中可以有这样的操作"><span class="toc-text">C++中可以有这样的操作</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#最主要是关于模m矩阵的实际解法问题"><span class="toc-text">最主要是关于模m矩阵的实际解法问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#伴随矩阵求模m的逆矩阵"><span class="toc-text">伴随矩阵求模m的逆矩阵</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#matalab试验求解，由于计算量巨大，我也不擅长矩阵计算-这里直接给出代码和结果"><span class="toc-text">matalab试验求解，由于计算量巨大，我也不擅长矩阵计算 这里直接给出代码和结果</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -980,21 +980,10 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="位运算的应用"><a href="#位运算的应用" class="headerlink" title="位运算的应用"></a>位运算的应用</h1><p>给定两个字符串 s 和 t，它们只包含小写字母。</p>
-<p>字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。</p>
-<p>请找出在 t 中被添加的字母。</p>
-<h1 id="我的代码"><a href="#我的代码" class="headerlink" title="我的代码"></a>我的代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">char findTheDifference(string s, string t) &#123;</span><br><span class="line">       char a = t[t.size()-1];</span><br><span class="line">       for(int i = 0 ;i &lt;s.size();i++)&#123;</span><br><span class="line">           a^=s[i];</span><br><span class="line">           a^=t[i];</span><br><span class="line">       &#125;</span><br><span class="line">       return a;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="最主要是关于模m矩阵的实际解法问题"><a href="#最主要是关于模m矩阵的实际解法问题" class="headerlink" title="最主要是关于模m矩阵的实际解法问题"></a>最主要是关于模m矩阵的实际解法问题</h1><h1 id="伴随矩阵求模m的逆矩阵"><a href="#伴随矩阵求模m的逆矩阵" class="headerlink" title="伴随矩阵求模m的逆矩阵"></a>伴随矩阵求模m的逆矩阵</h1><p>！<a href="hill3密码探究/hill.jpg">example</a></p>
+<h1 id="matalab试验求解，由于计算量巨大，我也不擅长矩阵计算-这里直接给出代码和结果"><a href="#matalab试验求解，由于计算量巨大，我也不擅长矩阵计算-这里直接给出代码和结果" class="headerlink" title="matalab试验求解，由于计算量巨大，我也不擅长矩阵计算 这里直接给出代码和结果"></a>matalab试验求解，由于计算量巨大，我也不擅长矩阵计算 这里直接给出代码和结果</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">% 所有问题的根源在于mod26，因此在取逆时要采用模m逆矩阵的求法</span><br><span class="line">% 用伴随矩阵求 A-1 = |A|-1 * A*（mod m），</span><br><span class="line">% 其中|A|-1 为|A|模m的逆</span><br><span class="line">A = [ 3 4 19;</span><br><span class="line">    4 17 12;</span><br><span class="line">    8 13 0];</span><br><span class="line"></span><br><span class="line">A1 = [ 3 4 19;</span><br><span class="line">    4 17 12;</span><br><span class="line">    13 19 18];</span><br><span class="line"></span><br><span class="line">B = [10 16 3 ;</span><br><span class="line">    2 5 3;</span><br><span class="line">    8 9 11</span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line">B1 = [10 16 3 ;</span><br><span class="line">    2 5 3;</span><br><span class="line">    23 17 6</span><br><span class="line">    ];</span><br><span class="line">a = det(A);</span><br><span class="line">a1 = det(A1);</span><br><span class="line">As =det(A)*inv(A);</span><br><span class="line">As1= det(A1)*inv(A1);</span><br><span class="line">As</span><br><span class="line">As1</span><br><span class="line">a</span><br><span class="line">a1</span><br><span class="line">b =  mod(a,26)</span><br><span class="line">b1 =  mod(a1,26)</span><br><span class="line">A1_1 = mod(25*As1,26);</span><br><span class="line">A1_1</span><br><span class="line"></span><br><span class="line">K = mod(A1_1*B1,26)</span><br><span class="line">mod_k = mod(det(K),26);</span><br><span class="line">mod_k</span><br><span class="line">K_1 =mod(3*det(K)*inv(K),26);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">%下面是验证部分 </span><br><span class="line">C = [13,14,15];</span><br><span class="line">Creal = mod(C*K_1,26);</span><br><span class="line">Creal</span><br><span class="line">KK = inv(K);</span><br><span class="line">CC = [19 14 24]</span><br><span class="line"></span><br><span class="line">R =mod(CC*K,26);</span><br><span class="line">R</span><br></pre></td></tr></table></figure>
 
-<h1 id="字符串替换法"><a href="#字符串替换法" class="headerlink" title="字符串替换法"></a>字符串替换法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static char findTheDifference(String s, String t) &#123;</span><br><span class="line">    for(Character c : s.toCharArray())&#123;</span><br><span class="line">        t = t.replaceFirst(c.toString(),&quot;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return t.toCharArray()[0];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="map-计数法"><a href="#map-计数法" class="headerlink" title="map 计数法"></a>map 计数法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public static char findTheDifference(String s, String t) &#123;</span><br><span class="line">    Character result = null;</span><br><span class="line">    Map&lt;Character, Integer&gt; sMap = new HashMap&lt;&gt;();</span><br><span class="line">    Map&lt;Character, Integer&gt; tMap = new HashMap&lt;&gt;();</span><br><span class="line">    for (Character c : s.toCharArray()) &#123;</span><br><span class="line">        if (!sMap.containsKey(c)) &#123;</span><br><span class="line">            sMap.put(c, 0);</span><br><span class="line">        &#125;</span><br><span class="line">        sMap.put(c, sMap.get(c) + 1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (Character c : t.toCharArray()) &#123;</span><br><span class="line">        if (!tMap.containsKey(c)) &#123;</span><br><span class="line">            tMap.put(c, 0);</span><br><span class="line">        &#125;</span><br><span class="line">        tMap.put(c, tMap.get(c) + 1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Set&lt;Map.Entry&lt;Character, Integer&gt;&gt; entries = tMap.entrySet();</span><br><span class="line">    for (Map.Entry&lt;Character, Integer&gt; entry : entries) &#123;</span><br><span class="line">        Character key = entry.getKey();</span><br><span class="line">        Integer value = entry.getValue();</span><br><span class="line">        if (!value.equals(sMap.get(key))) &#123;</span><br><span class="line">            result = key;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="ASCII-差值法"><a href="#ASCII-差值法" class="headerlink" title="ASCII 差值法"></a>ASCII 差值法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static char findTheDifference(String s, String t) &#123;</span><br><span class="line">    int sCount = 0;</span><br><span class="line">    int tCount = 0;</span><br><span class="line">    for (Character c : s.toCharArray()) &#123;</span><br><span class="line">        sCount += c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (Character c : t.toCharArray()) &#123;</span><br><span class="line">        tCount += c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return (char)(tCount - sCount);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="C-vesrion"><a href="#C-vesrion" class="headerlink" title="C++ vesrion:"></a>C++ vesrion:</h2><p>t.toCharArray()<br>字符串的toCharArray（）方法<br>public char[] toCharArray()</p>
-<p>java 语言中该方法的作用是返回一个字符数组，该字符数组中存放了当前字符串中的所有字符<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static char findTheDifference(String s, String t) &#123;</span><br><span class="line">    int sCount = 0;</span><br><span class="line">    int tCount = 0;</span><br><span class="line">    for (Character c : s.toCharArray()) &#123;</span><br><span class="line">        sCount += c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (Character c : t.toCharArray()) &#123;</span><br><span class="line">        tCount += c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return (char)(tCount - sCount);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="C-中可以有这样的操作"><a href="#C-中可以有这样的操作" class="headerlink" title="C++中可以有这样的操作"></a>C++中可以有这样的操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">char findTheDifference(string s, string t) &#123;</span><br><span class="line">        int sum = 0;</span><br><span class="line">        for(int i=0;i&lt;t.length();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += t[i];</span><br><span class="line">            if(i &lt; s.length())</span><br><span class="line">                sum -= s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        return (char)sum;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
+<p><img src="//jhshz520.github.io/2019/11/14/hill3密码探究/result.png" alt="result"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
@@ -1008,12 +997,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>leetcode389找不同</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">442</span></p>
+    <p><span class="copy-title">文章标题:</span>hill3密码探究</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">226</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-14, 15:56:18</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-07, 16:32:18</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/14/leetcode389找不同/" title="leetcode389找不同">http://jhshz520.github.io/2019/10/14/leetcode389找不同/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-14, 17:43:42</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-14, 17:54:39</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/14/hill3密码探究/" title="hill3密码探究">http://jhshz520.github.io/2019/11/14/hill3密码探究/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
