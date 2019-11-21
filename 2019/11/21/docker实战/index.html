@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>leetcode859亲密字符串 | 华中阁</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="leetcode859亲密字符串 | 华中阁">
+  <title>docker实战 | 华中阁</title>
+  <meta name="keywords" content=" docker ">
+  <meta name="description" content="docker实战 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -989,9 +989,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-leetcode859亲密字符串" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-docker实战" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">leetcode859亲密字符串</h1>
+        <h1 class="article-title">docker实战</h1>
     
     <div class="article-meta">
         
@@ -999,26 +999,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Cpp算法实践">Cpp算法实践</a>
+                <a href="javascript:" data-rel="Docker">Docker</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">leetcode</a>
+            <a href="javascript:" class="color2">docker</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-06 18:08:22'>2019-11-04 16:37</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-21 21:39:13'>2019-11-21 20:30</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:356</span>
+        <span>字数:5</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1037,7 +1037,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#最主要的易错点是容易漏掉判断条件致使出错"><span class="toc-text">最主要的易错点是容易漏掉判断条件致使出错</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mycode"><span class="toc-text">mycode</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#code-技巧"><span class="toc-text">code 技巧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#set-的应用"><span class="toc-text">set 的应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#string-字符处理"><span class="toc-text">string 字符处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#怎么对字符串中的元素进行排序？"><span class="toc-text">怎么对字符串中的元素进行排序？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode1071字符串的最大公因子"><span class="toc-text">leetcode1071字符串的最大公因子</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#回顾两个数的最大公因子"><span class="toc-text">回顾两个数的最大公因子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#辗转相除法"><span class="toc-text">辗转相除法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？"><span class="toc-text">上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#windows-下安装DockerToolbox"><span class="toc-text">windows 下安装DockerToolbox</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1052,17 +1052,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="最主要的易错点是容易漏掉判断条件致使出错"><a href="#最主要的易错点是容易漏掉判断条件致使出错" class="headerlink" title="最主要的易错点是容易漏掉判断条件致使出错"></a>最主要的易错点是容易漏掉判断条件致使出错</h1><h1 id="mycode"><a href="#mycode" class="headerlink" title="mycode"></a>mycode</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool buddyStrings(string A, string B) &#123;</span><br><span class="line">        if(A.size()!=B.size())</span><br><span class="line">            return false;</span><br><span class="line">        set &lt;char&gt; s;</span><br><span class="line">          </span><br><span class="line">        int i = 0;</span><br><span class="line">        int flag =0;</span><br><span class="line">        char tmp;</span><br><span class="line">        while(i&lt;A.size())&#123;</span><br><span class="line">            if(A[i]==B[i])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">                  s.insert(A[i]);</span><br><span class="line">            &#125;else if(A[i] == B[A.size()-1-i])&#123;</span><br><span class="line">                flag++;</span><br><span class="line">                 i++;</span><br><span class="line">                s.insert(A[i]);</span><br><span class="line">               </span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       // cout &lt;&lt;s.size()&lt;A.size()&lt;&lt;flag;</span><br><span class="line">        if(flag ==2||(flag==0&amp;&amp;s.size()&lt;A.size()))&#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="code-技巧"><a href="#code-技巧" class="headerlink" title="code 技巧"></a>code 技巧</h1><p>括号一定要对齐，判断条件一定要对应，看看if之后的else条件是否都是满足的</p>
-<h1 id="set-的应用"><a href="#set-的应用" class="headerlink" title="set 的应用"></a>set 的应用</h1><p>set主要是insert（）方法</p>
-<h1 id="string-字符处理"><a href="#string-字符处理" class="headerlink" title="string 字符处理"></a>string 字符处理</h1><h1 id="怎么对字符串中的元素进行排序？"><a href="#怎么对字符串中的元素进行排序？" class="headerlink" title="怎么对字符串中的元素进行排序？"></a>怎么对字符串中的元素进行排序？</h1><h1 id="leetcode1071字符串的最大公因子"><a href="#leetcode1071字符串的最大公因子" class="headerlink" title="leetcode1071字符串的最大公因子"></a>leetcode1071字符串的最大公因子</h1><h2 id="回顾两个数的最大公因子"><a href="#回顾两个数的最大公因子" class="headerlink" title="回顾两个数的最大公因子"></a>回顾两个数的最大公因子</h2><h3 id="辗转相除法"><a href="#辗转相除法" class="headerlink" title="辗转相除法"></a>辗转相除法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onst gcd = (a, b) =&gt; (0 === b ? a : gcd(b, a % b))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">string gcdOfStrings(string str1, string str2) &#123;</span><br><span class="line">      //int a[str1.size()];</span><br><span class="line">      int l1 = str1.length();</span><br><span class="line">      int l2 = str2.length();</span><br><span class="line">      if(l1==l2)&#123;</span><br><span class="line">          if(str1==str2)</span><br><span class="line">              return str1;</span><br><span class="line">          else&#123;</span><br><span class="line">              return &quot;&quot;;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;else if(l1&gt;l2)&#123;</span><br><span class="line">          string substr = str1.substr(l2);</span><br><span class="line">          return gcdOfStrings(substr,str2);</span><br><span class="line">      &#125;else&#123;</span><br><span class="line">      string substr = str2.substr(l1);</span><br><span class="line">      return gcdOfStrings(substr,str1);</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？"><a href="#上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？" class="headerlink" title="上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？"></a>上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？</h1><p>sort（string.begin(),string.end()）<br>sort()函数的功能实在是强大啊</p>
-<p>substr（）函数能够对字符串进行切分是一个很好的工具</p>
-
+        <h1 id="windows-下安装DockerToolbox"><a href="#windows-下安装DockerToolbox" class="headerlink" title="windows 下安装DockerToolbox"></a>windows 下安装DockerToolbox</h1>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -1075,12 +1065,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>leetcode859亲密字符串</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">356</span></p>
+    <p><span class="copy-title">文章标题:</span>docker实战</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">5</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-11-04, 16:37:33</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-06, 18:08:22</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/04/leetcode859亲密字符串/" title="leetcode859亲密字符串">http://jhshz520.github.io/2019/11/04/leetcode859亲密字符串/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-21, 20:30:34</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-21, 21:39:13</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/21/docker实战/" title="docker实战">http://jhshz520.github.io/2019/11/21/docker实战/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
