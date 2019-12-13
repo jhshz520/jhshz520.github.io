@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Debian安装与配置 | 华中阁</title>
-  <meta name="keywords" content=" Docker环境 ">
-  <meta name="description" content="Debian安装与配置 | 华中阁">
+  <title>Anaconda env set | 华中阁</title>
+  <meta name="keywords" content=" python ">
+  <meta name="description" content="Anaconda env set | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -1061,9 +1061,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Debian安装与配置" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Anaconda-env-set" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Debian安装与配置</h1>
+        <h1 class="article-title">Anaconda env set</h1>
     
     <div class="article-meta">
         
@@ -1071,26 +1071,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="工具">工具</a>
+                <a href="javascript:" data-rel="python环境">python环境</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">Docker环境</a>
+            <a href="javascript:" class="color2">python</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-12 19:57:25'>2019-10-25 13:26</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-13 13:16:27'>2019-12-13 12:34</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:79</span>
+        <span>字数:84</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1109,7 +1109,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装了Debian10-双系统"><span class="toc-text">安装了Debian10 双系统</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#输入法的配置"><span class="toc-text">输入法的配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sudo权限的更改"><span class="toc-text">sudo权限的更改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装了vim"><span class="toc-text">安装了vim</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置了Debien的国内源"><span class="toc-text">配置了Debien的国内源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#解决debian10的wifi问题"><span class="toc-text">解决debian10的wifi问题</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Anaconda-Prompt"><span class="toc-text">Anaconda Prompt</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Anaconda-换源"><span class="toc-text">Anaconda 换源</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1124,11 +1124,9 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安装了Debian10-双系统"><a href="#安装了Debian10-双系统" class="headerlink" title="安装了Debian10 双系统"></a>安装了Debian10 双系统</h1><h1 id="输入法的配置"><a href="#输入法的配置" class="headerlink" title="输入法的配置"></a>输入法的配置</h1><h1 id="sudo权限的更改"><a href="#sudo权限的更改" class="headerlink" title="sudo权限的更改"></a>sudo权限的更改</h1><h1 id="安装了vim"><a href="#安装了vim" class="headerlink" title="安装了vim"></a>安装了vim</h1><h1 id="配置了Debien的国内源"><a href="#配置了Debien的国内源" class="headerlink" title="配置了Debien的国内源"></a>配置了Debien的国内源</h1><h1 id="解决debian10的wifi问题"><a href="#解决debian10的wifi问题" class="headerlink" title="解决debian10的wifi问题"></a>解决debian10的wifi问题</h1><p>1 apt-get install iwilwifi</p>
-<p>2 modprobe -r iwlwifi; modprobe iwlwifi</p>
-<p>3 lspci 查看网卡的型号搜索相关的驱动</p>
-<p>4 apt-get install firmware-realtek</p>
-<p>5 最后重启电脑，能够设置成功</p>
+        <h1 id="Anaconda-Prompt"><a href="#Anaconda-Prompt" class="headerlink" title="Anaconda Prompt"></a>Anaconda Prompt</h1><p>1 conda info -e / conda env list<br> 查看 已安装的环境<br>2 conda create -n env-name python=X.X（版本）<br>创建 新的python环境<br>3 activate python2.7<br>激活新环境</p>
+<p>经过以上三步就可以在后续进行pip安装相关的第三方依赖库</p>
+<h1 id="Anaconda-换源"><a href="#Anaconda-换源" class="headerlink" title="Anaconda 换源"></a>Anaconda 换源</h1><p>conda config –add channels https：//mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
@@ -1142,12 +1140,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Debian安装与配置</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">79</span></p>
+    <p><span class="copy-title">文章标题:</span>Anaconda env set</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">84</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-25, 13:26:16</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-12, 19:57:25</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/25/Debian安装与配置/" title="Debian安装与配置">http://jhshz520.github.io/2019/10/25/Debian安装与配置/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-13, 12:34:52</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-13, 13:16:27</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/13/Anaconda-env-set/" title="Anaconda env set">http://jhshz520.github.io/2019/12/13/Anaconda-env-set/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
