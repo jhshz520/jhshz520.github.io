@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>动态规划 | 华中阁</title>
-  <meta name="keywords" content=" 算法心得 ">
-  <meta name="description" content="动态规划 | 华中阁">
+  <title>leetcode实用模板 | 华中阁</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="leetcode实用模板 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -1069,30 +1069,36 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-动态规划" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-leetcode实用模板" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">动态规划</h1>
+        <h1 class="article-title">leetcode实用模板</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="Cpp算法实践">Cpp算法实践</a>
+            
+        </span>
+        
         
         <span class="tag">
             
-            <a href="javascript:" class="color5">算法心得</a>
+            <a href="javascript:" class="color4">leetcode</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-09-23 17:40:28'>2019-09-21 16:07</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-24 16:29:32'>2019-12-24 15:13</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:391</span>
+        <span>字数:630</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1111,7 +1117,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#动态规划"><span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#最重要的是要找到状态转移方程，不然开过大的数组很有可能会内存溢出"><span class="toc-text">最重要的是要找到状态转移方程，不然开过大的数组很有可能会内存溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#leetcode"><span class="toc-text">leetcode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不相邻数组取值问题"><span class="toc-text">不相邻数组取值问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决思路"><span class="toc-text">解决思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#官方的状态转移方程"><span class="toc-text">官方的状态转移方程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#f（k）-max（f-k-2-A-k-f-k-1-）"><span class="toc-text">f（k） = max（f(k-2)+A[k],f(k-1)）</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#模板的重要性"><span class="toc-text">模板的重要性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于博客的一些自己的看法"><span class="toc-text">关于博客的一些自己的看法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回溯算法与剪枝"><span class="toc-text">回溯算法与剪枝</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1126,15 +1132,39 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h2 id="最重要的是要找到状态转移方程，不然开过大的数组很有可能会内存溢出"><a href="#最重要的是要找到状态转移方程，不然开过大的数组很有可能会内存溢出" class="headerlink" title="最重要的是要找到状态转移方程，不然开过大的数组很有可能会内存溢出"></a>最重要的是要找到状态转移方程，不然开过大的数组很有可能会内存溢出</h2><p>区间和可以转换成求差的问题，求差问题，也可以转换成区间和的问题。</p>
-<p>2019 年 9月 21 日</p>
-<h2 id="leetcode"><a href="#leetcode" class="headerlink" title="leetcode"></a>leetcode</h2><h2 id="不相邻数组取值问题"><a href="#不相邻数组取值问题" class="headerlink" title="不相邻数组取值问题"></a>不相邻数组取值问题</h2><p> 你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。</p>
-<p>给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额。</p>
-<p>学习了leetcode的一些刷题方法，主要是动态规划的简单应用，学会用空间换时间的一些技巧</p>
-<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>设置两个变量，sumOdd 和 sumEven 分别对数组的奇数和偶数元素求和。<br>遍历数组，索引为奇数时，将元素加到奇数和，并与偶数和比较更新成max。<br>偶数和同理。<br>返回时进行最后一次更新max。<br>很值得借鉴</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">int sumOdd = 0;</span><br><span class="line">	int sumEven = 0;</span><br><span class="line"></span><br><span class="line">	for (int i = 0; i &lt; nums.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (i % 2 == 0)</span><br><span class="line">		&#123;</span><br><span class="line">			sumEven += nums[i];</span><br><span class="line">			sumEven = max(sumOdd, sumEven);</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			sumOdd += nums[i];</span><br><span class="line">			sumOdd = max(sumOdd, sumEven);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return max(sumOdd, sumEven);</span><br></pre></td></tr></table></figure>
+        <h1 id="模板的重要性"><a href="#模板的重要性" class="headerlink" title="模板的重要性"></a>模板的重要性</h1><p>很多时候刷完leetcode，一道题当时的印象比较深刻可是实践过得久了，再看到同样的题目，还是很难快速的反应过来</p>
+<p>因此，总结一套自己的万能模板，能够达到事半功倍的效果，当然自己短期的一些训练与很早就从事算法竞赛的同学相比</p>
+<p>有很大的差距，当时在锻炼自己的思维能力和编程方面还是能起到不小的作用的</p>
+<h2 id="关于博客的一些自己的看法"><a href="#关于博客的一些自己的看法" class="headerlink" title="关于博客的一些自己的看法"></a>关于博客的一些自己的看法</h2><p>博客本来就是记述一下自己的学习过程，所以形式不是最重要的不要刻意地为了写博客而写博客应该是能够针对自己当时问题的解决方法有一个明确的解释提醒自己相同的问题可能的解决方案可能会从什么地方入手，就跟高中的错题本一样，不能本末倒置</p>
+<h2 id="回溯算法与剪枝"><a href="#回溯算法与剪枝" class="headerlink" title="回溯算法与剪枝"></a>回溯算法与剪枝</h2><p>做搜索、回溯问题的套路是画图，代码其实就是根据画出的树形图写出来的。</p>
+<p>根据题目中的用例，画一个图，因为是搜索，因此呈现的是一个树形结构图，并且在这个树形结构中会体现出递归结构。<br>根据题目中的用例，比对自己画图的结果和题目的结果的差异，如果一样，说明我们的分析没有错；如果不一样，说明我们的分析有误，一定有哪一个环节漏掉了或者分析错误，根据找到的问题调整算法。</p>
+<p>for（）语句中第二个条件通常就是DFS的剪枝语句<br>class Solution {<br>    private:<br>    vector&lt;vector<int>&gt; res;<br>    vector<int> candidates;<br>    vector<int> path;</int></int></int></p>
+<p>public:</p>
+<pre><code>    void DFS(int start, int target){
+    if(target ==0){
+        res.push_back(path);
+        return;
+    }
+    for(int i = start;i&lt;candidates.size()&amp;&amp;target-candidates[i]&gt;=0;i++){
+        path.push_back(candidates[i]);
+        DFS(i,target-candidates[i]);
+        path.pop_back();
+    }
+}
+vector&lt;vector&lt;int&gt;&gt; combinationSum(vector&lt;int&gt;&amp; candidates, int target) {
+  //取一个的情况，试一下是哪些元素的倍数
+//两个组合后，试一下是哪些元素组合的倍数
+ //n的组合看是否是这些元素的倍数
+ // 没看代码前我的思路
+   // vector&lt;int&gt; path;
+    //vector&lt;vector&lt;int&gt;&gt; res;
+   //容易出错的步骤，如果不排序将不输出结果，而且必须是先进行排序进而赋值 
+    this-&gt;candidates = candidates;
+    sort(candidates.begin(),candidates.end());
+    DFS(0,target);
+   return res;
+}</code></pre><p>};</p>
 
-<h2 id="官方的状态转移方程"><a href="#官方的状态转移方程" class="headerlink" title="官方的状态转移方程"></a>官方的状态转移方程</h2><h4 id="f（k）-max（f-k-2-A-k-f-k-1-）"><a href="#f（k）-max（f-k-2-A-k-f-k-1-）" class="headerlink" title="f（k） = max（f(k-2)+A[k],f(k-1)）"></a>f（k） = max（f(k-2)+A[k],f(k-1)）</h4>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -1147,12 +1177,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>动态规划</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">391</span></p>
+    <p><span class="copy-title">文章标题:</span>leetcode实用模板</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">630</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-21, 16:07:34</p>
-    <p><span class="copy-title">最后更新:</span>2019-09-23, 17:40:28</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/21/动态规划/" title="动态规划">http://jhshz520.github.io/2019/09/21/动态规划/</a>
+    <p><span class="copy-title">发布时间:</span>2019-12-24, 15:13:45</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-24, 16:29:32</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/24/leetcode实用模板/" title="leetcode实用模板">http://jhshz520.github.io/2019/12/24/leetcode实用模板/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
