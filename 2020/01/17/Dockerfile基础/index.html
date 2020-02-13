@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>leetcode257二叉树的所有路径 | 华中阁</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="leetcode257二叉树的所有路径 | 华中阁">
+  <title>Dockerfile基础 | 华中阁</title>
+  <meta name="keywords" content=" docker ">
+  <meta name="description" content="Dockerfile基础 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介北上滨城五载，南下荆楚三年。 山河表里飘蓬客，春秋难易赤子心。 2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -1117,9 +1117,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-leetcode257二叉树的所有路径" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Dockerfile基础" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">leetcode257二叉树的所有路径</h1>
+        <h1 class="article-title">Dockerfile基础</h1>
     
     <div class="article-meta">
         
@@ -1127,26 +1127,26 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="Cpp算法实践">Cpp算法实践</a>
+                <a href="javascript:" data-rel="Docker">Docker</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">leetcode</a>
+            <a href="javascript:" class="color2">docker</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-30 11:04:54'>2019-10-28 15:40</time>
+        创建时间:<time class="date" title='更新时间: 2020-01-17 14:59:26'>2020-01-17 09:19</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:615</span>
+        <span>字数:266</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1165,7 +1165,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#erase（）"><span class="toc-text">erase（）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dfs-实现利用传入参数的方式实现"><span class="toc-text">dfs 实现利用传入参数的方式实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用到的几个技巧"><span class="toc-text">用到的几个技巧</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#string-的-erase（）"><span class="toc-text">string 的 erase（）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#STL的find，find-if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，"><span class="toc-text">STL的find，find_if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dockerfile的语法"><span class="toc-text">Dockerfile的语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#FROM"><span class="toc-text">FROM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MAINTAINER"><span class="toc-text">MAINTAINER</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EXPOSE"><span class="toc-text">EXPOSE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RUN"><span class="toc-text">RUN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WORKDIR"><span class="toc-text">WORKDIR</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ENV"><span class="toc-text">ENV</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ADD"><span class="toc-text">ADD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COPY"><span class="toc-text">COPY</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VOLUME"><span class="toc-text">VOLUME</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMD"><span class="toc-text">CMD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ENTERPOINT"><span class="toc-text">ENTERPOINT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ONBUILD"><span class="toc-text">ONBUILD</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1180,29 +1180,19 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="erase（）"><a href="#erase（）" class="headerlink" title="erase（）"></a>erase（）</h1><p>ector.erase()的功能从指定容器中删除指定位置的元素或某段范围内的元素，有以下两种重载方式：</p>
-<p>iterator erase( iterator _Where);//删除指定位置的元素，返回值是一个迭代器，指向删除元素的下一个元素；<br>iterator erase( iterator _First, iterator _Last);//删除从_First开始到_Last位置(不包括_Last位置)的元素，返回值也是一个迭代器，指向最后一个删除元素的下一个位置。</p>
-<p>调用erase()方法后，vector后面的元素会向前移位,一般在调用该方法后将迭代器自减一。</p>
-<p>veci.erase(iter)之后，iter就变成了一个野指针，对一个野指针进行 iter++ 是肯定会出错</p>
-<h1 id="dfs-实现利用传入参数的方式实现"><a href="#dfs-实现利用传入参数的方式实现" class="headerlink" title="dfs 实现利用传入参数的方式实现"></a>dfs 实现利用传入参数的方式实现</h1> <figure class="highlight plain"><figcaption><span>binaryTreePaths(TreeNode* root) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    vector&lt;string&gt; res;</span><br><span class="line">    string path;</span><br><span class="line">   dfs(root,path,res);</span><br><span class="line">    return res;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">void dfs(TreeNode * root,string path,vector &lt;string&gt; &amp;res)&#123;</span><br><span class="line">   if(!root) return;</span><br><span class="line">    path.append(to_string(root-&gt;val));</span><br><span class="line">    path.append(&quot;-&gt;&quot;);</span><br><span class="line">    if(root-&gt;left==NULL&amp;&amp;root-&gt;right==NULL)</span><br><span class="line">        path.erase(path.size()-1);</span><br><span class="line">    res.push_back(path);</span><br><span class="line">    dfs(root-&gt;left,path,res);</span><br><span class="line">    dfs(root-&gt;right,path,res);</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="用到的几个技巧"><a href="#用到的几个技巧" class="headerlink" title="用到的几个技巧"></a>用到的几个技巧</h3><p>1 利用参数传递来进行每次的值得录入</p>
-<p>2 string类型每次会创建一个新的副本</p>
-<p>3 $引用可以对全局变量的值进行一个操作</p>
-<p>4 string的最后一位默认是“”空值</p>
-<h1 id="string-的-erase（）"><a href="#string-的-erase（）" class="headerlink" title="string 的 erase（）"></a>string 的 erase（）</h1><p>1 string.erase(pos,n)          //删除从pos开始的n个字符    string.erase(0,1);   删除第一个字符</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"> </span><br><span class="line">using namespace std;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   string::iterator i;</span><br><span class="line">   string s;</span><br><span class="line">   cin&gt;&gt;s;</span><br><span class="line">   s.erase(1,2);</span><br><span class="line">   cout&lt;&lt;s;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2   //删除pos处的一个字符（pos是string类型的迭代器）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">string.erase(pos)      </span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"> </span><br><span class="line">using namespace std;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   string::iterator i;</span><br><span class="line">   string s;</span><br><span class="line">   cin&gt;&gt;s;</span><br><span class="line">   i = s.begin()+3;</span><br><span class="line">   s.erase(i);</span><br><span class="line">   cout&lt;&lt;s;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3、string.erase(first,last)    //删除从first到last中间的字符（first和last都是string类型的迭代器）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"> </span><br><span class="line">using namespace std;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   string::iterator i;</span><br><span class="line">   string s;</span><br><span class="line">   cin&gt;&gt;s;</span><br><span class="line">   s.erase(s.begin()+1,s.end()-1);</span><br><span class="line">   cout&lt;&lt;s;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4 如果直接给一个int值，则表示从该int值处开始直到结尾</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; s.erase(s.size()-2)&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-
-<h1 id="STL的find，find-if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，"><a href="#STL的find，find-if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，" class="headerlink" title="STL的find，find_if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，"></a>STL的find，find_if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，</h1><p>需 #include <algorithm><br>我们查找一个list中的数据，通常用find()，例如：</algorithm></p>
+        <h1 id="Dockerfile的语法"><a href="#Dockerfile的语法" class="headerlink" title="Dockerfile的语法"></a>Dockerfile的语法</h1><h2 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h2><p>基础镜像，当前的镜像是基于哪个镜像的</p>
+<h2 id="MAINTAINER"><a href="#MAINTAINER" class="headerlink" title="MAINTAINER"></a>MAINTAINER</h2><p>镜像维护者的姓名和邮箱地址</p>
+<h2 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a>EXPOSE</h2><p>当前容器对外暴露出的端口</p>
+<h2 id="RUN"><a href="#RUN" class="headerlink" title="RUN"></a>RUN</h2><p>容器构建时的运行命令</p>
+<h2 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h2><p>指定容器创建后，终端默认登录进来的工作目录一个落脚点</p>
+<h2 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h2><p>用来构建镜像过程中设置环境变量</p>
+<h2 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h2><p>将宿主机目录下的文件拷贝进镜像，且自动处理URL和解压tar包</p>
+<h2 id="COPY"><a href="#COPY" class="headerlink" title="COPY"></a>COPY</h2><p>将从构建上下文目录的原路径文件复制到新一层的镜像内的&lt;目标路径位置&gt;</p>
+<h2 id="VOLUME"><a href="#VOLUME" class="headerlink" title="VOLUME"></a>VOLUME</h2><p>容器数据卷，用于数据保存和持久化工作</p>
+<h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><p>指定一个容器启东时要运行的命令</p>
+<p>指定容器启动程序和参数</p>
+<h2 id="ENTERPOINT"><a href="#ENTERPOINT" class="headerlink" title="ENTERPOINT"></a>ENTERPOINT</h2><p>与CMD大致相同，但CMD只有最后一个命令会生效<br>ENTERPOINT 则是追加模式</p>
+<h2 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a>ONBUILD</h2><p>当构建一个被继承的Dockerfile时运行命令，父镜像在被子镜像继承后父镜像的onbuild被触发 </p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
@@ -1216,12 +1206,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>leetcode257二叉树的所有路径</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">615</span></p>
+    <p><span class="copy-title">文章标题:</span>Dockerfile基础</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">266</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-28, 15:40:37</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-30, 11:04:54</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/28/leetcode257二叉树的所有路径/" title="leetcode257二叉树的所有路径">http://jhshz520.github.io/2019/10/28/leetcode257二叉树的所有路径/</a>
+    <p><span class="copy-title">发布时间:</span>2020-01-17, 09:19:14</p>
+    <p><span class="copy-title">最后更新:</span>2020-01-17, 14:59:26</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/17/Dockerfile基础/" title="Dockerfile基础">http://jhshz520.github.io/2020/01/17/Dockerfile基础/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
