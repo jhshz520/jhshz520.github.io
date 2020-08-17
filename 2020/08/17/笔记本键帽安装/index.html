@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Docker集群的调度策略和通信优化技术研究 | 华中阁</title>
-  <meta name="keywords" content=" 文献阅读 ">
-  <meta name="description" content="Docker集群的调度策略和通信优化技术研究 | 华中阁">
+  <title>笔记本键帽安装 | 华中阁</title>
+  <meta name="keywords" content>
+  <meta name="description" content="笔记本键帽安装 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="X型架构的键帽1 首先安装X型架构的中间部分2 将X型结构装进键盘槽内3 最终再将键帽安装上进行复原最最关键的一部分是先进行X结构的安装">
 <meta property="og:type" content="article">
@@ -1161,36 +1161,24 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Docker集群的调度策略和通信优化技术研究" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-笔记本键帽安装" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Docker集群的调度策略和通信优化技术研究</h1>
+        <h1 class="article-title">笔记本键帽安装</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-                <a href="javascript:" data-rel="容器课题相关">容器课题相关</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color5">文献阅读</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-28 15:04:05'>2019-09-18 10:25</time>
+        创建时间:<time class="date" title='更新时间: 2020-08-17 09:10:01'>2020-08-17 09:07</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:365</span>
+        <span>字数:62</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1209,7 +1197,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker网络发展的关键点"><span class="toc-text">Docker网络发展的关键点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整"><span class="toc-text">如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一般使用第三方工具进行定制"><span class="toc-text">一般使用第三方工具进行定制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#调度问题，负载问题的解决可以类比交通领域的解决方式"><span class="toc-text">调度问题，负载问题的解决可以类比交通领域的解决方式</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#X型架构的键帽"><span class="toc-text">X型架构的键帽</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-首先安装X型架构的中间部分"><span class="toc-text">1 首先安装X型架构的中间部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-将X型结构装进键盘槽内"><span class="toc-text">2 将X型结构装进键盘槽内</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-最终再将键帽安装上进行复原"><span class="toc-text">3 最终再将键帽安装上进行复原</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#最最关键的一部分是先进行X结构的安装"><span class="toc-text">最最关键的一部分是先进行X结构的安装</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1224,15 +1212,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Docker网络发展的关键点"><a href="#Docker网络发展的关键点" class="headerlink" title="Docker网络发展的关键点"></a>Docker网络发展的关键点</h1><h2 id="如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整"><a href="#如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整" class="headerlink" title="如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整"></a>如何合理分配不同容器的宽带资源，让容器所占用的网络资源可以按照用户的实际需求进行动态调整</h2><h3 id="一般使用第三方工具进行定制"><a href="#一般使用第三方工具进行定制" class="headerlink" title="一般使用第三方工具进行定制"></a>一般使用第三方工具进行定制</h3><p>1 OpenvsSwitch</p>
-<p>重量级解决方案，不适合中小规模应用，不支持容器的动态地址转换，无法实现应用隐匿性，而且由于实现基于虚拟化网桥，性能方面有损失<br>2 CoreOS 公司的Flanel</p>
-<p>为集群所有节点重新规划地址分配规则，部署繁琐，随节点规模增长复杂度提升，缺少服务质量控制功能，无细粒度管理和控制</p>
-<p>3 Linux内置 Traffic control 和cgroup 方式实现</p>
-<p>需要修改内核，实现难度大，而且需要在创建容器时预先指定大小，无法实现动态网络控制，实现方式不灵活，集群重新部署，需要重新配置内核环境，与DOcker的跨平台和容易部署初衷相违背</p>
-<p>4 Socetplane</p>
-<p>原有Docker命令进行封装，提供网络抽象层，支持多网络和分布式IP地址管理，虽然实现了容器地址的丰富管理，但缺少质量控制，无法实现分级管理</p>
-<p>无一劳永逸的解决方法</p>
-<h2 id="调度问题，负载问题的解决可以类比交通领域的解决方式"><a href="#调度问题，负载问题的解决可以类比交通领域的解决方式" class="headerlink" title="调度问题，负载问题的解决可以类比交通领域的解决方式"></a>调度问题，负载问题的解决可以类比交通领域的解决方式</h2>
+        <h1 id="X型架构的键帽"><a href="#X型架构的键帽" class="headerlink" title="X型架构的键帽"></a>X型架构的键帽</h1><h2 id="1-首先安装X型架构的中间部分"><a href="#1-首先安装X型架构的中间部分" class="headerlink" title="1 首先安装X型架构的中间部分"></a>1 首先安装X型架构的中间部分</h2><h2 id="2-将X型结构装进键盘槽内"><a href="#2-将X型结构装进键盘槽内" class="headerlink" title="2 将X型结构装进键盘槽内"></a>2 将X型结构装进键盘槽内</h2><h2 id="3-最终再将键帽安装上进行复原"><a href="#3-最终再将键帽安装上进行复原" class="headerlink" title="3 最终再将键帽安装上进行复原"></a>3 最终再将键帽安装上进行复原</h2><h3 id="最最关键的一部分是先进行X结构的安装"><a href="#最最关键的一部分是先进行X结构的安装" class="headerlink" title="最最关键的一部分是先进行X结构的安装"></a>最最关键的一部分是先进行X结构的安装</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -1245,12 +1225,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Docker集群的调度策略和通信优化技术研究</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">365</span></p>
+    <p><span class="copy-title">文章标题:</span>笔记本键帽安装</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">62</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-09-18, 10:25:50</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-28, 15:04:05</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/18/Docker集群的调度策略和通信优化技术研究/" title="Docker集群的调度策略和通信优化技术研究">http://jhshz520.github.io/2019/09/18/Docker集群的调度策略和通信优化技术研究/</a>
+    <p><span class="copy-title">发布时间:</span>2020-08-17, 09:07:12</p>
+    <p><span class="copy-title">最后更新:</span>2020-08-17, 09:10:01</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/08/17/笔记本键帽安装/" title="笔记本键帽安装">http://jhshz520.github.io/2020/08/17/笔记本键帽安装/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
