@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>sregistry部署 | 华中阁</title>
+  <title>华中阁</title>
   <meta name="keywords" content>
-  <meta name="description" content="sregistry部署 | 华中阁">
+  <meta name="description" content="华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介北上滨城五载，南下荆楚三年。 山河表里飘蓬客，春秋难易赤子心。 2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -324,7 +324,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="97">
-<input type="hidden" id="yelog_site_word_count" value="69.9k">
+<input type="hidden" id="yelog_site_word_count" value="69.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1069,7 +1069,7 @@
            href="/2020/09/16/sregistry部署/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="sregistry部署">sregistry部署</span>
+            <span class="post-title" title=""></span>
             <span class="post-date" title="2020-09-16 18:25:32">2020/09/16</span>
         </a>
         
@@ -1319,8 +1319,6 @@
     <div class="pjax">
         <article id="post-sregistry部署" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">sregistry部署</h1>
-    
     <div class="article-meta">
         
         
@@ -1329,12 +1327,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-10-04 11:21:51'>2020-09-16 18:25</time>
+        创建时间:<time class="date" title='更新时间: 2020-10-15 22:19:40'>2020-09-16 18:25</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:833</span>
+        <span>字数:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1353,7 +1351,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装相关依赖"><span class="toc-text">安装相关依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装docker和docker-compose"><span class="toc-text">安装docker和docker compose</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装主机依赖"><span class="toc-text">安装主机依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载所需的工程仓库"><span class="toc-text">下载所需的工程仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#进行相关设置"><span class="toc-text">进行相关设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Github-授权设置"><span class="toc-text">Github 授权设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#容器的启动和删除"><span class="toc-text">容器的启动和删除</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些docker常用命令"><span class="toc-text">一些docker常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不能够利用singularity-pull-来拉取镜像的原因"><span class="toc-text">不能够利用singularity pull 来拉取镜像的原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遇到nginx不能启动常见的解决办法"><span class="toc-text">遇到nginx不能启动常见的解决办法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直接查看与nginx相关的进程进行关闭"><span class="toc-text">直接查看与nginx相关的进程进行关闭</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在阿里云服务器上部署服务的时候拉取镜像非常慢"><span class="toc-text">在阿里云服务器上部署服务的时候拉取镜像非常慢</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#超级用户和管理员的添加"><span class="toc-text">超级用户和管理员的添加</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#与镜像进行交互"><span class="toc-text">与镜像进行交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进行超级用户和管理员的删除操作"><span class="toc-text">进行超级用户和管理员的删除操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用的新增新的team-和colletion的caozuo"><span class="toc-text">常用的新增新的team 和colletion的caozuo</span></a></li></ol></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -1368,66 +1366,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="安装相关依赖"><a href="#安装相关依赖" class="headerlink" title="安装相关依赖"></a>安装相关依赖</h1><h2 id="安装docker和docker-compose"><a href="#安装docker和docker-compose" class="headerlink" title="安装docker和docker compose"></a>安装docker和docker compose</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://docs.docker.com/engine/install/ubuntu/</span><br></pre></td></tr></table></figure>
-
-<p>安装docker compose</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.27.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
-
-<p>检验docker compose 是否已经安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装主机依赖"><a href="#安装主机依赖" class="headerlink" title="安装主机依赖"></a>安装主机依赖</h2><p>说明文档上给出的所需要的依赖环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">anyjson</span><br><span class="line">coreapi==2.3.3</span><br><span class="line">cython</span><br><span class="line">django-chosen</span><br><span class="line">django-crispy-forms</span><br><span class="line">django-datatables-view</span><br><span class="line">django-dirtyfields</span><br><span class="line">django-extensions</span><br><span class="line">django-filter</span><br><span class="line">django-form-utils</span><br><span class="line">django-gravatar2</span><br><span class="line">django-guardian</span><br><span class="line">django-hstore==1.3.5</span><br><span class="line">django-notifications-hq</span><br><span class="line">django-ratelimit==2.0.0</span><br><span class="line">django-rest-swagger</span><br><span class="line">django-rq</span><br><span class="line">django-taggit</span><br><span class="line">django-taggit-templatetags</span><br><span class="line">django-user-agents</span><br><span class="line">django==2.2.13</span><br><span class="line">djangorestframework==3.10.3</span><br><span class="line">google</span><br><span class="line">google-api-python-client</span><br><span class="line">h5py</span><br><span class="line">ipython</span><br><span class="line">markdown</span><br><span class="line">numexpr</span><br><span class="line">oauth2client==3.0</span><br><span class="line">Pillow</span><br><span class="line">PyYAML==5.1</span><br><span class="line">psycopg2-binary</span><br><span class="line">pygments</span><br><span class="line">python3-saml</span><br><span class="line">python-social-auth</span><br><span class="line">requests</span><br><span class="line">requests-oauthlib</span><br><span class="line">requests-toolbelt</span><br><span class="line">retrying</span><br><span class="line">rq-scheduler</span><br><span class="line">shapely</span><br><span class="line">social-auth-app-django</span><br><span class="line">social-auth-core[saml]</span><br><span class="line">sregistry[all-basic]&gt;=0.2.19</span><br><span class="line">uwsgi</span><br><span class="line">minio==5.0.8</span><br></pre></td></tr></table></figure>
-
-<p>查看pip是否已经安装成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip --version</span><br></pre></td></tr></table></figure>
-
-<p>利用pip进行相关python库的安装<br>真么查询都已经安装了哪些python库呢？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
-
-<p>能够显示出pip所安装的所有python库</p>
-<p>可以先进行容器的拉取和部署再根据报错信息进行相关依赖的补充安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up</span><br></pre></td></tr></table></figure>
-
-<p>可以安装Anaconda3 进行相关python库的管理和django的安装</p>
-<h2 id="下载所需的工程仓库"><a href="#下载所需的工程仓库" class="headerlink" title="下载所需的工程仓库"></a>下载所需的工程仓库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/singularityhub/sregistry</span><br><span class="line">cd sregistry</span><br><span class="line"></span><br><span class="line">git clone https://github.com/jhshz520/gridshub.git</span><br><span class="line">cd gridshub</span><br></pre></td></tr></table></figure>
-
-<p>## </p>
-<h1 id="进行相关设置"><a href="#进行相关设置" class="headerlink" title="进行相关设置"></a>进行相关设置</h1><h2 id="Github-授权设置"><a href="#Github-授权设置" class="headerlink" title="Github 授权设置"></a>Github 授权设置</h2><p>f24fe141cb652a42e494</p>
-<p>a9f04a9706ac6771c64ae6c80c35e412b9cc5f7f</p>
-<p><a href="http://gridshub.cn" target="_blank" rel="noopener">http://gridshub.cn</a></p>
-<p><a href="http://gridshub.cn/complete/github" target="_blank" rel="noopener">http://gridshub.cn/complete/github</a></p>
-<h1 id="容器的启动和删除"><a href="#容器的启动和删除" class="headerlink" title="容器的启动和删除"></a>容器的启动和删除</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">docker-compose stop</span><br><span class="line">docker-compose rm</span><br><span class="line"># 查看现有的镜像</span><br><span class="line">docker ps</span><br><span class="line"># 删除容器镜像</span><br><span class="line">docker rmi quay.io/vanessa/sregistry</span><br><span class="line">docker rmi quay.io/vanessa/sregistry nginx</span><br><span class="line"># 通过日志查看每一个容器</span><br><span class="line">docker-compose logs uwsgi</span><br><span class="line"></span><br><span class="line">#只查看最后三十行</span><br><span class="line">docker-compose logs uwsgi --tail=30 uwsgi</span><br><span class="line"># 进行交互式Debug</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line">docker exec -it 37b0f7d1332a bash</span><br><span class="line">## 或者</span><br><span class="line">NAME=$(docker ps -aqf&quot;name=sregistry_uwsgi_1&quot;)\</span><br><span class="line">docker exec -it $&#123;NAME&#125; bash</span><br><span class="line"></span><br><span class="line">python manage.py shell</span><br><span class="line">## 也可以输入python manage.py 来查看都能有哪些参数可以调用</span><br></pre></td></tr></table></figure>
-
-<h2 id="一些docker常用命令"><a href="#一些docker常用命令" class="headerlink" title="一些docker常用命令"></a>一些docker常用命令</h2><p>docker 删除所有镜像</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f$&#123;docker images -qa&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="不能够利用singularity-pull-来拉取镜像的原因"><a href="#不能够利用singularity-pull-来拉取镜像的原因" class="headerlink" title="不能够利用singularity pull 来拉取镜像的原因"></a>不能够利用singularity pull 来拉取镜像的原因</h2><p>没有进行https的认证</p>
-<h2 id="遇到nginx不能启动常见的解决办法"><a href="#遇到nginx不能启动常见的解决办法" class="headerlink" title="遇到nginx不能启动常见的解决办法"></a>遇到nginx不能启动常见的解决办法</h2><p>查看80端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo lsof -i:80</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -apn|grep 8080</span><br></pre></td></tr></table></figure>
-
-<h3 id="直接查看与nginx相关的进程进行关闭"><a href="#直接查看与nginx相关的进程进行关闭" class="headerlink" title="直接查看与nginx相关的进程进行关闭"></a>直接查看与nginx相关的进程进行关闭</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep nginx</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 [pid]</span><br></pre></td></tr></table></figure>
-
-<h1 id="在阿里云服务器上部署服务的时候拉取镜像非常慢"><a href="#在阿里云服务器上部署服务的时候拉取镜像非常慢" class="headerlink" title="在阿里云服务器上部署服务的时候拉取镜像非常慢"></a>在阿里云服务器上部署服务的时候拉取镜像非常慢</h1><p>尝试利用阿里云进行容器的加速</p>
-<p>在/etc/docker/ 下重新建立一个 daemon.json 文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;registry-mirrors&quot;:[&quot;https://bkry7tdy.mirror.aliyuncs.com&quot;],</span><br><span class="line">&quot;experimental&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>进行docker容器的重启</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systenctl restart docker</span><br></pre></td></tr></table></figure>
-
-<p>但是感觉效果依然不是特别的明显</p>
-<p>删除所有存在的镜像进行重新来过</p>
-<h2 id="超级用户和管理员的添加"><a href="#超级用户和管理员的添加" class="headerlink" title="超级用户和管理员的添加"></a>超级用户和管理员的添加</h2><h3 id="与镜像进行交互"><a href="#与镜像进行交互" class="headerlink" title="与镜像进行交互"></a>与镜像进行交互</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">方法一：</span><br><span class="line">NAME=$(docker ps -aqf &quot;name=sregistry_uwsgi_1&quot;)</span><br><span class="line">docker exec -it $&#123;NAME&#125; bash</span><br><span class="line">python manage.py shell</span><br><span class="line"></span><br><span class="line">方法二</span><br><span class="line">NAME=$(docker ps -aqf &quot;name=sregistry_uwsgi_1&quot;)</span><br><span class="line">docker exec $NAME python /code/manage.py add_superuser --username vsoch</span><br><span class="line">docker exec $NAME python /code/manage.py add_admin --username vsoch</span><br><span class="line"></span><br><span class="line">python manage.py add_superuser --username jhshz520</span><br><span class="line">python manage.py add_admin --username jhshz520</span><br></pre></td></tr></table></figure>
-
-<h3 id="进行超级用户和管理员的删除操作"><a href="#进行超级用户和管理员的删除操作" class="headerlink" title="进行超级用户和管理员的删除操作"></a>进行超级用户和管理员的删除操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py remove_superuser --username vsoch</span><br><span class="line">$ python manage.py remove_admin --username vsoch</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用的新增新的team-和colletion的caozuo"><a href="#常用的新增新的team-和colletion的caozuo" class="headerlink" title="常用的新增新的team 和colletion的caozuo"></a>常用的新增新的team 和colletion的caozuo</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it sregistry_uwsgi_1 bash</span><br><span class="line">python manage.py shell</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from shub.apps.users.models import User</span><br><span class="line">from shub.apps.main.models import Collection</span><br><span class="line">user = User.objects.get(username=&quot;myuser&quot;)</span><br><span class="line">collection = Collection.objects.get(name=&quot;mycollection&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from shub.apps.users.models import Team, User</span><br><span class="line">team = Team.objects.get(name=&quot;myteam&quot;)</span><br><span class="line">user = User.objects.get(username=&quot;myuser&quot;)</span><br><span class="line">team.members.add(user)</span><br></pre></td></tr></table></figure>
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -1440,12 +1379,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>sregistry部署</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">833</span></p>
+    <p><span class="copy-title">文章标题:</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2020-09-16, 18:25:32</p>
-    <p><span class="copy-title">最后更新:</span>2020-10-04, 11:21:51</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/09/16/sregistry部署/" title="sregistry部署">http://jhshz520.github.io/2020/09/16/sregistry部署/</a>
+    <p><span class="copy-title">最后更新:</span>2020-10-15, 22:19:40</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/09/16/sregistry部署/" title="">http://jhshz520.github.io/2020/09/16/sregistry部署/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
