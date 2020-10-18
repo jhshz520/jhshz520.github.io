@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>leetcode入门题目第一弹 | 华中阁</title>
+  <meta name="keywords" content=" leetcode ">
+  <meta name="description" content="leetcode入门题目第一弹 | 华中阁">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介北上滨城五载，南下荆楚三年。 山河表里飘蓬客，春秋难易赤子心。 2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://jhshz520.github.io/about/index.html">
+<meta property="og:site_name" content="华中阁">
+<meta property="og:description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介北上滨城五载，南下荆楚三年。 山河表里飘蓬客，春秋难易赤子心。 2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-24T09:51:44.148Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="about">
+<meta name="twitter:description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介北上滨城五载，南下荆楚三年。 山河表里飘蓬客，春秋难易赤子心。 2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>钟帅豪</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/jhshz520" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/zhong-shuai-hao/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:583614868@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=583614868&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(71)</small></div></li>
+    
+        
+            
+            <li><div data-rel="python环境">python环境<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具">工具<small>(15)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="开发">开发<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Docker">Docker<small>(9)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="容器课题相关">容器课题相关<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="JAVA">JAVA<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="编程实践">编程实践<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="项目开发">项目开发<small>(4)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="大数据">大数据<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="密码学">密码学<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="论文">论文<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="JAVA学习">JAVA学习<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法">算法<small>(3)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="Cpp算法实践">Cpp算法实践<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据库">数据库<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="系统结构">系统结构<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="随笔">随笔<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="网站开发">网站开发<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="经典算法">经典算法<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具利用">工具利用<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="数据结构">数据结构<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="71">
+<input type="hidden" id="yelog_site_word_count" value="82.1k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://grid.hust.edu.cn/">穿过丛林实验室</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">python</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">code心得</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Django</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">Docker环境</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">文献阅读</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Git 心得</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">Go</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">Linux</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">网络</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">codeblocks配置</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">Anaconda</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">博客相关</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">希尔密码探究</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">编程语言</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">leetcode</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">blog编辑相关</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">test</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">算法心得</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">分布式</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">读研心得</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">域名</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">经典算法模板</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">考试相关</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">命令行工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">刷题心得</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数论相关</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">Git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">计算机论文</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">coding 心得</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">高性能计算相关</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">链表</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">java web</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">容器迁移</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">就业规划</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="python环境 "
+           href="/2019/12/13/Anaconda-env-set/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="Anaconda env set">Anaconda env set</span>
+            <span class="post-date" title="2019-12-13 12:34:52">2019/12/13</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/11/06/Cpp中stl用法积累/"
+           data-tag="code心得"
+           data-author="" >
+            <span class="post-title" title="Cpp中stl用法积累">Cpp中stl用法积累</span>
+            <span class="post-date" title="2019-11-06 15:28:35">2019/11/06</span>
+        </a>
+        
+        <a  class="开发 "
+           href="/2020/09/21/Django初学/"
+           data-tag="Django"
+           data-author="" >
+            <span class="post-title" title="Django初学">Django初学</span>
+            <span class="post-date" title="2020-09-21 07:53:05">2020/09/21</span>
+        </a>
+        
+        <a  class="开发 "
+           href="/2020/09/21/Django模板/"
+           data-tag="Django"
+           data-author="" >
+            <span class="post-title" title="Django模板">Django模板</span>
+            <span class="post-date" title="2020-09-21 07:54:05">2020/09/21</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/10/25/Debian安装与配置/"
+           data-tag="Docker环境"
+           data-author="" >
+            <span class="post-title" title="Debian安装与配置">Debian安装与配置</span>
+            <span class="post-date" title="2019-10-25 13:26:16">2019/10/25</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2020/01/17/Dockerfile基础/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="Dockerfile基础">Dockerfile基础</span>
+            <span class="post-date" title="2020-01-17 09:19:14">2020/01/17</span>
+        </a>
+        
+        <a  class="容器课题相关 "
+           href="/2019/09/18/Docker集群的调度策略和通信优化技术研究/"
+           data-tag="文献阅读"
+           data-author="" >
+            <span class="post-title" title="Docker集群的调度策略和通信优化技术研究">Docker集群的调度策略和通信优化技术研究</span>
+            <span class="post-date" title="2019-09-18 10:25:50">2019/09/18</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/09/03/GitBash常用语句/"
+           data-tag="Git 心得"
+           data-author="" >
+            <span class="post-title" title="GitBash的常用语句">GitBash的常用语句</span>
+            <span class="post-date" title="2019-09-03 06:54:51">2019/09/03</span>
+        </a>
+        
+        <a  class="JAVA "
+           href="/2020/01/09/Eclipse相关/"
+           data-tag="工具"
+           data-author="" >
+            <span class="post-title" title="Eclipse相关">Eclipse相关</span>
+            <span class="post-date" title="2020-01-09 15:55:11">2020/01/09</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2019/12/04/Go语言进阶5/"
+           data-tag="Go"
+           data-author="" >
+            <span class="post-title" title="Go语言进阶5">Go语言进阶5</span>
+            <span class="post-date" title="2019-12-04 11:35:30">2019/12/04</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2019/11/27/Go语言进阶2/"
+           data-tag="Go"
+           data-author="" >
+            <span class="post-title" title="Go语言进阶2">Go语言进阶2</span>
+            <span class="post-date" title="2019-11-27 09:11:00">2019/11/27</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2019/11/28/Go语言进阶4/"
+           data-tag="Go"
+           data-author="" >
+            <span class="post-title" title="Go语言进阶4">Go语言进阶4</span>
+            <span class="post-date" title="2019-11-28 09:48:16">2019/11/28</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2019/11/27/Go语言进阶3/"
+           data-tag="Go"
+           data-author="" >
+            <span class="post-title" title="Go语言进阶3">Go语言进阶3</span>
+            <span class="post-date" title="2019-11-27 10:20:13">2019/11/27</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2019/11/29/Linux常用命令/"
+           data-tag="Linux"
+           data-author="" >
+            <span class="post-title" title="Linux常用命令">Linux常用命令</span>
+            <span class="post-date" title="2019-11-29 11:38:47">2019/11/29</span>
+        </a>
+        
+        <a  class="容器课题相关 "
+           href="/2019/10/31/RDMA技术/"
+           data-tag="网络"
+           data-author="" >
+            <span class="post-title" title="RDMA技术">RDMA技术</span>
+            <span class="post-date" title="2019-10-31 17:29:43">2019/10/31</span>
+        </a>
+        
+        <a  class="编程实践 "
+           href="/2019/09/18/bubble-sort-and-selection-sort/"
+           data-tag="code心得"
+           data-author="" >
+            <span class="post-title" title="bubble sort and selection sort ">bubble sort and selection sort </span>
+            <span class="post-date" title="2019-09-18 16:41:06">2019/09/18</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/11/06/codeblocks调试stl/"
+           data-tag="codeblocks配置"
+           data-author="" >
+            <span class="post-title" title="codeblocks调试stl">codeblocks调试stl</span>
+            <span class="post-date" title="2019-11-06 08:58:17">2019/11/06</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2020/09/21/conda基本使用/"
+           data-tag="Anaconda"
+           data-author="" >
+            <span class="post-title" title="conda基本使用">conda基本使用</span>
+            <span class="post-date" title="2020-09-21 08:04:28">2020/09/21</span>
+        </a>
+        
+        <a  class="项目开发 "
+           href="/2020/09/23/docker-compose学习/"
+           data-tag="Docker"
+           data-author="" >
+            <span class="post-title" title="docker-compose学习">docker-compose学习</span>
+            <span class="post-date" title="2020-09-23 18:55:44">2020/09/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/09/23/dockerfile学习/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="dockerfile学习">dockerfile学习</span>
+            <span class="post-date" title="2020-09-23 18:56:19">2020/09/23</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2019/11/21/docker实战/"
+           data-tag="docker"
+           data-author="" >
+            <span class="post-title" title="docker实战">docker实战</span>
+            <span class="post-date" title="2019-11-21 20:30:34">2019/11/21</span>
+        </a>
+        
+        <a  class="大数据 "
+           href="/2020/01/06/hadoop-在Eclipse中的配置/"
+           data-tag="工具"
+           data-author="" >
+            <span class="post-title" title="hadoop在Eclipse中的配置">hadoop在Eclipse中的配置</span>
+            <span class="post-date" title="2020-01-06 12:13:47">2020/01/06</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/10/28/hexo问题解决/"
+           data-tag="博客相关"
+           data-author="" >
+            <span class="post-title" title="hexo问题解决">hexo问题解决</span>
+            <span class="post-date" title="2019-10-28 09:11:55">2019/10/28</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/09/02/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-09-02 12:31:20">2019/09/02</span>
+        </a>
+        
+        <a  class="密码学 "
+           href="/2019/11/14/hill3密码探究/"
+           data-tag="希尔密码探究"
+           data-author="" >
+            <span class="post-title" title="hill3密码探究">hill3密码探究</span>
+            <span class="post-date" title="2019-11-14 17:43:42">2019/11/14</span>
+        </a>
+        
+        <a  class="论文 "
+           href="/2019/10/30/hpc容器集群的应用和性能优化/"
+           data-tag="文献阅读"
+           data-author="" >
+            <span class="post-title" title="hpc容器集群的应用和性能优化">hpc容器集群的应用和性能优化</span>
+            <span class="post-date" title="2019-10-30 09:05:31">2019/10/30</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/09/21/html学习/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="html学习">html学习</span>
+            <span class="post-date" title="2020-09-21 07:54:37">2020/09/21</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/11/07/image-test/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="image test">image test</span>
+            <span class="post-date" title="2019-11-07 09:04:06">2019/11/07</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/11/07/image/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="image">image</span>
+            <span class="post-date" title="2019-11-07 15:45:29">2019/11/07</span>
+        </a>
+        
+        <a  class="JAVA学习 "
+           href="/2020/01/10/java基础学习/"
+           data-tag="编程语言"
+           data-author="" >
+            <span class="post-title" title="java基础学习">java基础学习</span>
+            <span class="post-date" title="2020-01-10 09:42:52">2020/01/10</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/03/28/leetcode-list/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="leetcode_list">leetcode_list</span>
+            <span class="post-date" title="2020-03-28 20:37:51">2020/03/28</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/10/29/leetcode的playground模板/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="leetcode的playground模板">leetcode的playground模板</span>
+            <span class="post-date" title="2019-10-29 09:45:25">2019/10/29</span>
+        </a>
+        
+        <a  class="Cpp算法实践 "
+           href="/2019/12/24/leetcode实用模板/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="leetcode实用模板">leetcode实用模板</span>
+            <span class="post-date" title="2019-12-24 15:13:45">2019/12/24</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/09/11/markdown使用心得体会/"
+           data-tag="blog编辑相关"
+           data-author="" >
+            <span class="post-title" title="markdown使用心得体会">markdown使用心得体会</span>
+            <span class="post-date" title="2019-09-11 17:41:24">2019/09/11</span>
+        </a>
+        
+        <a  class="Cpp算法实践 "
+           href="/2019/10/12/map初始化的几种方式/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="map初始化的几种方式">map初始化的几种方式</span>
+            <span class="post-date" title="2019-10-12 09:03:19">2019/10/12</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/02/my-first-blog/"
+           data-tag="test"
+           data-author="" >
+            <span class="post-title" title="my first blog">my first blog</span>
+            <span class="post-date" title="2019-09-02 21:27:05">2019/09/02</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/03/20/mysql/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="mysql">mysql</span>
+            <span class="post-date" title="2020-03-20 22:05:09">2020/03/20</span>
+        </a>
+        
+        <a  class="项目开发 "
+           href="/2020/09/21/shub项目部署/"
+           data-tag="Django"
+           data-author="" >
+            <span class="post-title" title="shub项目部署">shub项目部署</span>
+            <span class="post-date" title="2020-09-21 14:41:20">2020/09/21</span>
+        </a>
+        
+        <a  class="项目开发 "
+           href="/2020/09/19/social-oauth-python/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="social-oauth-python">social-oauth-python</span>
+            <span class="post-date" title="2020-09-19 21:36:50">2020/09/19</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/21/动态规划/"
+           data-tag="算法心得"
+           data-author="" >
+            <span class="post-title" title="动态规划">动态规划</span>
+            <span class="post-date" title="2019-09-21 16:07:34">2019/09/21</span>
+        </a>
+        
+        <a  class="系统结构 "
+           href="/2019/09/03/分布式系统/"
+           data-tag="分布式"
+           data-author="" >
+            <span class="post-title" title="分布式系统">分布式系统</span>
+            <span class="post-date" title="2019-09-03 06:54:08">2019/09/03</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/11/07/博客中插入图片音乐视频/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="博客中插入图片音乐视频">博客中插入图片音乐视频</span>
+            <span class="post-date" title="2019-11-07 08:45:43">2019/11/07</span>
+        </a>
+        
+        <a  class="论文 "
+           href="/2020/01/13/中文文献阅读记录/"
+           data-tag="文献阅读"
+           data-author="" >
+            <span class="post-title" title="中文文献阅读记录">中文文献阅读记录</span>
+            <span class="post-date" title="2020-01-13 11:38:54">2020/01/13</span>
+        </a>
+        
+        <a  class="随笔 "
+           href="/2019/09/11/古今唯难甘，可与人言无二三/"
+           data-tag="读研心得"
+           data-author="" >
+            <span class="post-title" title="古今唯难甘，可与人言无二三">古今唯难甘，可与人言无二三</span>
+            <span class="post-date" title="2019-09-11 18:08:48">2019/09/11</span>
+        </a>
+        
+        <a  class="网站开发 "
+           href="/2020/10/13/域名备案/"
+           data-tag="域名"
+           data-author="" >
+            <span class="post-title" title="域名备案">域名备案</span>
+            <span class="post-date" title="2020-10-13 10:23:35">2020/10/13</span>
+        </a>
+        
+        <a  class="经典算法 "
+           href="/2019/11/11/图的遍历模板/"
+           data-tag="经典算法模板"
+           data-author="" >
+            <span class="post-title" title="图的遍历模板">图的遍历模板</span>
+            <span class="post-date" title="2019-11-11 09:12:29">2019/11/11</span>
+        </a>
+        
+        <a  class="密码学 "
+           href="/2019/11/21/密码学期末考试题目/"
+           data-tag="考试相关"
+           data-author="" >
+            <span class="post-title" title="密码学期末考试题目">密码学期末考试题目</span>
+            <span class="post-date" title="2019-11-21 15:27:28">2019/11/21</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/21/常用Dos命令/"
+           data-tag="命令行工具"
+           data-author="" >
+            <span class="post-title" title="常用Dos命令">常用Dos命令</span>
+            <span class="post-date" title="2019-10-21 14:47:13">2019/10/21</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/25/指针/"
+           data-tag="刷题心得"
+           data-author="" >
+            <span class="post-title" title="指针">指针</span>
+            <span class="post-date" title="2019-09-25 09:16:31">2019/09/25</span>
+        </a>
+        
+        <a  class="密码学 "
+           href="/2019/11/19/模多项式的运算法则/"
+           data-tag="数论相关"
+           data-author="" >
+            <span class="post-title" title="模多项式的运算法则">模多项式的运算法则</span>
+            <span class="post-date" title="2019-11-19 18:00:13">2019/11/19</span>
+        </a>
+        
+        <a  class="工具利用 "
+           href="/2020/09/16/建立github仓库并上传代码/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="建立github仓库并上传代码">建立github仓库并上传代码</span>
+            <span class="post-date" title="2020-09-16 18:51:14">2020/09/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/12/环形链表leetcode141/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="环形链表leetcode141">环形链表leetcode141</span>
+            <span class="post-date" title="2019-10-12 16:29:57">2019/10/12</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/08/17/笔记本键帽安装/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="笔记本键帽安装">笔记本键帽安装</span>
+            <span class="post-date" title="2020-08-17 09:07:12">2020/08/17</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/12/蔡乐公式leetcode1185/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="蔡乐公式leetcode1185">蔡乐公式leetcode1185</span>
+            <span class="post-date" title="2019-10-12 15:20:10">2019/10/12</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/11/09/解决Gitbash中文乱码问题/"
+           data-tag="Git"
+           data-author="" >
+            <span class="post-title" title="解决Gitbash中文乱码问题">解决Gitbash中文乱码问题</span>
+            <span class="post-date" title="2019-11-09 16:52:16">2019/11/09</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/03/编程实践/"
+           data-tag="code心得"
+           data-author="" >
+            <span class="post-title" title="编程实践
+
+
+
+">编程实践
+
+
+
+</span>
+            <span class="post-date" title="2019-09-03 06:52:29">2019/09/03</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/03/计算机顶会列表/"
+           data-tag="计算机论文"
+           data-author="" >
+            <span class="post-title" title="计算机顶会列表">计算机顶会列表</span>
+            <span class="post-date" title="2019-09-03 06:38:17">2019/09/03</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/03/邻接矩阵的使用/"
+           data-tag="coding 心得"
+           data-author="" >
+            <span class="post-title" title="邻接矩阵的使用">邻接矩阵的使用</span>
+            <span class="post-date" title="2019-09-03 06:54:51">2019/09/03</span>
+        </a>
+        
+        <a  class="随笔 "
+           href="/2019/10/23/求索之路/"
+           data-tag="读研心得"
+           data-author="" >
+            <span class="post-title" title="求索之路">求索之路</span>
+            <span class="post-date" title="2019-10-23 20:06:26">2019/10/23</span>
+        </a>
+        
+        <a  class="论文 "
+           href="/2020/01/13/高性能计算的相关论文/"
+           data-tag="高性能计算相关"
+           data-author="" >
+            <span class="post-title" title="高性能计算的相关论文">高性能计算的相关论文</span>
+            <span class="post-date" title="2020-01-13 12:58:21">2020/01/13</span>
+        </a>
+        
+        <a  class="数据结构 "
+           href="/2019/11/11/链表常用操作/"
+           data-tag="链表"
+           data-author="" >
+            <span class="post-title" title="链表常用操作">链表常用操作</span>
+            <span class="post-date" title="2019-11-11 19:46:38">2019/11/11</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/30/线段树/"
+           data-tag="算法心得"
+           data-author="" >
+            <span class="post-title" title="线段树">线段树</span>
+            <span class="post-date" title="2019-09-30 08:37:01">2019/09/30</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2019/11/22/Go语言进阶1/"
+           data-tag="Go"
+           data-author="" >
+            <span class="post-title" title="Go语言进阶1">Go语言进阶1</span>
+            <span class="post-date" title="2019-11-22 16:15:42">2019/11/22</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2019/11/09/IDEA使用手册/"
+           data-tag="java web"
+           data-author="" >
+            <span class="post-title" title="IDEA使用手册">IDEA使用手册</span>
+            <span class="post-date" title="2019-11-09 17:46:40">2019/11/09</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2020/10/09/criu学习/"
+           data-tag="容器迁移"
+           data-author="" >
+            <span class="post-title" title="criu学习">criu学习</span>
+            <span class="post-date" title="2020-10-09 08:43:41">2020/10/09</span>
+        </a>
+        
+        <a  class="项目开发 "
+           href="/2020/09/22/social-auth配置解析/"
+           data-tag="python"
+           data-author="" >
+            <span class="post-title" title="social-auth配置解析">social-auth配置解析</span>
+            <span class="post-date" title="2020-09-22 19:55:31">2020/09/22</span>
+        </a>
+        
+        <a  class="网站开发 "
+           href="/2020/09/16/sregistry部署/"
+           data-tag="工具"
+           data-author="" >
+            <span class="post-title" title="sregistry部署">sregistry部署</span>
+            <span class="post-date" title="2020-09-16 18:25:32">2020/09/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/09/12/银行待遇汇总/"
+           data-tag="就业规划"
+           data-author="" >
+            <span class="post-title" title="银行待遇汇总">银行待遇汇总</span>
+            <span class="post-date" title="2019-09-12 14:29:01">2019/09/12</span>
+        </a>
+        
+        <a  class="Docker "
+           href="/2019/11/16/Go语言基础入门/"
+           data-tag="Go"
+           data-author="" >
+            <span class="post-title" title="Go语言基础入门">Go语言基础入门</span>
+            <span class="post-date" title="2019-11-16 17:07:53">2019/11/16</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/10/18/leetcode入门题目第一弹/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="leetcode入门题目第一弹">leetcode入门题目第一弹</span>
+            <span class="post-date" title="2020-10-18 11:30:29">2020/10/18</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2020/10/18/leetcode入门题目/"
+           data-tag="leetcode"
+           data-author="" >
+            <span class="post-title" title="leetcode入门题目第一弹">leetcode入门题目第一弹</span>
+            <span class="post-date" title="2020-10-18 11:30:29">2020/10/18</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-leetcode入门题目" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">leetcode入门题目第一弹</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="算法">算法</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">leetcode</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-10-18 17:11:12'>2020-10-18 11:30</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:11.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leetdoe27移除元素"><span class="toc-text">leetdoe27移除元素</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原地移除元素"><span class="toc-text">原地移除元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#双指针的典型应用"><span class="toc-text">双指针的典型应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vector-删除元素"><span class="toc-text">vector 删除元素</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode42-接雨水栈"><span class="toc-text">leetcode42 接雨水栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组内维护一个栈"><span class="toc-text">数组内维护一个栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cb快捷键"><span class="toc-text">cb快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#eclipse"><span class="toc-text">eclipse</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么不能在int数组初始化时直接赋值"><span class="toc-text">为什么不能在int数组初始化时直接赋值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode104-二叉树的最大深度"><span class="toc-text">leetcode104 二叉树的最大深度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归、栈循环实现深度优先遍历"><span class="toc-text">递归、栈循环实现深度优先遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的递归实现超时代码"><span class="toc-text">我的递归实现超时代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode107-二叉树的层次遍历"><span class="toc-text">leetcode107 二叉树的层次遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目介绍"><span class="toc-text">题目介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的代码"><span class="toc-text">我的代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#利用队列实现，然后进行顺序的翻转"><span class="toc-text">利用队列实现，然后进行顺序的翻转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stack"><span class="toc-text">stack</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode111-二叉树的最小深度"><span class="toc-text">leetcode111 二叉树的最小深度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归最终要的是先要缕清递归的结束条件"><span class="toc-text">递归最终要的是先要缕清递归的结束条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理"><span class="toc-text">最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode342-回文链表"><span class="toc-text">leetcode342 回文链表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#翻转前半部分判断是否相等"><span class="toc-text">翻转前半部分判断是否相等</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链表翻转的关键代码"><span class="toc-text">链表翻转的关键代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mycode"><span class="toc-text">mycode</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode237-链表删除节点"><span class="toc-text">leetcode237 链表删除节点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何在不知道前一个节点时来删除这个节点"><span class="toc-text">如何在不知道前一个节点时来删除这个节点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode257-二叉树的所有路径"><span class="toc-text">leetcode257 二叉树的所有路径</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#erase（）"><span class="toc-text">erase（）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dfs-实现利用传入参数的方式实现"><span class="toc-text">dfs 实现利用传入参数的方式实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用到的几个技巧"><span class="toc-text">用到的几个技巧</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#string-的-erase（）"><span class="toc-text">string 的 erase（）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STL的find，find-if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，"><span class="toc-text">STL的find，find_if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode349-两个数组的交集"><span class="toc-text">leetcode349 两个数组的交集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#利用set集合进行去重"><span class="toc-text">利用set集合进行去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vector的assign（）函数"><span class="toc-text">Vector的assign（）函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#my-code"><span class="toc-text">my code</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode371-进位的两个整数之和"><span class="toc-text">leetcode371 进位的两个整数之和</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#二进制异或可以进行无进位加法"><span class="toc-text">二进制异或可以进行无进位加法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递归法求两数之和"><span class="toc-text">递归法求两数之和</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode387-字符串中的第一个唯一字符"><span class="toc-text">leetcode387 字符串中的第一个唯一字符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#利用map-超级简短明了的代码实现"><span class="toc-text">利用map 超级简短明了的代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的冗余没通过代码，本地能通过，leetcode报内存溢出"><span class="toc-text">我的冗余没通过代码，本地能通过，leetcode报内存溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#这种思路有问题只能解决配对问题，不能解决多个奇数的问题，例如三个重复"><span class="toc-text">这种思路有问题只能解决配对问题，不能解决多个奇数的问题，例如三个重复</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#heap–overflow-大概率是数组越界等，因此要好好检查数组的使用情况"><span class="toc-text">heap–overflow 大概率是数组越界等，因此要好好检查数组的使用情况</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#我的简便做法，两次遍历"><span class="toc-text">我的简便做法，两次遍历</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode389-找不同"><span class="toc-text">leetcode389 找不同</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#位运算的应用"><span class="toc-text">位运算的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的代码-1"><span class="toc-text">我的代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串替换法"><span class="toc-text">字符串替换法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map-计数法"><span class="toc-text">map 计数法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ASCII-差值法"><span class="toc-text">ASCII 差值法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-vesrion"><span class="toc-text">C++ vesrion:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-中可以有这样的操作"><span class="toc-text">C++中可以有这样的操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode429-N叉树的层序遍历"><span class="toc-text">leetcode429 N叉树的层序遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#queue的应用"><span class="toc-text">queue的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题的关键怎么判断节点在一层"><span class="toc-text">问题的关键怎么判断节点在一层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码如下："><span class="toc-text">代码如下：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode496-递增栈和递减栈"><span class="toc-text">leetcode496 递增栈和递减栈</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#递增栈"><span class="toc-text">递增栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#递减栈"><span class="toc-text">递减栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map-中的元素访问全都是用-中括号来访问"><span class="toc-text">map[[]]中的元素访问全都是用[]中括号来访问</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode559-N叉树的深搜"><span class="toc-text">leetcode559 N叉树的深搜</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#N叉树深搜利用for迭代器的循环"><span class="toc-text">N叉树深搜利用for迭代器的循环</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode682-棒球比赛"><span class="toc-text">leetcode682 棒球比赛</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么实现string类型向int型的转换"><span class="toc-text">怎么实现string类型向int型的转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#string-和-int-的相互转换"><span class="toc-text">string 和 int 的相互转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ps"><span class="toc-text">ps</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode739-每日气温"><span class="toc-text">leetcode739 每日气温</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#首先确定一下基础语法-for（）定义域"><span class="toc-text">首先确定一下基础语法 for（）定义域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#想要后续继续使用i特别是i的结果值，那就要在for（）外面定义int-i"><span class="toc-text">想要后续继续使用i特别是i的结果值，那就要在for（）外面定义int i</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的不考虑效率解法，超时！"><span class="toc-text">我的不考虑效率解法，超时！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#维护一个递减栈"><span class="toc-text">维护一个递减栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前置题目496和503"><span class="toc-text">前置题目496和503</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单调栈设计与模板"><span class="toc-text">单调栈设计与模板</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode859-亲密字符串"><span class="toc-text">leetcode859 亲密字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#最主要的易错点是容易漏掉判断条件致使出错"><span class="toc-text">最主要的易错点是容易漏掉判断条件致使出错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mycode-1"><span class="toc-text">mycode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#code-技巧"><span class="toc-text">code 技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set-的应用"><span class="toc-text">set 的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#string-字符处理"><span class="toc-text">string 字符处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么对字符串中的元素进行排序？"><span class="toc-text">怎么对字符串中的元素进行排序？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#leetcode1071字符串的最大公因子"><span class="toc-text">leetcode1071字符串的最大公因子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回顾两个数的最大公因子"><span class="toc-text">回顾两个数的最大公因子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#辗转相除法"><span class="toc-text">辗转相除法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？"><span class="toc-text">上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode897-递增顺序树"><span class="toc-text">leetcode897 递增顺序树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#给定一个树，按中序遍历重新排列树，使树中最左边的结点现在是树的根，并且每个结点没有左子结点，只有一个右子结点。"><span class="toc-text">给定一个树，按中序遍历重新排列树，使树中最左边的结点现在是树的根，并且每个结点没有左子结点，只有一个右子结点。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中序遍历加重排"><span class="toc-text">中序遍历加重排</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode917-字符串翻转操作"><span class="toc-text">leetcode917 字符串翻转操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#isalpha（）函数"><span class="toc-text">isalpha（）函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A的ASCII码是65-a的ASCII码是97。"><span class="toc-text">A的ASCII码是65,a的ASCII码是97。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#string-的子字符串"><span class="toc-text">string 的子字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mycode-2"><span class="toc-text">mycode</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode938-二叉搜索树的范围和"><span class="toc-text">leetcode938 二叉搜索树的范围和</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉搜索树的范围和"><span class="toc-text">二叉搜索树的范围和</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解法利用递归"><span class="toc-text">解法利用递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学会reverse（）函数的使用"><span class="toc-text">学会reverse（）函数的使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode993-二叉树的堂兄弟节点"><span class="toc-text">leetcode993 二叉树的堂兄弟节点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#两种实现方式"><span class="toc-text">两种实现方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#层序遍历解决"><span class="toc-text">层序遍历解决</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#带参数的dfs"><span class="toc-text">带参数的dfs</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode997"><span class="toc-text">leetcode997</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#图的应用"><span class="toc-text">图的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用vector来进行vector数组的截取"><span class="toc-text">利用vector来进行vector数组的截取</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode999"><span class="toc-text">leetcode999</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述-1"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的最普通解法"><span class="toc-text">我的最普通解法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#超时"><span class="toc-text">超时</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#不应该设置这么多重的循环"><span class="toc-text">// 不应该设置这么多重的循环</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在一个循环里面利用flag，还有加深for的理解，可以用if和break来整理某些逻辑"><span class="toc-text">在一个循环里面利用flag，还有加深for的理解，可以用if和break来整理某些逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#先找到车的位置"><span class="toc-text">先找到车的位置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode1027-独一无二的数"><span class="toc-text">leetcode1027 独一无二的数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述-2"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map-容器"><span class="toc-text">map 容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for循环的另一种表示形式"><span class="toc-text">for循环的另一种表示形式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for-auto-c-count"><span class="toc-text">for(auto c : count)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#求气球的个数"><span class="toc-text">求气球的个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#我的方法"><span class="toc-text">我的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用switch-的方法来对进行有限的情况来进行枚举也不失为一种好方法"><span class="toc-text">用switch 的方法来对进行有限的情况来进行枚举也不失为一种好方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode1029-两地调度"><span class="toc-text">leetcode1029 两地调度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#map怎么进行排序"><span class="toc-text">map怎么进行排序?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路一-将键和值进行对调进而按照键来进行访问，自动实现了排序"><span class="toc-text">思路一 将键和值进行对调进而按照键来进行访问，自动实现了排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#但是两者的插入方式还是有区别的"><span class="toc-text">但是两者的插入方式还是有区别的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路二-利用pair中的value值进行比较，进而排序找出，前一半"><span class="toc-text">思路二 利用pair中的value值进行比较，进而排序找出，前一半</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误解析"><span class="toc-text">错误解析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode1170-最小字母出现频次"><span class="toc-text">leetcode1170 最小字母出现频次</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#mycode-3"><span class="toc-text">mycode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#改进-存储后来的值"><span class="toc-text">改进 存储后来的值</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="leetdoe27移除元素"><a href="#leetdoe27移除元素" class="headerlink" title="leetdoe27移除元素"></a>leetdoe27移除元素</h1><h2 id="原地移除元素"><a href="#原地移除元素" class="headerlink" title="原地移除元素"></a>原地移除元素</h2><p>给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。</p>
+<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+<h2 id="双指针的典型应用"><a href="#双指针的典型应用" class="headerlink" title="双指针的典型应用"></a>双指针的典型应用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeElement(vector&lt;int&gt;&amp; nums, int val) &#123;</span><br><span class="line">        int j =0;</span><br><span class="line">        for(int i = 0;i&lt;nums.size();i++)&#123;</span><br><span class="line">           if(nums[i] != val)&#123;</span><br><span class="line">               nums[j] =nums[i];</span><br><span class="line">               j++;</span><br><span class="line">           &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        return j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="vector-删除元素"><a href="#vector-删除元素" class="headerlink" title="vector 删除元素"></a>vector 删除元素</h2><p>.clear()删除全部元素</p>
+<p>.pop_back()删除末尾元素</p>
+<p>.erase()删除指定位置元素，只输入一个int型数i则会删除i到末尾的全部元素</p>
+<p>remove() 算法由定义在 algorithm 头文件中的模板生成，它可以删除匹配特定值的一段元素。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;std::string&gt; words &#123; &quot;one&quot;, &quot;none&quot;,&quot;some&quot;, &quot;all”, &quot;none&quot;, &quot;most&quot;,&quot;many&quot;&#125;;</span><br><span class="line">auto iter = std::remove(std::begin(words), std::end(words), &quot;none&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>第二条语句在头两个参数指定的元素范围内，移除了所有匹配 remove() 的第三个参数 string(“none”) 的元素。移除元素这个表述有一点误导，remove() 是一个全局函数，所以它不能删除容器中的元素。remove() 移除元素的方式和从字符串中移除空格的方式相似，都是通过用匹配元素右边的元素来覆盖匹配元素的方式移除元素。图 1 展示了这个过程：</p>
+<p>图 1 remove() 算法的工作原理</p>
+<p>如果在 remove() 操作后输出 words 中的元素，只会输出前 5 个元素。尽管 size() 返回的值仍然是 7，而且最后两个元素仍然存在，但是它们被替换成了空字符串对象。为了摆脱这些多余的元素，可以使用成员函数 erase()。remove() 返回的迭代器可以这样使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">words.erase(iter, std::end(words));//Remove surplus elements</span><br></pre></td></tr></table></figure>
+
+<p>这被叫作 erase-remove，执行删除操作后，iter 指向最后一个元素之后的位置，所以它标识了被删除序列的第一个元素，被删除序列的结束位置由 std::end(words) 指定。当然，在一条语句中，也能先移除元素，然后再删除末尾不想要的元素：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">words.erase(std::remove(std::begin(words), std::end(words),&quot;none&quot;), std::end(words));</span><br></pre></td></tr></table></figure>
+
+<p>remove() 算法返回的迭代器作为 erase() 的第一个参数，erase() 的第二个参数是所指向容器中最后一个元素后一个位置的迭代器。了解如何为 vector 容器分配额外容量，可以让你明白会产生多少额外开销，以及可分配的内存量。</p>
+<h1 id="leetcode42-接雨水栈"><a href="#leetcode42-接雨水栈" class="headerlink" title="leetcode42 接雨水栈"></a>leetcode42 接雨水栈</h1><h2 id="数组内维护一个栈"><a href="#数组内维护一个栈" class="headerlink" title="数组内维护一个栈"></a>数组内维护一个栈</h2><p>使用栈来存储条形块的索引下标。<br>遍历数组：</p>
+<p>当栈非空且当前遍历到的数组的高度大于栈顶的高度，</p>
+<p>则可以界定中间的高度了弹出栈顶元素，计算距离，<br>C++</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">int trap(vector&lt;int&gt;&amp; height)</span><br><span class="line">&#123;</span><br><span class="line">    int ans = 0, current = 0;</span><br><span class="line">    stack&lt;int&gt; st;</span><br><span class="line">    while (current &lt; height.size()) &#123;</span><br><span class="line">        while (!st.empty() &amp;&amp; height[current] &gt; height[st.top()]) &#123;</span><br><span class="line">            int top = st.top();//保存当前栈中最小高度位置的下标</span><br><span class="line">            st.pop();</span><br><span class="line">            if (st.empty())</span><br><span class="line">                break;</span><br><span class="line">            int distance = current - st.top() - 1;</span><br><span class="line">            int bounded_height = min(height[current], height[st.top()]) - height[top];//可以看做是一层一层的叠加，bounded_height看做是左右中最小高度与前一个次小高度的高度差</span><br><span class="line">            ans += distance * bounded_height;</span><br><span class="line">        &#125;</span><br><span class="line">        st.push(current++);</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="cb快捷键"><a href="#cb快捷键" class="headerlink" title="cb快捷键"></a>cb快捷键</h3><p>crtl + D 快速复制一行</p>
+<h3 id="eclipse"><a href="#eclipse" class="headerlink" title="eclipse"></a>eclipse</h3><p>ctrl +alt+下箭头</p>
+<h3 id="为什么不能在int数组初始化时直接赋值"><a href="#为什么不能在int数组初始化时直接赋值" class="headerlink" title="为什么不能在int数组初始化时直接赋值"></a>为什么不能在int数组初始化时直接赋值</h3><p> int count[26] ={101}</p>
+<p> 这样的语句的最终结果是只有第一项是101，其余各项还都</p>
+<p> 是直接赋值为零</p>
+<h1 id="leetcode104-二叉树的最大深度"><a href="#leetcode104-二叉树的最大深度" class="headerlink" title="leetcode104 二叉树的最大深度"></a>leetcode104 二叉树的最大深度</h1><h2 id="递归、栈循环实现深度优先遍历"><a href="#递归、栈循环实现深度优先遍历" class="headerlink" title="递归、栈循环实现深度优先遍历"></a>递归、栈循环实现深度优先遍历</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">//深度优先：递归版</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxDepth(TreeNode* root) &#123;</span><br><span class="line">        if(root==NULL) return 0;</span><br><span class="line">        int l=maxDepth(root-&gt;left)+1;</span><br><span class="line">        int r=maxDepth(root-&gt;right)+1;</span><br><span class="line">        return l&gt;r?l:r;   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">//深度优先：用栈的循环版</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxDepth(TreeNode* root) &#123;</span><br><span class="line">        if(root==NULL) return 0;</span><br><span class="line">        stack&lt;pair&lt;TreeNode*,int&gt;&gt; s;</span><br><span class="line">        TreeNode* p=root;</span><br><span class="line">        int Maxdeep=0;</span><br><span class="line">        int deep=0;</span><br><span class="line">        while(!s.empty()||p!=NULL)//若栈非空，则说明还有一些节点的右子树尚未探索；若p非空，意味着还有一些节点的左子树尚未探索</span><br><span class="line">        &#123;</span><br><span class="line">            while(p!=NULL)//优先往左边走</span><br><span class="line">            &#123;</span><br><span class="line">                s.push(pair&lt;TreeNode*,int&gt;(p,++deep));</span><br><span class="line">                p=p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            p=s.top().first;//若左边无路，就预备右拐。右拐之前，记录右拐点的基本信息</span><br><span class="line">            deep=s.top().second;</span><br><span class="line">            if(Maxdeep&lt;deep) Maxdeep=deep;//预备右拐时，比较当前节点深度和之前存储的最大深度</span><br><span class="line">            s.pop();//将右拐点出栈；此时栈顶为右拐点的前一个结点。在右拐点的右子树全被遍历完后，会预备在这个节点右拐</span><br><span class="line">            p=p-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        return Maxdeep;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">//广度优先：使用队列</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxDepth(TreeNode* root) &#123;</span><br><span class="line">         if(root==NULL) return 0;</span><br><span class="line">         deque&lt;TreeNode*&gt; q;</span><br><span class="line">         q.push_back(root);</span><br><span class="line">         int deep=0;</span><br><span class="line">         while(!q.empty())</span><br><span class="line">         &#123;</span><br><span class="line">             deep++;</span><br><span class="line">             int num=q.size();</span><br><span class="line">             for(int i=1;i&lt;=num;i++)</span><br><span class="line">             &#123;</span><br><span class="line">                TreeNode* p=q.front();</span><br><span class="line">                q.pop_front();</span><br><span class="line">                if(p-&gt;left) q.push_back(p-&gt;left);</span><br><span class="line">                if(p-&gt;right) q.push_back(p-&gt;right);</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         return deep;         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="我的递归实现超时代码"><a href="#我的递归实现超时代码" class="headerlink" title="我的递归实现超时代码"></a>我的递归实现超时代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int dfs(int depth,TreeNode * node)&#123;</span><br><span class="line">    //int l =depth,r = depth;</span><br><span class="line">    if(!node)</span><br><span class="line">        return depth;</span><br><span class="line">    if(node-&gt;left)&#123;</span><br><span class="line">        //l +=1;</span><br><span class="line">       dfs(1+depth,node-&gt;left);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">       if(node-&gt;right)&#123;</span><br><span class="line">        //r +=1;</span><br><span class="line">           //node = node-&gt;right;</span><br><span class="line">           dfs(1+depth,node-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">    return max(dfs(1+depth,node-&gt;left),dfs(1+depth,node-&gt;right));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode107-二叉树的层次遍历"><a href="#leetcode107-二叉树的层次遍历" class="headerlink" title="leetcode107 二叉树的层次遍历"></a>leetcode107 二叉树的层次遍历</h1><h2 id="题目介绍"><a href="#题目介绍" class="headerlink" title="题目介绍"></a>题目介绍</h2><p>给定一个二叉树，返回其节点值自底向上的层次遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）</p>
+<h2 id="我的代码"><a href="#我的代码" class="headerlink" title="我的代码"></a>我的代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;vector&lt;int&gt; &gt; result;//</span><br><span class="line">        vector&lt;int&gt; floor;</span><br><span class="line">     TreeNode * q[10000];</span><br><span class="line">        int front ,rear;</span><br><span class="line">        TreeNode * p = root;</span><br><span class="line">        front = rear = -1;</span><br><span class="line">        int last = 0;</span><br><span class="line">        if(!root) return result;</span><br><span class="line">        q[++rear] = root;//first root put in queue</span><br><span class="line">        while(front!=rear)&#123;</span><br><span class="line">            p = q[++front];</span><br><span class="line">      </span><br><span class="line">            floor.push_back(p-&gt;val);</span><br><span class="line">            if(p-&gt;left)&#123;</span><br><span class="line">                q[++rear] = p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">              if(p-&gt;right)&#123;</span><br><span class="line">                q[++rear] = p-&gt;right;</span><br><span class="line">            &#125;</span><br><span class="line">              if(front == last)&#123;</span><br><span class="line">            last = rear;</span><br><span class="line">            result.push_back(floor);</span><br><span class="line">                  floor.clear();</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        reverse(result.begin(),result.end());</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="利用队列实现，然后进行顺序的翻转"><a href="#利用队列实现，然后进行顺序的翻转" class="headerlink" title="利用队列实现，然后进行顺序的翻转"></a>利用队列实现，然后进行顺序的翻转</h3><h3 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h3><p>思路：此题需要熟悉二叉树的层次遍历，对于常见的层次遍历是利用队列（先进先出）的特性进行实现的，总的思路就是我们每遍历一个节点就把该节点的左孩子和右孩子放进队列（顺序很重要），然后遍历完这个节点之后就从队列中取出头节点（取出的节点有可能是右边的同层节点，也有可能是下一层的第一个节点），然后直到遍历完成。以上就是层次遍历的思路。<br>对于本题，额外需要注意的是判断什么时候遍历完一层，我们可以采取使用一个记录下一层位置的一个值来判断什么时候完成遍历的。我们首先就应该在循环外面把根节点放入队列，然后令last等于0，这其实是让last指向队尾，什么时候我们从队列中取出元素，如果取出到last的时候就代表我们已经遍历完一层，同时每遍历完一层，就应该更新last的值，让last=rear,因为遍历完一层了，说明旗下所有的孩子均已经入队了，所以此时rear就对应出下一层的最大值。此算法强烈推荐大家记住，面试常考。</p>
+<p>与老师进行沟通，根据教学计划制定相应的助教工作方案，协助老师整理算法题库和教辅资料，自己也进行相关算法的学习与复习，向老师了解本科生的学习情况，便于后续对学生平时的表现给予公正的评价。</p>
+<h1 id="leetcode111-二叉树的最小深度"><a href="#leetcode111-二叉树的最小深度" class="headerlink" title="leetcode111 二叉树的最小深度"></a>leetcode111 二叉树的最小深度</h1><h2 id="递归最终要的是先要缕清递归的结束条件"><a href="#递归最终要的是先要缕清递归的结束条件" class="headerlink" title="递归最终要的是先要缕清递归的结束条件"></a>递归最终要的是先要缕清递归的结束条件</h2><h2 id="最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理"><a href="#最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理" class="headerlink" title="最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理"></a>最难的是有有一颗子树不存在的情况利用右子树进行递归左子树同理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"># java版本</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public int minDepth(TreeNode root) &#123;</span><br><span class="line">        if(root == null) return 0;</span><br><span class="line">        int m1 = minDepth(root.left);</span><br><span class="line">        int m2 = minDepth(root.right);</span><br><span class="line">        //1.如果左孩子和右孩子有为空的情况，直接返回m1+m2+1</span><br><span class="line">        //2.如果都不为空，返回较小深度+1</span><br><span class="line">        return root.left == null || root.right == null ? m1 + m2 + 1 : Math.min(m1,m2) + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line">    int minDepth(TreeNode* root) &#123;</span><br><span class="line">        //int min = 0;</span><br><span class="line">        int l,r;</span><br><span class="line">        if(!root)</span><br><span class="line">            return 0;</span><br><span class="line">       // int level =1;</span><br><span class="line">        if(root-&gt;left==NULL&amp;&amp;root-&gt;right==NULL)</span><br><span class="line">            return 1;//</span><br><span class="line">        </span><br><span class="line">        l = minDepth(root-&gt;left);</span><br><span class="line">         r = minDepth(root-&gt;right);</span><br><span class="line">         if((!root-&gt;right)||(!root-&gt;left))</span><br><span class="line">             return l+r+1;</span><br><span class="line">             </span><br><span class="line">           </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        return min(l,r)+1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode342-回文链表"><a href="#leetcode342-回文链表" class="headerlink" title="leetcode342 回文链表"></a>leetcode342 回文链表</h1><h2 id="翻转前半部分判断是否相等"><a href="#翻转前半部分判断是否相等" class="headerlink" title="翻转前半部分判断是否相等"></a>翻转前半部分判断是否相等</h2><p>思路：此题基本思路就是讲链表分为两段，并且把前面一段进行倒置，然后再比较前后两段是否相同即可，最简单的方法就是先计算链表的长度，然后将前面一半用头插法的办法进行倒置，最后再比较，但是由于需要的是一半这个特殊的位置，所以我们可以考虑快慢指针，何谓快慢指针，其实就是两个指针，一根指针一次移动一个位置，另一个指针一次移动两个位置，就好比两个人走路一个速度为v,一个速度为2v,当速度快的人走到底了设长度为x,这个速度快的人所话的时间就为x/(2v)而对于相同的时间而言对于那个走得慢的就走到的距离为d. d = v* t,而t为x/(2v),代入就为d = x/2所以当一个人走到底了另一个人正好走到了一半。所以快慢指针适合用于有中点相关的场景，同时为了更加简便，我们可以采用一边移动一边将其倒置，这个倒置的顺序只需要在图上画一画就凑出来了，同时需要注意链表个数为奇数和为偶数对于后一半的头结点位置有所不同。所以此题最关键就是可以在找到中点的同时就进行倒置了，也要记住有中点或倍数的时候可以考虑快慢指针来解决问题。</p>
+<h2 id="链表翻转的关键代码"><a href="#链表翻转的关键代码" class="headerlink" title="链表翻转的关键代码"></a>链表翻转的关键代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ListNode * pre;</span><br><span class="line">ListNode* s =NULL;</span><br><span class="line">slow = head;</span><br><span class="line">pre = slow;</span><br><span class="line">slow = slow-&gt;next;</span><br><span class="line">pre-&gt;next = s;</span><br><span class="line">s = pre;</span><br></pre></td></tr></table></figure>
+
+<h2 id="mycode"><a href="#mycode" class="headerlink" title="mycode"></a>mycode</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode *next;</span><br><span class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool isPalindrome(ListNode* head) &#123;</span><br><span class="line">        if(!head||!head-&gt;next)</span><br><span class="line">            return true;</span><br><span class="line">        ListNode * slow,*fast;</span><br><span class="line">        slow = fast = head;</span><br><span class="line">        ListNode * s =NULL;</span><br><span class="line">        ListNode * pre = NULL ;</span><br><span class="line">        while(fast!=NULL&amp;&amp;fast-&gt;next!=NULL)&#123;//很关键的一个步骤能够便于后续区分奇数还是偶数，奇数时不是尾指针，偶数时则是尾指针,指向空指针,因为fast是一次跳两个因此要同时判断此时的fast和下一时刻的fast，不然会造成越界溢出</span><br><span class="line">            pre =slow;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">            fast = fast-&gt;next-&gt;next;</span><br><span class="line">            pre-&gt;next = s;</span><br><span class="line">            s = pre;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode * tmp;</span><br><span class="line">        tmp = slow;</span><br><span class="line">        if(fast!=NULL) //判断出数目为偶数</span><br><span class="line">        tmp =tmp-&gt;next;//偶数个后半部分则从中点n+1开始</span><br><span class="line">        while(tmp!=NULL)&#123;</span><br><span class="line">            if(tmp-&gt;val!=pre-&gt;val)</span><br><span class="line">                return false;</span><br><span class="line">            else&#123;</span><br><span class="line">                tmp = tmp-&gt;next;</span><br><span class="line">                pre = pre-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode237-链表删除节点"><a href="#leetcode237-链表删除节点" class="headerlink" title="leetcode237 链表删除节点"></a>leetcode237 链表删除节点</h1><h2 id="如何在不知道前一个节点时来删除这个节点"><a href="#如何在不知道前一个节点时来删除这个节点" class="headerlink" title="如何在不知道前一个节点时来删除这个节点"></a>如何在不知道前一个节点时来删除这个节点</h2><p>先把后面的节点转存到要删除的节点然后删除后面的节点即可，然后删除后面的节点</p>
+<h1 id="leetcode257-二叉树的所有路径"><a href="#leetcode257-二叉树的所有路径" class="headerlink" title="leetcode257 二叉树的所有路径"></a>leetcode257 二叉树的所有路径</h1><h2 id="erase（）"><a href="#erase（）" class="headerlink" title="erase（）"></a>erase（）</h2><p>ector.erase()的功能从指定容器中删除指定位置的元素或某段范围内的元素，有以下两种重载方式：</p>
+<p>iterator erase( iterator _Where);//删除指定位置的元素，返回值是一个迭代器，指向删除元素的下一个元素；<br>iterator erase( iterator _First, iterator _Last);//删除从_First开始到_Last位置(不包括_Last位置)的元素，返回值也是一个迭代器，指向最后一个删除元素的下一个位置。</p>
+<p>调用erase()方法后，vector后面的元素会向前移位,一般在调用该方法后将迭代器自减一。</p>
+<p>veci.erase(iter)之后，iter就变成了一个野指针，对一个野指针进行 iter++ 是肯定会出错</p>
+<h2 id="dfs-实现利用传入参数的方式实现"><a href="#dfs-实现利用传入参数的方式实现" class="headerlink" title="dfs 实现利用传入参数的方式实现"></a>dfs 实现利用传入参数的方式实现</h2> <figure class="highlight plain"><figcaption><span>binaryTreePaths(TreeNode* root) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    vector&lt;string&gt; res;</span><br><span class="line">    string path;</span><br><span class="line">   dfs(root,path,res);</span><br><span class="line">    return res;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">void dfs(TreeNode * root,string path,vector &lt;string&gt; &amp;res)&#123;</span><br><span class="line">   if(!root) return;</span><br><span class="line">    path.append(to_string(root-&gt;val));</span><br><span class="line">    path.append(&quot;-&gt;&quot;);</span><br><span class="line">    if(root-&gt;left==NULL&amp;&amp;root-&gt;right==NULL)</span><br><span class="line">        path.erase(path.size()-1);</span><br><span class="line">    res.push_back(path);</span><br><span class="line">    dfs(root-&gt;left,path,res);</span><br><span class="line">    dfs(root-&gt;right,path,res);</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="用到的几个技巧"><a href="#用到的几个技巧" class="headerlink" title="用到的几个技巧"></a>用到的几个技巧</h3><p>1 利用参数传递来进行每次的值得录入</p>
+<p>2 string类型每次会创建一个新的副本</p>
+<p>3 $引用可以对全局变量的值进行一个操作</p>
+<p>4 string的最后一位默认是“”空值</p>
+<h2 id="string-的-erase（）"><a href="#string-的-erase（）" class="headerlink" title="string 的 erase（）"></a>string 的 erase（）</h2><p>1 string.erase(pos,n)          //删除从pos开始的n个字符    string.erase(0,1);   删除第一个字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"> </span><br><span class="line">using namespace std;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   string::iterator i;</span><br><span class="line">   string s;</span><br><span class="line">   cin&gt;&gt;s;</span><br><span class="line">   s.erase(1,2);</span><br><span class="line">   cout&lt;&lt;s;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2   //删除pos处的一个字符（pos是string类型的迭代器）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">string.erase(pos)      </span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"> </span><br><span class="line">using namespace std;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   string::iterator i;</span><br><span class="line">   string s;</span><br><span class="line">   cin&gt;&gt;s;</span><br><span class="line">   i = s.begin()+3;</span><br><span class="line">   s.erase(i);</span><br><span class="line">   cout&lt;&lt;s;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、string.erase(first,last)    //删除从first到last中间的字符（first和last都是string类型的迭代器）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"> </span><br><span class="line">using namespace std;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">   string::iterator i;</span><br><span class="line">   string s;</span><br><span class="line">   cin&gt;&gt;s;</span><br><span class="line">   s.erase(s.begin()+1,s.end()-1);</span><br><span class="line">   cout&lt;&lt;s;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4 如果直接给一个int值，则表示从该int值处开始直到结尾</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; s.erase(s.size()-2)&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+
+<h2 id="STL的find，find-if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，"><a href="#STL的find，find-if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，" class="headerlink" title="STL的find，find_if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，"></a>STL的find，find_if函数提供了一种对数组、STL容器进行查找的方法。使用该函数，</h2><p>需 #include <algorithm><br>我们查找一个list中的数据，通常用find()，例如：</algorithm></p>
+<h1 id="leetcode349-两个数组的交集"><a href="#leetcode349-两个数组的交集" class="headerlink" title="leetcode349 两个数组的交集"></a>leetcode349 两个数组的交集</h1><h2 id="利用set集合进行去重"><a href="#利用set集合进行去重" class="headerlink" title="利用set集合进行去重"></a>利用set集合进行去重</h2><p>set集合<br>set.insert（）函数</p>
+<h2 id="Vector的assign（）函数"><a href="#Vector的assign（）函数" class="headerlink" title="Vector的assign（）函数"></a>Vector的assign（）函数</h2><p>vector 有个函数assign, 可以帮助执行赋值操作。</p>
+<p>assign会清空你的容器。</p>
+<p>assign函数:</p>
+<p>函数原型：</p>
+<p>void assign(const_iterator first,const_iterator last);</p>
+<p>void assign(size_type n,const T&amp; x = T());</p>
+<p>功能：</p>
+<p>将区间[first,last)的元素赋值到当前的vector容器中，或者赋n个值为x的元素到vector容器中，这个容器会清除掉vector容器中以前的内容。</p>
+<h2 id="my-code"><a href="#my-code" class="headerlink" title="my code"></a>my code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; intersection(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123;</span><br><span class="line">        vector&lt;int&gt; nums;//可以直接set.insert()函数将元素插入到set集合中</span><br><span class="line">        //set&lt;int&gt; res;</span><br><span class="line">        int i ,j;</span><br><span class="line">        i = j =0;</span><br><span class="line">        if(nums2.size()==0||nums1.size()==0)</span><br><span class="line">            return nums;</span><br><span class="line">        sort(nums1.begin(),nums1.end());</span><br><span class="line">        sort(nums2.begin(),nums2.end());//利用set去重</span><br><span class="line">        while(i &lt; nums1.size()&amp;&amp;j&lt;nums2.size())&#123;</span><br><span class="line">            if(nums1[i]&lt;nums2[j])&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;else if(nums1[i]&gt;nums2[j])&#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                nums.push_back(nums1[i]);</span><br><span class="line">                i++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        set &lt;int&gt; s(nums.begin(),nums.end());</span><br><span class="line">        nums.assign(s.begin(),s.end());</span><br><span class="line">        return nums;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode371-进位的两个整数之和"><a href="#leetcode371-进位的两个整数之和" class="headerlink" title="leetcode371 进位的两个整数之和"></a>leetcode371 进位的两个整数之和</h1><h2 id="二进制异或可以进行无进位加法"><a href="#二进制异或可以进行无进位加法" class="headerlink" title="二进制异或可以进行无进位加法"></a>二进制异或可以进行无进位加法</h2><p>我们知道，在位运算操作中，异或的一个重要特性是无进位加法</p>
+<p>如果要得到 a + b 的最终值，我们还要找到进位的数，把这二者相加。在位运算中，我们可以使用与操作获得进位</p>
+<p>利用位操作实现加法</p>
+<p>首先看十进制是如何做的： 5+7=12，三步走</p>
+<pre><code>第一步：相加各位的值，不算进位，得到2。
+第二步：计算进位值，得到10. 如果这一步的进位值为0，那么第一步得到的值就是最终结果。
+第三步：重复上述两步，只是相加的值变成上述两步的得到的结果2和10，得到12。</code></pre><p>同样我们可以用三步走的方式计算二进制值相加： 5—101，7—111</p>
+<pre><code>第一步：相加各位的值，不算进位，得到010，二进制每位相加就相当于各位做异或操作，101^111。
+第二步：计算进位值，得到1010，相当于各位进行与操作得到101，再向左移一位得到1010，(101&amp;111)&lt;&lt;1。
+第三步重复上述两步，各位相加 010^1010=1000，进位值为100=(010 &amp; 1010)&lt;&lt;1。
+继续重复上述两步：1000^100 = 1100，进位值为0，跳出循环，1100为最终结果。
+结束条件：进位为0，即a为最终的求和结果。</code></pre><h2 id="递归法求两数之和"><a href="#递归法求两数之和" class="headerlink" title="递归法求两数之和"></a>递归法求两数之和</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int getSum(int a, int b) &#123;</span><br><span class="line">       unsigned int c =a^b;</span><br><span class="line">       unsigned int d =a&amp;b;</span><br><span class="line">        d = d&lt;&lt;1;</span><br><span class="line">       while(d)&#123;</span><br><span class="line">          </span><br><span class="line">           return getSum(c,d);</span><br><span class="line">       &#125;</span><br><span class="line">       return c;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode387-字符串中的第一个唯一字符"><a href="#leetcode387-字符串中的第一个唯一字符" class="headerlink" title="leetcode387 字符串中的第一个唯一字符"></a>leetcode387 字符串中的第一个唯一字符</h1><h2 id="利用map-超级简短明了的代码实现"><a href="#利用map-超级简短明了的代码实现" class="headerlink" title="利用map 超级简短明了的代码实现"></a>利用map 超级简短明了的代码实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">  public:</span><br><span class="line">    int firstUniqChar(string s) &#123;</span><br><span class="line">        unordered_map&lt;char, int&gt; map;</span><br><span class="line">        for (auto &amp;c : s) ++map[c];</span><br><span class="line">        for (auto &amp;c : s) if (map[c] == 1) return s.find_first_of(c);</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="我的冗余没通过代码，本地能通过，leetcode报内存溢出"><a href="#我的冗余没通过代码，本地能通过，leetcode报内存溢出" class="headerlink" title="我的冗余没通过代码，本地能通过，leetcode报内存溢出"></a>我的冗余没通过代码，本地能通过，leetcode报内存溢出</h2><h2 id="这种思路有问题只能解决配对问题，不能解决多个奇数的问题，例如三个重复"><a href="#这种思路有问题只能解决配对问题，不能解决多个奇数的问题，例如三个重复" class="headerlink" title="这种思路有问题只能解决配对问题，不能解决多个奇数的问题，例如三个重复"></a>这种思路有问题只能解决配对问题，不能解决多个奇数的问题，例如三个重复</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int firstUniqChar(string s) &#123;</span><br><span class="line">      vector&lt;char&gt; v;</span><br><span class="line">        v.push_back(s[0]);</span><br><span class="line">       // cout &lt;&lt; v[i];</span><br><span class="line">      int pos[26];</span><br><span class="line">        for(int i = 0; i &lt;26;i++)&#123;</span><br><span class="line">            pos[i]  =-1;</span><br><span class="line">        &#125;</span><br><span class="line">        pos[s[0]-97] = 0;</span><br><span class="line">        for(int i = 1;i &lt;s.size();i++)&#123;</span><br><span class="line">            if(pos[s[i]-97]==-1)&#123;</span><br><span class="line">                pos[s[i]-97] = i;</span><br><span class="line">            &#125;</span><br><span class="line">            for(int j = 0; ;)&#123;</span><br><span class="line">                if(s[i]==v[j]&amp;&amp;j&lt;v.size())&#123;//这里容易报堆栈溢出的错误应该先判断j是否与size（）相等了，如果相等则不进行下面的操作，v[j]不访问也就不会数组越界</span><br><span class="line">                    cout &lt;&lt; *(v.begin()+j);</span><br><span class="line">                    v.erase(v.begin()+j);</span><br><span class="line">                    break;</span><br><span class="line"></span><br><span class="line">            &#125;else if(s[i]!=v[j]&amp;&amp;j&lt;v.size())&#123;</span><br><span class="line">                        j++;</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                       v.push_back(s[i]);</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        // cout &lt;&lt; *(v.begin()+j);</span><br><span class="line">          return pos[v[0]-97];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="heap–overflow-大概率是数组越界等，因此要好好检查数组的使用情况"><a href="#heap–overflow-大概率是数组越界等，因此要好好检查数组的使用情况" class="headerlink" title="heap–overflow 大概率是数组越界等，因此要好好检查数组的使用情况"></a>heap–overflow 大概率是数组越界等，因此要好好检查数组的使用情况</h1><h2 id="我的简便做法，两次遍历"><a href="#我的简便做法，两次遍历" class="headerlink" title="我的简便做法，两次遍历"></a>我的简便做法，两次遍历</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">if(s.size()==0)</span><br><span class="line">            return -1;</span><br><span class="line">        int pos[26] = &#123;0&#125;;</span><br><span class="line">        for(int i =0; i&lt;s.size();i++)&#123;</span><br><span class="line">            pos[s[i]-&apos;a&apos;]++;</span><br><span class="line">        &#125;</span><br><span class="line">        int i =0;</span><br><span class="line">        for(; i&lt;s.size();i++)&#123;</span><br><span class="line">            if(pos[s[i]-&apos;a&apos;]==1)</span><br><span class="line">               return i;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return -1;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode389-找不同"><a href="#leetcode389-找不同" class="headerlink" title="leetcode389 找不同"></a>leetcode389 找不同</h1><h2 id="位运算的应用"><a href="#位运算的应用" class="headerlink" title="位运算的应用"></a>位运算的应用</h2><p>给定两个字符串 s 和 t，它们只包含小写字母。</p>
+<p>字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。</p>
+<p>请找出在 t 中被添加的字母。</p>
+<h2 id="我的代码-1"><a href="#我的代码-1" class="headerlink" title="我的代码"></a>我的代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">char findTheDifference(string s, string t) &#123;</span><br><span class="line">       char a = t[t.size()-1];</span><br><span class="line">       for(int i = 0 ;i &lt;s.size();i++)&#123;</span><br><span class="line">           a^=s[i];</span><br><span class="line">           a^=t[i];</span><br><span class="line">       &#125;</span><br><span class="line">       return a;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串替换法"><a href="#字符串替换法" class="headerlink" title="字符串替换法"></a>字符串替换法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static char findTheDifference(String s, String t) &#123;</span><br><span class="line">    for(Character c : s.toCharArray())&#123;</span><br><span class="line">        t = t.replaceFirst(c.toString(),&quot;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return t.toCharArray()[0];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="map-计数法"><a href="#map-计数法" class="headerlink" title="map 计数法"></a>map 计数法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public static char findTheDifference(String s, String t) &#123;</span><br><span class="line">    Character result = null;</span><br><span class="line">    Map&lt;Character, Integer&gt; sMap = new HashMap&lt;&gt;();</span><br><span class="line">    Map&lt;Character, Integer&gt; tMap = new HashMap&lt;&gt;();</span><br><span class="line">    for (Character c : s.toCharArray()) &#123;</span><br><span class="line">        if (!sMap.containsKey(c)) &#123;</span><br><span class="line">            sMap.put(c, 0);</span><br><span class="line">        &#125;</span><br><span class="line">        sMap.put(c, sMap.get(c) + 1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (Character c : t.toCharArray()) &#123;</span><br><span class="line">        if (!tMap.containsKey(c)) &#123;</span><br><span class="line">            tMap.put(c, 0);</span><br><span class="line">        &#125;</span><br><span class="line">        tMap.put(c, tMap.get(c) + 1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Set&lt;Map.Entry&lt;Character, Integer&gt;&gt; entries = tMap.entrySet();</span><br><span class="line">    for (Map.Entry&lt;Character, Integer&gt; entry : entries) &#123;</span><br><span class="line">        Character key = entry.getKey();</span><br><span class="line">        Integer value = entry.getValue();</span><br><span class="line">        if (!value.equals(sMap.get(key))) &#123;</span><br><span class="line">            result = key;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="ASCII-差值法"><a href="#ASCII-差值法" class="headerlink" title="ASCII 差值法"></a>ASCII 差值法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static char findTheDifference(String s, String t) &#123;</span><br><span class="line">    int sCount = 0;</span><br><span class="line">    int tCount = 0;</span><br><span class="line">    for (Character c : s.toCharArray()) &#123;</span><br><span class="line">        sCount += c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (Character c : t.toCharArray()) &#123;</span><br><span class="line">        tCount += c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return (char)(tCount - sCount);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="C-vesrion"><a href="#C-vesrion" class="headerlink" title="C++ vesrion:"></a>C++ vesrion:</h2><p>t.toCharArray()<br>字符串的toCharArray（）方法<br>public char[] toCharArray()</p>
+<p>java 语言中该方法的作用是返回一个字符数组，该字符数组中存放了当前字符串中的所有字符<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public static char findTheDifference(String s, String t) &#123;</span><br><span class="line">    int sCount = 0;</span><br><span class="line">    int tCount = 0;</span><br><span class="line">    for (Character c : s.toCharArray()) &#123;</span><br><span class="line">        sCount += c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for (Character c : t.toCharArray()) &#123;</span><br><span class="line">        tCount += c;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return (char)(tCount - sCount);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="C-中可以有这样的操作"><a href="#C-中可以有这样的操作" class="headerlink" title="C++中可以有这样的操作"></a>C++中可以有这样的操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">char findTheDifference(string s, string t) &#123;</span><br><span class="line">        int sum = 0;</span><br><span class="line">        for(int i=0;i&lt;t.length();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += t[i];</span><br><span class="line">            if(i &lt; s.length())</span><br><span class="line">                sum -= s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        return (char)sum;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode429-N叉树的层序遍历"><a href="#leetcode429-N叉树的层序遍历" class="headerlink" title="leetcode429 N叉树的层序遍历"></a>leetcode429 N叉树的层序遍历</h1><h2 id="queue的应用"><a href="#queue的应用" class="headerlink" title="queue的应用"></a>queue的应用</h2><p>pop（）</p>
+<p>front（）</p>
+<p>push（）</p>
+<p>back（）</p>
+<h2 id="问题的关键怎么判断节点在一层"><a href="#问题的关键怎么判断节点在一层" class="headerlink" title="问题的关键怎么判断节点在一层"></a>问题的关键怎么判断节点在一层</h2><p>入队列时先判断一下队列中的节点个数，在压入队列时一次性压入一层的节点，</p>
+<p>在对队列的节点进行访问时，出队列前将其记录在vector中进行存储</p>
+<h2 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">// Definition for a Node.</span><br><span class="line">class Node &#123;</span><br><span class="line">public:</span><br><span class="line">    int val;</span><br><span class="line">    vector&lt;Node*&gt; children;</span><br><span class="line"></span><br><span class="line">    Node() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    Node(int _val, vector&lt;Node*&gt; _children) &#123;</span><br><span class="line">        val = _val;</span><br><span class="line">        children = _children;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">*/</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; levelOrder(Node* root) &#123;</span><br><span class="line">        vector&lt;vector &lt;int&gt; &gt; res;</span><br><span class="line">        queue &lt;Node * &gt; q;//怎么判断该层结束了？</span><br><span class="line">        //一次压入一层</span><br><span class="line">        q.push(root);</span><br><span class="line">      //  vector&lt;int&gt; first;</span><br><span class="line">        if(!root)</span><br><span class="line">            return &#123;&#125;;</span><br><span class="line">       // first.push_back(root-&gt;val);</span><br><span class="line">        //res.push_back(first);</span><br><span class="line">        while(!q.empty())&#123;</span><br><span class="line">            int cnt = q.size();</span><br><span class="line">           </span><br><span class="line">            </span><br><span class="line">            //q.pop();</span><br><span class="line">              vector&lt;int&gt; ans;</span><br><span class="line">            for(int i = 0;i&lt;cnt;i++)&#123;</span><br><span class="line">                Node * cur = q.front();</span><br><span class="line">                q.pop();</span><br><span class="line">                ans.push_back(cur-&gt;val);</span><br><span class="line">                 for(auto n : cur-&gt;children)&#123;            </span><br><span class="line">                      q.push(n);</span><br><span class="line">                     </span><br><span class="line">                &#125; </span><br><span class="line">               /* if(n-&gt;val!=NULL)&#123;</span><br><span class="line">                      ans.push_back(n-&gt;val);</span><br><span class="line">            &#125;</span><br><span class="line">            */</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">           if(ans.size()!=0)</span><br><span class="line">            res.push_back(ans);</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode496-递增栈和递减栈"><a href="#leetcode496-递增栈和递减栈" class="headerlink" title="leetcode496 递增栈和递减栈"></a>leetcode496 递增栈和递减栈</h1><h2 id="递增栈"><a href="#递增栈" class="headerlink" title="递增栈"></a>递增栈</h2><p>1.元素入栈之后，其下面元素一定是其左边第一个比它大的数；(可用来求每个元素左边更大的第一个元素)<br>2.若在元素插入之前，栈顶元素比插入元素小，那么栈顶元素一定是插入元素左边第一个比它小的数<br>3.若在元素插入之前，栈顶元素比插入元素小，那么待插入元素是所有需要出栈的元素右边第一个更大的数； (可用来求每个元素右边更大的第一个元素)<br>4.最后一定会留下最大的数（对较大的数更有利）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/*1.正向用递增栈*/</span><br><span class="line">/*class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; nextGreaterElement(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123;</span><br><span class="line">        map&lt;int,int&gt; PMap;</span><br><span class="line">        stack&lt;int&gt; UpStack;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        for(int i=0;i&lt;nums2.size();i++)&#123;</span><br><span class="line">            if(UpStack.empty()||UpStack.top()&gt;nums2[i])</span><br><span class="line">                UpStack.push(nums2[i]);</span><br><span class="line">            else&#123;</span><br><span class="line">                while(!UpStack.empty()&amp;&amp;UpStack.top()&lt;nums2[i])&#123;</span><br><span class="line">                    PMap.insert(&#123;UpStack.top(),nums2[i]&#125;);</span><br><span class="line">                    UpStack.pop();</span><br><span class="line">                &#125;</span><br><span class="line">                UpStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        while(!UpStack.empty())&#123;</span><br><span class="line">            PMap.insert(&#123;UpStack.top(),-1&#125;);</span><br><span class="line">            UpStack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;nums1.size();i++)&#123;</span><br><span class="line">            result.push_back(PMap[nums1[i]]);   //map的下标操作返回值是和value的类型一样的</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;*/</span><br></pre></td></tr></table></figure>
+
+<h2 id="递减栈"><a href="#递减栈" class="headerlink" title="递减栈"></a>递减栈</h2><p>1.元素入栈之后，其下面的元素一定是其左边第一个比它小的数；(可用来求每个元素左边更小的第一个元素)<br>2.若在元素插入之前，栈顶元素比插入元素更大，那么栈顶元素一定是待插入元素左边一个更大的数<br>3.若在元素插入之前，栈顶元素比插入元素更大，那么栈顶元素一定是所有需要出栈的元素右边更小的数；(可用来求每个元素右边更小的第一个元素)<br>4.最后一定会留下最小的数（对较小 的数更有利）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; nextGreaterElement(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) &#123;</span><br><span class="line">        map&lt;int,int&gt; PMap;</span><br><span class="line">        stack&lt;int&gt; DStack;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        for(int i=nums2.size()-1;i&gt;=0;i--)&#123;</span><br><span class="line">            if(DStack.empty())&#123;</span><br><span class="line">                PMap.insert(&#123;nums2[i],-1&#125;);</span><br><span class="line">                DStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            else if(DStack.top()&gt;nums2[i])&#123;</span><br><span class="line">                PMap.insert(&#123;nums2[i],DStack.top()&#125;);</span><br><span class="line">                DStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                while(!DStack.empty()&amp;&amp;DStack.top()&lt;nums2[i])</span><br><span class="line">                   DStack.pop();</span><br><span class="line">                if(DStack.empty())</span><br><span class="line">                   PMap.insert(&#123;nums2[i],-1&#125;);</span><br><span class="line">                else</span><br><span class="line">                   PMap.insert(&#123;nums2[i],DStack.top()&#125;); </span><br><span class="line">                DStack.push(nums2[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;nums1.size();i++)</span><br><span class="line">            result.push_back(PMap[nums1[i]]);   //map的下标操作返回值是和value的类型一样的</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="map-中的元素访问全都是用-中括号来访问"><a href="#map-中的元素访问全都是用-中括号来访问" class="headerlink" title="map[[]]中的元素访问全都是用[]中括号来访问"></a>map[[]]中的元素访问全都是用[]中括号来访问</h2><h1 id="leetcode559-N叉树的深搜"><a href="#leetcode559-N叉树的深搜" class="headerlink" title="leetcode559 N叉树的深搜"></a>leetcode559 N叉树的深搜</h1><h2 id="N叉树深搜利用for迭代器的循环"><a href="#N叉树深搜利用for迭代器的循环" class="headerlink" title="N叉树深搜利用for迭代器的循环"></a>N叉树深搜利用for迭代器的循环</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int maxDepth(Node* root) &#123;</span><br><span class="line">    if (!root) return 0;</span><br><span class="line">    int m = 0;</span><br><span class="line">    for (Node* it : root-&gt;children) </span><br><span class="line">        m = max(m, maxDepth(it));</span><br><span class="line">    return ++m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode682-棒球比赛"><a href="#leetcode682-棒球比赛" class="headerlink" title="leetcode682 棒球比赛"></a>leetcode682 棒球比赛</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>你现在是棒球比赛记录员。<br>给定一个字符串列表，每个字符串可以是以下四种类型之一：<br>1.整数（一轮的得分）：直接表示您在本轮中获得的积分数。</p>
+<ol start="2">
+<li>“+”（一轮的得分）：表示本轮获得的得分是前两轮有效 回合得分的总和。</li>
+<li>“D”（一轮的得分）：表示本轮获得的得分是前一轮有效 回合得分的两倍。</li>
+<li>“C”（一个操作，这不是一个回合的分数）：表示您获得的最后一个有效 回合的分数是无效的，应该被移除。</li>
+</ol>
+<p>每一轮的操作都是永久性的，可能会对前一轮和后一轮产生影响。<br>你需要返回你在所有回合中得分的总和。</p>
+<h2 id="怎么实现string类型向int型的转换"><a href="#怎么实现string类型向int型的转换" class="headerlink" title="怎么实现string类型向int型的转换"></a>怎么实现string类型向int型的转换</h2><h2 id="string-和-int-的相互转换"><a href="#string-和-int-的相互转换" class="headerlink" title="string 和 int 的相互转换"></a>string 和 int 的相互转换</h2><p>1 to_string<br>包含在# include<string>。作用是把数值类型如int、double、long等转化为string</string></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int a = 4;</span><br><span class="line">double b = 3.14;</span><br><span class="line">string str1, str2;</span><br><span class="line">str1 = to_string(a);</span><br><span class="line">str2 = to_string(b);</span><br><span class="line">cout &lt;&lt; str1 &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; str2 &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+<p>2 stoi和atoi<br>包含在#include<string>，不是c++11的可以在#include<cstring>。作用是将字符串转化为int型。区别是stoi的形参是const string<em>，而atoi的形参是const char<em>。c_str()的作用是将const string</em>转化为const char</em></cstring></string></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">string s1(&quot;1234567&quot;);</span><br><span class="line">char* s2 = &quot;1234567&quot;;</span><br><span class="line">int a = stoi(s1);</span><br><span class="line">int b = atoi(s2);</span><br><span class="line">int c = atoi(s1.c_str());</span><br><span class="line">cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; c &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+<h2 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h2><p>codeblocks 存在bug不能很好支持to_string和stoi</p>
+<p>因此需要替换MinGW中的头文件</p>
+<p>将include文件夹下的wchar.h和stdio.h拷贝到MinGW的include文件夹中，一般是C:\mingw\include，如果你的codeblocks集成了MinGW则首先要从你的codeblocks安装目录中找到MinGW文件夹，拷贝到其下的include文件夹。<br>C:\mingw\include 或者 D:\Program Files\CodeBlocks\MinGW\include（记得找你自己的codeblocks安装目录）</p>
+<p>将os_defines.h拷贝到MinGW安装目录的如下目录：<br>C:\mingw\lib\gcc\mingw32\4.7.0\include\c++\mingw32\bits<br>当然如果codeblocks集成MinGW，你要拷贝到对应的MinGW目录下对应的文件夹。</p>
+<h1 id="leetcode739-每日气温"><a href="#leetcode739-每日气温" class="headerlink" title="leetcode739 每日气温"></a>leetcode739 每日气温</h1><h2 id="首先确定一下基础语法-for（）定义域"><a href="#首先确定一下基础语法-for（）定义域" class="headerlink" title="首先确定一下基础语法 for（）定义域"></a>首先确定一下基础语法 for（）定义域</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for(int i = 0 ;i&lt;T.szie();i++)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">cout&lt;&lt;i;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">这样是会报错，找不到i的声明</span><br></pre></td></tr></table></figure>
+
+<h2 id="想要后续继续使用i特别是i的结果值，那就要在for（）外面定义int-i"><a href="#想要后续继续使用i特别是i的结果值，那就要在for（）外面定义int-i" class="headerlink" title="想要后续继续使用i特别是i的结果值，那就要在for（）外面定义int i"></a>想要后续继续使用i特别是i的结果值，那就要在for（）外面定义int i</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int i;</span><br><span class="line">for(i=0;i &lt;T.size();i++)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>给定一个列表 temperatures = [73, 74, 75, 71, 69, 72, 76, 73]，你的输出应该是 [1, 1, 4, 2, 1, 1, 0, 0]。</p>
+<p>提示：气温 列表长度的范围是 [1, 30000]。每个气温的值的均为华氏度，都是在 [30, 100] 范围内的整数。</p>
+<h2 id="我的不考虑效率解法，超时！"><a href="#我的不考虑效率解法，超时！" class="headerlink" title="我的不考虑效率解法，超时！"></a>我的不考虑效率解法，超时！</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; dailyTemperatures(vector&lt;int&gt;&amp; T) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        </span><br><span class="line">        for(int i = 0;i &lt;T.size();i++)&#123;</span><br><span class="line">        int j = i;</span><br><span class="line">        bool flag = false;</span><br><span class="line">        while(j&lt;T.size()-1)&#123;</span><br><span class="line">            j++;</span><br><span class="line">            if(T[j]&gt;T[i])&#123;</span><br><span class="line">                result.push_back(j-i);</span><br><span class="line">                flag = true;</span><br><span class="line">                break;</span><br><span class="line">            &#125;        </span><br><span class="line">        &#125;</span><br><span class="line">        if(j==T.size()-1&amp;&amp;flag==false)&#123;</span><br><span class="line">        result.push_back(0);</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="维护一个递减栈"><a href="#维护一个递减栈" class="headerlink" title="维护一个递减栈"></a>维护一个递减栈</h2><p>class Solution {<br>public:<br>//维护递减栈，stack的元素都是递减的<br>    vector<int> dailyTemperatures(vector<int>&amp; T) {//最后一天推到第一天，这样会简单很多。因为最后一天显然不会再有升高的可能，结果直接为0。<br>      stack <int> sta;</int></int></int></p>
+<pre><code> // vector&lt;int&gt; res();不加参数会报错
+  vector&lt;int&gt; res(T.size(),0);
+
+  for(int i = 0;i&lt;T.size();i++){
+    while(!sta.empty()&amp;&amp;T[sta.top()]&lt;T[i]){
+    res[sta.top()]=(i-sta.top());
+    sta.pop();
+    }
+    sta.push(i);
+  }
+return res;
+} </code></pre><p>};</p>
+<h2 id="前置题目496和503"><a href="#前置题目496和503" class="headerlink" title="前置题目496和503"></a>前置题目496和503</h2><h2 id="单调栈设计与模板"><a href="#单调栈设计与模板" class="headerlink" title="单调栈设计与模板"></a>单调栈设计与模板</h2><p>vector<int> nextGreaterElements(vector<int>&amp; nums) {<br>    int n = nums.size();<br>    vector<int> res(n); // 存放结果<br>    stack<int> s;<br>    // 假装这个数组长度翻倍了<br>    for (int i = 2 * n - 1; i &gt;= 0; i–) {<br>        while (!s.empty() &amp;&amp; s.top() &lt;= nums[i % n])<br>            s.pop();<br>        res[i % n] = s.empty() ? -1 : s.top();<br>        s.push(nums[i % n]);<br>    }<br>    return res;<br>}</int></int></int></int></p>
+<h1 id="leetcode859-亲密字符串"><a href="#leetcode859-亲密字符串" class="headerlink" title="leetcode859 亲密字符串"></a>leetcode859 亲密字符串</h1><h2 id="最主要的易错点是容易漏掉判断条件致使出错"><a href="#最主要的易错点是容易漏掉判断条件致使出错" class="headerlink" title="最主要的易错点是容易漏掉判断条件致使出错"></a>最主要的易错点是容易漏掉判断条件致使出错</h2><h2 id="mycode-1"><a href="#mycode-1" class="headerlink" title="mycode"></a>mycode</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool buddyStrings(string A, string B) &#123;</span><br><span class="line">        if(A.size()!=B.size())</span><br><span class="line">            return false;</span><br><span class="line">        set &lt;char&gt; s;</span><br><span class="line">          </span><br><span class="line">        int i = 0;</span><br><span class="line">        int flag =0;</span><br><span class="line">        char tmp;</span><br><span class="line">        while(i&lt;A.size())&#123;</span><br><span class="line">            if(A[i]==B[i])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">                  s.insert(A[i]);</span><br><span class="line">            &#125;else if(A[i] == B[A.size()-1-i])&#123;</span><br><span class="line">                flag++;</span><br><span class="line">                 i++;</span><br><span class="line">                s.insert(A[i]);</span><br><span class="line">               </span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       // cout &lt;&lt;s.size()&lt;A.size()&lt;&lt;flag;</span><br><span class="line">        if(flag ==2||(flag==0&amp;&amp;s.size()&lt;A.size()))&#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="code-技巧"><a href="#code-技巧" class="headerlink" title="code 技巧"></a>code 技巧</h2><p>括号一定要对齐，判断条件一定要对应，看看if之后的else条件是否都是满足的</p>
+<h2 id="set-的应用"><a href="#set-的应用" class="headerlink" title="set 的应用"></a>set 的应用</h2><p>set主要是insert（）方法</p>
+<h2 id="string-字符处理"><a href="#string-字符处理" class="headerlink" title="string 字符处理"></a>string 字符处理</h2><h2 id="怎么对字符串中的元素进行排序？"><a href="#怎么对字符串中的元素进行排序？" class="headerlink" title="怎么对字符串中的元素进行排序？"></a>怎么对字符串中的元素进行排序？</h2><h2 id="leetcode1071字符串的最大公因子"><a href="#leetcode1071字符串的最大公因子" class="headerlink" title="leetcode1071字符串的最大公因子"></a>leetcode1071字符串的最大公因子</h2><h2 id="回顾两个数的最大公因子"><a href="#回顾两个数的最大公因子" class="headerlink" title="回顾两个数的最大公因子"></a>回顾两个数的最大公因子</h2><h3 id="辗转相除法"><a href="#辗转相除法" class="headerlink" title="辗转相除法"></a>辗转相除法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onst gcd = (a, b) =&gt; (0 === b ? a : gcd(b, a % b))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">string gcdOfStrings(string str1, string str2) &#123;</span><br><span class="line">      //int a[str1.size()];</span><br><span class="line">      int l1 = str1.length();</span><br><span class="line">      int l2 = str2.length();</span><br><span class="line">      if(l1==l2)&#123;</span><br><span class="line">          if(str1==str2)</span><br><span class="line">              return str1;</span><br><span class="line">          else&#123;</span><br><span class="line">              return &quot;&quot;;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;else if(l1&gt;l2)&#123;</span><br><span class="line">          string substr = str1.substr(l2);</span><br><span class="line">          return gcdOfStrings(substr,str2);</span><br><span class="line">      &#125;else&#123;</span><br><span class="line">      string substr = str2.substr(l1);</span><br><span class="line">      return gcdOfStrings(substr,str1);</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？"><a href="#上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？" class="headerlink" title="上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？"></a>上面的算法是在字符串按顺序排列的基础上，如果字符串不是按顺序的呢？</h2><p>sort（string.begin(),string.end()）<br>sort()函数的功能实在是强大啊</p>
+<p>substr（）函数能够对字符串进行切分是一个很好的工具</p>
+<h1 id="leetcode897-递增顺序树"><a href="#leetcode897-递增顺序树" class="headerlink" title="leetcode897 递增顺序树"></a>leetcode897 递增顺序树</h1><h2 id="给定一个树，按中序遍历重新排列树，使树中最左边的结点现在是树的根，并且每个结点没有左子结点，只有一个右子结点。"><a href="#给定一个树，按中序遍历重新排列树，使树中最左边的结点现在是树的根，并且每个结点没有左子结点，只有一个右子结点。" class="headerlink" title="给定一个树，按中序遍历重新排列树，使树中最左边的结点现在是树的根，并且每个结点没有左子结点，只有一个右子结点。"></a>给定一个树，按中序遍历重新排列树，使树中最左边的结点现在是树的根，并且每个结点没有左子结点，只有一个右子结点。</h2><h2 id="中序遍历加重排"><a href="#中序遍历加重排" class="headerlink" title="中序遍历加重排"></a>中序遍历加重排</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    TreeNode* increasingBST(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; tree;</span><br><span class="line">        //构造新树</span><br><span class="line">        //TreeNode * r1;</span><br><span class="line">        midorder(root,tree);</span><br><span class="line">    TreeNode  *  r1 = new TreeNode(0);</span><br><span class="line">    TreeNode * cur = r1;</span><br><span class="line">        //r1-&gt;val = tree[0];</span><br><span class="line">        </span><br><span class="line">        for(int i =0; i&lt; tree.size();i++)&#123;</span><br><span class="line">            cur-&gt;left = NULL;</span><br><span class="line">            cur-&gt;right = new TreeNode(tree[i]);</span><br><span class="line">            //cur = r1-&gt;right;这么简单的错误寻找了半天</span><br><span class="line">           cur =  cur-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        return r1-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void midorder(TreeNode * root,vector&lt;int&gt; &amp;tree)&#123;</span><br><span class="line">        if(!root) return;</span><br><span class="line">        midorder(root-&gt;left,tree);</span><br><span class="line">        tree.push_back(root-&gt;val);</span><br><span class="line">        midorder(root-&gt;right,tree);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode917-字符串翻转操作"><a href="#leetcode917-字符串翻转操作" class="headerlink" title="leetcode917 字符串翻转操作"></a>leetcode917 字符串翻转操作</h1><h2 id="isalpha（）函数"><a href="#isalpha（）函数" class="headerlink" title="isalpha（）函数"></a>isalpha（）函数</h2><p>原型：int isalpha（int ch）</p>
+<p>判断字符ch是否为英文字母，当ch为英文字母a-z或A-Z时，返回非零值，否则返回零。</p>
+<p>使用时需包含头文件&lt;ctype.h&gt;</p>
+<h2 id="A的ASCII码是65-a的ASCII码是97。"><a href="#A的ASCII码是65-a的ASCII码是97。" class="headerlink" title="A的ASCII码是65,a的ASCII码是97。"></a>A的ASCII码是65,a的ASCII码是97。</h2><p>ASCII码表中,小写字母排在大写字母的后面,一个字母的大小写数值相差32</p>
+<h2 id="string-的子字符串"><a href="#string-的子字符串" class="headerlink" title="string 的子字符串"></a>string 的子字符串</h2><p>string s2 = s1.substr(2, 4); </p>
+<h2 id="mycode-2"><a href="#mycode-2" class="headerlink" title="mycode"></a>mycode</h2><p><ctype>里面还有很多string类型的操作<br>比如isalnum（）字母或数字</ctype></p>
+<p>iscontrl（）控制字符</p>
+<p>isdigit（）数字</p>
+<p>islower（）小写</p>
+<p>isspace（）空格</p>
+<p>toupper（）转大写</p>
+<p>tolower（）转小写<br>等等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string reverseOnlyLetters(string S) &#123;</span><br><span class="line">          if(S.size()==0)</span><br><span class="line">            return S;</span><br><span class="line">        string s1 (S);</span><br><span class="line">        //s1 = S;</span><br><span class="line">        int i = S.size()-1;</span><br><span class="line">        int j =0;</span><br><span class="line">      </span><br><span class="line">        while (i&gt;=0)&#123;</span><br><span class="line">           if((&apos;A&apos;&lt;=S[i])&amp;&amp;(S[i]&lt;=&apos;Z&apos;)||(&apos;a&apos;&lt;=S[i])&amp;&amp;(S[i]&lt;=&apos;z&apos;))&#123;//不能将这种条件一起判断应该分两次判断</span><br><span class="line">               </span><br><span class="line">               if((&apos;A&apos;&lt;=s1[j])&amp;&amp;(s1[j]&lt;=&apos;Z&apos;)||(&apos;a&apos;&lt;=s1[j])&amp;&amp;(s1[j]&lt;=&apos;z&apos;))</span><br><span class="line">               &#123;</span><br><span class="line">                   s1[j] = S[i]; </span><br><span class="line">                   i--;</span><br><span class="line">                   j++;</span><br><span class="line">               &#125;else&#123;</span><br><span class="line">                   j++;</span><br><span class="line">               &#125;</span><br><span class="line">                </span><br><span class="line">           &#125;</span><br><span class="line">           else&#123;</span><br><span class="line">               i--;</span><br><span class="line">           &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return s1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode938-二叉搜索树的范围和"><a href="#leetcode938-二叉搜索树的范围和" class="headerlink" title="leetcode938 二叉搜索树的范围和"></a>leetcode938 二叉搜索树的范围和</h1><h2 id="二叉搜索树的范围和"><a href="#二叉搜索树的范围和" class="headerlink" title="二叉搜索树的范围和"></a>二叉搜索树的范围和</h2><p>给定二叉搜索树的根结点 root，返回 L 和 R（含）之间的所有结点的值的和。</p>
+<p>二叉搜索树保证具有唯一的值。</p>
+<h2 id="解法利用递归"><a href="#解法利用递归" class="headerlink" title="解法利用递归"></a>解法利用递归</h2><p> 题意：这个题字面含义很难理解，本意就是求出所有 X &gt;= L 且 X &lt;= R 的值的和<br>递归终止条件：</p>
+<pre><code>当前节点为 null 时返回 0
+当前节点 X &lt; L 时则返回右子树之和
+当前节点 X &gt; R 时则返回左子树之和
+当前节点 X &gt;= L 且 X &lt;= R 时则返回：当前节点值 + 左子树之和 + 右子树之和</code></pre><p>注意点：通过判断X的大小能够避免遍历全部树的节点，比如下方的动图中，3 这个值就没有必要遍历</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">    public int rangeSumBST(TreeNode root, int L, int R) &#123;</span><br><span class="line">        if (root == null) &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        if (root.val &lt; L) &#123;</span><br><span class="line">            return rangeSumBST(root.right, L, R);</span><br><span class="line">        &#125;</span><br><span class="line">        if (root.val &gt; R) &#123;</span><br><span class="line">            return rangeSumBST(root.left, L, R);</span><br><span class="line">        &#125;</span><br><span class="line">        return root.val + rangeSumBST(root.left, L, R) + rangeSumBST(root.right, L, R);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">我的代码</span><br><span class="line">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int rangeSumBST(TreeNode* root, int L, int R) &#123;</span><br><span class="line">        int ans =0;</span><br><span class="line">        int l,r,v;</span><br><span class="line">        l = r = 0;</span><br><span class="line">        if(root==NULL)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">       if(root-&gt;val&lt;L)&#123;</span><br><span class="line">          ans = rangeSumBST(root-&gt;right,L,R); </span><br><span class="line">       &#125; </span><br><span class="line">        else if(root-&gt;val&gt;R)&#123;</span><br><span class="line">            ans = rangeSumBST(root-&gt;left,L,R);</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            v = root-&gt;val;</span><br><span class="line">            l = rangeSumBST(root-&gt;right,L,R);</span><br><span class="line">            r = rangeSumBST(root-&gt;left,L,R);</span><br><span class="line">            ans = v+l+r;</span><br><span class="line">        &#125;</span><br><span class="line">       return  ans; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="学会reverse（）函数的使用"><a href="#学会reverse（）函数的使用" class="headerlink" title="学会reverse（）函数的使用"></a>学会reverse（）函数的使用</h2><p>string res</p>
+<p>reverse(res.begin(),res.end());</p>
+<h1 id="leetcode993-二叉树的堂兄弟节点"><a href="#leetcode993-二叉树的堂兄弟节点" class="headerlink" title="leetcode993 二叉树的堂兄弟节点"></a>leetcode993 二叉树的堂兄弟节点</h1><h2 id="两种实现方式"><a href="#两种实现方式" class="headerlink" title="两种实现方式"></a>两种实现方式</h2><p>一种是利用层序遍历，有点类似于线段树</p>
+<p>第二种是直接带参数的dfs，之后进行判断</p>
+<h2 id="层序遍历解决"><a href="#层序遍历解决" class="headerlink" title="层序遍历解决"></a>层序遍历解决</h2><h2 id="带参数的dfs"><a href="#带参数的dfs" class="headerlink" title="带参数的dfs"></a>带参数的dfs</h2><h1 id="leetcode997"><a href="#leetcode997" class="headerlink" title="leetcode997"></a>leetcode997</h1><h2 id="图的应用"><a href="#图的应用" class="headerlink" title="图的应用"></a>图的应用</h2><p>在一个小镇里，按从 1 到 N 标记了 N 个人。传言称，这些人中有一个是小镇上的秘密法官。</p>
+<p>如果小镇的法官真的存在，那么：</p>
+<pre><code>小镇的法官不相信任何人。
+每个人（除了小镇法官外）都信任小镇的法官。
+只有一个人同时满足属性 1 和属性 2 。</code></pre><p>给定数组 trust，该数组由信任对 trust[i] = [a, b] 组成，表示标记为 a 的人信任标记为 b 的人。</p>
+<h2 id="利用vector来进行vector数组的截取"><a href="#利用vector来进行vector数组的截取" class="headerlink" title="利用vector来进行vector数组的截取"></a>利用vector来进行vector数组的截取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TreeNode * root = new TreeNode(nums[mid]);</span><br><span class="line">       vector&lt;int&gt; vec_left(nums.begin(),nums.begin()+mid);</span><br><span class="line">       root-&gt;left = sortedArrayToBST(vec_left);</span><br><span class="line">        vector&lt;int&gt; vec_right(nums.begin()+mid+1,nums.end());</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode999"><a href="#leetcode999" class="headerlink" title="leetcode999"></a>leetcode999</h1><h2 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个 8 x 8 的棋盘上，有一个白色车（rook）。也可能有空方块，白色的象（bishop）和黑色的卒（pawn）。它们分别以字符 “R”，“.”，“B” 和 “p” 给出。大写字符表示白棋，小写字符表示黑棋。</p>
+<p>车按国际象棋中的规则移动：它选择四个基本方向中的一个（北，东，西和南），然后朝那个方向移动，直到它选择停止、到达棋盘的边缘或移动到同一方格来捕获该方格上颜色相反的卒。另外，车不能与其他友方（白色）象进入同一个方格。</p>
+<h2 id="我的最普通解法"><a href="#我的最普通解法" class="headerlink" title="我的最普通解法"></a>我的最普通解法</h2><h3 id="超时"><a href="#超时" class="headerlink" title="超时"></a>超时</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int numRookCaptures(vector&lt;vector&lt;char&gt;&gt;&amp; board) &#123;</span><br><span class="line">        int count =0;</span><br><span class="line">        int row,col;</span><br><span class="line">        for(int i = 0; i &lt; board.size();i++)&#123;</span><br><span class="line">            for(int j = 0; j &lt; board[0].size();j++)&#123;</span><br><span class="line">                if(board[i][j] == &apos;R&apos;)&#123;</span><br><span class="line">                    row = i;</span><br><span class="line">                    col = j;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 0;i &lt; row;i++)&#123;</span><br><span class="line">            if(board[i][col] == &apos;B&apos;)&#123;</span><br><span class="line">                int tmp = i;</span><br><span class="line">                for(int m = 0;m&lt;tmp;m--)&#123;</span><br><span class="line">                    if(board[i][col] == &apos;p&apos;)</span><br><span class="line">                        count--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                if(board[i][col] == &apos;p&apos;)&#123;</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        for(int i = row+1;i &lt; board.size();i++)&#123;</span><br><span class="line">            if(board[i][col] == &apos;B&apos;)&#123;</span><br><span class="line">                int tmp = i;</span><br><span class="line">                for(int m = tmp+1;m&lt;board.size();m++)&#123;</span><br><span class="line">                    if(board[i][col] == &apos;p&apos;)</span><br><span class="line">                        count--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                if(board[i][col] == &apos;p&apos;)&#123;</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">         for(int j = 0;j &lt; col;j++)&#123;</span><br><span class="line">            if(board[row][j] == &apos;B&apos;)&#123;</span><br><span class="line">                int tmp = j;</span><br><span class="line">                for(int m = 0;m&lt;tmp;m--)&#123;</span><br><span class="line">                    if(board[row][m] == &apos;p&apos;)</span><br><span class="line">                        count--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                if(board[row][j] == &apos;p&apos;)&#123;</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        for(int j = col+1;j &lt; board[1].size();j++)&#123;</span><br><span class="line">            if(board[row][j] == &apos;B&apos;)&#123;</span><br><span class="line">                int tmp = j;</span><br><span class="line">                for(int m = tmp+1;m&lt;board.size();m++)&#123;</span><br><span class="line">                    if(board[row][j] == &apos;p&apos;)</span><br><span class="line">                        count--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                if(board[row][j] == &apos;p&apos;)&#123;</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return count;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="不应该设置这么多重的循环"><a href="#不应该设置这么多重的循环" class="headerlink" title="// 不应该设置这么多重的循环"></a>// 不应该设置这么多重的循环</h4><h2 id="在一个循环里面利用flag，还有加深for的理解，可以用if和break来整理某些逻辑"><a href="#在一个循环里面利用flag，还有加深for的理解，可以用if和break来整理某些逻辑" class="headerlink" title="在一个循环里面利用flag，还有加深for的理解，可以用if和break来整理某些逻辑"></a>在一个循环里面利用flag，还有加深for的理解，可以用if和break来整理某些逻辑</h2><h2 id="先找到车的位置"><a href="#先找到车的位置" class="headerlink" title="先找到车的位置"></a>先找到车的位置</h2><p><strong>以车的位置上下左右四个点为起点按行按列搜索</strong></p>
+<p><strong>碰到象挡路直接break；</strong></p>
+<p><strong>否则搜索小卒的位置，搜索到则加一</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int numRookCaptures(vector&lt;vector&lt;char&gt;&gt;&amp; board) &#123;</span><br><span class="line">        int count =0;</span><br><span class="line">        int row,col;</span><br><span class="line">        for(int i = 0; i &lt; board.size();i++)&#123;</span><br><span class="line">            for(int j = 0; j &lt; board[0].size();j++)&#123;</span><br><span class="line">                if(board[i][j] == &apos;R&apos;)&#123;</span><br><span class="line">                    row = i;</span><br><span class="line">                    col = j;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = row-1;i &gt; 0;i--)&#123;</span><br><span class="line"></span><br><span class="line">            if(board[i][col] == &apos;B&apos;)</span><br><span class="line">                break;</span><br><span class="line">            else if(board[i][col] ==&apos;p&apos;)&#123;</span><br><span class="line">                count++;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        for(int i = row+1;i &lt; board.size();i++)&#123;</span><br><span class="line"></span><br><span class="line">            if(board[i][col] == &apos;B&apos;)</span><br><span class="line">                break;</span><br><span class="line">            else if(board[i][col] == &apos;p&apos;)&#123;</span><br><span class="line">                count++;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">         for(int j = col-1;j &gt;=0;j--)&#123;</span><br><span class="line"></span><br><span class="line">             if(board[row][j] == &apos;B&apos;)</span><br><span class="line">                 break;</span><br><span class="line">             else if(board[row][j] == &apos;p&apos;)&#123;</span><br><span class="line">                 count++;</span><br><span class="line">                 break;</span><br><span class="line">                 </span><br><span class="line">             &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        for(int j = col+1;j &lt; board[1].size();j++)&#123;</span><br><span class="line"></span><br><span class="line">              if(board[row][j] == &apos;B&apos;)</span><br><span class="line">                 break;</span><br><span class="line">             else if(board[row][j] == &apos;p&apos;)&#123;</span><br><span class="line">                 count++;</span><br><span class="line">                 break;</span><br><span class="line">                 </span><br><span class="line">             &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return count;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode1027-独一无二的数"><a href="#leetcode1027-独一无二的数" class="headerlink" title="leetcode1027 独一无二的数"></a>leetcode1027 独一无二的数</h1><h2 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个整数数组 arr，请你帮忙统计数组中每个数的出现次数。</p>
+<p>如果每个数的出现次数都是独一无二的，就返回 true；否则返回 false。</p>
+<h2 id="map-容器"><a href="#map-容器" class="headerlink" title="map 容器"></a>map 容器</h2><p>map 容器中first 和second 可以用vector等任何其他的容器来进行定义<br>例如<br>map&lt;int,int&gt; count;<br>map &lt;int, vector<int> &gt; result;</int></p>
+<h2 id="for循环的另一种表示形式"><a href="#for循环的另一种表示形式" class="headerlink" title="for循环的另一种表示形式"></a>for循环的另一种表示形式</h2><p>C++11中的新的特性<br>跟java中的for循环的两种形式比较类似，直接对对象进行for循环枚举，比平常int型的定义更加的方便特别是当size未知时这种</p>
+<p>循环方式更加的便利和高效</p>
+<h3 id="for-auto-c-count"><a href="#for-auto-c-count" class="headerlink" title="for(auto c : count)"></a>for(auto c : count)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool uniqueOccurrences(vector&lt;int&gt;&amp; arr) &#123;</span><br><span class="line">        map&lt;int,int&gt; count;//count the number of arry[i]        </span><br><span class="line">        map&lt;int,vector&lt;int&gt;&gt; result;// vector storage the the number of arry[i]</span><br><span class="line">        sort(arr.begin(),arr.end());</span><br><span class="line">        for(int i =0; i&lt; arr.size(); i++)&#123;</span><br><span class="line">            count[arr[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        for(auto c : count)&#123;</span><br><span class="line">            result[c.second].push_back(c.first);</span><br><span class="line">        &#125;</span><br><span class="line">        for(auto r : result)&#123;</span><br><span class="line">            if(r.second.size() &gt; 1)</span><br><span class="line">                return false;</span><br><span class="line">        &#125;</span><br><span class="line">    return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="求气球的个数"><a href="#求气球的个数" class="headerlink" title="求气球的个数"></a>求气球的个数</h2><p>给你一个字符串 text，你需要使用 text 中的字母来拼凑尽可能多的单词 “balloon”（气球）。</p>
+<p>字符串 text 中的每个字母最多只能被使用一次。请你返回最多可以拼凑出多少个单词 “balloon”。</p>
+<h2 id="我的方法"><a href="#我的方法" class="headerlink" title="我的方法"></a>我的方法</h2><figure class="highlight plain"><figcaption><span>Solution &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">public:</span><br><span class="line">    int maxNumberOfBalloons(string text) &#123;//第一次没看题解，自己提交通过纪念一下</span><br><span class="line">        map&lt;int,int&gt; ma;//</span><br><span class="line">      //  map&lt;int,vector&lt;int&gt; result;</span><br><span class="line">        //int b,a,l,o,n;</span><br><span class="line">        int ans = 0;</span><br><span class="line">        map&lt;char,int&gt; ballon;</span><br><span class="line">        for(int i = 0; i &lt;text.size(); i++)&#123;</span><br><span class="line">            ballon[text[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">       /* for(int j = 0 ;j &lt;ballon.size(); j++)&#123;</span><br><span class="line">            if(ballon[j].first==&apos;b&apos;)&#123;</span><br><span class="line">                b = ballon[i]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        */</span><br><span class="line">        for(auto b: ballon)&#123;</span><br><span class="line">            if(b.first == &apos;b&apos;)&#123;</span><br><span class="line">                ans =b.second;</span><br><span class="line">            &#125;</span><br><span class="line">            if(b.first == &apos;a&apos;)&#123;</span><br><span class="line">                ans = min(ans,b.second);</span><br><span class="line">            &#125;</span><br><span class="line">             if(b.first == &apos;n&apos;)&#123;</span><br><span class="line">                ans = min(ans,b.second);</span><br><span class="line">            &#125;</span><br><span class="line">            if(b.first == &apos;l&apos;)&#123;</span><br><span class="line">              ans = min(ans,b.second/2);</span><br><span class="line">            &#125;</span><br><span class="line">            if(b.first == &apos;o&apos;)&#123;</span><br><span class="line">                ans = min(ans,b.second/2);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="用switch-的方法来对进行有限的情况来进行枚举也不失为一种好方法"><a href="#用switch-的方法来对进行有限的情况来进行枚举也不失为一种好方法" class="headerlink" title="用switch 的方法来对进行有限的情况来进行枚举也不失为一种好方法"></a>用switch 的方法来对进行有限的情况来进行枚举也不失为一种好方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">int maxNumberOfBalloons(string text) &#123;</span><br><span class="line">int a1[5]=&#123;0,0,0,0,0&#125;;</span><br><span class="line">for(int i=0;i&lt;text.length();i++)</span><br><span class="line">&#123;</span><br><span class="line">switch(text[i])</span><br><span class="line">&#123; case &apos;b&apos; : a1[0]+=1;</span><br><span class="line">break;</span><br><span class="line">case &apos;a&apos; : a1[1]+=1;</span><br><span class="line">break;</span><br><span class="line">case &apos;l&apos; : a1[2]+=1;</span><br><span class="line">break;</span><br><span class="line">case &apos;o&apos; : a1[3]+=1;</span><br><span class="line">break;</span><br><span class="line">case &apos;n&apos; : a1[4]+=1;</span><br><span class="line">break;</span><br><span class="line">default :</span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">a1[2]=a1[2]/2;</span><br><span class="line">a1[3]=a1[3]/2;</span><br><span class="line">int count=a1[0];</span><br><span class="line">for(int i=1;i&lt;5;i++)</span><br><span class="line">&#123;</span><br><span class="line">if(a1[i]&lt;count)</span><br><span class="line">&#123;</span><br><span class="line">count=a1[i];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return count;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="leetcode1029-两地调度"><a href="#leetcode1029-两地调度" class="headerlink" title="leetcode1029 两地调度"></a>leetcode1029 两地调度</h1><p>公司计划面试 2N 人。第 i 人飞往 A 市的费用为 costs[i][0]，飞往 B 市的费用为 costs[i][1]。</p>
+<p>返回将每个人都飞到某座城市的最低费用，要求每个城市都有 N 人抵达。</p>
+<h2 id="map怎么进行排序"><a href="#map怎么进行排序" class="headerlink" title="map怎么进行排序?"></a>map怎么进行排序?</h2><p>第一反应是利用stl中提供的sort算法实现，这个想法是好</p>
+<p>的，不幸的是，sort算法有个限制，利用sort算法只能对</p>
+<p>序列容器进行排序，就是线性的（如vector，list，</p>
+<p>deque）。map也是一个集合容器，它里面存储的元素是</p>
+<p>pair，但是它不是线性存储的（前面提过，像红黑树），所</p>
+<p>以利用sort不能直接和map结合进行排序。</p>
+<p>我们知道map中的元素类型为pair，具体定义如下：</p>
+<p>template &lt;class T1, class T2&gt; struct pair<br>{<br>  typedef T1 first_type;<br>  typedef T2 second_type;</p>
+<p>  T1 first;<br>  T2 second;<br>  pair() : first(T1()), second(T2()) {}<br>  pair(const T1&amp; x, const T2&amp; y) : first(x), second(y) {}<br>  template &lt;class U, class V&gt;<br>    pair (const pair&lt;U,V&gt; &amp;p) : first(p.first), second(p.second) { }<br>}</p>
+<p>pair也是一个模板类，这样就实现了良好的通用性。它仅有两个数据成员first 和 second，即 key 和 value，而且</p>
+<p>在 <utility>头文件中，还为pair重载了 &lt; 运算符， 具体实现如下： </utility></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">template&lt;class _T1, class _T2&gt;</span><br><span class="line">    inline bool</span><br><span class="line">    operator&lt;(const pair&lt;_T1, _T2&gt;&amp; __x, const pair&lt;_T1, _T2&gt;&amp; __y)</span><br><span class="line">    &#123; return __x.first &lt; __y.first</span><br><span class="line">             || (!(__y.first &lt; __x.first) &amp;&amp; __x.second &lt; __y.second); &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="思路一-将键和值进行对调进而按照键来进行访问，自动实现了排序"><a href="#思路一-将键和值进行对调进而按照键来进行访问，自动实现了排序" class="headerlink" title="思路一 将键和值进行对调进而按照键来进行访问，自动实现了排序"></a>思路一 将键和值进行对调进而按照键来进行访问，自动实现了排序</h2><p>在实际的项目中可能会碰到key重复的情况，正常的MAP类型</p>
+<p>是不允许重复的key，所以就要使用multimap了，</p>
+<p>multimap的使用和map基本类似，可以无缝对接</p>
+<h2 id="但是两者的插入方式还是有区别的"><a href="#但是两者的插入方式还是有区别的" class="headerlink" title="但是两者的插入方式还是有区别的"></a>但是两者的插入方式还是有区别的</h2><p>//name_score_map[“LiMin”] = 90;　　//主要插入的方式和map有所区别<br>name_score_map.insert(make_pair(“LiMin”, 90));<br>//name_score_map[“LiMin”] = 91;<br>name_score_map.insert(make_pair(“LiMin”, 91));<br>//name_score_map[“ZiLinMi”] = 79;<br>name_score_map.insert(make_pair(“ZiLinMi”, 79));<br>//name_score_map[“BoB”] = 92;</p>
+<h2 id="思路二-利用pair中的value值进行比较，进而排序找出，前一半"><a href="#思路二-利用pair中的value值进行比较，进而排序找出，前一半" class="headerlink" title="思路二 利用pair中的value值进行比较，进而排序找出，前一半"></a>思路二 利用pair中的value值进行比较，进而排序找出，前一半</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">static bool cmp(const pair&lt;int,int&gt;&amp; a,const pair&lt;int,int&gt;&amp; b)</span><br><span class="line">    &#123;</span><br><span class="line">        return a.first&lt;b.first;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int twoCitySchedCost(vector&lt;vector&lt;int&gt;&gt;&amp; costs) &#123;</span><br><span class="line">        int n=costs.size();</span><br><span class="line">        int n2=n/2;</span><br><span class="line">        vector&lt;pair&lt;int,int&gt;&gt; cha(n);</span><br><span class="line">        for(int i=0;i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            cha[i]=make_pair(costs[i][1]-costs[i][0],i);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        stable_sort(cha.begin(),cha.end(),cmp);</span><br><span class="line"></span><br><span class="line">        int res=0;</span><br><span class="line">        for(int i=0;i&lt;n2;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            res+=costs[cha[i].second][1];</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=n2;i&lt;n;++i)</span><br><span class="line">        &#123;</span><br><span class="line">            res+=costs[cha[i].second][0];</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>利用vector进行比较，非常值得借鉴，构造一个sort的比较方案</p>
+<h2 id="错误解析"><a href="#错误解析" class="headerlink" title="错误解析"></a>错误解析</h2><p>i 的作用域错误，致使半天没有发现错误，实际上思路是没有问题的，以后要特别注意避免犯这样的错误。</p>
+<h1 id="leetcode1170-最小字母出现频次"><a href="#leetcode1170-最小字母出现频次" class="headerlink" title="leetcode1170 最小字母出现频次"></a>leetcode1170 最小字母出现频次</h1><h2 id="mycode-3"><a href="#mycode-3" class="headerlink" title="mycode"></a>mycode</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) &#123;</span><br><span class="line">        vector&lt;int&gt; res;</span><br><span class="line">        int i;</span><br><span class="line">        i =0;</span><br><span class="line">        while(i&lt;queries.size())&#123;</span><br><span class="line">            int count =0;</span><br><span class="line">            for(int j=0;j&lt;words.size();j++)&#123;</span><br><span class="line">                if(f(queries[i])&lt;f(words[j]))</span><br><span class="line">                    count++;</span><br><span class="line">            &#125;</span><br><span class="line">            res.push_back(count);</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">    int f(string s)&#123;</span><br><span class="line">        int cnt =0;</span><br><span class="line">        char min = s[0];</span><br><span class="line">        for(int i = 1; i &lt; s.size();i++)&#123;</span><br><span class="line">            if(min&gt;s[i])</span><br><span class="line">                min = s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 0; i &lt;s.size();i++)&#123;</span><br><span class="line">            if(s[i] ==min)</span><br><span class="line">                cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        return cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="改进-存储后来的值"><a href="#改进-存储后来的值" class="headerlink" title="改进 存储后来的值"></a>改进 存储后来的值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int f(string&amp; s) &#123;</span><br><span class="line">        char min = s[0];</span><br><span class="line">        int count = 1;</span><br><span class="line">        int length = s.length();</span><br><span class="line">        for (int i = 1; i &lt; length; i++) &#123;</span><br><span class="line">            if (s[i] &lt; min) &#123;</span><br><span class="line">                min = s[i];</span><br><span class="line">                count = 1;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            if (s[i] == min) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    vector&lt;int&gt; numSmallerByFrequency(vector&lt;string&gt;&amp; queries, vector&lt;string&gt;&amp; words) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        vector&lt;int&gt; fwords;</span><br><span class="line">        //先计算好words数组中每个元素调用f函数的值，存到fwords数组中</span><br><span class="line">        for (auto it = words.begin(); it != words.end(); it++) &#123;</span><br><span class="line">            fwords.push_back(f(*it));</span><br><span class="line">        &#125;</span><br><span class="line">        sort(fwords.begin(), fwords.end());</span><br><span class="line">        int size = fwords.size();</span><br><span class="line">        for (auto it = queries.begin(); it != queries.end(); it++) &#123;</span><br><span class="line">            int fquery = f(*it);</span><br><span class="line">            //对于每个f(queries[i])，用二分查找找到应该插入的位置，再用size减去位置，就得到了数组中比它大的元素个数</span><br><span class="line">            result.push_back(size - (upper_bound(fwords.begin(), fwords.end(), fquery) - fwords.begin()));</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>leetcode入门题目第一弹</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">11.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-10-18, 11:30:29</p>
+    <p><span class="copy-title">最后更新:</span>2020-10-18, 17:11:12</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/10/18/leetcode入门题目/" title="leetcode入门题目第一弹">http://jhshz520.github.io/2020/10/18/leetcode入门题目/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 钟帅豪</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#python','#code心得','#Django','#Docker环境','#docker','#文献阅读','#Git 心得','#工具','#Go','#Linux','#网络','#codeblocks配置','#Anaconda','#Docker','#博客相关','#希尔密码探究','#hexo','#编程语言','#leetcode','#blog编辑相关','#test','#mysql','#算法心得','#分布式','#读研心得','#域名','#经典算法模板','#考试相关','#命令行工具','#刷题心得','#数论相关','#Git','#计算机论文','#coding 心得','#高性能计算相关','#链表','#java web','#容器迁移','#就业规划',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
