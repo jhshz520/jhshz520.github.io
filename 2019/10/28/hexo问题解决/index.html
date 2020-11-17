@@ -332,7 +332,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="74">
-<input type="hidden" id="yelog_site_word_count" value="72.6k">
+<input type="hidden" id="yelog_site_word_count" value="72.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1165,12 +1165,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-11-17 11:10:29'>2019-10-28 09:11</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-17 11:45:42'>2019-10-28 09:11</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:455</span>
+        <span>字数:802</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1189,7 +1189,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-clean"><span class="toc-text">hexo clean</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#清除缓存-网页正常情况下可以忽略此条命令-执行该指令后-会删掉站点根目录下的public文件夹"><span class="toc-text">清除缓存 ,网页正常情况下可以忽略此条命令,执行该指令后,会删掉站点根目录下的public文件夹</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-怎么增加一个动态的人物在自己的主页面呢？"><span class="toc-text">hexo 怎么增加一个动态的人物在自己的主页面呢？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-添加看板娘"><span class="toc-text">hexo 添加看板娘</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#config配置"><span class="toc-text">config配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#live2d"><span class="toc-text">live2d</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo实现文件下载功能"><span class="toc-text">hexo实现文件下载功能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-Nunjucks-Error-Line-18-Column-226-unexpected-token"><span class="toc-text">hexo Nunjucks Error:  [Line 18, Column 226] unexpected token: .</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-访问的问题"><span class="toc-text">hexo 访问的问题</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-clean"><span class="toc-text">hexo clean</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#清除缓存-网页正常情况下可以忽略此条命令-执行该指令后-会删掉站点根目录下的public文件夹"><span class="toc-text">清除缓存 ,网页正常情况下可以忽略此条命令,执行该指令后,会删掉站点根目录下的public文件夹</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-怎么增加一个动态的人物在自己的主页面呢？"><span class="toc-text">hexo 怎么增加一个动态的人物在自己的主页面呢？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-添加看板娘"><span class="toc-text">hexo 添加看板娘</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#config配置"><span class="toc-text">config配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#live2d"><span class="toc-text">live2d</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo实现文件下载功能"><span class="toc-text">hexo实现文件下载功能</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-Nunjucks-Error-Line-18-Column-226-unexpected-token"><span class="toc-text">hexo Nunjucks Error:  [Line 18, Column 226] unexpected token: .</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-访问的问题"><span class="toc-text">hexo 访问的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#列表形式要谨慎使用"><span class="toc-text">列表形式要谨慎使用</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1214,7 +1214,8 @@
 <p>2注意在source文件夹下建立一个CNAME文件，里面只写一个域名就能避免每次被清空这也是解决方法之一<br>重新更新一下repository中的settings才会生效</p>
 <p>3 测试了好几次为什么每次都是先在githubpages上反映，<br>在<a href="http://www.jhshz.top上反映的很慢？需要刷新一下" target="_blank" rel="noopener">www.jhshz.top上反映的很慢？需要刷新一下</a></p>
 <p>是因为TTL是10分钟的原因吗，并不会马上部署完成还是需要一定的反应时间，但并不是每次都需要重新访问githubpages的，<br>部署顺序估计是先部署到githubpages，在其上面更新，然后通过域名访问时，其实是在访问githubpages</p>
-
+<h2 id="列表形式要谨慎使用"><a href="#列表形式要谨慎使用" class="headerlink" title="列表形式要谨慎使用"></a>列表形式要谨慎使用</h2><p>不然可能引起项目的报错<br>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 局部变量 局部变量在脚本或命令中定义，仅在当前shell实例中有效，其他shell启动的程序不能访问局部变量。</span><br><span class="line">2. 环境变量 所有的程序，包括shell启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候shell脚本也可以定义环境变量。</span><br><span class="line">3. shell变量 shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了shell的正常运行</span><br><span class="line"></span><br><span class="line">如下形式就可能报错</span><br><span class="line">        1. 局部变量 局部变量在脚本或命令中定义，仅在当前shell实例中有效，其他shell启动的程序不能访问局部变量。</span><br><span class="line">        2. 环境变量 所有的程序，包括shell启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候shell脚本也可以定义环境变量。</span><br><span class="line">        3. shell变量 shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了shell的正常运行</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -1228,10 +1229,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>hexo问题解决</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">455</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">802</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-28, 09:11:55</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-17, 11:10:29</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-17, 11:45:42</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/28/hexo问题解决/" title="hexo问题解决">http://jhshz520.github.io/2019/10/28/hexo问题解决/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
