@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>环形链表leetcode141 | 华中阁</title>
-  <meta name="keywords" content=" leetcode ">
-  <meta name="description" content="环形链表leetcode141 | 华中阁">
+  <title>shell教程6 | 华中阁</title>
+  <meta name="keywords" content>
+  <meta name="description" content="shell教程6 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介北上滨城五载，南下荆楚三年。 山河表里飘蓬客，春秋难易赤子心。 2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -1157,30 +1157,24 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="w-环形链表leetcode141" class="article article-type-w" itemscope itemprop="blogPost">
+        <article id="post-shell教程6" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">环形链表leetcode141</h1>
+        <h1 class="article-title">shell教程6</h1>
     
     <div class="article-meta">
         
         
         
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">leetcode</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-12 17:29:00'>2019-10-12 16:29</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-17 15:27:12'>2020-11-17 15:27</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:469</span>
+        <span>字数:0</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1199,7 +1193,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#环形链表"><span class="toc-text">环形链表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#快慢指针"><span class="toc-text">快慢指针</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hash表"><span class="toc-text">hash表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#map-count-的值只能是0-或者1"><span class="toc-text">map count()的值只能是0 或者1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#map-使用下标索引可以获取该键所关联的值，若下标访问不存在的元素则会导致容器中添加一个新的元素，键即为下标的值"><span class="toc-text">map 使用下标索引可以获取该键所关联的值，若下标访问不存在的元素则会导致容器中添加一个新的元素，键即为下标的值</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -1214,19 +1208,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="环形链表"><a href="#环形链表" class="headerlink" title="环形链表"></a>环形链表</h1><p>面试中经常会考察的一种题型</p>
-<p>给定一个链表，判断链表中是否有环。</p>
-<p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。</p>
-<h2 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h2><p>定义两个指针若两个指针相遇则存在空</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">bool hasCycle(struct ListNode *head)</span><br><span class="line">&#123;</span><br><span class="line">    struct ListNode *slow = head;</span><br><span class="line">	struct ListNode *fast = head;</span><br><span class="line">	</span><br><span class="line">	while(fast &amp;&amp; fast-&gt;next)</span><br><span class="line">	&#123;</span><br><span class="line">		slow = slow-&gt;next;</span><br><span class="line">		fast = fast-&gt;next-&gt;next;</span><br><span class="line">		</span><br><span class="line">		if(slow == fast)</span><br><span class="line">		&#123;</span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">	 &#125; </span><br><span class="line">	 return false; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="hash表"><a href="#hash表" class="headerlink" title="hash表"></a>hash表</h1><p>们遍历所有结点并在哈希表中存储每个结点的引用（或内存地址）。如果当前结点为空结点 null（即已检测到链表尾部的下一个结点），那么我们已经遍历完整个链表，并且该链表不是环形链表。如果当前结点的引用已经存在于哈希表中，那么返回 true（即该链表为环形链表）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">public boolean hasCycle(ListNode head) &#123;</span><br><span class="line">    Set&lt;ListNode&gt; nodesSeen = new HashSet&lt;&gt;();</span><br><span class="line">    while (head != null) &#123;</span><br><span class="line">        if (nodesSeen.contains(head)) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            nodesSeen.add(head);</span><br><span class="line">        &#125;</span><br><span class="line">        head = head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool hasCycle(ListNode *head) &#123;</span><br><span class="line">        if(head==nullptr || head-&gt;next == nullptr)</span><br><span class="line">        &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        map&lt;ListNode*,int&gt; ptrArr;</span><br><span class="line">        ptrArr[head] = 1;</span><br><span class="line">        while(head)</span><br><span class="line">        &#123;</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">            if(ptrArr.count(head) == 1)</span><br><span class="line">            &#123;</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                ptrArr[head] = 1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h1 id="map-count-的值只能是0-或者1"><a href="#map-count-的值只能是0-或者1" class="headerlink" title="map count()的值只能是0 或者1"></a>map count()的值只能是0 或者1</h1><h1 id="map-使用下标索引可以获取该键所关联的值，若下标访问不存在的元素则会导致容器中添加一个新的元素，键即为下标的值"><a href="#map-使用下标索引可以获取该键所关联的值，若下标访问不存在的元素则会导致容器中添加一个新的元素，键即为下标的值" class="headerlink" title="map 使用下标索引可以获取该键所关联的值，若下标访问不存在的元素则会导致容器中添加一个新的元素，键即为下标的值"></a>map 使用下标索引可以获取该键所关联的值，若下标访问不存在的元素则会导致容器中添加一个新的元素，键即为下标的值</h1><p>count 和find 用于检查某个键是否存在而不会插入该键</p>
-<p>默认下标访问插入的关联值为0</p>
-<p>这种插入方式与insert（make_pair()）插入方式效果相同</p>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -1239,12 +1221,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>环形链表leetcode141</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">469</span></p>
+    <p><span class="copy-title">文章标题:</span>shell教程6</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-12, 16:29:57</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-12, 17:29:00</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/12/环形链表leetcode141/" title="环形链表leetcode141">http://jhshz520.github.io/2019/10/12/环形链表leetcode141/</a>
+    <p><span class="copy-title">发布时间:</span>2020-11-17, 15:27:11</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-17, 15:27:12</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/17/shell教程6/" title="shell教程6">http://jhshz520.github.io/2020/11/17/shell教程6/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
