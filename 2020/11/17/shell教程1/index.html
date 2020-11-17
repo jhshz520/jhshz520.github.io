@@ -1197,7 +1197,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-11-17 21:33:58'>2020-11-17 11:27</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-17 21:36:50'>2020-11-17 11:27</time>
         
     </div>
     <div class="article-meta">
@@ -1221,7 +1221,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#shell脚本"><span class="toc-text">shell脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一个shell脚本"><span class="toc-text">第一个shell脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#运行方法"><span class="toc-text">运行方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell变量"><span class="toc-text">shell变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#只读变量"><span class="toc-text">只读变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除变量"><span class="toc-text">删除变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行shell时的三种变量"><span class="toc-text">运行shell时的三种变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shell字符串"><span class="toc-text">shell字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#双引号拼接"><span class="toc-text">双引号拼接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#单引号拼接"><span class="toc-text">单引号拼接</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#shell脚本"><span class="toc-text">shell脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一个shell脚本"><span class="toc-text">第一个shell脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#运行方法"><span class="toc-text">运行方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell变量"><span class="toc-text">shell变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#只读变量"><span class="toc-text">只读变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除变量"><span class="toc-text">删除变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行shell时的三种变量"><span class="toc-text">运行shell时的三种变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell字符串"><span class="toc-text">shell字符串</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#双引号拼接"><span class="toc-text">双引号拼接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#单引号拼接"><span class="toc-text">单引号拼接</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1261,10 +1261,10 @@
 <li><p>环境变量 所有的程序，包括shell启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候shell脚本也可以定义环境变量。</p>
 </li>
 <li><p>shell变量 shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了shell的正常运行</p>
-<h3 id="shell字符串"><a href="#shell字符串" class="headerlink" title="shell字符串"></a>shell字符串</h3><p>单引号的限制：</p>
+<h2 id="shell字符串"><a href="#shell字符串" class="headerlink" title="shell字符串"></a>shell字符串</h2><p>单引号的限制：</p>
 <pre><code>串内不能出现单独一个引号</code></pre></li>
 </ol>
-<p>双引号有点：</p>
+<p>双引号优点：</p>
 <ol>
 <li>引号内可以有变量</li>
 <li>可以出现转义字符</li>
@@ -1272,7 +1272,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">your_name=&quot;jhshz&quot;</span><br><span class="line">str=&quot;hello , I know you are \&quot;$your_name&quot; !\n&quot;</span><br><span class="line">echo -e $str</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">输出结果</span><br></pre></td></tr></table></figure>
 
 <p>hello, I know  you are “jhshz”!</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 拼接字符串</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 拼接字符串</span><br></pre></td></tr></table></figure>
 
 <p>your_name=”jhshz”</p>
 <h1 id="双引号拼接"><a href="#双引号拼接" class="headerlink" title="双引号拼接"></a>双引号拼接</h1><p>greeting=”hello,”$your_name”!”<br>greeting_1=”hello,${your_name}!”</p>
@@ -1330,7 +1330,7 @@
     <p><span class="copy-title">文章字数:</span><span class="post-count">632</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2020-11-17, 11:27:53</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-17, 21:33:58</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-17, 21:36:50</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/17/shell教程1/" title="shell教程1">http://jhshz520.github.io/2020/11/17/shell教程1/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
