@@ -332,7 +332,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="74">
-<input type="hidden" id="yelog_site_word_count" value="72.9k">
+<input type="hidden" id="yelog_site_word_count" value="73.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1165,12 +1165,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-11-17 11:21:10'>2020-11-17 09:08</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-17 15:24:17'>2020-11-17 09:08</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:726</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1189,7 +1189,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#shell命令"><span class="toc-text">shell命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#echo-命令"><span class="toc-text">echo 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#显示结果重定向到文件"><span class="toc-text">显示结果重定向到文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原样输出字符串，不进行转义和取变量"><span class="toc-text">原样输出字符串，不进行转义和取变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示命令的执行结果"><span class="toc-text">显示命令的执行结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#printf命令"><span class="toc-text">printf命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#test命令"><span class="toc-text">test命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数值测试"><span class="toc-text">数值测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符测试"><span class="toc-text">字符测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件测试"><span class="toc-text">文件测试</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1204,7 +1204,36 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="shell命令"><a href="#shell命令" class="headerlink" title="shell命令"></a>shell命令</h1><h2 id="echo-命令"><a href="#echo-命令" class="headerlink" title="echo 命令"></a>echo 命令</h2><p>显示变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">read name # 从标准输入中读入一个name 变量</span><br><span class="line">echo &quot;$name It is a test&quot;</span><br></pre></td></tr></table></figure>
+
+<p>显示换行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo -e &quot;ok!\n&quot; # -e 开启转义，不知道为什么我的-e依然会在命令行中显示出来</span><br><span class="line">echo &quot;it is a test&quot;</span><br><span class="line"></span><br><span class="line">echo -e &quot;ok!\c&quot; # -e 开启转义 \c不换行</span><br><span class="line">echo &quot;it is a test&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="显示结果重定向到文件"><a href="#显示结果重定向到文件" class="headerlink" title="显示结果重定向到文件"></a>显示结果重定向到文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;it is a test echo to file &quot; &gt; myfile #会生成myfile，隐藏文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="原样输出字符串，不进行转义和取变量"><a href="#原样输出字符串，不进行转义和取变量" class="headerlink" title="原样输出字符串，不进行转义和取变量"></a>原样输出字符串，不进行转义和取变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;$name\&quot;&apos;</span><br></pre></td></tr></table></figure>
+
+<h3 id="显示命令的执行结果"><a href="#显示命令的执行结果" class="headerlink" title="显示命令的执行结果"></a>显示命令的执行结果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo `date`</span><br></pre></td></tr></table></figure>
+
+<h2 id="printf命令"><a href="#printf命令" class="headerlink" title="printf命令"></a>printf命令</h2><p>printf 命令模仿 C 程序库（library）里的 printf() 程序printf 由 POSIX 标准所定义，因此使用 printf 的脚本比使用 echo 移植性好。<br>外面可以在 printf 中使用格式化字符串，还可以制定字符串的宽度、左右对齐方式等。默认 printf 不会像 echo 自动添加换行符，我们可以手动添加 \n。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">printf &quot;%-10s %-8s %-4s\n&quot; 姓名 性别 体重kg  </span><br><span class="line">printf &quot;%-10s %-8s %-4.2f\n&quot; 郭靖 男 66.1234 </span><br><span class="line">printf &quot;%-10s %-8s %-4.2f\n&quot; 杨过 男 48.6543 </span><br><span class="line">printf &quot;%-10s %-8s %-4.2f\n&quot; 郭芙 女 47.9876</span><br></pre></td></tr></table></figure>
+
+<h2 id="test命令"><a href="#test命令" class="headerlink" title="test命令"></a>test命令</h2><p>test 命令用于检查某个条件是否成立，它可以进行数值、字符和文件三个方面的测试</p>
+<h3 id="数值测试"><a href="#数值测试" class="headerlink" title="数值测试"></a>数值测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-eq	等于则为真</span><br><span class="line">-ne	不等于则为真</span><br><span class="line">-gt	大于则为真</span><br><span class="line">-ge	大于等于则为真</span><br><span class="line">-lt	小于则为真</span><br><span class="line">-le	小于等于则为真</span><br></pre></td></tr></table></figure>
+
+<p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line">num1=100</span><br><span class="line">num2=100</span><br><span class="line">if test $[num1] -eq $[num2]</span><br><span class="line">then</span><br><span class="line">    echo &apos;两个数相等！&apos;</span><br><span class="line">else</span><br><span class="line">    echo &apos;两个数不相等！&apos;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">a=5</span><br><span class="line">b=6</span><br><span class="line"></span><br><span class="line">result=$[a+b] # 注意等号两边不能有空格</span><br><span class="line">echo &quot;result 为： $result&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符测试"><a href="#字符测试" class="headerlink" title="字符测试"></a>字符测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">=	等于则为真</span><br><span class="line">!=	不相等则为真</span><br><span class="line">-z 字符串	字符串的长度为零则为真</span><br><span class="line">-n 字符串	字符串的长度不为零则为真</span><br></pre></td></tr></table></figure>
+
+<p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">num1=&quot;ru1noob&quot;</span><br><span class="line">num2=&quot;runoob&quot;</span><br><span class="line">if test $num1 = $num2</span><br><span class="line">then</span><br><span class="line">    echo &apos;两个字符串相等!&apos;</span><br><span class="line">else</span><br><span class="line">    echo &apos;两个字符串不相等!&apos;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件测试"><a href="#文件测试" class="headerlink" title="文件测试"></a>文件测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-e 文件名	如果文件存在则为真</span><br><span class="line">-r 文件名	如果文件存在且可读则为真</span><br><span class="line">-w 文件名	如果文件存在且可写则为真</span><br><span class="line">-x 文件名	如果文件存在且可执行则为真</span><br><span class="line">-s 文件名	如果文件存在且至少有一个字符则为真</span><br><span class="line">-d 文件名	如果文件存在且为目录则为真</span><br><span class="line">-f 文件名	如果文件存在且为普通文件则为真</span><br><span class="line">-c 文件名	如果文件存在且为字符型特殊文件则为真</span><br><span class="line">-b 文件名	如果文件存在且为块特殊文件则为真</span><br></pre></td></tr></table></figure>
+
+<p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /bin</span><br><span class="line">if test -e ./notFile -o -e ./bash</span><br><span class="line">then</span><br><span class="line">    echo &apos;至少有一个文件存在!&apos;</span><br><span class="line">else</span><br><span class="line">    echo &apos;两个文件都不存在&apos;</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -1218,10 +1247,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>shell教程3</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">726</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2020-11-17, 09:08:54</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-17, 11:21:10</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-17, 15:24:17</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/17/shell教程3/" title="shell教程3">http://jhshz520.github.io/2020/11/17/shell教程3/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
