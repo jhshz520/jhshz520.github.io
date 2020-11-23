@@ -340,7 +340,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="83">
-<input type="hidden" id="yelog_site_word_count" value="76.7k">
+<input type="hidden" id="yelog_site_word_count" value="77.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1237,12 +1237,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-11-23 08:41:20'>2020-11-23 08:39</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-23 11:40:01'>2020-11-23 08:39</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:373</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1261,7 +1261,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#docker-容器镜像和镜像仓库"><span class="toc-text">docker 容器镜像和镜像仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#列出镜像"><span class="toc-text">列出镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找镜像"><span class="toc-text">查找镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-pull"><span class="toc-text">docker pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构建镜像"><span class="toc-text">构建镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#登录到docker-hub"><span class="toc-text">登录到docker hub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-commit"><span class="toc-text">docker commit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-history"><span class="toc-text">docker history</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动分离式容器"><span class="toc-text">启动分离式容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过-p-命令映射特定的端口号"><span class="toc-text">通过-p 命令映射特定的端口号</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1276,7 +1276,43 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="docker-容器镜像和镜像仓库"><a href="#docker-容器镜像和镜像仓库" class="headerlink" title="docker 容器镜像和镜像仓库"></a>docker 容器镜像和镜像仓库</h1><h2 id="列出镜像"><a href="#列出镜像" class="headerlink" title="列出镜像"></a>列出镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<font color="yellow">
+本地镜像都保存在 /var/lib/docker 目录下，每个镜像保存在所用的存储驱动的目录下如aufs或者devicemapper
+</font>
+
+<h2 id="查找镜像"><a href="#查找镜像" class="headerlink" title="查找镜像"></a>查找镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search puppet NAME</span><br></pre></td></tr></table></figure>
+
+<h2 id="docker-pull"><a href="#docker-pull" class="headerlink" title="docker pull"></a>docker pull</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo docker pull jamtur01/puppetmaster</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo docker run -i -t jamtur01/puppetmaster /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>利用镜像创建一个容器</p>
+<h2 id="构建镜像"><a href="#构建镜像" class="headerlink" title="构建镜像"></a>构建镜像</h2><p>docker build 命令和 dockerfile文件</p>
+<h2 id="登录到docker-hub"><a href="#登录到docker-hub" class="headerlink" title="登录到docker hub"></a>登录到docker hub</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker login</span><br><span class="line"></span><br><span class="line">sudo docker logout</span><br></pre></td></tr></table></figure>
+
+<font color="yellow">
+个人的认证信息会保存到 $HOME/.dockercfg文件
+
+<p>1.7.0 之后<br>$HOME/.docker/config.json<br></p></font><p></p>
+<h2 id="docker-commit"><a href="#docker-commit" class="headerlink" title="docker commit"></a>docker commit</h2><p>创建一个要进行修改的定制容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -i -t ubuntu /bin/bash </span><br><span class="line"></span><br><span class="line">apt-get -yqq update</span><br><span class="line"></span><br><span class="line">apt-get -y install apache2</span><br><span class="line"></span><br><span class="line">sudo docker commit 原容器id jamtur01/apache2</span><br></pre></td></tr></table></figure>
+
+<h2 id="docker-history"><a href="#docker-history" class="headerlink" title="docker history"></a>docker history</h2><p>docker history 跟的参数是iamge的名称或者id，然后就会显示镜像的每一层，以及创建这些层的指令</p>
+<h2 id="启动分离式容器"><a href="#启动分离式容器" class="headerlink" title="启动分离式容器"></a>启动分离式容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -d -p 80 --name static_web jamtur01/static_web \nginx -g  &quot;daemon off;&quot;</span><br></pre></td></tr></table></figure>
+
+<font color="yellow">
+-p 标志用来控制公开的网络端口号给外部，docker run 命令会随机选择一个 32768~61000的一个大的端口号来映射到容器的80 端口
+</font>
+## 查看docker 端口的映射情况
+docker ps -l
+## docker port 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker port 容器id 80</span><br></pre></td></tr></table></figure>
+
+<p>这样就能够查看该容器id的80端口所对应的宿主机的端口号</p>
+<h2 id="通过-p-命令映射特定的端口号"><a href="#通过-p-命令映射特定的端口号" class="headerlink" title="通过-p 命令映射特定的端口号"></a>通过-p 命令映射特定的端口号</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -d -p 80：80 --name static_web jamtur01/static_web \nginx -g  &quot;daemon off;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>第一个80代表宿主机的80，第二个80代表容器的80端口</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -1290,10 +1326,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>第一本docker书2</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">373</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2020-11-23, 08:39:10</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-23, 08:41:20</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-23, 11:40:01</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/23/第一本docker书2/" title="第一本docker书2">http://jhshz520.github.io/2020/11/23/第一本docker书2/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
