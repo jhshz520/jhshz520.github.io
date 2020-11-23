@@ -340,7 +340,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="83">
-<input type="hidden" id="yelog_site_word_count" value="76.1k">
+<input type="hidden" id="yelog_site_word_count" value="76.4k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1237,12 +1237,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-11-23 09:07:11'>2020-11-23 08:38</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-23 09:38:05'>2020-11-23 08:38</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:350</span>
+        <span>字数:660</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1261,7 +1261,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#docker声明周期"><span class="toc-text">docker声明周期</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dcoker-info"><span class="toc-text">dcoker info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-run"><span class="toc-text">docker run</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用第一个容器"><span class="toc-text">使用第一个容器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-help"><span class="toc-text">docker help</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-ps"><span class="toc-text">docker ps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#容器命名"><span class="toc-text">容器命名</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#docker声明周期"><span class="toc-text">docker声明周期</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dcoker-info"><span class="toc-text">dcoker info</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-run"><span class="toc-text">docker run</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用第一个容器"><span class="toc-text">使用第一个容器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-help"><span class="toc-text">docker help</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-ps"><span class="toc-text">docker ps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#容器命名"><span class="toc-text">容器命名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重新启动已经停止的容器"><span class="toc-text">重新启动已经停止的容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-create"><span class="toc-text">docker  create</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-attach-容器附着"><span class="toc-text">docker attach 容器附着</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建守护式容器"><span class="toc-text">创建守护式容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-logs"><span class="toc-text">docker logs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker支持日志驱动"><span class="toc-text">docker支持日志驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-top"><span class="toc-text">docker top</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-states"><span class="toc-text">docker states</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#容器内部运行进程"><span class="toc-text">容器内部运行进程</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1292,7 +1292,31 @@
 
 <h2 id="容器命名"><a href="#容器命名" class="headerlink" title="容器命名"></a>容器命名</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name myubuntu -i -t ubuntu  /bin/bash</span><br></pre></td></tr></table></figure>
 
+<h2 id="重新启动已经停止的容器"><a href="#重新启动已经停止的容器" class="headerlink" title="重新启动已经停止的容器"></a>重新启动已经停止的容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker start myubuntu</span><br></pre></td></tr></table></figure>
 
+<h2 id="docker-create"><a href="#docker-create" class="headerlink" title="docker  create"></a>docker  create</h2><p>创建一个容器，但是并不运行它，可以在自己的容器工作流中进行细粒度的控制</p>
+<h2 id="docker-attach-容器附着"><a href="#docker-attach-容器附着" class="headerlink" title="docker attach 容器附着"></a>docker attach 容器附着</h2><p>docker在重新启动的时候会沿用docker run 命令时的指定参数来运行</p>
+<p>因此容器在启动的时候会运行一个交互式的shell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker attach myubuntu</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建守护式容器"><a href="#创建守护式容器" class="headerlink" title="创建守护式容器"></a>创建守护式容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name daemon_ubuntu -d ubuntu /bin/bash -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="docker-logs"><a href="#docker-logs" class="headerlink" title="docker logs"></a>docker logs</h2><p>查看容器内部的运行情况</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker logs daemon_ubuntu</span><br></pre></td></tr></table></figure>
+
+<p>ctrl+c 退出内部日志跟踪</p>
+<h2 id="docker支持日志驱动"><a href="#docker支持日志驱动" class="headerlink" title="docker支持日志驱动"></a>docker支持日志驱动</h2><p>可以将docker logs 日志功能禁用，将所有日志输出到syslog，但是目前我用不到这个功能</p>
+<h2 id="docker-top"><a href="#docker-top" class="headerlink" title="docker top"></a>docker top</h2><p>查看容器内的进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker top daemon_ubuntu</span><br></pre></td></tr></table></figure>
+
+<font color="yellow">
+PID 和PPID 的含义表示什么还值得后续查找资料
+</font>
+
+<h2 id="docker-states"><a href="#docker-states" class="headerlink" title="docker states"></a>docker states</h2><p>统计信息，显示一个或者多个容器的统计信息</p>
+<p>能够看到容器的CPU 内存 网络 I/O 存储 的性能和指标，能够快速地监控一个主机上的一组容器</p>
+<p>这个是1.5 之后引入的命令</p>
+<h2 id="容器内部运行进程"><a href="#容器内部运行进程" class="headerlink" title="容器内部运行进程"></a>容器内部运行进程</h2>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -1306,10 +1330,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>第一本docker书1</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">350</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">660</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2020-11-23, 08:38:46</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-23, 09:07:11</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-23, 09:38:05</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/23/第一本docker书1/" title="第一本docker书1">http://jhshz520.github.io/2020/11/23/第一本docker书1/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
