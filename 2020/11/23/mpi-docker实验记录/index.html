@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>dockerfile学习 | 华中阁</title>
-  <meta name="keywords" content>
-  <meta name="description" content="dockerfile学习 | 华中阁">
+  <title>mpi_docker实验记录 | 华中阁</title>
+  <meta name="keywords" content=" 实验 ">
+  <meta name="description" content="mpi_docker实验记录 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介北上滨城五载，南下荆楚三年。 山河表里飘蓬客，春秋难易赤子心。 2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
 <meta property="og:type" content="website">
@@ -1225,24 +1225,36 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-dockerfile学习" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-mpi-docker实验记录" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">dockerfile学习</h1>
+        <h1 class="article-title">mpi_docker实验记录</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="实验">实验</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color3">实验</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-09-23 18:56:19'>2020-09-23 18:56</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-23 22:17:24'>2020-11-23 20:09</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:242</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1261,7 +1273,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NLKNguyen-alpine-mpich实验"><span class="toc-text">NLKNguyen/alpine-mpich实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#single-host"><span class="toc-text">single host</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#试试能不能跑benchmark"><span class="toc-text">试试能不能跑benchmark</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#npb-测试集怎么使用呢"><span class="toc-text">npb 测试集怎么使用呢</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#所有虚拟机的ip"><span class="toc-text">所有虚拟机的ip</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1276,7 +1288,22 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="NLKNguyen-alpine-mpich实验"><a href="#NLKNguyen-alpine-mpich实验" class="headerlink" title="NLKNguyen/alpine-mpich实验"></a>NLKNguyen/alpine-mpich实验</h1><h2 id="single-host"><a href="#single-host" class="headerlink" title="single host"></a>single host</h2><p>获取id_rsa.pub：</p>
+<p>ssh-keygen</p>
+<p>一路回车会看到一个矩形图案</p>
+<p>这时ls看不到 .ssh文件夹，需要 cd  /root/ssh/</p>
+<p>这样会切换到.ssh 再ls 能够看到id_rsa 和 id_ras.pub</p>
+<p>ssh: Could not resolve hostname keygen: Temporary failure in name resolution</p>
+<p>这是因为打错了应该是ssh-keygen，生成的id_rsa和id_rsa.pub 在 /home/Hadoop/.ssh文件夹下 将其复制到 alpine-mpich cluster ssh文件夹下进行替换</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./cluster.sh login</span><br><span class="line"></span><br><span class="line">WARNING: Error loading config file: /home/hadoop/.docker/config.json: stat /home/hadoop/.docker/config.json: permission denied</span><br></pre></td></tr></table></figure>
+
+<p>虽然报错但是依然能运行出正确的结果</p>
+<h2 id="试试能不能跑benchmark"><a href="#试试能不能跑benchmark" class="headerlink" title="试试能不能跑benchmark"></a>试试能不能跑benchmark</h2><h3 id="npb-测试集怎么使用呢"><a href="#npb-测试集怎么使用呢" class="headerlink" title="npb 测试集怎么使用呢"></a>npb 测试集怎么使用呢</h3><p>sudo curl -L “<a href="https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$" target="_blank" rel="noopener">https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$</a>(uname -s)-$(uname -m)” -o /usr/local/bin/docker-compose</p>
+<h2 id="所有虚拟机的ip"><a href="#所有虚拟机的ip" class="headerlink" title="所有虚拟机的ip"></a>所有虚拟机的ip</h2><p>ubuntu1 192.168.110.129<br>ubuntu_slave1 192.168.110.8<br>ubuntu_slave2 192.168.110.9<br>mpi_single 192.168.110.12 ifconfig 显示是 192.168.110.11 还没有改正</p>
+<p>linux 设置静态ip</p>
+<p>vi /etc/network/interface</p>
+<p>dns-nameserver 202.114.0.131</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -1289,12 +1316,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>dockerfile学习</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">文章标题:</span>mpi_docker实验记录</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">242</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-09-23, 18:56:19</p>
-    <p><span class="copy-title">最后更新:</span>2020-09-23, 18:56:19</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/09/23/dockerfile学习/" title="dockerfile学习">http://jhshz520.github.io/2020/09/23/dockerfile学习/</a>
+    <p><span class="copy-title">发布时间:</span>2020-11-23, 20:09:29</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-23, 22:17:24</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/23/mpi-docker实验记录/" title="mpi_docker实验记录">http://jhshz520.github.io/2020/11/23/mpi-docker实验记录/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
