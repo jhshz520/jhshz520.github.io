@@ -348,7 +348,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="88">
-<input type="hidden" id="yelog_site_word_count" value="81.9k">
+<input type="hidden" id="yelog_site_word_count" value="82.6k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1293,12 +1293,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-11-27 15:35:27'>2020-11-24 08:39</time>
+        创建时间:<time class="date" title='更新时间: 2020-11-27 15:55:12'>2020-11-24 08:39</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:2k</span>
+        <span>字数:2.6k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1317,7 +1317,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#项目结构"><span class="toc-text">项目结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#For-single-host-with-Docker-Compose"><span class="toc-text">For single-host with Docker Compose</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cluster-sh"><span class="toc-text">cluster.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dockerfile"><span class="toc-text">dockerfile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-compose-yml"><span class="toc-text">docker-compose.yml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NPB测试的使用"><span class="toc-text">NPB测试的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker怎么进入一个正在运行的容器内部"><span class="toc-text">docker怎么进入一个正在运行的容器内部</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参照默认dockerfile定制化"><span class="toc-text">参照默认dockerfile定制化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么查看docker容器的运行状态"><span class="toc-text">怎么查看docker容器的运行状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-怎么把容器保存为本地镜像"><span class="toc-text">docker 怎么把容器保存为本地镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么给docker-容器重命名"><span class="toc-text">怎么给docker 容器重命名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-run的参数解释"><span class="toc-text">docker run的参数解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除容器的镜像"><span class="toc-text">删除容器的镜像</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#项目结构"><span class="toc-text">项目结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#For-single-host-with-Docker-Compose"><span class="toc-text">For single-host with Docker Compose</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cluster-sh"><span class="toc-text">cluster.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dockerfile"><span class="toc-text">dockerfile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-compose-yml"><span class="toc-text">docker-compose.yml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NPB测试的使用"><span class="toc-text">NPB测试的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker怎么进入一个正在运行的容器内部"><span class="toc-text">docker怎么进入一个正在运行的容器内部</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参照默认dockerfile定制化"><span class="toc-text">参照默认dockerfile定制化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么查看docker容器的运行状态"><span class="toc-text">怎么查看docker容器的运行状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-怎么把容器保存为本地镜像"><span class="toc-text">docker 怎么把容器保存为本地镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么给docker-容器重命名"><span class="toc-text">怎么给docker 容器重命名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-run的参数解释"><span class="toc-text">docker run的参数解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除容器的镜像"><span class="toc-text">删除容器的镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker数据映射"><span class="toc-text">docker数据映射</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1367,10 +1367,23 @@
 <h2 id="docker-run的参数解释"><a href="#docker-run的参数解释" class="headerlink" title="docker run的参数解释"></a>docker run的参数解释</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-a  attach 表示追加</span><br><span class="line">- i 表示交互方式</span><br><span class="line">- t</span><br><span class="line"></span><br><span class="line">--privileged=false， 指定容器是否为特权容器，特权容器拥有所有的capabilities</span><br></pre></td></tr></table></figure>
 
 <p><strong>指定容器名称</strong><br>利用容器镜像启动容器的时候直接指定容器的名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run --name [container name] -t -i [image ID | Repository:TAG] /bin/bash</span><br><span class="line"></span><br><span class="line">sudo docker run --name sql5.7 -it mysql:5.7 /bin/bash</span><br></pre></td></tr></table></figure>
+
 <h2 id="删除容器的镜像"><a href="#删除容器的镜像" class="headerlink" title="删除容器的镜像"></a>删除容器的镜像</h2><p>直接 sudo docker rmi mysql的时候会报错，因为还有容器依赖于该镜像，所以正常情况下是先删除容器再删除容器依赖的镜像</p>
 <p>docker删除所有none镜像</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker rmi `docker images | grep  &apos;&lt;none&gt;&apos; | awk &apos;&#123;print $3&#125;&apos;`</span><br></pre></td></tr></table></figure>
 
+<h2 id="docker数据映射"><a href="#docker数据映射" class="headerlink" title="docker数据映射"></a>docker数据映射</h2><p><strong>什么是挂载</strong></p>
+<p>当在 Linux 系统中使用这些硬件设备时，只有将Linux本身的文件目录与硬件设备的文件目录合二为一，硬件设备才能为我们所用。合二为一的过程称为“挂载”。</p>
+<p>挂载，指的就是将设备文件中的顶级目录连接到 Linux 根目录下的某一目录（最好是空目录），访问此目录就等同于访问设备文件</p>
+<p>当插入了新硬盘，分了新磁盘区sdb1。它现在还不属于/。</p>
+<p>我们虽然可以在一些图形桌面系统里找到他的位置，浏览管理里面的文件，但在命令行却不知怎么访问它的目录，比如无法使用cd或者ls。也无法在编程时指定一个目录对它操作。</p>
+<p>当我们使用了 mount /dev/sdb1 <del>/Share/ ，把新硬盘的区sdb1挂载到工作目录的</del>/Share/文件夹下，之后访问这个~/Share/文件夹就相当于访问这个硬盘2的sdb1分区了。对/Share/的任何操作，都相当于对sdb1里文件的操作。</p>
+<p>所以Linux下，mount挂载的作用，就是将一个设备（通常是存储设备）挂接到一个已存在的目录上。访问这个目录就是访问该存储设备。</p>
+<p>插入CD，系统其实自动执行了 mount /dev/cdrom /media/cdrom。所以可以直接在/media/cdrom中对CD中的内容进行管理</p>
+<p>纠正一个误区，并不是根目录下任何一个目录都可以作为挂载点，由于挂载操作会使得原有目录中文件被隐藏，因此根目录以及系统原有目录都不要作为挂载点，会造成系统异常甚至崩溃，挂载点最好是新建的空目录</p>
+<p>语法：docker run –dit –v /src:/dst centos:latest bash<br>-v 用来指定挂载目录, 冒号: 前面的/src 为物理机本地目录,:后面的/dst 为容器里的目录:</p>
+<p>例1：把物理机上的/var/ww/html映射到docker实例的/var/www/html<br>[root@xuegod110 ~]# mkdir -p /var/www/html/<br>[root@xuegod110 ~]# docker run -dit –name docker11 -v /var/www/html:/var/www/html centos:latest bash<br>[root@xuegod110 ~]# echo xuegod110 &gt; /var/www/html/index.html #在物理机上写入文件<br>[root@xuegod110 ~]# docker exec -it docker11 bash<br>[root@5be95cdaaa29 /]# cat /var/www/html/index.html #容器实例查看<br>xuegod110</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
@@ -1385,10 +1398,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>mpi_docker项目分析</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">2k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.6k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2020-11-24, 08:39:50</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-27, 15:35:27</p>
+    <p><span class="copy-title">最后更新:</span>2020-11-27, 15:55:12</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/24/mpi-docker项目分析/" title="mpi_docker项目分析">http://jhshz520.github.io/2020/11/24/mpi-docker项目分析/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
