@@ -179,7 +179,7 @@
     
         
             
-            <li><div data-rel="Docker">Docker<small>(8)</small></div>
+            <li><div data-rel="Docker">Docker<small>(7)</small></div>
                 
             </li>
             
@@ -307,7 +307,7 @@
     
         
             
-            <li><div data-rel="研究方向">研究方向<small>(3)</small></div>
+            <li><div data-rel="研究方向">研究方向<small>(2)</small></div>
                 
             </li>
             
@@ -337,6 +337,14 @@
             
         
     
+        
+            
+            <li><div data-rel="docker">docker<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -348,7 +356,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="88">
-<input type="hidden" id="yelog_site_word_count" value="83.7k">
+<input type="hidden" id="yelog_site_word_count" value="84.2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -753,7 +761,7 @@
             <span class="post-date" title="2019-10-28 09:11:55">2019/10/28</span>
         </a>
         
-        <a  class="Docker "
+        <a  class="docker "
            href="/2019/11/21/docker实战/"
            data-tag="docker"
            data-author="" >
@@ -1145,7 +1153,7 @@
             <span class="post-date" title="2019-11-11 19:46:38">2019/11/11</span>
         </a>
         
-        <a  class="研究方向 "
+        <a  class="docker "
            href="/2020/11/23/第一本docker书1/"
            data-tag="docker"
            data-author="" >
@@ -1279,7 +1287,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="研究方向">研究方向</a>
+                <a href="javascript:" data-rel="docker">docker</a>
             
         </span>
         
@@ -1293,12 +1301,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-11-23 10:56:04'>2020-11-23 08:38</time>
+        创建时间:<time class="date" title='更新时间: 2020-12-07 09:49:40'>2020-11-23 08:38</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1k</span>
+        <span>字数:1.5k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1342,10 +1350,16 @@
 <h2 id="docker-help"><a href="#docker-help" class="headerlink" title="docker help"></a>docker help</h2><h2 id="docker-ps"><a href="#docker-ps" class="headerlink" title="docker ps"></a>docker ps</h2><p>列出所有的容器，默认情况下只能看到正在运行的容器，如果指定-a标志，会列出所有容器</p>
 <p>-l 列出最后一个运行的容器，可以通过–format标志来进一步控制显示的信息</p>
 <font color="yellow">
-三种方式可以唯一的指代容器
-短UUID，长UUID或者容器名称
+
+<p>三种方式可以唯一的指代容器<br>短UUID，长UUID或者容器名称</p>
 </font>
 
+<p>参数：</p>
+<p>-a 列出所有正在运行的容器和历史上运行过的容器</p>
+<p>-l 显示最近创建的容器</p>
+<p>-n 最近n个创建的容器</p>
+<p>-q 静默模式，只显示容器的编号</p>
+<p>ctrl+P+Q： 容器不停止退出 和 exit是 不相同</p>
 <h2 id="容器命名"><a href="#容器命名" class="headerlink" title="容器命名"></a>容器命名</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name myubuntu -i -t ubuntu  /bin/bash</span><br></pre></td></tr></table></figure>
 
 <h2 id="重新启动已经停止的容器"><a href="#重新启动已经停止的容器" class="headerlink" title="重新启动已经停止的容器"></a>重新启动已经停止的容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker start myubuntu</span><br></pre></td></tr></table></figure>
@@ -1355,12 +1369,27 @@
 <p>因此容器在启动的时候会运行一个交互式的shell</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker attach myubuntu</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建守护式容器"><a href="#创建守护式容器" class="headerlink" title="创建守护式容器"></a>创建守护式容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name daemon_ubuntu -d ubuntu /bin/bash -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="创建守护式容器"><a href="#创建守护式容器" class="headerlink" title="创建守护式容器"></a>创建守护式容器</h2><font color="yellow">
+$ sudo echo “hahah” >> test.csv
+-bash: test.asc: Permission denied
+这时可以看到 bash 拒绝这么做，说是权限不够。这是因为重定向符号 “>” 和 “>>” 也是 bash 的命令。我们使用 sudo 只是让 echo 命令具有了 root 权限，但是没有让 “>” 和 “>>” 命令也具有 root 权限，所以 bash 会认为这两个命令都没有像 test.csv文件写入信息的权限。
+
+<p><strong>解决方式</strong><br>第一种 第一种是利用 “sh -c” 命令，它可以让 bash 将一个字串作为完整的命令来执行，这样就可以将 sudo 的影响范围扩展到整条命令。具体用法如下：</p>
+<p>$ sudo /bin/sh -c ‘echo “hahah” &gt;&gt; test.asc’</p>
+<p>另一种方法是利用管道和 tee 命令，该命令可以从标准输入中读入信息并将其写入标准输出或文件中，具体用法如下：</p>
+<p>$ echo “hahah” | sudo tee -a test.asc</p>
+<p>tee 命令的 “-a” 选项的作用等同于 “&gt;&gt;” 命令，如果去除该选项，那么 tee 命令的作用就等同于 “&gt;” 命令</p>
+</font>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --name daemon_ubuntu -d ubuntu /bin/bash -c &quot;while true; do echo hello world; sleep 1; done&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run -d centos # 这样之后利用docker ps 是不显示其已经运行的，这样做会导致docker前台没有应用，容器启动后会立即自杀，最佳解决方案是要运行的程序以前台进程的形式运行</span><br></pre></td></tr></table></figure>
 
 <h2 id="docker-logs"><a href="#docker-logs" class="headerlink" title="docker logs"></a>docker logs</h2><p>查看容器内部的运行情况</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker logs daemon_ubuntu</span><br></pre></td></tr></table></figure>
 
 <p>ctrl+c 退出内部日志跟踪</p>
+<p>-t  加入时间戳</p>
+<p>-f 跟随最新的日志打印</p>
+<p>-tail 数字显示最后多少条</p>
 <h2 id="docker支持日志驱动"><a href="#docker支持日志驱动" class="headerlink" title="docker支持日志驱动"></a>docker支持日志驱动</h2><p>可以将docker logs 日志功能禁用，将所有日志输出到syslog，但是目前我用不到这个功能</p>
 <h2 id="docker-top"><a href="#docker-top" class="headerlink" title="docker top"></a>docker top</h2><p>查看容器内的进程</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker top daemon_ubuntu</span><br></pre></td></tr></table></figure>
@@ -1377,7 +1406,7 @@ PID 和PPID 的含义表示什么还值得后续查找资料
 <h2 id="容器内部运行进程"><a href="#容器内部运行进程" class="headerlink" title="容器内部运行进程"></a>容器内部运行进程</h2><p>在容器内运行交互式命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -t -i daemon_ubuntu  /bin/bash</span><br></pre></td></tr></table></figure>
 
-<h2 id="停止守护式容器"><a href="#停止守护式容器" class="headerlink" title="停止守护式容器"></a>停止守护式容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker stop daemon_ubuntu</span><br></pre></td></tr></table></figure>
+<h2 id="停止守护式容器"><a href="#停止守护式容器" class="headerlink" title="停止守护式容器"></a>停止守护式容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker stop daemon_ubuntu # stop是温柔停止</span><br><span class="line"></span><br><span class="line">sudo docker kill daemon_ubuntu # kill是强制停止，类似于拔电源</span><br></pre></td></tr></table></figure>
 
 <h2 id="自动重启容器"><a href="#自动重启容器" class="headerlink" title="自动重启容器"></a>自动重启容器</h2><p>–restart 标志会检查容器退出的代码，来判断是否要重启容器，默认行为是不重启</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --restart=always --name daemon_ubuntu -d ubuntu /bin/bash -c &quot;while true;echo hello world; sleep 1;done&quot;</span><br></pre></td></tr></table></figure>
@@ -1398,6 +1427,9 @@ PID 和PPID 的含义表示什么还值得后续查找资料
 
 <h2 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rm 容器id</span><br><span class="line"></span><br><span class="line">sudo docker rm -f 删除运行中的docker容器，以前的版本需要先使用docker stop 或者docker kill命令来停止容器</span><br></pre></td></tr></table></figure>
 
+<p><strong>删除所有停用的容器</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rm -f$&#123;docker ps -a -q&#125;</span><br><span class="line"></span><br><span class="line">sudo docker ps -a -q |xargs docker rm</span><br><span class="line"></span><br><span class="line"># xargs 是linux 的可变参数</span><br></pre></td></tr></table></figure>
+
 <p>tips 删除所有容器</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker rm &apos;sudo docker ps -a -q&apos;</span><br></pre></td></tr></table></figure>
 
@@ -1416,10 +1448,10 @@ PID 和PPID 的含义表示什么还值得后续查找资料
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>第一本docker书1</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.5k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2020-11-23, 08:38:46</p>
-    <p><span class="copy-title">最后更新:</span>2020-11-23, 10:56:04</p>
+    <p><span class="copy-title">最后更新:</span>2020-12-07, 09:49:40</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/11/23/第一本docker书1/" title="第一本docker书1">http://jhshz520.github.io/2020/11/23/第一本docker书1/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
