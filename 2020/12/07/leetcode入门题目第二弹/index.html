@@ -3,7 +3,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <title>leetcode入门题目第二弹 | 华中阁</title>
-  <meta name="keywords" content>
+  <meta name="keywords" content=" leetcode ">
   <meta name="description" content="leetcode入门题目第二弹 | 华中阁">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="关于作者教育经历2014-2019  大连理工大学 计算机科学与技术（日语强化） 2019-2022  华中科技大学 计算机软件与理论 自己紹介北上滨城五载，南下荆楚三年。 山河表里飘蓬客，春秋难易赤子心。 2014-2019　大連理工大学　専門：日本語と計算機 2019-2022　華中科学と技術大学　専門：計算機 研究方向分布式 云计算 高性能计算与容器">
@@ -339,7 +339,7 @@
     
         
             
-            <li><div data-rel="leetcode">leetcode<small>(1)</small></div>
+            <li><div data-rel="leetcode">leetcode<small>(2)</small></div>
                 
             </li>
             
@@ -356,7 +356,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="89">
-<input type="hidden" id="yelog_site_word_count" value="84.3k">
+<input type="hidden" id="yelog_site_word_count" value="84.9k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -817,9 +817,9 @@
             <span class="post-date" title="2020-03-28 20:37:51">2020/03/28</span>
         </a>
         
-        <a  class=""
+        <a  class="leetcode "
            href="/2020/12/07/leetcode入门题目第二弹/"
-           data-tag=""
+           data-tag="leetcode"
            data-author="" >
             <span class="post-title" title="leetcode入门题目第二弹">leetcode入门题目第二弹</span>
             <span class="post-date" title="2020-12-07 16:03:38">2020/12/07</span>
@@ -1293,16 +1293,28 @@
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="leetcode">leetcode</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">leetcode</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-12-07 16:03:38'>2020-12-07 16:03</time>
+        创建时间:<time class="date" title='更新时间: 2020-12-07 17:46:04'>2020-12-07 16:03</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:0</span>
+        <span>字数:467</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1321,7 +1333,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode-回顾-从2020-12-7起"><span class="toc-text">leetcode 回顾 从2020-12-7起</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#18四数之和"><span class="toc-text">18四数之和</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1336,7 +1348,18 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="leetcode-回顾-从2020-12-7起"><a href="#leetcode-回顾-从2020-12-7起" class="headerlink" title="leetcode 回顾 从2020-12-7起"></a>leetcode 回顾 从2020-12-7起</h1><h2 id="18四数之和"><a href="#18四数之和" class="headerlink" title="18四数之和"></a>18四数之和</h2><p>给定一个数组求n个数组成不重复的排列且这几个数的和为定值<br><strong>思路</strong><br>首先将数组 numsnums 升序排序，并把答案四元组中没确定的个数设为 nn</p>
+<p>我把剪枝分为了 4 类，括号内的是用什么完成剪枝</p>
+<ol>
+<li>如果剩余可选的数字数量少于 n，则剪掉（递归返回）；</li>
+<li>每层递归的 for 循环中，从第二轮循环开始，如果数组中当前数字和前一个相同，则剪掉（进行下一次循环，这条的任务就是去重）；</li>
+<li>如果 当前数字 + 已确定数字的和 + (n - 1) * 排序后数组中当前数字的下一个数字 &gt; target,则说明后面的数无论怎么选，加起来都一定大于 target，所以剪掉（递归返回）；</li>
+<li>如果 当前数字 + 已确定数字的和 + (n - 1) * 排序后数组最后一个数字 小于target，则说明后面的数无论怎么选，加起来都一定小于 targettarget，所以剪掉（进行下一次循环）。</li>
+</ol>
+<p><strong>dfs模板解法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Solution </span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; ans;</span><br><span class="line">    vector&lt;int&gt; myNums, subans;</span><br><span class="line">    int tar, numSize;</span><br><span class="line">    void DFS(int low, int sum)</span><br><span class="line">    &#123;</span><br><span class="line">        if (sum == tar &amp;&amp; subans.size() == 4)</span><br><span class="line">        &#123;</span><br><span class="line">            ans.emplace_back(subans);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = low; i &lt; numSize; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            if (numSize - i &lt; int(4 - subans.size())) //剪枝</span><br><span class="line">                return;</span><br><span class="line">            if (i &gt; low &amp;&amp; myNums[i] == myNums[i - 1]) //去重</span><br><span class="line">                continue; </span><br><span class="line">            if (i &lt; numSize - 1 &amp;&amp; sum + myNums[i] + int(3 - subans.size()) * myNums[i + 1] &gt; tar) //剪枝</span><br><span class="line">                return;</span><br><span class="line">            if (i &lt; numSize - 1 &amp;&amp; sum + myNums[i] + int(3 - subans.size()) * myNums[numSize - 1] &lt; tar) //剪枝</span><br><span class="line">                continue;</span><br><span class="line">            subans.emplace_back(myNums[i]);</span><br><span class="line">            DFS(i + 1, myNums[i] + sum);</span><br><span class="line">            subans.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; fourSum(vector&lt;int&gt;&amp; nums, int target) </span><br><span class="line">    &#123;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        myNums = nums;</span><br><span class="line">        tar = target;</span><br><span class="line">        numSize = nums.size();</span><br><span class="line">        if (numSize &lt; 4)</span><br><span class="line">            return ans;</span><br><span class="line">        DFS(0, 0);</span><br><span class="line">        return ans;    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 583614868@qq.com </span>
     </div>
@@ -1350,10 +1373,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>leetcode入门题目第二弹</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">0</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">467</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2020-12-07, 16:03:38</p>
-    <p><span class="copy-title">最后更新:</span>2020-12-07, 16:03:38</p>
+    <p><span class="copy-title">最后更新:</span>2020-12-07, 17:46:04</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/12/07/leetcode入门题目第二弹/" title="leetcode入门题目第二弹">http://jhshz520.github.io/2020/12/07/leetcode入门题目第二弹/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
