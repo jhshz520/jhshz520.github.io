@@ -280,3 +280,14 @@ push你的代码 (git push), 这时会让你输入用户名和密码, 这一步�
 下次再push代码时就不用输入用户名密码 ! 这一步会在用户目录下生成文件.git-credential记录用户名密码的信息
 ```
 上面的**在登录git时，报错Logon failed, use ctrl+c to cancel basic credential prompt.错误**
+
+## git for windows update
+
+```
+git version
+
+2.17.1之前用git update
+
+2.17.1之后用git update-git-for-windows
+
+```
