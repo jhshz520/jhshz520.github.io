@@ -265,6 +265,8 @@ git config --global http.lowSpeedTime 999999
 
 2. 因为只是需要git push之类的操作，所以勾选repo选项，即可
 3. 随后token生成成功，然后再在本地git bash中进行git push，账号还是原来的github账号，密码改为填写刚刚生成的token即可。之后就不会再重复输入密码了795057ceb1c744cca75aa2725fa7f47c2cd850e2
+
+jhshz f22f32903d58415c8daa53916395d555ee735c33
 4. 之后可以到"控制面板 -> 用户账户 -> 凭据管理器 -> Windows凭据"下查看，可以发现系统中已经保存了新的GitHub的token，此后就可以安全的使用了。
 
 **上面的方案好像对我没有什么用**
@@ -277,3 +279,4 @@ git config --global http.lowSpeedTime 999999
 push你的代码 (git push), 这时会让你输入用户名和密码, 这一步输入的用户名密码会被记住,
 下次再push代码时就不用输入用户名密码 ! 这一步会在用户目录下生成文件.git-credential记录用户名密码的信息
 ```
+上面的**在登录git时，报错Logon failed, use ctrl+c to cancel basic credential prompt.错误**
