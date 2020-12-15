@@ -94,5 +94,30 @@ test my blog
 
 ## hexo怎么进行同步？
 **Hexo实现多终端同步管理**
-假设我另外的机器上有相同的hexo
-### 想要新建一个仓库
+hexo生成的静态博客文件都是上传到GitHub上的, 且默认放在master分支上, 而一些相关的配置文件都在本地hexo的源文件（部署环境文件）可以都放在hexo分支上（可以新创建一个hexo分支），换新电脑时，直接git clone hexo分支
+
+### 想要新建一个仓库分支
+在Github的username.github.io仓库上新建一个hexo(分支名字可自定义)分支, 在下图箭头位置输入分支名字,完成创建；
+**将其设置为默认分支**
+切换到该hexo分支，并在该仓库->Settings->Branches->Default branch中将默认分支设为hexo,然后点击update进行保存；
+### 新建myhexo文件进行仓库的克隆
+
+克隆或者push，pull等速度问题见博客git仓库相关
+**本地hexo文件中的所有选项都复制到myhexo文件下github.jhshz.io**
+将thems文件加下.git文件夹删除，因为会冲突
+
+```
+可能有人会问，删除了themes目录中的.git不就不能git pull更新主题了吗，很简单，需要更新主题时在另一个地方git clone下来该主题的最新版本，然后将内容拷到当前主题目录即可
+```
+## B客户端进行部署
+1. 克隆下来整个项目
+2. 切换到username.github.io目录，执行npm install(由于仓库有一个.gitignore文件，里面默认是忽略掉 node_modules文件夹的，也就是说仓库的hexo分支并没有存储该目录，所以需要install下)；
+
+**此后撰写文章更新博客的流程**
+
+1. 首先git pull进行最新分支的拉取，再编辑、撰写文章或其他博客更新改动
+
+2. 文章编辑好之后，依次执行git add .、git commit -m '***'（引号内容为描述提交内容）、git push指令，保证githubremote分支版本最新
+
+3. 执行hexo clean && hexo g && hexo d指令，完成后就会发现，最新改动已经更新到master分支了，两个分支互不干扰！
+
