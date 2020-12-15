@@ -252,3 +252,10 @@ git clone https://github.com.cnpmjs.org/Hackergeek/architecture-samples
 //使用镜像
 git clone https://git.sdut.me/Hackergeek/architecture-samples
 ```
+
+## 修改下载速度
+
+```
+git config --global http.lowSpeedLimit 0
+git config --global http.lowSpeedTime 999999
+```
