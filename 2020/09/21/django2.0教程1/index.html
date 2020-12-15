@@ -364,7 +364,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="94">
-<input type="hidden" id="yelog_site_word_count" value="95.6k">
+<input type="hidden" id="yelog_site_word_count" value="96.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -1357,12 +1357,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-12-09 17:49:31'>2020-09-21 07:53</time>
+        创建时间:<time class="date" title='更新时间: 2020-12-10 15:21:29'>2020-09-21 07:53</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.9k</span>
+        <span>字数:2k</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1381,7 +1381,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Django"><span class="toc-text">Django</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Django主要组成"><span class="toc-text">Django主要组成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#views"><span class="toc-text">views</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#settings"><span class="toc-text">settings</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Django常用的管理语句"><span class="toc-text">Django常用的管理语句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#快速入门"><span class="toc-text">快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模型"><span class="toc-text">设计模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用数据模型"><span class="toc-text">应用数据模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#便捷的API"><span class="toc-text">便捷的API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态管理接口"><span class="toc-text">动态管理接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#规划URLs"><span class="toc-text">规划URLs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写视图"><span class="toc-text">编写视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模板"><span class="toc-text">设计模板</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Django"><span class="toc-text">Django</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Django主要组成"><span class="toc-text">Django主要组成</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#views"><span class="toc-text">views</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#settings"><span class="toc-text">settings</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Django常用的管理语句"><span class="toc-text">Django常用的管理语句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#快速入门"><span class="toc-text">快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#设计模型"><span class="toc-text">设计模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用数据模型"><span class="toc-text">应用数据模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#便捷的API"><span class="toc-text">便捷的API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态管理接口"><span class="toc-text">动态管理接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#规划URLs"><span class="toc-text">规划URLs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写视图"><span class="toc-text">编写视图</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1422,7 +1422,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysite/news/views.py</span><br><span class="line">from django.shortcuts import render</span><br><span class="line"></span><br><span class="line">from .models import Article</span><br><span class="line"></span><br><span class="line">def year_archive(request, year):</span><br><span class="line">    a_list = Article.objects.filter(pub_date__year=year)</span><br><span class="line">    context = &#123;&apos;year&apos;: year, &apos;article_list&apos;: a_list&#125;</span><br><span class="line">    return render(request, &apos;news/year_archive.html&apos;, context)</span><br></pre></td></tr></table></figure>
 
 <p>这个例子使用了 Django 模板系统 ，它有着很多强大的功能，而且使用起来足够简单，即使不是程序员也可轻松使用</p>
-<h2 id="设计模板"><a href="#设计模板" class="headerlink" title="设计模板"></a>设计模板</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">上面的代码加载了 news/year_archive.html 模板。</span><br><span class="line"></span><br><span class="line">Django 允许设置搜索模板路径，这样可以最小化模板之间的冗余。在 Django 设置中，你可以通过 DIRS 参数指定一个路径列表用于检索模板。如果第一个路径中不包含任何模板，就继续检查第二个，以此类推。</span><br><span class="line"></span><br><span class="line">让我们假设 news/year_archive.html 模板已经找到。它看起来可能是下面这个样子：</span><br><span class="line"></span><br><span class="line">mysite/news/templates/news/year_archive.html</span><br><span class="line">&#123;% extends &quot;base.html&quot; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block title %&#125;Articles for &#123;&#123; year &#125;&#125;&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line">&lt;h1&gt;Articles for &#123;&#123; year &#125;&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&#123;% for article in article_list %&#125;</span><br><span class="line">    &lt;p&gt;&#123;&#123; article.headline &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;By &#123;&#123; article.reporter.full_name &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;Published &#123;&#123; article.pub_date|date:&quot;F j, Y&quot; &#125;&#125;&lt;/p&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<font color="red">
+每个视图函数至少要有一个参数，通常被叫作request。 这是一个触发这个视图、包含当前Web请求信息的对象，是类django.http.HttpRequest的一个实例。在这个示例中，我们虽然不用request做任何事情，然而它仍必须是这个视图的第一个参数。
+</font>
+## 设计模板
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">上面的代码加载了 news/year_archive.html 模板。</span><br><span class="line"></span><br><span class="line">Django 允许设置搜索模板路径，这样可以最小化模板之间的冗余。在 Django 设置中，你可以通过 DIRS 参数指定一个路径列表用于检索模板。如果第一个路径中不包含任何模板，就继续检查第二个，以此类推。</span><br><span class="line"></span><br><span class="line">让我们假设 news/year_archive.html 模板已经找到。它看起来可能是下面这个样子：</span><br><span class="line"></span><br><span class="line">mysite/news/templates/news/year_archive.html</span><br><span class="line">&#123;% extends &quot;base.html&quot; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block title %&#125;Articles for &#123;&#123; year &#125;&#125;&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line">&lt;h1&gt;Articles for &#123;&#123; year &#125;&#125;&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&#123;% for article in article_list %&#125;</span><br><span class="line">    &lt;p&gt;&#123;&#123; article.headline &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;By &#123;&#123; article.reporter.full_name &#125;&#125;&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;Published &#123;&#123; article.pub_date|date:&quot;F j, Y&quot; &#125;&#125;&lt;/p&gt;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
 
 <p>我们看到变量都被双大括号括起来了。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; article.headline &#125;&#125;</span><br></pre></td></tr></table></figure>
@@ -1454,10 +1459,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>django2.0教程1</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">1.9k</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2020-09-21, 07:53:05</p>
-    <p><span class="copy-title">最后更新:</span>2020-12-09, 17:49:31</p>
+    <p><span class="copy-title">最后更新:</span>2020-12-10, 15:21:29</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/09/21/django2.0教程1/" title="django2.0教程1">http://jhshz520.github.io/2020/09/21/django2.0教程1/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
