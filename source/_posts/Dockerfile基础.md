@@ -14,7 +14,7 @@ dockerfile 基于DSL（domain specific language）语法，更具备可重复性
 ## EXPOSE
 当前容器对外暴露出的端口
 ## RUN
-容器构建时的运行命令,相当于在容器执行一个命令行，RUN有两种格式
+**容器构建**时的运行命令,相当于在容器执行一个命令行，RUN有两种格式
 
 shell格式
 ```
@@ -81,7 +81,7 @@ COPY hom?.txt /mydir/
 容器数据卷，用于数据保存和持久化工作
 ## CMD
 
-类似于RUN指令，用于运行程序，但是两者的时间点不同
+类似于RUN指令，用于**运行程序**，但是两者的时间点不同
 
 CMD是在docker run时运行
 
@@ -136,7 +136,7 @@ nginx -c /etc/nginx/new.conf
 ## ONBUILD
 当构建一个被继承的Dockerfile时运行命令，父镜像在被子镜像继承后父镜像的onbuild被触发
 
-用于延迟构建命令的执行。简单的说，就是 Dockerfile 里用 ONBUILD 指定的命令，在本次构建镜像的过程中不会执行（假设镜像为 test-build）。当有新的 Dockerfile 使用了之前构建的镜像 FROM test-build ，这是执行新镜像的 Dockerfile 构建时候，会执行 test-build 的 Dockerfile 里的 ONBUILD 指定的命令。
+用于**延迟构建命令**的执行。简单的说，就是 Dockerfile 里用 ONBUILD 指定的命令，在本次构建镜像的过程中不会执行（假设镜像为 test-build）。当有新的 Dockerfile 使用了之前构建的镜像 FROM test-build ，这是执行新镜像的 Dockerfile 构建时候，会执行 test-build 的 Dockerfile 里的 ONBUILD 指定的命令。
 
 
 # 项目文件中的dockerfile
@@ -150,3 +150,17 @@ nginx -c /etc/nginx/new.conf
 
 保留到html页面中依然会出错
 ```
+
+## ARG
+ARG是运行时的参数，ENV是全局参数
+
+一般用于build时候的使用
+
+## lable指定元数据
+例子
+
+```
+LABEL k='v' k1='v1'
+
+```
+便于后续inspect查看是否满足某些标识
