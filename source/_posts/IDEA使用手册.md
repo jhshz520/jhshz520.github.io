@@ -5,7 +5,7 @@ categories: 工具
 tags: java web
 ---
 # 2019 11 9
-今天重新由开始了IDEA的使用之路
+今天重新又开始了IDEA的使用之路
 
 配置了Tomcat 7
 
@@ -14,7 +14,13 @@ tags: java web
 熟悉了以下IDEA 的基本操作 环境
 ## 2019 11 28 
 ### maven的配置教程
+```
 https://www.cnblogs.com/xihehua/p/9639045.html
+
+https://www.cnblogs.com/yjmyzz/p/intellij-idea-13-getting-started.html
+
+如下图，先打开有@Test的类文件，然后把光标停在要测试的方法，比如testAdd上，直接按 shift+control+F10，就能让IDE自动帮我们生成junit的配置，并马上运行该配置
+```
 ### 
 windows当前目录下打开命令行的小技巧
 shift + 鼠标右键，会出现“在此处打开命令窗口”的字样
