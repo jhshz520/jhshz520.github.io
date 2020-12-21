@@ -2,7 +2,7 @@
 title: Docker集群的调度策略和通信优化技术研究
 date: 2019-09-18 10:25:50
 tags: 文献阅读
-categories: 容器课题相关
+categories: 课题相关
 ---
 # Docker网络发展的关键点
 

@@ -1,8 +1,8 @@
 ---
 title: hpc容器集群的应用和性能优化
 date: 2019-10-30 09:05:31
-categories: 论文
-tags: 文献阅读
+categories: 课题相关
+tags: 文献
 ---
 # 高性能计算的应用
 
