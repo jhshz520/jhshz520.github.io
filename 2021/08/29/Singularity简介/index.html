@@ -211,7 +211,7 @@
     
         
             
-            <li><div data-rel="容器">容器<small>(2)</small></div>
+            <li><div data-rel="容器">容器<small>(5)</small></div>
                 
             </li>
             
@@ -339,7 +339,7 @@
     
         
             
-            <li><div data-rel="docker">docker<small>(3)</small></div>
+            <li><div data-rel="docker">docker<small>(1)</small></div>
                 
             </li>
             
@@ -741,9 +741,9 @@
             <span class="post-date" title="2020-11-17 17:28:08">2020/11/17</span>
         </a>
         
-        <a  class=""
+        <a  class="容器 "
            href="/2020/09/23/dockerfile学习/"
-           data-tag=""
+           data-tag="docker"
            data-author="" >
             <span class="post-title" title="dockerfile学习">dockerfile学习</span>
             <span class="post-date" title="2020-09-23 18:56:19">2020/09/23</span>
@@ -1125,7 +1125,7 @@
             <span class="post-date" title="2019-10-21 14:47:13">2019/10/21</span>
         </a>
         
-        <a  class="docker "
+        <a  class="容器 "
            href="/2020/11/23/第一本docker书2/"
            data-tag="docker"
            data-author="" >
@@ -1133,7 +1133,7 @@
             <span class="post-date" title="2020-11-23 08:39:10">2020/11/23</span>
         </a>
         
-        <a  class="docker "
+        <a  class="容器 "
            href="/2020/11/23/第一本docker书3/"
            data-tag="docker"
            data-author="" >
@@ -1377,7 +1377,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2021-08-29 18:21:10'>2021-08-29 17:55</time>
+        创建时间:<time class="date" title='更新时间: 2021-08-29 18:26:06'>2021-08-29 17:55</time>
         
     </div>
     <div class="article-meta">
@@ -1429,15 +1429,15 @@
       
         <h1 id="诞生与发展"><a href="#诞生与发展" class="headerlink" title="诞生与发展"></a>诞生与发展</h1><p>2015年作为在HPC集群上运行的容器系统由劳伦斯伯克利国家实验室（LBNL）的Greg Kurtzer提出。Singularity本身就是为应对大规模、跨节点HPC和DL工作负载而开发的容器，具备轻量级、快速部署、方便迁移等诸多优势。2016年4月诞生第一个公开版，2018年1月1日，Greg Kurtzer成立了Sylabs Inc用以开发和维护Singularity及其相关生态，开源社区逐步形成。2018年10月，Singularity 3.0由Go语言重构。目前版本已经迭代到3.8，在Github上已经拥有2.2k+的start数量。</p>
 <h1 id="设计哲学"><a href="#设计哲学" class="headerlink" title="设计哲学"></a>设计哲学</h1><h2 id="计算的可移动性"><a href="#计算的可移动性" class="headerlink" title="计算的可移动性"></a>计算的可移动性</h2><p>计算的可移动性主要是指在本地构建一个工作流，同时保证这个工作流可以在不同的主机不同的linux操作系统或者云服务器上执行。本质上，计算的可移动性意味着能够将完整的软件栈从一个系统移动到另一个系统。对于一个可复现的自然科学来说，可计算的可移动性是其重要组成部分，同时还要保证计算的一致性和应用的持续性部署。</p>
-<p>Singularity通过利用一个可分发的镜像格式文件(Singularity image Format)来实现，这个SIF文件把完整的容器和栈封装到一个镜像文件中，这个文件能够被复制和共享,独特的镜像格式将应用程序所依赖的环境都封装在镜像文件中，不需要再单独打包和导入。没有复杂的缓存机制并且镜像经过压缩，只需占用非常少的磁盘空间。<br><img src="//jhshz520.github.io/2021/08/29/Singularity简介/%E5%9B%BE1.jpg" alt="图1 Singularity容器镜像格式"><br>图1 Singularity容器镜像格式</p>
+<p>Singularity通过利用一个可分发的镜像格式文件(Singularity image Format)来实现，这个SIF文件把完整的容器和栈封装到一个镜像文件中，这个文件能够被复制和共享,独特的镜像格式将应用程序所依赖的环境都封装在镜像文件中，不需要再单独打包和导入。没有复杂的缓存机制并且镜像经过压缩，只需占用非常少的磁盘空间。<br><img src="//jhshz520.github.io/2021/08/29/Singularity简介/%E5%9B%BE1.jpg" alt="图1 Singularity容器镜像格式"></p>
 <h2 id="可重复性"><a href="#可重复性" class="headerlink" title="可重复性"></a>可重复性</h2><p>一旦一个容器化的工作流被定义，在容器运行过程中可以实行快照和存档操作，以便容器能够继续使用，由于容器不受主机操作系统的影响，可以保证容器的文件和代码是没有更改的。</p>
 <h2 id="用户定义自由"><a href="#用户定义自由" class="headerlink" title="用户定义自由"></a>用户定义自由</h2><p>运维问题一直困扰着系统集成商，管理员和工程师们，必须花费大量的时间进行系统的管理和维护。Singularity旨在为用户提供安装不同版本应用程序和依赖的自由。通过提供和dockerfile类似的recipe脚本，用户可以定义自己的工作环境，并可以将环境镜像进行共享，在任何装有Singularity的系统上运行其工作流，运维复杂度也得到极大简化。</p>
 <h2 id="对现有HPC资源进行支持"><a href="#对现有HPC资源进行支持" class="headerlink" title="对现有HPC资源进行支持"></a>对现有HPC资源进行支持</h2><p>Docker作为最流行的容器技术，在微服务的部署中应用广泛，但是直接将Docker引入传统HPC，由于两种应用场景不能很好地重叠，因此解决方案是不能强行结合的。Singularity的一个目标就是支持现存的HPC资源，让使用Singularity就像和主机操作系统上安装单个软件包一样简单。<br>Singularity的架构如图2所示。在保证容器安全的基础上，弱化了隔离性。无需运行daemon进程，仅提供的一个完整运行时的环境，在不使用时不需要单独的进程，不占用任何资源。也正因为不由daemon进程代为执行指令，资源限制和权限问题也得以解决。</p>
 <p>Docker镜像应用非常广泛，生态优秀，为此Singularity设计上能够和Docker镜像无缝协作，可以将Docker镜像转换为自己的镜像格式（SIF）。例如可以直接利用下面命令进行Docker容器镜像的下载：Singularity shell docker://Ubuntu:latest。</p>
-<p>Singularity原生地支持infiniBand 、GPU和Lustre等，能够和资源管理器（SLURM,Torque，SGE等）集成，因此Singularity在系统上运行就像执行一个普通的命令行一样。<br><img src="//jhshz520.github.io/2021/08/29/Singularity简介/%E5%9B%BE2.png" alt="图2 Docker和Singularity的架构"><br>图2 Docker和Singularity的架构</p>
+<p>Singularity原生地支持infiniBand 、GPU和Lustre等，能够和资源管理器（SLURM,Torque，SGE等）集成，因此Singularity在系统上运行就像执行一个普通的命令行一样。<br><img src="//jhshz520.github.io/2021/08/29/Singularity简介/%E5%9B%BE2.png" alt="图2 Docker和Singularity的架构"></p>
 <h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>HPC集群资源由于是一个共享系统，普通用户不具有root访问权限。如果普通用户能够升权root权限，则可能造成严重的安全问题，这在容器技术中也是首要考虑的。</p>
 <p>想要在集群规模化运行容器，在大型的并行文件系统中使用单个镜像作为容器的标准镜像格式无疑是更有优势的，容器内部的元操作都发生在容器镜像内，而不是元数据服务器。</p>
-<p>Singularity通用的工作流如图3所示，用户在自己的终端根据需要创建，修改和更新容器。在容器中包含了相应的应用程序，库和数据，可以通过镜像共享给其他主机，并且可以在没有root权限下进行执行。<br><img src="//jhshz520.github.io/2021/08/29/Singularity简介/%E5%9B%BE3.png" alt="图3 Singularity的工作流"><br>图3 Singularity的工作流</p>
+<p>Singularity通用的工作流如图3所示，用户在自己的终端根据需要创建，修改和更新容器。在容器中包含了相应的应用程序，库和数据，可以通过镜像共享给其他主机，并且可以在没有root权限下进行执行。<br><img src="//jhshz520.github.io/2021/08/29/Singularity简介/%E5%9B%BE3.png" alt="图3 Singularity的工作流"></p>
 <h1 id="技术生态"><a href="#技术生态" class="headerlink" title="技术生态"></a>技术生态</h1><p>计算机领域任何一项技术的兴起和快速发展都离不开技术生态。Singularity目前已经有了丰富的工具集，建成了良好的生态。下面介绍几种常用的开源工具。</p>
 <h2 id="Singularity-Hub"><a href="#Singularity-Hub" class="headerlink" title="Singularity Hub"></a>Singularity Hub</h2><p>一个公共可用的Singularity容器云服务，存储了大量构建不同应用容器recipe文件，并且提供在线构建服务。（<a href="https://singularityhub.github.io/singularityhub-docs/）" target="_blank" rel="noopener">https://singularityhub.github.io/singularityhub-docs/）</a></p>
 <h2 id="Singularity-Registry-Server"><a href="#Singularity-Registry-Server" class="headerlink" title="Singularity Registry Server"></a>Singularity Registry Server</h2><p>可以部署私有的容器仓库服务，类似Docker Registry，可使用Singularity进行交互。<br>(<a href="https://singularityhub.github.io/sregistry/）" target="_blank" rel="noopener">https://singularityhub.github.io/sregistry/）</a></p>
@@ -1465,7 +1465,7 @@
     <p><span class="copy-title">文章字数:</span><span class="post-count">1.6k</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="钟帅豪">钟帅豪</a></p>
     <p><span class="copy-title">发布时间:</span>2021-08-29, 17:55:55</p>
-    <p><span class="copy-title">最后更新:</span>2021-08-29, 18:21:10</p>
+    <p><span class="copy-title">最后更新:</span>2021-08-29, 18:26:06</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2021/08/29/Singularity简介/" title="Singularity简介">http://jhshz520.github.io/2021/08/29/Singularity简介/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
